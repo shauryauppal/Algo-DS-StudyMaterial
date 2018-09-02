@@ -1,0 +1,813 @@
+/* topcoder's API moudle layout */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img{
+	border: none;
+}
+ *:focus{
+     outline:none;
+ }
+
+/*----------------- COMMON CSS CLASSES ----------------------*/
+.clear{
+    clear:both;
+}
+.hide{
+	display:none;
+}
+
+
+
+/* Common Widget */
+.commonWidget header ul li{
+position:relative;
+float:left;
+width:100%;
+font-weight:bold;
+text-align:center;
+height:46px;
+padding:0px;
+}
+.commonWidget header ul li.current a{
+	color:#000;
+	cursor:default;
+}
+.commonWidget header ul li.current a:hover{
+	text-decoration:none;
+}
+.commonWidget header ul li span{                        display:none;                    }                    
+.commonWidget header ul li.current span{                        display:block;                        position:absolute;                        left:50%;                        bottom:-8px;                        background:url(../i/widget-arrow.png) no-repeat 0 0;                        height:9px;                        width:15px;                        margin-left:-7px;                    }
+
+/* .commonWidget */        
+.commonWidget{            position:relative;            border:1px solid #d8d8d8;            font-family:Tahoma, Arial, Helvetica, sans-serif;            margin-bottom:15px;        }           
+.commonWidget header{                height:46px;                line-height:40px;                background:url(../i/widget-header.png) repeat-x 0 0;                border-bottom:1px solid #d8d8d8;            }                
+.commonWidget header h2{                    margin-left:16px;                    padding-left:72px;                    background:url(../i/events-icon.png) no-repeat 0 center;                 }
+.commonWidget .widgetTitle {
+	float:left;
+	font-size:12px;
+	height:46px; line-height:40px;
+	font-family:Tahoma, Arial, Helvetica, sans-serif; 
+	color:#666666;
+	margin-left:15px;
+	padding:0px;
+	margin-top:0px; 
+	margin-bottom:0px;
+	text-indent:0px;
+}
+	/* Common Widget Content */
+	.commonWidget .content{
+		background:url(../i/widget-footer.png) #fffffe repeat-x 0 bottom; 
+	}
+	
+	.commonWidget .corner{
+		position:absolute;                background:url(../i/widget-corner.png) no-repeat 0 0;                height:4px;                width:4px;                overflow:hidden;             }            
+		.commonWidget .tl{                left:-1px;                top:-1px;            }            .commonWidget .tr{                right:-1px;                top:-1px;                background-position:-4px 0;            }            
+		.commonWidget .bl{                left:-1px;                bottom:-1px;                background-position:0 -4px;            }            .commonWidget .br{                right:-1px;                bottom:-1px;                background-position:-4px -4px;            }
+		
+	/* .posts */
+	.commonWidget.posts .content{    padding:10px 14px 0;    font-size:11px;}
+    .commonWidget.posts figure{
+        overflow:hidden;
+        padding:10px 0;
+        border-bottom:1px solid #e5e5e5;        color:#333;        display:none;    	
+	}
+	.commonWidget.posts figure:last-child {
+		border-bottom:none; 
+	}
+	body #content .rightRail .commonWidget.posts figure:last-child {
+		border-bottom:none; 
+	}
+        .commonWidget.posts figure img{
+            border:1px solid #e3e3e3;
+            height:64px;
+            width:64px;            float:left;            margin-left:5px;       
+		}
+        .commonWidget.posts figure figcaption{
+			font-family:Tahoma, Arial, Helvetica, sans-serif;    
+			float:left;
+            padding:10px 20px 0 15px;
+        }
+		body #content .rightRail .commonWidget.posts figure figcaption {
+			font-family:Tahoma, Arial, Helvetica, sans-serif;    
+			float:left;
+            padding:10px 20px 0 15px;
+		}
+		.commonWidget.posts figure figcaption h5 {
+			margin:0px;
+			font-family:Tahoma, Arial, Helvetica, sans-serif;    
+			font-size:11px;
+		}
+		.commonWidget.posts figure figcaption p {
+			margin-bottom:0px;
+		}
+        .commonWidget.posts figure figcaption.singleLine{
+            padding-top:18px;
+        }
+            .commonWidget.posts figure figcaption a{
+                display:inline-block;
+                margin-top:2px;
+            }
+			.commonWidget .contestLink {
+				color:#333;
+			}
+    .commonWidget.posts .pagers{
+        text-align:center;
+        padding:12px 0;
+        line-height:14px;
+        font-weight:bold;        color:#636373;    }        
+			.commonWidget.posts .pagers a{            display:inline-block;            margin:0 2px;        }        
+			.commonWidget.posts .pagers a.current,        
+			.commonWidget.posts .pagers a.disabled{            color:#636373;            cursor:default;        }        
+			.commonWidget.posts .pagers a.current:hover,        
+			.commonWidget.posts .pagers a.disabled:hover{            text-decoration:none;        }        
+			.commonWidget.posts .pagers .prev{            margin-right:8px;        }        
+			.commonWidget.posts .pagers .next{            margin-left:8px;        }
+			/* .events */
+			.commonWidget.events .content{    padding:0 14px;    font-size:11px;}    
+			.commonWidget.events figure{        overflow:hidden;        padding:18px 0;        border-bottom:1px solid #e5e5e5;        color:#333;    }        
+			.commonWidget.events figure img{            height:39px;            width:64px;            float:left;            margin-left:4px;            margin-top:4px;        }        .commonWidget.events figure figcaption{            padding-left:78px;            color:#7f7f7f;        }            
+			.commonWidget.events figure figcaption a{                font-weight:bold;            }
+            .commonWidget.events figure figcaption p{
+                line-height:14px;
+                padding-top:2px;
+            }
+	/* Common Widget End */		
+
+.clear{
+    clear: both;
+}
+
+.container{
+    margin: 0 auto;
+    position: relative;
+}
+    
+.contestContent .container .mainRail{
+	float:left;
+    width: 655px;
+    margin: 30px 0px;
+}
+.contestContent .container .rightRail{
+    width: 285px;
+	float:left;
+	margin-top: 30px;
+	margin-bottom:30px;
+	margin-left:20px;
+}
+
+.categoriesWidg .categoryList a{
+    font-weight: bold;
+    font-size: 12px;
+}
+    .categoriesWidg .categoryList > li{
+        position: relative;
+        height: 22px;
+        line-height: 16px;
+        padding: 3px 0;
+    }
+    .categoriesWidg .categoryList > li a{
+        display: inline-block;
+        position: absolute; 
+        left: 0;
+        top: 3px;
+    }
+    .categoriesWidg .categoryList > li a:first-child{
+        position: relative;
+        left: auto;
+        top: auto;
+        padding-left: 30px;
+    }
+	
+#content .rightRail .commonWidget.posts .content{
+    padding-bottom: 6px;
+}
+#content .rightRail .commonWidget header ul li {
+    position: relative;
+    float: none;
+    width: auto;
+    font-weight: bold;
+    text-align: left;
+    text-indent: 16px;
+}
+#content .archWidg .archList li{
+    height: 22px;
+    line-height: 16px;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+    #content .archWidg ul li a{
+        font-size: 12px;    
+        list-style-type: disc;
+	}
+
+.contestTimelinePara {
+	min-height:25px;
+	padding-top:10px;
+	border-bottom:1px #cccccc dotted;
+}
+.commonWidget .contestTimelinePara:last-child {
+	border-bottom:none;
+	padding-bottom:20px;
+}
+	.contestTimelinePara .label {
+		font-weight:bold;
+		display:inline-block;
+		width:110px;
+		padding-right:10px;
+	}
+.contestContent h2 {
+	font-size:24px;
+	font-weight:normal;
+	line-height:32px;
+}	
+
+.shortcodeMainDiv {
+	font-size:14px;
+}
+.shortcodeMainDiv p {
+	margin:0px;
+}
+.shortcodeMainDiv td {
+	border:none;
+}
+.contestOverviewTitle {
+	padding-left:10px;
+	background-color:#f4f4f4;
+	font-size:20px;
+	font-weight:normal;
+	margin:10px 0px;
+	padding:5px 10px;
+}	
+/* Member Quote */
+.memberQuote {
+	width:547px; height:96px;
+	padding:20px 55px;
+	background: url(../i/member-quote-bg.png) no-repeat top left;
+	font-size:20px;
+	overflow:hidden;
+}
+/* Member Quote End */
+
+/* Member Profile */
+#memberProfileContainer {
+	min-height:620px;
+}
+.memberProfilePicture {
+	text-align:center;
+}
+.memberProfile {
+	border-bottom:1px #cccccc dotted;
+	padding:5px 0px;
+	color:#666666;
+	font-weight:bold;
+	overflow:hidden;
+}
+.memberProfile .handle {
+	text-align:center;
+	display:block;
+	margin-top:10px;
+	font-size:20px;
+	line-height:32px;
+}
+.memberProfile span {
+	font-weight:normal;
+}
+.memberProfile label {
+	float:left;
+	clear:left;
+}
+.memberProfile .alignRight {
+	float:right;
+	text-align:right;
+}
+.memberProfile .alignCenter{
+	float:right;
+	width:200px;
+	text-align:center;
+}
+/* Member Profile End */
+
+
+/* Coder Achievement*/
+.coderAchievementTop {
+	background: url(../i/coder-achievement-header.png) repeat-x top left;
+	height:23px;
+	line-height:23px;
+	padding-left:5px;
+	margin-top:20px;
+	border:1px #999999 solid;
+	border-bottom:none;
+	color:#333333;
+	font-weight:bold;
+}
+.coderAchievementTable {
+	width:100%;
+	border:1px #999999 solid;
+	border-top:none;
+}
+	.coderAchievementTable thead {
+		background-color:#dddddd;
+	}
+	.coderAchievementTable thead th {
+		height: 16px;
+		line-height:16px;
+		text-align:center;
+		font-size:12px;
+		color:#333333;
+		text-transform: none;
+	}
+	.coderAchievementTable tbody tr:nth-child(even) {
+		background-color:#eeeeee;
+	}
+		.coderAchievementTable tbody td {
+			height: 21px;
+			line-height:21px;
+			font-size:11px;
+			padding:0px 5px;
+		}
+		.coderAchievementTable tbody td.date {
+			text-align:center;
+			display:block;
+		}
+		.coderAchievementTable tbody td .desc {
+			padding-left:5px;
+		}
+		.coderAchievementTable tbody td .icon {
+			display:inline-block;
+			width:17px; height:17px;
+			position: relative;
+			top: 3px;
+		}
+		
+.copilotAchivementAjax {
+	display:none;
+}		
+/* Coder Achievement End */
+		
+/* Copilot Achievement */
+#copilotStatsShortcode .copilotAchivementAjax {
+	display:block;
+}	
+.copilotAchievementsTitle {
+	font-size:20px;
+	font-weight:normal;
+	margin:30px 0px 10px 0px;
+}		
+.copilot-pool .charts .palisade{
+    display:inline-block;
+    vertical-align:top;
+}
+.copilot-pool .charts .palisade-control {
+    border-top:1px solid #B5B5B5;
+    border-right:1px solid #B5B5B5;
+    border-bottom:1px solid #B5B5B5;
+	border-left:1px solid #B5B5B5;
+    overflow:hidden;
+    position:relative;
+	margin-top:0px;
+}
+.copilot-pool .charts .palisade .left-control{
+    /* float:left;*/
+  /*  position:relative;*/
+    float:left;
+	min-height:120px;
+	border-right:1px #b5b5b5 solid;
+}
+/* new add for BUGR-6044 */
+.copilot-pool .charts .palisade-control{
+	border-bottom:0;
+	background:url(../i/tabs-bg-border.png) left bottom repeat-x;
+	min-height:10px;
+}
+.copilot-pool .charts .palisade .left-control div.controller{
+    background: url(../i/tabs-bg-normal.png) repeat-x left top;
+    text-decoration:none;
+    width:156px;
+    color:#0000FF;
+    padding-left:9px;
+    cursor:pointer;
+	position:relative;
+	border-bottom:1px solid #b5b5b5;
+}
+.copilot-pool .charts .palisade .left-control div.active{
+    background: url(../i/tabs-bg-active.png) repeat-x left top;
+}
+.copilot-pool .charts .palisade .left-control div.controllerWrapper{
+    text-decoration:none;
+	background: url(../i/tabs-bg-normal.png) repeat-x left top;
+    color:#0000FF;
+    cursor:pointer;
+	min-height:26px;
+}
+.copilot-pool .charts .palisade .left-control div.active div.controllerWrapper{
+    background: url(../i/tabs-bg-normal.png) repeat-x left top;
+    font-weight:bold;
+    color:#000000;
+	min-height:26px;
+}
+.copilot-pool .charts .palisade .left-control div.controller span{
+    display:block;
+    padding:6px 5px;
+    line-height:14px;
+	font-size:12px;
+	font-family:arial;
+}
+.copilot-pool .charts .palisade .left-control div.controller span.arrow{
+    display:none;
+    padding:0;
+}
+.copilot-pool .charts .palisade .left-control div.active div.controllerWrapper span.arrow{
+	display:block;
+	width:15px;
+	height:26px;
+	position:absolute;
+	overflow:hidden;
+	right:-15px;
+	top:0;
+	background:url(../i/tabs-bg-arrow.png) -2px -1px no-repeat;
+	padding:0px;
+}
+.copilot-pool .charts .palisade .left-control div.controller:hover{
+	background:url(../i/tabs-bg-normal-hover.png) left bottom repeat-x;
+}
+.copilot-pool .charts .palisade .left-control div.controller:hover div.controllerWrapper{
+	background:url(../i/tabs-bg-normal-hover.png) left bottom repeat-x;
+}
+.copilot-pool .charts .palisade .left-control div.active:hover{
+    background: url(../i/tabs-bg-active.png) repeat-x left top;
+}
+.copilot-pool .charts .palisade .left-control div.active:hover div.controllerWrapper{
+    background: url(../i/tabs-bg-normal.png) repeat-x left top;
+}
+
+.copilot-pool .charts .palisade .right-area{ 
+    font-size:12px;
+    margin-left:180px;
+    padding-right:20px;
+    padding-top:15px;
+	width:160px;
+	min-height:100px;
+}
+.copilot-pool .charts .palisade .right-area table{
+    display:none;
+	margin:0px;
+}
+.copilot-pool .charts .palisade .right-area table{
+    width:100%;
+	border:none;
+}
+.copilot-pool .charts .palisade .right-area table tr {
+	line-height:20px;
+}
+.copilot-pool .charts .palisade .right-area table td {
+	font-family:arial;
+	font-size:11px;
+	border:none;
+}
+.copilot-pool .charts .palisade .right-area table td.number{
+    text-align:right;
+	font-size:11px;
+}
+/* Copilot Achievement End */	
+	
+/* table */
+/* author: evilkyro1965 */
+.contestTable{
+    width: 100%;  
+    background: #E9B041;
+    border: 1px solid #1883D6;
+    border-bottom: 0px;
+    color: #525252;
+}
+	.contestTable .head td{
+        background: #1883D6;
+        color: #fffffe;
+        height: auto;
+        text-shadow: 0 1px 1px #222;
+    }
+    .contestTable tr td{
+        padding: 2px 5px 2px 5px;
+        font-size: 12px; 
+        border-bottom: 1px solid #1883D6;
+        vertical-align: top;
+    }
+	.tc_contest .overlayWrapper {
+		position:relative;
+		height:40px;
+	}
+    .contestTable tbody tr td {
+        background: #F6E8E8;    
+        min-height: 35px;
+}
+    .contestTable tbody tr.odd td {
+        background: #fff;
+    }
+    .contestTable a,
+    .contestTable a:visited{
+        color: #F5791E;
+        text-decoration: underline;
+    }
+     .contestTable a:hover{
+        color: #367B54;
+    }
+
+.tc_contest .activePage {
+	text-decoration: underline;
+}
+
+.loadingOverlay {
+	background:url(../i/popup-bg.png) repeat top left;
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:888;
+	top:0px; left:0px;
+}	
+	.loadingGif {
+		background:url(../i/scs_progress_bar.gif) repeat top left;
+		position:absolute;
+		top:0px; left:0px;
+		width:114px; height:14px;
+	}
+	
+/* pagination */
+.contestPagination{
+    padding: 6px 0;
+}
+.pagingWrapper {
+	padding: 6px 0;
+}
+	.pagingWrapper a {
+		padding-left:5px;
+	}
+/* member_profile */
+.member_profile{
+    text-align: center;
+    min-height: 300px;
+    padding: 20px 0;
+}
+    .member_profile p{
+        padding: 4px 0;        
+    }
+    .member_profile .quote{
+        font-size: 16px;
+    }
+    .member_profile .member_pic{
+        height: 143px;
+    }
+.tc_coder{
+    font-weight: bold;
+}
+
+/* search contests widget */
+.search_contests_widget {
+    display: block;
+}
+
+    .search_contests_widget .btnSubmit {
+        position: fixed;
+        height: 0;
+        width: 0;
+        left: 0;
+        top: 0;
+        margin-left: -100px;
+    }
+    
+    .search_contests_widget .widg_header {
+        height: 40px;
+        background: url(../i/bg-widg-header.png) repeat-x;
+        color: #fffffe;
+        line-height: 40px;
+        color: #fffffe;
+        text-shadow: 0 1px 0 #3A3A3A;
+        padding-left: 14px;
+    }
+    
+    .search_contests_widget .widg_con {
+        min-height: 98px;
+        padding-bottom: 5px;
+        background: #c9e22c url(../i/bg-widget.png) repeat-x;
+        padding-top: 13px;
+        padding: 0 14px;
+    }
+    
+    .search_contests_widget .widg_con p {
+        color: #FFFFFE;
+        text-shadow: 0 1px 0 #838f3e;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 13px 0;
+    }
+    
+    .search_contests_widget .widg_con a.redBtn2,.search_contests_widget .widg_con a.redBtn2 .buttonMask,.search_contests_widget .widg_con a.redBtn2 .text {
+        background-image: url(../i/yellow-button-2.png);
+    }
+    
+    .search_contests_widget .widg_con .inputBox {
+        background: url("../i/input-bg-1_style3.png") no-repeat scroll 0 0 transparent;
+        float: left;
+        padding-left: 2px;
+    }
+
+        .search_contests_widget .widg_con .inputBox .boxR {
+            background: url("../i/input-bg-1_style3.png") no-repeat scroll right -70px transparent;
+            padding-right: 2px;
+        }
+        
+        .search_contests_widget .widg_con .inputBox .boxM {
+            background: url("../i/input-bg-1_style3.png") repeat-x scroll right -35px transparent;
+            height: 28px;
+            padding-top: 7px;
+        }
+
+.search_contests_widget .widg_con .inputBox input {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #FFFFFF;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    height: 22px;
+    line-height: 22px;
+    width: 252px;
+    outline: none;
+    padding: 0 0 0 7px;
+}
+
+.search_contests_widget .widg_con a.redBtn2 {
+    float: left;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+a.redBtn2 {
+    background: url( ../i/red-button-2.png) no-repeat left top;
+    display: inline-block;
+    padding-left: 3px;
+    text-decoration: none;
+}
+
+    a.redBtn2 .buttonMask {
+        background: url( ../i/red-button-2.png ) no-repeat right -140px;
+        padding-right: 3px;
+        display: inline-block;
+        cursor: pointer;
+    }
+    
+    a.redBtn2 .text {
+        background: url( ../i/red-button-2.png ) repeat-x left -70px;
+        display: inline-block;
+        height: 35px;
+        line-height: 34px;
+        font-family: Tahoma, Arial, Helvetica, sans-serif;
+        color: #fff;
+        font-size: 11px;
+        text-align: center;
+        font-weight: bold;
+        padding: 0 12px;
+        cursor: pointer;
+    }
+    
+        a.redBtn2:hover {
+            background-position: 0 -35px;
+            text-decoration: none;
+        }
+    
+    a.redBtn2:hover .buttonMask {
+        background-position: right -175px;
+    }
+    
+    a.redBtn2:hover .text {
+        background-position: 0 -105px;
+    }
+
+/* Search Box */	
+.searchBox {
+    background: url(../i/search-box-bg.png) no-repeat 0 0;
+    padding-left: 4px;
+}
+
+    .searchBox .boxR {
+        background: url(../i/search-box-bg.png) no-repeat right -80px;
+        padding-right: 4px;
+    }
+    
+    .searchBox .boxMid {
+        background: url(../i/search-box-bg.png) repeat-x 0 -40px;
+        padding-top: 9px;
+        height: 31px;
+    }
+    
+    .searchBox input {
+        background: none;
+        border: 0;
+        height: 22px;
+        line-height: 22px;
+        width: 345px;
+        float: left;
+    }
+    
+    .searchBox a {
+        background: url(../i/search-icon.png) no-repeat 0 0;
+        height: 16px;
+        width: 14px;
+        float: right;
+        margin: 4px 6px 0 2px;
+    }
+
+	
+.search_contests_widget .widg_con p {
+    margin-bottom: 0 !important;
+}
+/* Search Box End */
+
+/* Top Rank */
+.topRank select{
+	float:right;
+	margin:10px 10px;
+}
+.topRank table {
+	width:100%;
+	font-size:14px;
+	line-height:22px;
+	margin:0px;
+}
+	.topRank .content{
+		padding:15px 10px;
+	}
+	.topRank thead tr td {
+		border-bottom:1px #e5e5e5 solid;
+		padding-bottom:5px;
+		border-top:none;
+		color:#666666;
+	}
+	.topRank tbody tr:first-child td{
+		padding-top:10px;
+	}	
+	.topRank tbody tr td {
+		height:20px; 
+		line-height:20px;
+		color:#666666;
+	}
+	.topRank table .handle {
+		padding:0px 10px 0px 20px;
+	}
+	.topRank table .handle a:hover {
+		text-decoration:underline;
+	}
+	.topRank table .rating {
+		text-align:right;
+	}
+	.topRankHeader {
+		
+	}
+	.topRankHeader .DivSelectyze {
+		float:right;
+		width:150px;
+		margin-top:8px;
+		margin-right:10px;
+		position:relative;
+	}
+/* Top Rank End */
+	
+.alignRight {
+	text-align:right;
+}	
+/* Updated css for Contest Details, Member Profile */

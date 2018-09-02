@@ -1,0 +1,14 @@
+/**/ _ate.cbs.rcb_4blb0({
+   "og_object": {
+      "id": "1102548709774500",
+      "description": "Z algorithm Introduction There are some algorithms of exact substring searching (e.g. Knuth-Morris-Pratt, Boyer-Moore etc.) I want to explain one of them which is called Z algorithm in some sources. Z-boxes and Z-values Let\u2019s consider the concept of Z-box. Take the string S = \"abcxxxabyyy\". We have\u2026",
+      "title": "Z algorithm | Ivan Yurchenko",
+      "type": "website",
+      "updated_time": "2016-12-01T11:28:59+0000"
+   },
+   "share": {
+      "comment_count": 0,
+      "share_count": 9
+   },
+   "id": "https://ivanyu.me/blog/2013/10/15/z-algorithm/"
+});

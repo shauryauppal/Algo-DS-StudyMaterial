@@ -1,0 +1,6 @@
+To split two numbers into equal halves
+1.FIRST COUNT THE TOTAL NUMBER OF DIGITS
+2.int k=count/2;
+int x=pow(10,k);
+first half=number/k;
+second half=number%k;

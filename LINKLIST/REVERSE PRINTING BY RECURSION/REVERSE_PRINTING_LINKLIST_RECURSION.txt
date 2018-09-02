@@ -1,0 +1,12 @@
+void printReverse(struct node* head)
+{
+    // Base case  
+    if (head == NULL)
+       return;
+ 
+    // print the list after head node
+    printReverse(head->next);
+ 
+    // After everything else is printed, print head
+    printf("%d  ", head->data);
+}

@@ -1,0 +1,50 @@
+/*
+Theme Name: Kirumo
+Theme URI: http://kirumo.johnregan3.com
+Author: John Regan
+Author URI: http://johnregan3.me
+Description: Kirumo is a simple reponsive blogging theme with an elegant sliding mobile menu.  This theme supports custom background colors and images, as well as a custom accent (link) color.  One if its unique features is a full-width page template with a horizontal row of three widgets below.  It also features formatting for all post formats, RTL layouts, and vertical featured images.  Download Kirumo and take it for a test drive!
+Version: 0.3
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: kirumo
+Domain Path: /languages/
+Tags: black, custom-colors, custom-header, custom-menu, dark, featured-images, fluid-layout, full-width-template, gray, left-sidebar, post-formats, responsive-layout, right-sidebar, rtl-language-support, sticky-post, threaded-comments, translation-ready, two-columns, white
+
+Kirumo WordPress theme, Copyright (C) 2014 John Regan
+Kirumo WordPress theme is licensed under the GPL.
+Genericons font is licensed under the GPL and is available from http://genericons.com.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License, version 2, as
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+Kirumo is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+@import url( "inc/css/base.css" );
+@import url( "inc/css/mobile-menu.css" );
+@import url( "inc/css/kirumo.css" );
+@import url( "inc/css/structure.css" );
+@import url( "inc/css/genericons.css" );
+
+code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+  padding: 2px 4px;
+  border-radius: 4px;
+}

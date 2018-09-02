@@ -1,0 +1,147 @@
+var ADFMediaURLs='';
+var ADF_clickTag='https://adclick.g.doubleclick.net/aclk?sa=L&ai=CtCO7LEuSV5u2DYONogOdp7vABOLegsNEvtC4heUCwI23ARABIABg5cLkg6QOggEXY2EtcHViLTk0NjU2MDk2MTYxNzE4NjbIAQmpAuy0Hnyw44M-qAMBqgTAAU_Qn5xX5dBFHacQZBiudrdXGRJUSmF45YzQ4bM4SYNz5eWk2vcrKbWFNngzRKdVZDhUdQp2LmqckNQJrdBc1M5gWsx1tGb5j3-9NTH_uN1Sy-f50T5c-dIpyNd9SBDovP4p9b8E2bqUVf2-vGqFak1rDGVGB-Uw82NHzX5wAkhoxT9q6I9QeN4oW4Bk909CDZ2XHBUo6hHr2HlcbE3KUeXToAtLNILPEYMtmisazxgTqOrRoo2WE_eKdF8Ty5mpSoAG0K31gpOPoZF8oAYhqAemvhvYBwA&num=1&sig=AOD64_18FSsQ0Z1jZjaGckk87mqmasKd3w&client=ca-pub-9465609616171866&adurl=https://asia.adformdsp.net/C/?bn=13109881;crtbwp=V5JLLAADWxsKaIaDAA7TneiksKDqDo9RKeanHg;crtbdata=LA9mEKok5qD0oYB1CX2PCZvpchtVmV39_sozU2rdTN4NrQTeZ9XdXHuUNwcd7BVeIBt9gCaMlaOvQ4hnMtlYCOaU4BL4KjAhAYvyB-TjgPrOebptW0NXzD0SXtD4zJuWrL8W606dnULJPxj2Z-S4Zub4WkGtQm8BC9t1fSQnE7DiI8yRqi0xpBhEfRJ_b3SWsti2GxJilpbv4wXAkAtpxILfh-nVGSDpMK5vh18DZzQIffeKio1Er9pQAS8LTky3tBWgQFwMKjDnQTlqUP2Xs115u-ypbfaD0;adfibeg=0;cdata=_2yOKBraHSLJc4PadO-FmMksihICqH5QyF9bb8HKnXpvStBXMsATiNz7SFafVcJ2fRjzZIHWKJ0vv-WAjxCFNZaMKI1dNlrKjkPzrZ5thI1uG-s-vJlT8w2;;CREFURL=http%3a%2f%2fwww.geeksforgeeks.org%2fprimality-test-set-1-introduction-and-school-method%2f';
+var ADF_ClickEvent='';
+var ADFtagID='1x';
+var ADFafbanID='13109881';
+var FlashObjectID='FlashID1x';
+var ADFDomain='https://s2.adformdsp.net/Banners/';
+var ADFDomainCDN='https://files.adform.net/Banners/';
+var ADFVideoCDN='rtmp://s1yx966tga68s8.cloudfront.net/cfx/st/';
+var ADFVideoCDNList=['rtmp://s1yx966tga68s8.cloudfront.net/cfx/st/'];
+var ADFBanVer='257';
+var ADFBanVerBak='0';
+var ADFbu=false;
+var ADFerrTimeout = 15*24*60*60*1000;
+var ADFTemplateVersion;
+var ADFClientSiteId;
+var ADFTemplateId;
+var ADFGroupId;
+var ADFbanID='10815779';
+var ADFmembID='890796';
+var ADFcmpgnID='456639';
+var ADFassetID='0';
+var ADFbanPlacID='1649255';
+var ADFUnloadID='1347911326300747958';
+var ADFGeoData='16050;10008;356';
+Adform=window.Adform||{};
+Adform.cache="580";
+Adform.locationInfo={Country: 'India', Region: 'Haryana', City: 'Gurgaon', Latitude: '28.459600', Longitude: '77.072250'};
+
+(function () {
+try{
+var i = Adform.ADFBannerUtils.getInstance()
+i.addBannerAttribute("1x", "bn", 13109881);
+i.addBannerAttribute("1x", "rotseqno", "1");
+i.addBannerAttribute("1x", "cookieID", "6436229125088683751");
+i.addBannerAttribute("1x", "smid", "0");
+i.addBannerAttribute("1x", "unloadID", "1347911326300747958");
+i.addBannerAttribute("1x", "height", 280);
+i.addBannerAttribute("1x", "width", 336);
+i.addBannerAttribute("1x", "pm", "456639");
+i.addBannerAttribute("1x", "visibilityArea", [100]);
+i.addBannerAttribute("1x", "visibilityTime", [3]);
+i.addBannerAttribute("1x", "ms", "890796");
+i.addBannerAttribute("1x", "ban", "10815779");
+i.addBannerAttribute("1x", "stubFileURL", "");
+i.addBannerAttribute("1x", "serverTime", 1469207127015);
+i.addBannerAttribute("1x", "bannerVersion", "257");
+i.addBannerAttribute("1x", "csImpressionUrl", "https://asia.adformdsp.net/csimpr?bn=13109881;rtbwp=V5JLLAADWxsKaIaDAA7TneiksKDqDo9RKeanHg;rtbdata=LA9mEKok5qD0oYB1CX2PCZvpchtVmV39_sozU2rdTN4NrQTeZ9XdXHuUNwcd7BVeIBt9gCaMlaOvQ4hnMtlYCOaU4BL4KjAhAYvyB-TjgPrOebptW0NXzD0SXtD4zJuWrL8W606dnULJPxj2Z-S4Zub4WkGtQm8BC9t1fSQnE7DiI8yRqi0xpBhEfRJ_b3SWsti2GxJilpbv4wXAkAtpxILfh-nVGSDpMK5vh18DZzQIffeKio1Er9pQAS8LTky3tBWgQFwMKjDnQTlqUP2Xs115u-ypbfaD0;rtbdataext=dH1EEtP2jeA1;nofp=1;click=https://adclick.g.doubleclick.net/aclk?sa=L&ai=CtCO7LEuSV5u2DYONogOdp7vABOLegsNEvtC4heUCwI23ARABIABg5cLkg6QOggEXY2EtcHViLTk0NjU2MDk2MTYxNzE4NjbIAQmpAuy0Hnyw44M-qAMBqgTAAU_Qn5xX5dBFHacQZBiudrdXGRJUSmF45YzQ4bM4SYNz5eWk2vcrKbWFNngzRKdVZDhUdQp2LmqckNQJrdBc1M5gWsx1tGb5j3-9NTH_uN1Sy-f50T5c-dIpyNd9SBDovP4p9b8E2bqUVf2-vGqFak1rDGVGB-Uw82NHzX5wAkhoxT9q6I9QeN4oW4Bk909CDZ2XHBUo6hHr2HlcbE3KUeXToAtLNILPEYMtmisazxgTqOrRoo2WE_eKdF8Ty5mpSoAG0K31gpOPoZF8oAYhqAemvhvYBwA&num=1&sig=AOD64_18FSsQ0Z1jZjaGckk87mqmasKd3w&client=ca-pub-9465609616171866&adurl=;js=1;adfxid=1x;7747;set=en-US|en-US|1366X768|22|350|300|24|8|3|7|1&CREFURL=http%3A%2F%2Fwww.geeksforgeeks.org%2Fprimality-test-set-1-introduction-and-school-method%2F");
+i.addBannerAttribute("1x", "bnpl", "1649255");
+i.addBannerAttribute("1x", "sendUnloadData", 1);
+i.addBannerAttribute("1x", "unloadScriptVersion", 13);
+i.addBannerAttribute("1x", "isDSPTag", true);
+i.addBannerAttribute("1x", "isEventsEnabled", 1);
+i.addBannerAttribute("1x", "rtbInventorySourceId", "1");
+i.addBannerAttribute("1x", "rtbReqId", "57924b2c00035b1b0a688683480ed39d_1");
+i.addBannerAttribute("1x", "rtbdata", "LA9mEKok5qD0oYB1CX2PCZvpchtVmV39_sozU2rdTN4NrQTeZ9XdXHuUNwcd7BVeIBt9gCaMlaOvQ4hnMtlYCOaU4BL4KjAhAYvyB-TjgPrOebptW0NXzD0SXtD4zJuWrL8W606dnULJPxj2Z-S4Zub4WkGtQm8BC9t1fSQnE7DiI8yRqi0xpBhEfRJ_b3SWsti2GxJilpbv4wXAkAtpxILfh-nVGSDpMK5vh18DZzQIffeKio1Er9pQAS8LTky3tBWgQFwMKjDnQTlqUP2Xs115u-ypbfaD0");
+i.addBannerAttribute("1x", "rtbwp", "V5JLLAADWxsKaIaDAA7TneiksKDqDo9RKeanHg");
+i.setBannerRegisteredStatus("1x");
+}catch(e){}
+})();
+
+
+
+<!--
+var ADFtagid1346579345 = (typeof(ADFafbanID)!="undefined") ? ADFafbanID : 0;
+var ADFclickTagString1346579345 = (typeof(ADF_clickTag)!="undefined") ? escape(ADF_clickTag) : escape('https://asia.adformdsp.net/C/?bn='+ADFtagid1346579345);
+var ADFclickTagParameters1346579345 = (typeof(ADF_clickTagPars)!="undefined") ? escape(ADF_clickTagPars) : '';
+var ADFclickEventString = (typeof(ADF_ClickEvent) != "undefined") ? escape(ADF_ClickEvent) : escape('https://asia.adformdsp.net/C/?bn='+ADFtagid1346579345+';bsqno=1;li=1;cset=');
+var FlashObjectID=(typeof(FlashObjectID)!="undefined") ? FlashObjectID : 'adftest';
+var ADFDomain=(typeof(ADFDomain)!="undefined") ? ADFDomain : '';
+var ADFDomainCDN=(typeof(ADFDomainCDN)!="undefined") ? ADFDomainCDN : '';
+var ADFVideoCDN=(typeof(ADFVideoCDN)!="undefined") ? ADFVideoCDN : '';
+var ADFClientSiteId=(typeof(ADFClientSiteId)!="undefined") ? ADFClientSiteId : '';
+var ADFTemplateVersion=(typeof(ADFTemplateVersion)!="undefined") ? ADFTemplateVersion : '1346579345';
+var ADFTemplateId=(typeof(ADFTemplateId)!="undefined") ? ADFTemplateId : '';
+var ADFGroupId=(typeof(ADFGroupId)!="undefined") ? ADFGroupId : '';
+var ADFGeoData=(typeof ADFGeoData != "undefined" || ADFGeoData != null) ? ADFGeoData : '0;0;0';
+var ADFBanVer=(typeof(ADFBanVer)!="undefined") ? ADFBanVer : '1346579345';
+var ADFBanVerBak=(typeof(ADFBanVerBak)!="undefined") ? ADFBanVerBak : '1346579345';
+var ADFtagID=(typeof(ADFtagID)!="undefined") ? ADFtagID : '1x';
+if (typeof(ADFbu)=="undefined") ADFbu=false;
+
+var ADFcmpgnID = (typeof(ADFcmpgnID) != "undefined") ? ADFcmpgnID : '0';
+var ADFmembID = (typeof(ADFmembID) != "undefined") ? ADFmembID : '0';
+var ADFbanID = (typeof(ADFbanID) != "undefined") ? ADFbanID : '0';
+var ADFbanPlacID = (typeof(ADFbanPlacID) != "undefined") ? ADFbanPlacID : '0';
+var ADFUnloadID = (typeof(ADFUnloadID) != "undefined") ? ADFUnloadID : '0';
+
+
+var ADFclickTagVariables1346579345 = 'clickTAG='+ADFclickTagString1346579345+';C=1'+ADFclickTagParameters1346579345+'';
+if (ADFMediaURLs) ADFclickTagVariables1346579345 = ADFMediaURLs;
+
+
+
+if(typeof Adform == "undefined") {var Adform = {};};
+Adform.BannerData                    = {};
+Adform.Data                          = Adform.BannerData;
+Adform.RMBData                       = Adform.BannerData;
+Adform.RMBData.type                  = 'standard';
+Adform.RMBData.subtype               = 'rmb';
+Adform.BannerData.timestamp          = '201511090927345425'; // std @timestamp@ rev. @version@
+Adform.BannerData.ADFFlash           =  ADFDomain +'Elements/Files/40341/708125/Main assetabc999d9b1d06b380e517f5bb7a72f1e7/708125.js?ADFassetID=708125&bv='+ADFBanVer;
+
+Adform.BannerData.width              = "336";
+Adform.BannerData.height             = "280";
+Adform.BannerData.ADFid              = ADFtagID;
+Adform.BannerData.ADFban             = (typeof(ADFafbanID)!="undefined") ? ADFafbanID : 0;
+Adform.BannerData.wmode              = "opaque";
+Adform.RMBData.landingPageTarget     = "_blank";
+Adform.BannerData.quality            = "Autohigh";
+Adform.BannerData.bannerAlign        = "";
+Adform.BannerData.clicktags          = 'cid='+ADFClientSiteId+'&geo='+ADFGeoData+'&gid='+ADFGroupId+'&tv='+ADFTemplateVersion+'&tid='+ADFTemplateId+'&domain='+ ADFDomain +'&bv='+ADFBanVer+'&ADFid='+ADFtagID+'&'+ADFclickTagVariables1346579345+'';
+Adform.BannerData.clicktags         += '&ADFcmpgnID='+ADFcmpgnID+'&ADFmembID='+ADFmembID+'&ADFbanID='+ADFbanID+'&ADFbanPlacID='+ADFbanPlacID+'&unloadID='+ADFUnloadID;
+Adform.BannerData.clicktags         += "&bn="+ADFtagid1346579345;
+Adform.BannerData.clicktags         += "&wmode=opaque";
+Adform.BannerData.clicktags         += "&evtBaseLink="+ADFclickEventString;
+
+Adform.BannerData.clicktags         += "&settingsXML=" +  ADFDomain + ADFbanID  + "/settings.xml?bv="+ADFBanVer;
+Adform.BannerData.clicktags         += "&ADFDomain=" + ( ADFDomain ).replace(/\/$/, "");
+
+
+
+
+
+Adform.RMBData.css =  ADFDomain  + "scripts/assets/css/Adform.RMB.css?bv="+ADFBanVer;
+Adform.RMBData.socializeURL = "";
+
+
+
+
+
+
+
+
+
+Adform.BannerList = Adform.BannerList || [];
+Adform.BannerList.push(Adform.BannerData);
+
+if (!Adform.RMB || !Adform.RMB.AdConstructor) {
+	// Load constructor script
+	document.write('<scr' + 'ipt type="text/javascript" src="'+ ADFDomain +'scripts/rmb/Adform.RMB.js?bv='+ Adform.cache +'"></scr' + 'ipt>');
+} else {
+	// Run loaded constructor
+	Adform.RMB.AdConstructor.build();
+}
+//-->
+

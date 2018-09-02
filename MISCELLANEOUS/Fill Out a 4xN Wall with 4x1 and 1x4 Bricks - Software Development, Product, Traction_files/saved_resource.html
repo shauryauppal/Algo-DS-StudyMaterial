@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0653)http://feed.mikle.com/widget/?rssmikle_url=http%3A%2F%2Fwww.hsufengko.com%2F1%2Ffeed&rssmikle_frame_width=170&rssmikle_frame_height=545&rssmikle_target=_top&rssmikle_font=Arial%2C%20Helvetica%2C%20sans-serif&rssmikle_font_size=12&rssmikle_border=on&rssmikle_title=on&rssmikle_title_bgcolor=%23B2B0A9&rssmikle_title_color=%23FFFFFF&rssmikle_item_bgcolor=%23FFFFFF&rssmikle_item_title_length=55&rssmikle_item_title_color=%23666666&rssmikle_item_border_bottom=on&rssmikle_item_description=off&rssmikle_item_description_length=150&rssmikle_item_description_color=%23666666&rssmikle_item_date=off&rssmikle_item_description_tag=off&rssmikle_item_podcast=icon& -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Software Development, Product, Traction - Home</title>    <style type="text/css">
+    body{margin:0;padding:0;overflow-x:hidden;-webkit-text-size-adjust:100%;}
+    img{border:none;}
+    #container{text-align:left;overflow:hidden;margin:0;padding:0;width:170px;height:545px;font-family:Arial, Helvetica, sans-serif;font-size:12px;border:1px solid #CCCCCC;}
+    #header{margin:0px;padding:5px 5px 5px 5px;color:#FFFFFF;background-color:#B2B0A9;background-image:none;}
+    #header .feed_title{margin:0;padding:0;font-weight:bold;word-wrap:break-word;}
+    #header .feed_title a:link{color:#FFFFFF;text-decoration:none;}
+    #header .feed_title a:visited{color:#FFFFFF;text-decoration:none;}
+    #header .feed_title a:hover{color:#FFFFFF;text-decoration:underline;}
+    #header .feed_title a:active{color:#FFFFFF;text-decoration:none;}
+    #content{overflow:hidden;margin:0 0 0 0;padding:5px 0px 0px 0px;background-color:#FFFFFF;background-image:none;}
+    #content .feed_item{margin:0 0 7px 0;padding:0 0 7px 0;border-bottom:1px dashed #CCCCCC;clear:both;}
+    #content .feed_item_title{margin:1px 0 1px 3px;padding:1px 2px 1px 3px;color:#666666;font-weight:bold;}
+    #content .feed_item_title a:link{color:#666666;text-decoration:none;}
+    #content .feed_item_title a:visited{color:#666666;text-decoration:none;}
+    #content .feed_item_title a:hover{color:#666666;text-decoration:underline;}
+    #content .feed_item_title a:active{color:#666666;text-decoration:none;}
+    #content .feed_item_podcast{margin:0 0 0 3px;padding:0 0 0 3px;}
+    #content .feed_item_date{margin:0 0 0 3px;padding:0 2px 0 3px;color:#666666;overflow:hidden;text-overflow:ellipsis;clear:both;}
+    #content .feed_item_link{margin:0 0 0 3px;padding:0 2px 0 3px;color:#666666;overflow:hidden;text-overflow:ellipsis;clear:both;}
+    #content .feed_item_link a:link{color:#666666; text-decoration:none;}
+    #content .feed_item_link a:visited{color:#666666; text-decoration:none;}
+    #content .feed_item_link a:hover{color:#666666; text-decoration:none;}
+    #content .feed_item_link a:active{color:#666666; text-decoration:none;}
+    #content .feed_item_description{margin:0 0 0 3px;padding:0 2px 0 3px;color:#666666;line-height:135%;word-wrap:break-word;clear:both;}
+    #content .feed_item_thumbnail{width:110px; height:100px; float:left; margin:5px; overflow:hidden;}
+    #footer{display:none;height:0px;margin:0px;padding:0px;color:#FFFFFF;background-color:#FFFFFF;background-image:none;}
+    .scroll-pane{width: 100%;overflow:auto;}
+    </style>
+<script async="" src="./analytics.js"></script><script type="text/javascript" src="./jquery.min(1).js"></script>
+
+<script type="text/javascript">
+<!--
+function getObjectHeight(obj) {
+  var result = 0;
+  if(obj.offsetHeight){
+    result = obj.offsetHeight;
+  } else if (obj.clip && obj.clip.height){
+    result = obj.clip.height;
+  } else if (obj.style && obj.style.pixelHeight) {
+    result = obj.style.pixelHeight;
+  } else if (obj.scrollHeight) {
+    result = obj.scrollHeight;
+  }
+  return strToInt(result);
+}
+
+function getElementStyle(obj,IEStyleProp,CSSStyleProp) {
+  if(obj.currentStyle){
+    return obj.currentStyle[IEStyleProp];
+  } else if (window.getComputedStyle) {
+    return window.getComputedStyle(obj,'').getPropertyValue(CSSStyleProp);
+  } else if (document.defaultView.getComputedStyle) {
+    return document.defaultView.getComputedStyle(obj,'').getPropertyValue(CSSStyleProp);
+  }
+  return '';
+}
+
+function getPlayerTag(url) {
+  var playerWidth = 150;
+  var playerHeightMovie = 120;
+  var playerHeightSound = 45;
+  var playerHeight = playerHeightMovie;
+  var fileExtension = url.replace(/^.*\\./,'');
+  var tag;
+  if(fileExtension == 'mp3' || fileExtension == 'asf' || fileExtension == 'wma' || fileExtension == 'wav' || fileExtension == 'aiff' || fileExtension == 'mpg' || fileExtension == 'mpeg' || fileExtension == 'avi'){
+    if(fileExtension == 'mp3' || fileExtension == 'wav'){
+      playerHeight = playerHeightSound;
+    }
+    tag = '<OBJECT CLASSID=\"CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95\" '
+      + 'WIDTH=\"' + playerWidth + '\" '
+      + 'HEIGHT=\"' + playerHeight + '\" '
+      + 'ALIGN=\"middle\" '
+      + 'STANDBY=\"Loading Microsoft Windows Media Player components...\" '
+      + 'CODEBASE=\"http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,4,7,1112\" '
+      + 'TYPE=\"application/x-oleobject\">'
+      + '<PARAM NAME=\"AutoStart\" VALUE=\"false\">'
+      + '<PARAM NAME=\"FileName\" VALUE=\"' + url + '\">'
+      + '<PARAM NAME=\"ShowControls\" VALUE=\"true\">'
+      + '<PARAM NAME=\"ShowStatusBar\" VALUE=\"false\">'
+      + '<EMBED WIDTH=\"' + playerWidth + '\" HEIGHT=\"' + playerHeight + '\" SRC=\"' + url + '\" '
+      + 'ALIGN=\"middle\" AUTOSTART=\"0\" SHOWCONTROLS=\"1 SHOWSTATUSBAR=\"0\" TYPE=\"application/x-mplayer2\" PLUGINSPAGE=\"http://www.microsoft.com/Windows/MediaPlayer/\" />'
+      + '</OBJECT>';
+  } else if(fileExtension == 'qt' || fileExtension == 'mov'){
+    tag = '<OBJECT CLASSID=\"CLSID:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B\" '
+      + 'WIDTH=\"' + playerWidth + '\" '
+      + 'HEIGHT=\"' + playerHeight + '\" '
+      + 'ALIGN=\"middle\" '
+      + 'STANDBY=\"Loading QuickTime Player components...\" ENABLEJAVASCRIPT=\"true\" TYPE=\"video/quicktime\" '
+      + 'CODEBASE=\"http://www.apple.com/qtactivex/qtplugin.cab\">'
+      + '<PARAM NAME=\"AutoPlay\" VALUE=\"false\">'
+      + '<PARAM NAME=\"Src\" VALUE=\"',url,'\">'
+      + '<PARAM NAME=\"Controller\" VALUE=\"true\">'
+      + '<EMBED WIDTH=\"' + playerWidth + '\" HEIGHT=\"' + playerHeight + '\" SRC=\"' + url + '\" '
+      + 'ALIGN=\"middle\" AUTOPLAY=\"false\" CONTROLLER=\"true\" TYPE=\"video/quicktime\" ENABLEJAVASCRIPT=\"true\" '
+      + 'PLUGINSPAGE=\"http://www.apple.com/quicktime/download/\" />'
+      + '</OBJECT>';
+  } else if(fileExtension == 'rm'){
+    tag = '<OBJECT CLASSID=\"CLSID:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA\" '
+      + 'WIDTH=\"' + playerWidth + '\" '
+      + 'HEIGHT=\"' + playerHeight + '\" '
+      + 'ALIGN=\"middle\">'
+      + '<PARAM NAME=\"AutoStart\" VALUE=\"false\">'
+      + '<PARAM NAME=\"Src\" VALUE=\"' + url + '\">'
+      + '<PARAM NAME=\"Console\" VALUE=\"oneyhkplayerdiv9\">'
+      + '<PARAM NAME=\"Controls\" VALUE=\"imagewindow\">'
+      + '<EMBED WIDTH=\"' + playerWidth + '\" '
+      + 'HEIGHT=\"' + playerHeight + '\" '
+      + 'ALIGN=\"middle\" AUTOSTART=\"false\" CONTROLS=\"imagewindow\" CONSOLE=\"oneyhkplayerdiv9\" SRC=\"' + url + '\" '
+      + 'TYPE=\"audio/x-pn-realaudio-plugin\" PLUGINSPAGE=\"http://www.real.com/\" />'
+      + '</OBJECT>';
+  } else if(fileExtension == 'swf'){
+    tag = '<OBJECT CLASSID=\"CLSID:D27CDB6E-AE6D-11CF-96B8-444553540000\" '
+      + 'WIDTH=\"' + playerWidth + '\" '
+      + 'HEIGHT=\"' + playerHeight + '\" '
+      + 'ALIGN=\"middle\" TYPE=\"application/x-oleobject\">'
+      + '<PARAM NAME=\"MOVIE\" VALUE=\"' + url + '\">'
+      + '<PARAM NAME=\"SWLIVECONNECT\" VALUE=\"true\">'
+      + '<PARAM NAME=\"PLAY\" VALUE=\"false\">'
+      + '<PARAM NAME=\"LOOP\" VALUE=\"false\">'
+      + '<PARAM NAME=\"MENU\" VALUE=\"false\">'
+      + '<PARAM NAME=\"QUALITY\" VALUE=\"high\">'
+      + '<PARAM NAME=\"BGCOLOR\" VALUE=\"#FFFFFF\">'
+      + '<PARAM NAME=\"FLASHVARS\" VALUE=\"\">'
+      + '<PARAM NAME=\"SCALE\" VALUE=\"default\">'
+      + '<PARAM NAME=\"WMODE\" VALUE=\"window\">'
+      + '<PARAM NAME=\"ALLOWSCRIPTACCESS\" VALUE=\"sameDomain\">'
+      + '<EMBED WIDTH=\"' + playerWidth + '\" HEIGHT=\"' + playerHeight + '\" ALIGN=\"middle\" TYPE=\"application/x-shockwave-flash\" '
+      + 'SRC=\"' + url + '\" SWLIVECONNECT=\"true\" PLAY=\"false\" LOOP=\"false\" '
+      + 'MENU=\"false\" QUALITY=\"high\" BGCOLOR=\"#FFFFFF\" FLASHVARS=\"\" SCALE=\"default\" WMODE=\"window\" ALLOWSCRIPTACCESS=\"sameDomain\" '
+      + 'PLUGINSPAGE=\"http://www.macromedia.com/go/getflashplayer\" /></OBJECT>';
+  } else {
+    if(url.indexOf('youtube')){
+      //var pos1 = url.indexOf('v=') + 2;
+      //var pos2 = url.indexOf('&', pos2);
+      //var youtube_url = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.youtube.com/embed/' + url.substring(pos1, pos2);
+      youtube_url = url.replace('watch?v=','embed/');
+      tag = '<IFRAME '
+        + 'WIDTH=\"' + playerWidth + '\" '
+        + 'HEIGHT=\"' + playerHeight + '\" '
+        + 'SRC=\"' + youtube_url + '\" '
+        + 'FRAMEBORDER=\"0\" allowfullscreen> '
+        + '</IFRAME>';
+    }
+  }
+  return tag;
+}
+
+function strToInt(str) {
+  num = parseInt(str);
+  if(isNaN(num)){
+    return 0;
+  } else if(!num) {
+    return 0;
+  }
+    return num;
+}
+
+var autoscrollTimer;
+function init() {
+  var anchorTarget = '_top';
+  var itemPodcast = 'icon';
+
+  var containerObj = document.getElementById('container');
+  var headerObj = document.getElementById('header') ? document.getElementById('header') : "";
+  var contentObj = document.getElementById('content');
+  var footerObj = document.getElementById('footer');
+
+  var totalHeight = getObjectHeight(containerObj);
+  var borderSize = 1 * 2;
+  var headerHeight = headerObj ? getObjectHeight(headerObj) + strToInt(getElementStyle(headerObj,'marginTop','margin-top')) + strToInt(getElementStyle(headerObj,'marginBottom','margin-bottom')) : 0;
+  var contentMargin = strToInt(getElementStyle(contentObj,'marginTop','margin-top')) + strToInt(getElementStyle(contentObj,'marginBottom','margin-bottom'))
+  var contentPadding = strToInt(getElementStyle(contentObj,'paddingTop','padding-top')) + strToInt(getElementStyle(contentObj,'paddingBottom','padding-bottom'));
+  var footerHeight = getObjectHeight(footerObj) + strToInt(getElementStyle(footerObj,'marginTop','margin-top')) + strToInt(getElementStyle(footerObj,'marginBottom','margin-bottom'));
+  var contentHeight = totalHeight - borderSize - headerHeight - contentMargin - contentPadding - footerHeight;
+  var tmpHeight = contentHeight - contentPadding;
+
+  var divElem = document.getElementsByTagName('div');
+  var noneFlag = 0;
+  var itemCounter = 1;
+  for(var i=0; i < divElem.length; i++){
+    if(divElem[i].className == 'feed_item'){
+      if(!noneFlag){
+        for(var j=0; j < divElem[i].childNodes.length; j++) {
+          if(divElem[i].childNodes[j].className == 'feed_item_title'){
+          } else if(divElem[i].childNodes[j].className == 'feed_item_podcast') {
+            if(itemPodcast == 'player'){
+              divElem[i].childNodes[j].innerHTML = getPlayerTag(divElem[i].childNodes[j].childNodes[0].href) ? getPlayerTag(divElem[i].childNodes[j].childNodes[0].href) : divElem[i].childNodes[j].innerHTML;
+            }
+          } 
+        }
+        var tmpObjHeight = getObjectHeight(divElem[i]);
+        var tmpMarginTop = strToInt(getElementStyle(divElem[i],'marginTop','margin-top'));
+        var tmpMarginBottom = strToInt(getElementStyle(divElem[i],'marginBottom','margin-bottom'));
+        tmpHeight -= tmpObjHeight - tmpMarginTop;
+        if(tmpHeight < 0 && itemCounter != 1){
+          if ('' != 'on_scrollbar'  &&
+              '' != 'on_flexcroll'  &&
+              'off' != 'on' &&
+             'off' == 'off') {
+            divElem[i].style.display = 'none';
+            noneFlag = 1;
+          }
+        }
+        tmpHeight -= tmpMarginBottom;
+      } else {
+        divElem[i].style.display = 'none';
+      }
+      itemCounter++;
+    }
+  }
+  contentObj.style.height = contentHeight + 'px';
+
+  var aElem = document.getElementsByTagName('a');
+  for(var i=0; i < aElem.length; i++){
+    aElem[i].target = anchorTarget;
+  }
+    
+        
+    
+}
+
+
+
+
+window.onload = init;
+-->
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-199268-12', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body marginwidth="0" marginheight="0">
+<!-- off cache -->
+<div id="container">
+    <div id="header"><div class="feed_title"><a href="http://www.hsufengko.com/home" target="_top" rel="nofollow">Software Development, Product, Traction - Home</a></div></div>
+
+<div id="content" style="height: 502px;">
+
+
+  <div class="feed_item">
+    <div class="feed_item_title"><a href="http://www.hsufengko.com/home/a-framework-of-getting-traction" target="_top" rel="nofollow">A Framework of Getting Traction</a></div>
+            </div>
+  <div class="feed_item">
+    <div class="feed_item_title"><a href="http://www.hsufengko.com/home/spread-the-words-via-mailto" target="_top" rel="nofollow">Spread the Words via mailto:</a></div>
+            </div>
+  <div class="feed_item">
+    <div class="feed_item_title"><a href="http://www.hsufengko.com/home/profile-of-an-entrepreneur" target="_top" rel="nofollow">Profile of an Entrepreneur</a></div>
+            </div>
+  <div class="feed_item">
+    <div class="feed_item_title"><a href="http://www.hsufengko.com/home/thumbtacks-simple-database-challenge" target="_top" rel="nofollow">Simple Database Challenge</a></div>
+            </div>
+  <div class="feed_item">
+    <div class="feed_item_title"><a href="http://www.hsufengko.com/home/memento-design-pattern-example" target="_top" rel="nofollow">Memento Design Pattern Example</a></div>
+            </div>
+  <div class="feed_item">
+    <div class="feed_item_title"><a href="http://www.hsufengko.com/home/software-engineer-interview-preparation" target="_top" rel="nofollow">Software Engineer Interview Preparation</a></div>
+            </div>
+  <div class="feed_item">
+    <div class="feed_item_title"><a href="http://www.hsufengko.com/home/java-collection-framework" target="_top" rel="nofollow">Java Collection Framework</a></div>
+            </div>
+  <div class="feed_item">
+    <div class="feed_item_title"><a href="http://www.hsufengko.com/home/fill-out-a-4xn-wall-with-4x1-and-1x4-bricks" target="_top" rel="nofollow">Fill Out a 4xN Wall with 4x1 and 1x4 Bricks</a></div>
+            </div>
+  <div class="feed_item">
+    <div class="feed_item_title"><a href="http://www.hsufengko.com/home/protect-ssh-server-from-brute-force-attack" target="_top" rel="nofollow">Protect&nbsp;SSH Server from Brute Force Attack</a></div>
+            </div>
+  <div class="feed_item">
+    <div class="feed_item_title"><a href="http://www.hsufengko.com/home/digital-ocean-experience" target="_top" rel="nofollow">Digital Ocean Experience</a></div>
+            </div>
+
+
+
+
+</div><!--#content and #flexcroll-->
+<div id="footer"></div>
+
+</div><!--#container-->
+
+
+
+</body></html>

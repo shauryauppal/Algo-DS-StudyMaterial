@@ -1,0 +1,52 @@
+/*IN THIS CODE WE USE STRUCT NODE * FUNCTION TO INSERT REMOVE
+WE DONOT DECLARE THE TOP AND PTR GLOBALLY SO WE HAVE TO USE
+STRUCT NODE *INSERT(STRUCT NODE* TOP,INT X)
+{//BODY}
+AND THEN
+IN MAIN
+TOP=INSERT(TOP,X VALUE) IS GIVEN THEN PRINT(TOP)
+*/
+
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+struct node {int data;
+struct node*next;};
+struct node *insert_beg(struct node *top,int x)
+{
+    struct node *ptr;
+    ptr=(struct node *)malloc(sizeof(struct node));
+    ptr->data=x;
+    ptr->next=NULL;
+    if(top==NULL)
+        top=ptr;
+    else{ptr->next=top;
+    top=ptr;}
+    return top;
+}
+void print(struct node *top)
+{
+    struct node *ptr;
+    ptr=top;
+    if(ptr==NULL)
+        return ;
+    else
+        {
+           while(ptr!=NULL)
+           {
+               cout<<ptr->data<<'\n';
+               ptr=ptr->next;
+           }
+        }
+}
+int main()
+{
+    int x;
+    struct node *top=NULL;
+    top=insert_beg(top,1);
+    top=insert_beg(top,2);
+    top=insert_beg(top,3);
+    print(top);
+    return 0;
+}

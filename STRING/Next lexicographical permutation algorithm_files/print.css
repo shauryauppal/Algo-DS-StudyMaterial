@@ -1,0 +1,187 @@
+/*---- Content elements ----*/
+
+html {
+	font-family: "Times New Roman", serif;
+}
+
+h1, h2, h3 {
+	font-family: "Swiss 721 BT", "Helvetica", "Arial", sans-serif;
+}
+
+h1 {
+	margin-top: 1.0em;
+	margin-bottom: 1.0em;
+	text-align: center;
+	font-size: 140%;
+	font-weight: bold;
+}
+
+h2 {
+	margin-top: 1.5em;
+	margin-bottom: 0.8em;
+	font-size: 120%;
+	font-weight: bold;
+}
+
+h3 {
+	margin-top: 1.2em;
+	margin-bottom: 0.6em;
+	font-size: 110%;
+	font-weight: bold;
+}
+
+p {
+	margin: 0.8em 0em;
+	text-align: justify;
+	line-height: 1.2;
+}
+
+ul {
+	margin: 0.5em 0em 1.0em;
+}
+
+li {
+	margin: 0.5em 0em 0.5em 1.5em;
+}
+
+dl {
+	margin: 1.5em 0em;
+}
+
+dt {
+	margin: 1.0em 0em 0.5em;
+	font-weight: bold;
+}
+
+dd {
+	margin: 0.5em 0em 0.5em 2.0em;
+}
+
+table {
+	margin: 1.5em 0em;
+	border-collapse: collapse;
+}
+
+td, th {
+	padding: 0.3em 0.5em;
+	border: 1px solid #808080;
+}
+
+pre, code {
+	font-family: "Courier New", monospace;
+}
+
+blockquote {
+	margin: 1em 0em;
+	padding: 0em 1em;
+	border: 1px solid #C0C0C0;
+}
+
+iframe {
+	display: none;
+}
+
+*.floatright {
+	margin-left: 2em;
+	margin-bottom: 1em;
+}
+
+*.container.inline {
+	display: inline-block;
+	margin-right: 1em;
+	margin-bottom: 1em;
+	vertical-align: top;
+}
+
+ul.pagelinks {
+	list-style-type: none;
+}
+
+ul.pagelinks img {
+	display: inline-block;
+	margin-right: 0.5em;
+	border: 1px solid #808080;
+	vertical-align: middle;
+}
+
+
+/*---- Site layout ----*/
+
+header h1 {
+	border-bottom: 1px solid #000000;
+	text-align: right;
+	font-size: 80%;
+	font-weight: normal;
+}
+
+header a {
+	text-decoration: none;
+	color: inherit;
+}
+
+header + hr {
+	display: none;
+}
+
+#headnav, #main > nav, article > nav {
+	display: none;
+}
+
+article > footer {
+	margin-top: 3em;
+	font-size: 75%;
+}
+
+article > footer div.table {
+	display: table;
+	width: 100%;
+}
+
+article > footer div.table > p {
+	display: table-cell;
+}
+
+article > footer div.table > p:nth-child(1) {
+	text-align: left;
+}
+
+article > footer div.table > p:nth-child(2) {
+	text-align: right;
+}
+
+#copyrightlink, #datelink {
+	color: inherit;
+	text-decoration: none;
+}
+
+#feedback {
+	margin-top: 1em;
+	font-size: 70%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#feedback > p {
+	padding: 0em 1.0em;
+}
+
+#feedback > p:first-child {
+	padding-left: 0em;
+}
+
+#feedback > p:last-child {
+	padding-right: 0em;
+}
+
+div.horzAdvert, div.vertAdvert {
+	display: none;
+}
+
+#main > hr {
+	display: none;
+}
+
+body > hr {
+	border-bottom: 1px solid #000000;
+}

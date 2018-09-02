@@ -1,0 +1,20 @@
+string file
+FOR MORE INFORMATION VISIT:http://pages.cs.wisc.edu/~cs368-1/CppTutorial/NOTES/STRING.html 
+or
+ http://www.cplusplus.com/reference/string/string/ 
+ or
+ http://en.cppreference.com/w/cpp/string/basic_string
+Below are some basic information given->
+1.declaration: string str;
+2.cin>>str;
+3.compare: string str1,str2;
+cin>>str1>>str2;
+if(str1==str2)
+cout<<"equal";
+4.get size of string: str.size(); or str.length();
+5. concatination: string str;
+str=str+"hello shaurya";
+6.resize a string: str.resize();
+7.To clear a existing string we can use clear(): cin>>a;
+                                                 cout<<a;
+												 a.clear();

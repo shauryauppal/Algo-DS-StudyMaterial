@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<!-- saved from url=(0093)http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>string - Find number of palindromes that are anagrams in C++ - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Find number of palindromes that are anagrams in C++">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I am taking part in an online programming contest for fun on http://www.hackerrank.com. One of the problems that I am working on is to find number of anagrams of a string that are palindrome as wel...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c">
+    <link rel="canonical" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c">
+
+    
+    
+    <script type="text/javascript" async="" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/ados"></script><script async="" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/quant.js"></script><script async="" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/beacon.js"></script><script async="" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/ados.js"></script><script src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Find number of palindromes that are anagrams in C++&#39;" href="http://stackoverflow.com/feeds/question/17524341">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:17524341});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '17524341');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1457077040,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableSocialMediaInSharePopup":true},"user":{"fkey":"7a5e5cf1616a4f4b134d5d88094083c8","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"7226ead6e52b","js/moderator.en.js":"481e310df8f0","js/full-anon.en.js":"9027a5f17c90","js/full.en.js":"0c515b3719c7","js/wmd.en.js":"262d7d978df3","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"52aabd47bbed","js/help.en.js":"c8004cc0095d","js/tageditor.en.js":"a0ed6b4d7f8d","js/tageditornew.en.js":"ddc17f22a99b","js/inline-tag-editing.en.js":"de80429b1816","js/revisions.en.js":"c2bb6b44f707","js/review.en.js":"12686b67ce29","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"d3889764c6ba","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"b95902faca59","js/keyboard-shortcuts.en.js":"fbad027ea81b","js/external-editor.en.js":"d3d544e5946c","js/external-editor.en.js":"d3d544e5946c","js/snippet-javascript.en.js":"1f4524dde381","js/snippet-javascript-codemirror.en.js":"c682f0a06284"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script async="" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/prettify-full.en.js"></script><script type="text/javascript" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/adFeedback.css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f17524341%2ffind-number-of-palindromes-that-are-anagrams-in-c" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f17524341%2ffind-number-of-palindromes-that-are-anagrams-in-c" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 153 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f17524341%2ffind-number-of-palindromes-that-are-anagrams-in-c" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f17524341%2ffind-number-of-palindromes-that-are-anagrams-in-c" class="login-link">log in</a>
+
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                            <a href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                        About Us
+                        <span class="item-summary">
+                            Learn more about Stack Overflow the company
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                        Business
+                        <span class="item-summary">
+                            Learn more about hiring developers or posting ads with us
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs">Jobs</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                                            </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+            <br>
+                <br>Join them; it only takes a minute:<br>
+            <br>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f17524341%2ffind-number-of-palindromes-that-are-anagrams-in-c" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Join the Stack Overflow community to:</b>
+            <ol id="hiw">
+                <li id="q">Ask programming questions
+                </li>
+                <li id="an">Answer and help your peers
+                </li>
+                <li id="b">Get recognized for your expertise
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c" class="question-hyperlink">Find number of palindromes that are anagrams in C++</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="17524341" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1325326890",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1325326890"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY5MTg0LCJkaSI6ImM2ZTQxMzVhYmU5NzRkZTlhNjI3OGZiMmFmYzAwOWNkIiwiZG0iOjEsImZjIjoxMzY3OTM3LCJmbCI6ODY0MjI1LCJpcCI6IjE3MS40OC42Mi45NCIsImt3IjoiYysrLHN0cmluZyxhbGdvcml0aG0sZHluYW1pYy1wcm9ncmFtbWluZyxwYWxpbmRyb21lIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28uaW4vIiwic3QiOjgyNzcsInVrIjoidWUxLWU1NDFjNTE0YWNjYzQxNTY5NjUxODdlN2EwNWVlYjVmIiwiem4iOjQzLCJ0cyI6MTQ1NzA3NzA0NzIzMCwiYmYiOnRydWUsInBuIjoiYWR6ZXJrMTMyNTMyNjg5MCIsInVyIjoiaHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL2pvYnMvcmVtb3RlP3V0bV9zb3VyY2U9c3RhY2tvdmVyZmxvdy5jb20mdXRtX21lZGl1bT1hZCZ1dG1fY2FtcGFpZ249Y2FuZGlkYXRlcy13ZmgmdXRtX2NvbnRlbnQ9bGItd2ZoLWtpZC13b3JrLW9uLXdvcmsifQ&amp;s=ORrJXX284h0T45jorU3-OpCHAQo" rel="nofollow" target="_blank" title=""><img src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/ca0f847878fc4be5bac353194231ef81.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="17524341">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#" title="This is a favorite question (click again to undo)">favorite</a>
+        <div class="favoritecount"><b>5</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I am taking part in an online programming contest for fun on <a href="http://www.hackerrank.com/" rel="nofollow">http://www.hackerrank.com</a>. One of the problems that I am working on is to find number of anagrams of a string that are palindrome as well. I have solve the problem but when I try to upload it it fails on a number of test cases. As the actual test cases are hidden from me I do not know for sure why its failing but I assume it could be a scalability issue. Now I do not want someone to give me a ready made solution because that would not be fair but I am just curious on what people think about my approach.</p>
+
+<p>Here is the problem description from the website:</p>
+
+<blockquote>
+  <p>Now that the king knows how to find out whether a given word has an anagram which is a palindrome or not, he is faced with another challenge. He realizes that there can be more than one anagram which are palindromes for a given word. Can you help him find out how many anagrams are possible for a given word which are palindromes?</p>
+  
+  <p>The king has many words. For each given word, the king needs to find out the number of anagrams of the string which are palindromes. As the number of anagrams can be large, the king needs number of anagrams % (10<sup>9</sup>+ 7).</p>
+  
+  <p>Input format :<br>
+  A single line which will contain the input string</p>
+  
+  <p>Output format :<br>
+  A single line containing the number of anagram strings which are <code>palindrome % (10<sup>9</sup> + 7)</code>.</p>
+  
+  <p>Constraints :</p>
+  
+  <ul>
+  <li><code>1&lt;=length of string &lt;= 10<sup>5</sup></code></li>
+  <li>Each character of the string is a lowercase alphabet.</li>
+  <li>Each testcase has atleast 1 anagram which is a palindrome.</li>
+  </ul>
+  
+  <p>Sample Input 01 :</p>
+
+<pre class="lang-cpp prettyprint prettyprinted"><code><span class="pln">aaabbbb</span></code></pre>
+  
+  <p>Sample Output 01 :</p>
+
+<pre class="lang-cpp prettyprint prettyprinted"><code><span class="lit">3</span><span class="pln"> </span></code></pre>
+  
+  <p>Explanation :<br>
+  Three permutation of given string which are palindrome can be given as abbabba , bbaaabb and bababab.</p>
+  
+  <p>Sample Input 02 :</p>
+
+<pre class="lang-cpp prettyprint prettyprinted"><code><span class="pln">cdcdcdcdeeeef</span></code></pre>
+  
+  <p>Sample Output 02 :</p>
+
+<pre class="lang-cpp prettyprint prettyprinted"><code><span class="lit">90</span></code></pre>
+</blockquote>
+
+<p>As specified in the problem description input strings can be as large as 10^5, hence all palindromes for a large string is not possible since I will run into number saturation issues. Also since I only need to give a modulo (10^9 + 7) based answer, I thought of taking log of numbers with base (10^9 + 7) and after all computations take antilog of fraction part with base (10^9 + 7) of the answer since that will be the modulo anyway. </p>
+
+<p>My algorithm is as follows:</p>
+
+<ol>
+<li>Store freq of each char (only need to look half of the string since
+second half should be same as first one by def of palindrome)</li>
+<li>If there are more than one char appearing with odd number of time no palindrome possible</li>
+<li>Else for each char's freq incrementally calculate number of palindromes (Dynamic Programming)</li>
+</ol>
+
+<p>For the DP following is the subproblem:
+previous_count = 1</p>
+
+<blockquote>
+  <p>For each additional character <code>added number of palindromes = previous_count * (number_of_char_already_seen + 1)/(number of char same as current char)</code></p>
+</blockquote>
+
+<p>Here is my code:</p>
+
+<pre class="lang-cpp prettyprint prettyprinted"><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;iostream&gt;</span><span class="pln">
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;string&gt;</span><span class="pln">
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;vector&gt;</span><span class="pln">
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;map&gt;</span><span class="pln">
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;cmath&gt;</span><span class="pln">
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;cstdio&gt;</span><span class="pln">
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;algorithm&gt;</span><span class="pln">
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;fstream&gt;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+</span><span class="com">#define</span><span class="pln"> MAX_SIZE </span><span class="lit">100001</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> factorial2 </span><span class="pun">(</span><span class="kwd">unsigned</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> num</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">unsigned</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">fact</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    fact</span><span class="pun">[</span><span class="pln">num</span><span class="pun">]++;</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">double</span><span class="pln"> mylog</span><span class="pun">(</span><span class="kwd">double</span><span class="pln"> x</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">double</span><span class="pln"> normalizer </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1000000007.0</span><span class="pun">;</span><span class="pln"> 
+    </span><span class="kwd">return</span><span class="pln"> log10</span><span class="pun">(</span><span class="pln">x</span><span class="pun">)/</span><span class="pln">log10</span><span class="pun">(</span><span class="pln">normalizer</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="typ">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    string in</span><span class="pun">;</span><span class="pln">
+    cin </span><span class="pun">&gt;&gt;</span><span class="pln"> in</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">in</span><span class="pun">.</span><span class="pln">size</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+        cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="typ">map</span><span class="pun">&lt;</span><span class="kwd">char</span><span class="pun">,</span><span class="pln"> </span><span class="typ">int</span><span class="pun">&gt;</span><span class="pln"> freq</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="typ">int</span><span class="pln"> i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">&lt;</span><span class="pln">in</span><span class="pun">.</span><span class="pln">size</span><span class="pun">();</span><span class="pln"> </span><span class="pun">++</span><span class="pln">i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">freq</span><span class="pun">.</span><span class="pln">find</span><span class="pun">(</span><span class="pln">in</span><span class="pun">.</span><span class="pln">at</span><span class="pun">(</span><span class="pln">i</span><span class="pun">))</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> freq</span><span class="pun">.</span><span class="pln">end</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            freq</span><span class="pun">[</span><span class="pln">in</span><span class="pun">.</span><span class="pln">at</span><span class="pun">(</span><span class="pln">i</span><span class="pun">)]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            freq</span><span class="pun">[</span><span class="pln">in</span><span class="pun">.</span><span class="pln">at</span><span class="pun">(</span><span class="pln">i</span><span class="pun">)]++;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="typ">map</span><span class="pun">&lt;</span><span class="kwd">char</span><span class="pun">,</span><span class="pln"> </span><span class="typ">int</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">::</span><span class="typ">iterator</span><span class="pln"> itr </span><span class="pun">=</span><span class="pln"> freq</span><span class="pun">.</span><span class="pln">begin</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">unsigned</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> count </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">bool</span><span class="pln"> first </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">unsigned</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> normalizer </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1000000007</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">unsigned</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> size </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">unsigned</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> fact</span><span class="pun">[</span><span class="pln">MAX_SIZE</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="lit">0</span><span class="pun">};</span><span class="pln">
+    </span><span class="typ">vector</span><span class="pun">&lt;</span><span class="kwd">unsigned</span><span class="pln"> </span><span class="typ">int</span><span class="pun">&gt;</span><span class="pln"> numerator</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">itr </span><span class="pun">!=</span><span class="pln"> freq</span><span class="pun">.</span><span class="pln">end</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">first </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            first </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">size_t</span><span class="pln"> i</span><span class="pun">=</span><span class="lit">1</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">&lt;=</span><span class="pln">itr</span><span class="pun">-&gt;</span><span class="pln">second</span><span class="pun">/</span><span class="lit">2</span><span class="pun">;</span><span class="pln"> </span><span class="pun">++</span><span class="pln">i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                factorial2</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> fact</span><span class="pun">);</span><span class="pln">
+                numerator</span><span class="pun">.</span><span class="pln">push_back</span><span class="pun">(</span><span class="pln">size</span><span class="pun">+</span><span class="pln">i</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        size </span><span class="pun">+=</span><span class="pln"> itr</span><span class="pun">-&gt;</span><span class="pln">second</span><span class="pun">/</span><span class="lit">2</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">++</span><span class="pln">itr</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="com">//This loop is to cancel out common factors in numerator and denominator</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">int</span><span class="pln"> i</span><span class="pun">=</span><span class="pln">MAX_SIZE</span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">&gt;</span><span class="lit">1</span><span class="pun">;</span><span class="pln"> </span><span class="pun">--</span><span class="pln">i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">fact</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">bool</span><span class="pln"> not_div </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+            </span><span class="typ">vector</span><span class="pun">&lt;</span><span class="kwd">unsigned</span><span class="pln"> </span><span class="typ">int</span><span class="pun">&gt;</span><span class="pln"> newNumerator</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">size_t</span><span class="pln"> j</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln"> j</span><span class="pun">&lt;</span><span class="pln">numerator</span><span class="pun">.</span><span class="pln">size</span><span class="pun">();</span><span class="pln"> </span><span class="pun">++</span><span class="pln">j</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">fact</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> numerator</span><span class="pun">[</span><span class="pln">j</span><span class="pun">]%</span><span class="pln">i </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">numerator</span><span class="pun">[</span><span class="pln">j</span><span class="pun">]/</span><span class="pln">i </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+                        newNumerator</span><span class="pun">.</span><span class="pln">push_back</span><span class="pun">(</span><span class="pln">numerator</span><span class="pun">[</span><span class="pln">j</span><span class="pun">]/</span><span class="pln">i</span><span class="pun">);</span><span class="pln">
+                    fact</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]--;</span><span class="pln">  </span><span class="com">//Do as many cancellations as possible</span><span class="pln">
+                    not_div </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                    newNumerator</span><span class="pun">.</span><span class="pln">push_back</span><span class="pun">(</span><span class="pln">numerator</span><span class="pun">[</span><span class="pln">j</span><span class="pun">]);</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            numerator </span><span class="pun">=</span><span class="pln"> newNumerator</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">not_div</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">double</span><span class="pln"> countD </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">size_t</span><span class="pln"> i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">&lt;</span><span class="pln">numerator</span><span class="pun">.</span><span class="pln">size</span><span class="pun">();</span><span class="pln"> </span><span class="pun">++</span><span class="pln">i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        countD </span><span class="pun">+=</span><span class="pln"> mylog</span><span class="pun">(</span><span class="kwd">double</span><span class="pun">(</span><span class="pln">numerator</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]));</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">size_t</span><span class="pln"> i</span><span class="pun">=</span><span class="lit">2</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln">MAX_SIZE</span><span class="pun">;</span><span class="pln"> </span><span class="pun">++</span><span class="pln">i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">fact</span><span class="pun">[</span><span class="pln">i</span><span class="pun">])</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            countD </span><span class="pun">-=</span><span class="pln"> mylog</span><span class="pun">((</span><span class="pln">pow</span><span class="pun">(</span><span class="kwd">double</span><span class="pun">(</span><span class="pln">i</span><span class="pun">),</span><span class="pln"> </span><span class="kwd">double</span><span class="pun">(</span><span class="pln">fact</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]))));</span><span class="pln">
+            fact</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="com">//Get the fraction part of countD</span><span class="pln">
+    countD </span><span class="pun">=</span><span class="pln"> countD </span><span class="pun">-</span><span class="pln"> floor</span><span class="pun">(</span><span class="pln">countD</span><span class="pun">);</span><span class="pln">
+    countD </span><span class="pun">=</span><span class="pln"> pow</span><span class="pun">(</span><span class="kwd">double</span><span class="pun">(</span><span class="pln">normalizer</span><span class="pun">),</span><span class="pln"> countD</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">floor</span><span class="pun">(</span><span class="pln">countD </span><span class="pun">+</span><span class="pln"> </span><span class="lit">0.5</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&gt;</span><span class="pln"> floor</span><span class="pun">(</span><span class="pln">countD</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        countD </span><span class="pun">=</span><span class="pln"> ceil</span><span class="pun">(</span><span class="pln">countD</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        countD </span><span class="pun">=</span><span class="pln"> floor</span><span class="pun">(</span><span class="pln">countD</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    count </span><span class="pun">=</span><span class="pln"> countD</span><span class="pun">;</span><span class="pln">
+    cout </span><span class="pun">&lt;&lt;</span><span class="pln"> count</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Now I have spent a lot of time on this problem and I just wonder if there is something wrong in my approach or am I missing something here. Any ideas?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/c%2b%2b" class="post-tag js-gps-track" title="show questions tagged &#39;c++&#39;" rel="tag">c++</a> <a href="http://stackoverflow.com/questions/tagged/string" class="post-tag js-gps-track" title="show questions tagged &#39;string&#39;" rel="tag">string</a> <a href="http://stackoverflow.com/questions/tagged/algorithm" class="post-tag js-gps-track" title="show questions tagged &#39;algorithm&#39;" rel="tag">algorithm</a> <a href="http://stackoverflow.com/questions/tagged/dynamic-programming" class="post-tag js-gps-track" title="show questions tagged &#39;dynamic-programming&#39;" rel="tag">dynamic-programming</a> <a href="http://stackoverflow.com/questions/tagged/palindrome" class="post-tag js-gps-track" title="show questions tagged &#39;palindrome&#39;" rel="tag">palindrome</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/17524341" title="short permalink to this question" class="short-link" id="link-post-17524341">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/17524341/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/17524341/revisions" title="show all edits to this post">edited <span title="2013-07-08 10:45:02Z" class="relativetime">Jul 8 '13 at 10:45</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2040040/johnchen902"><div class="gravatar-wrapper-32"><img src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/FD6QD.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2040040/johnchen902">johnchen902</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">7,157</span><span title="13 silver badges"><span class="badge2"></span><span class="badgecount">13</span></span><span title="52 bronze badges"><span class="badge3"></span><span class="badgecount">52</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2013-07-08 10:27:24Z" class="relativetime">Jul 8 '13 at 10:27</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/678342/richeek"><div class="gravatar-wrapper-32"><img src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/5c8d465bb63763a9653e757262adc7d4" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/678342/richeek">Richeek</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">571</span><span title="12 silver badges"><span class="badge2"></span><span class="badgecount">12</span></span><span title="21 bronze badges"><span class="badge3"></span><span class="badgecount">21</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17524341" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-25483066" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">With a <code>map</code>, you can just say <code>freq[in.at(i)]++;</code> to initialize the item to <code>1</code> since using <code>operator[]</code> will cause the value to be initialized with the default value (<code>0</code>), so you can remove that for-loop.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1711796/dukeling" title="34981 reputation" class="comment-user">Dukeling</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#comment25483066_17524341"><span title="2013-07-08 10:59:38Z" class="relativetime-clean">Jul 8 '13 at 10:59</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-25514131" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">thanks for pointing it out...corrected!</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/678342/richeek" title="571 reputation" class="comment-user owner">Richeek</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#comment25514131_17524341"><span title="2013-07-09 07:31:21Z" class="relativetime-clean">Jul 9 '13 at 7:31</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-17524341" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								2 Answers
+                                <span style="display:none;" itemprop="answerCount">2</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="17530453"></a>
+<div id="answer-17530453" class="answer accepted-answer" data-answerid="17530453" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="17530453">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The basic formula is:</p>
+
+<pre class="lang-cpp prettyprint prettyprinted"><code><span class="pln">p</span><span class="pun">!/(</span><span class="pln">a</span><span class="pun">!*</span><span class="pln">b</span><span class="pun">!...*</span><span class="pln">z</span><span class="pun">!)</span></code></pre>
+
+<p>where <code>p</code> is floor of <code>length/2</code> of the word and  a,b,c..,z denotes the floor of half of frequency of occurrences a,b,c..,z in the word receptively.</p>
+
+<p>The only problem now you are left is how to calculate this. For that, check <a href="http://comeoncodeon.wordpress.com/category/algorithm/" rel="nofollow">this</a> out.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/17530453" title="short permalink to this answer" class="short-link" id="link-post-17530453">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/17530453/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/17530453/revisions" title="show all edits to this post">edited <span title="2013-07-09 08:39:56Z" class="relativetime">Jul 9 '13 at 8:39</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1711796/dukeling"><div class="gravatar-wrapper-32"><img src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/PZnlu.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1711796/dukeling">Dukeling</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 34981" dir="ltr">35k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="35 silver badges"><span class="badge2"></span><span class="badgecount">35</span></span><span title="75 bronze badges"><span class="badge3"></span><span class="badgecount">75</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-07-08 15:29:44Z" class="relativetime">Jul 8 '13 at 15:29</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2455876/user2455876"><div class="gravatar-wrapper-32"><img src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/0cb8c5864515c1075598d064fdaa6b2c" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2455876/user2455876">user2455876</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">76</span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17530453" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-25514105" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">thanks for posting the link. I tried it out. For solution where function <code>long long pow(int a, int b, int MOD)</code> is used , in line  <code>if(x&gt;MOD) x%=MOD;</code> it is assumed that <code>x=x*y</code> does not go beyond data type saturation limit. Which I think is a valid assumption. However in my case I think that it may not be true since my submissions are still failing :(</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/678342/richeek" title="571 reputation" class="comment-user owner">Richeek</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#comment25514105_17530453"><span title="2013-07-09 07:30:20Z" class="relativetime-clean">Jul 9 '13 at 7:30</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-25515173" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">never mind it worked finally! Thanks for ur help!</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/678342/richeek" title="571 reputation" class="comment-user owner">Richeek</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#comment25515173_17530453"><span title="2013-07-09 08:07:57Z" class="relativetime-clean">Jul 9 '13 at 8:07</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-17530453" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk561460662",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk561460662"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY3ODQxLCJkaSI6IjdmODUzNTEwOWFkNDRlZGZiNTlkMjRhOTkwOTY2ZjNkIiwiZG0iOjEsImZjIjoxMzY2MzQyLCJmbCI6ODY0MjI2LCJpcCI6IjE3MS40OC42Mi45NCIsImt3IjoiYysrLHN0cmluZyxhbGdvcml0aG0sZHluYW1pYy1wcm9ncmFtbWluZyxwYWxpbmRyb21lIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNTY4LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28uaW4vIiwic3QiOjgyNzcsInVrIjoidWUxLWU1NDFjNTE0YWNjYzQxNTY5NjUxODdlN2EwNWVlYjVmIiwiem4iOjQ0LCJ0cyI6MTQ1NzA3NzA0NzIzMiwiYmYiOnRydWUsInBuIjoiYWR6ZXJrNTYxNDYwNjYyIiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icy93aHktam9icz91dG1fc291cmNlPXN0YWNrb3ZlcmZsb3cuY29tJnV0bV9tZWRpdW09YWQmdXRtX2NhbXBhaWduPWNhbmRpZGF0ZXMtYWRkLWN2JnV0bV9jb250ZW50PWxiLWJpcmRzIn0&amp;s=1EEU2WnOm4ptmDS6XSw_8TnEs8w" rel="nofollow" target="_blank" title=""><img src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/82dad5859089475ba9131caf8f71c2cc.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/i(1).gif"></div>
+  
+<a name="17524789"></a>
+<div id="answer-17524789" class="answer" data-answerid="17524789" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="17524789">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">9</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Note that anagrams are reflexive (they look the same read from the back as from the front), so half the occurrences of each character will be on one side and we just need to calculate the number of permutations of these. The other side will be an <em>exact</em> reversal of this side, so it doesn't add to the number of possibilities. The odd occurrence of a character (if one exists) must always be in the middle, so it can be ignored when calculating the number of permutations.</p>
+
+<p>So:</p>
+
+<ul>
+<li><p>Calculate the frequencies of the characters</p></li>
+<li><p>Check that there's only 1 odd frequency</p></li>
+<li><p>Divide the frequency of each character (rounding down - removes any odd occurrence).</p></li>
+<li><p>Calculate the permutation of these characters using this formula:<br>
+(as per <a href="http://en.wikipedia.org/wiki/Permutation#In_combinatorics">Wikipedia - multiset permutation</a>)</p>
+
+<p><img src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/FFeqF.png" alt="Formula"></p></li>
+</ul>
+
+<p><strike>Since the above terms can get quite big, we might want to split the formula up into prime factors so we can cancel out terms so we're left with only multiplication, then I believe we can <code>% 10<sup>9</sup> + 7</code> after each multiplication, which should fit into a <code>long long</code> (since <code>(10<sup>9</sup>+7)*10<sup>5</sup> &lt; 9223372036854775807</code>).</strike></p>
+
+<p>Thanks to <a href="http://stackoverflow.com/users/270287/ivlad">IVlad</a> for pointing out a more efficient method of avoiding overflow than above:</p>
+
+<blockquote>
+  <p>Notice that <code>p = 10<sup>9</sup> + 7</code> is a prime number, so we can use <a href="http://en.wikipedia.org/wiki/Fermat%27s_little_theorem">Fermat's little theorem</a> to compute the multiplicative inverses of the <code>m<sub>i</sub> mod p</code>, and multiply by these and take the mod at each step instead of dividing. <code>m<sub>i</sub><sup>-1</sup> = m<sub>i</sub><sup>(10^9 + 5)</sup> (mod p)</code>. Using exponentiation by squaring, this will be very fast.</p>
+</blockquote>
+
+<p>I also found <a href="http://stackoverflow.com/questions/13802649/how-to-calculate-ncr-modulo-1000000007-when-n-400000">this question</a> (which also has some useful duplicates).</p>
+
+<p>Examples:</p>
+
+<pre class="lang-cpp prettyprint prettyprinted"><code><span class="typ">Input</span><span class="pun">:</span><span class="pln"> aaabbbb
+
+</span><span class="typ">Frequency</span><span class="pun">:</span><span class="pln">
+a  b
+</span><span class="lit">3</span><span class="pln">  </span><span class="lit">4</span><span class="pln">
+
+</span><span class="typ">Div</span><span class="pln"> </span><span class="lit">2</span><span class="pun">:</span><span class="pln">
+a  b
+</span><span class="lit">1</span><span class="pln">  </span><span class="lit">2</span><span class="pln">
+
+</span><span class="typ">Solution</span><span class="pun">:</span><span class="pln">
+</span><span class="lit">3</span><span class="pun">!/</span><span class="lit">2</span><span class="pun">!</span><span class="lit">1</span><span class="pun">!</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">3</span><span class="pln">
+
+</span><span class="typ">Input</span><span class="pun">:</span><span class="pln"> cdcdcdcdeeeef
+
+</span><span class="typ">Frequency</span><span class="pun">:</span><span class="pln">
+c  d  e  f
+</span><span class="lit">4</span><span class="pln">  </span><span class="lit">4</span><span class="pln">  </span><span class="lit">4</span><span class="pln">  </span><span class="lit">1</span><span class="pln">
+
+</span><span class="typ">Div</span><span class="pln"> </span><span class="lit">2</span><span class="pun">:</span><span class="pln">
+c  d  e  f
+</span><span class="lit">2</span><span class="pln">  </span><span class="lit">2</span><span class="pln">  </span><span class="lit">2</span><span class="pln">  </span><span class="lit">0</span><span class="pln">
+
+</span><span class="typ">Solution</span><span class="pun">:</span><span class="pln">
+</span><span class="lit">6</span><span class="pun">!/</span><span class="lit">2</span><span class="pun">!</span><span class="lit">2</span><span class="pun">!</span><span class="lit">2</span><span class="pun">!</span><span class="lit">0</span><span class="pun">!</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">90</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/17524789" title="short permalink to this answer" class="short-link" id="link-post-17524789">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/17524789/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/17524789/revisions" title="show all edits to this post">edited <span title="2013-07-08 12:22:20Z" class="relativetime">Jul 8 '13 at 12:22</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/270287/ivlad"><div class="gravatar-wrapper-32"><img src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/1GwpB.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/270287/ivlad">IVlad</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 30868" dir="ltr">30.9k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="56 silver badges"><span class="badge2"></span><span class="badgecount">56</span></span><span title="136 bronze badges"><span class="badge3"></span><span class="badgecount">136</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-07-08 10:51:23Z" class="relativetime">Jul 8 '13 at 10:51</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1711796/dukeling"><div class="gravatar-wrapper-32"><img src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/PZnlu.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1711796/dukeling">Dukeling</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 34981" dir="ltr">35k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="35 silver badges"><span class="badge2"></span><span class="badgecount">35</span></span><span title="75 bronze badges"><span class="badge3"></span><span class="badgecount">75</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17524789" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-25483302" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I get <code>len(str(factorial((10**5)/2)))</code> = <code>213237</code> in python. Does that means we need to hand-craft a 213237 digits big-integer in c++?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2040040/johnchen902" title="7157 reputation" class="comment-user">johnchen902</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#comment25483302_17524789"><span title="2013-07-08 11:06:52Z" class="relativetime-clean">Jul 8 '13 at 11:06</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-25483446" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@johnchen902 Edited.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1711796/dukeling" title="34981 reputation" class="comment-user">Dukeling</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#comment25483446_17524789"><span title="2013-07-08 11:12:03Z" class="relativetime-clean">Jul 8 '13 at 11:12</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-25483486" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Oh! I forgot that trick! Thanks.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2040040/johnchen902" title="7157 reputation" class="comment-user">johnchen902</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#comment25483486_17524789"><span title="2013-07-08 11:13:25Z" class="relativetime-clean">Jul 8 '13 at 11:13</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-25483728" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1, but you don't really need to cancel terms - there's an easier to implement solution. Notice that <code>p = 10^9 + 7</code> is a prime number, so we can use Fermat's little theorem to compute the multiplicative inverses of the <code>mi</code> mod <code>p</code>, and multiply by these and take the mod at each step instead of dividing. <code>mi^-1 = mi^(p - 1) (mod p)</code>. Using exponentiation by squaring this will be very fast.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/270287/ivlad" title="30868 reputation" class="comment-user">IVlad</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#comment25483728_17524789"><span title="2013-07-08 11:21:28Z" class="relativetime-clean">Jul 8 '13 at 11:21</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 5 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-17524789" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+				    <div class="question-status">
+        <h2>                    <b>protected</b> by <a href="http://stackoverflow.com/users/-1/community">Community</a><span class="mod-flair" title="moderator">♦</span> <span dir="ltr"><span title="2016-03-03 03:17:48Z" class="relativetime">yesterday</span></span>
+</h2>
+        <p>
+Thank you for your interest in this question. 
+Because it has attracted low-quality or spam answers that had to be removed, posting an answer now requires 10 <a href="http://stackoverflow.com/help/whats-reputation">reputation</a> on this site.
+<br><br>
+Would you like to answer one of these <a href="http://stackoverflow.com/unanswered?fromProtectedNotice=true">unanswered questions</a> instead?
+</p>
+    </div>
+
+
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged &#39;c++&#39;" rel="tag">c++</a> <a href="http://stackoverflow.com/questions/tagged/string" class="post-tag" title="show questions tagged &#39;string&#39;" rel="tag">string</a> <a href="http://stackoverflow.com/questions/tagged/algorithm" class="post-tag" title="show questions tagged &#39;algorithm&#39;" rel="tag">algorithm</a> <a href="http://stackoverflow.com/questions/tagged/dynamic-programming" class="post-tag" title="show questions tagged &#39;dynamic-programming&#39;" rel="tag">dynamic-programming</a> <a href="http://stackoverflow.com/questions/tagged/palindrome" class="post-tag" title="show questions tagged &#39;palindrome&#39;" rel="tag">palindrome</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2013-07-08 10:27:24Z"><b>2 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>3084 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/17524341/find-number-of-palindromes-that-are-anagrams-in-c?lastactivity" class="lastactivity-link" title="2016-03-03 02:49:50Z">yesterday</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk164779738",[5,17,2221]).setZone(45); });
+            </script>
+            
+        <div id="hireme">
+            <script>
+;"use strict";var _extends=Object.assign||function(n){for(var i,r,t=1;t<arguments.length;t++){i=arguments[t];for(r in i)Object.prototype.hasOwnProperty.call(i,r)&&(n[r]=i[r])}return n};(function(n){function f(){return(new Date).getTime()}function ut(n,t){return n.split(/\&/g).reduce(function(n,t){var i=t.split("=");return n[v(i[0])]=v(i[1]),n},t||{})}function ft(n,t){return Object.keys(n).filter(function(n){return t.indexOf(n)!==-1}).map(function(t){return u(t)+"="+u(n[t])}).join("&")}function y(n){return i.querySelectorAll(n)}function r(n){return i.querySelector(n)}function p(n,t,r){var u=i.createElement("script"),e="onreadystatechange",o="onload",f="readyState",s=!1;u.async=!0;u.src=n;typeof t=="function"&&(u[o]=u[e]=function(){s||u[f]&&u[f]!=="loaded"&&u[f]!=="complete"||(s=!0,typeof t=="function"&&t(u),u[o]=u[e]=null,r&&u.parentNode.removeChild(u))});tt.appendChild(u)}function w(n){var t=i.createElement("link");t.type="text/css";t.rel="stylesheet";t.href=n;it.appendChild(t)}function b(){return[].map.call(y(".post-taglist .post-tag"),function(n){return n.innerText})}function et(){var n=t.StackExchange,i="options",r="user";return n&&n[i]&&n[i][r]&&n[i][r].accountId}function ot(n){var t,i;return n=ut(s.hash?s.hash.substr(1):"",n||{}),t=n.ac||n.accountId||et(),t&&(n.ac=t),n.tags||(i=b(),i.length>0&&(n.tags=i.join(";"))),n}function k(n){return n.innerHTML.replace(/\s+$/g,"")}function st(n,t,i,u){var c=r(n);if(c===null)return function(){};var h=null,s=null,l=f(),a=function a(){k(c)?(o(h),u(!1,f()-l)):s=e(a,t)};return s=e(a,t),i&&(h=e(function(){o(s);u(!0,f()-l)},i)),function(){o(s);o(h)}}function ht(){var t="careers1",i="careers3",u=!g()||r("#careersadsdoublehigh"),f=u?1:2,n=[f+"=hireme"];return r("#"+t)&&n.push("5="+t),r("#"+i)&&n.push("6="+i),n.join("&")}function d(n,i){var r=ot(_extends({},nt,{zones:ht()})),u,e;n&&(r.azt=1);i&&(r.lw=i);typeof t.innerWidth=="number"&&(r.bw=t.innerWidth);u=["zones","ip","ac","eng","prov","tags","theme","at","remote","seed","lw","azt","sysadmin","bw","nocpm"];e=l+"?"+ft(r,u);c=f();p(e)}function ct(n){function h(){u.forEach(w);e.forEach(function(n){lt(n,i[n],s,o)});typeof t.clc_after_load=="function"&&t.clc_after_load()}var i=n.cr,r=n.h,u=n.st,e=Object.keys(i),o=c?f()-c:0,s="//"+r+"/ct";h()}function lt(n,t,i,f){var h=t.cl,c=t.cn,o=t.an,l=t.utm,s=(h||[]).join(" "),e=r("#"+n);e&&(s&&(e.className+=" "+s),e.innerHTML=c.replace("&pt=0","&pt="+(f||0)),e.onmousedown=function(n){for(var t=n.target,r,f,s;t.tagName!=="A"&&t!==e;)t=t.parentNode;t!==e&&(r=[],o&&r.push("an="+o),f=[].filter.call(t.attributes,function(n){return/^data-/.test(n.name)}),f.length>0&&f.forEach(function(n){var t=n.name.replace(/^data-/,"");r.push(u(t)+"="+u(n.value))}),r.push("utm="+u(rt+l)),s="",r.length>0&&(s="?"+r.join("&")),t.href=i+s)})}function g(){return y(h).length>0}function at(n){var t=i.createElement("a");return t.href=n,t.host}function vt(){var t,n;g()?(n=st(h,20,t,d),e(function(){var u=r(h),t;k(u)||(u.parentNode.removeChild(u),typeof n=="function"&&n(),t=i.createElement("img"),t.src="//"+at(l)+"/to.gif",t.style.display="none",i.body.appendChild(t))},2e3)):d()}var l=n.u,a=n.o,nt=a===undefined?{}:a,t=window,s=t.location,u=t.encodeURIComponent,v=t.decodeURIComponent,i=t.document,tt=i.body,it=i.getElementsByTagName("head")[0],e=t.setTimeout,o=t.clearTimeout,rt="&utm_source="+s.hostname+"&utm_medium=ad&utm_campaign=",h="#sidebar [id^=adzerk].everyonelovesstackoverflow",c=0;t.clc={init:ct,load:vt,ls:p,as:w,tags:b}}).call(null, {"u":"//clc.stackoverflow.com/p.js"});"use strict";var allowedHosts=["stackoverflow.com","serverfault.com"];(allowedHosts[0]==="*"||allowedHosts.indexOf(location.hostname)!==-1)&&window.clc.load();            </script>
+        </div>
+			<div class="module" id="chat-feature">
+    
+
+    
+<h4><a href="http://chat.stackoverflow.com/" id="h-chat-link" title="41 users active in 27 rooms the last 60 minutes">41 People Chatting</a></h4>
+
+<div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="PHP"><a href="http://chat.stackoverflow.com/rooms/11">PHP</a></span></h3><span title="2016-03-04 03:58:09Z" class="ad502-last-message">3 hours ago - <a href="http://chat.stackoverflow.com/users/538216">Levi Morrison</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/538216"><img height="23" width="23" title="Levi Morrison: 3 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/e91a4b631b4bb7f0c477626617dd3926"></a><a href="http://chat.stackoverflow.com/users/4251625"><img height="23" width="23" title="Wes: 3 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/XUshi.jpg"></a><a href="http://chat.stackoverflow.com/users/4332216"><img height="23" width="23" title="Saitama: 3 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/Wv4X9.jpg"></a><a href="http://chat.stackoverflow.com/users/1947276"><img height="23" width="23" title="little pootis: 3 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/89dSf.png"></a><a href="http://chat.stackoverflow.com/users/5353097"><img height="23" width="23" title="jayesh: 3 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/82733ac2f2776b9a1b6637de2a5827d0"></a><a href="http://chat.stackoverflow.com/users/3942918"><img height="23" width="23" title="Paul Crovella: 3 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/Rup3Y.jpg"></a><a href="http://chat.stackoverflow.com/users/4107368"><img height="23" width="23" title="Sun Maung Oo: 4 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/3594daeca1170f0a0d0c2ddc133bdda1"></a></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="Lounge&lt;C++&gt;"><a href="http://chat.stackoverflow.com/rooms/10">Lounge&lt;C++&gt;</a></span></h3><span title="2016-03-04 04:02:04Z" class="ad502-last-message">3 hours ago - <a href="http://chat.stackoverflow.com/users/5991423">Aaron3468</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/5991423"><img height="23" width="23" title="Aaron3468: 3 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/eda53354248f80b4b8fb896159ea1765"></a><a href="http://chat.stackoverflow.com/users/703016"><img height="23" width="23" title="Hubert Applebaum: 3 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/UqxI5.jpg"></a><a href="http://chat.stackoverflow.com/users/179910"><img height="23" width="23" title="Jerry Coffin: 3 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/d8962238339d771f0348967be6f97b1b"></a><a href="http://chat.stackoverflow.com/users/5280922"><img height="23" width="23" title="ThePhD: 4 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/331716f42186fee81481fbb90a18fe50"></a><a href="http://chat.stackoverflow.com/users/4892076"><img height="23" width="23" title="jaggedSpire: 4 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/s6vwT.png"></a><a href="http://chat.stackoverflow.com/users/75889"><img height="23" width="23" title="StackedCrooked: 5 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/37aa3ec65ec47c5a3f9e2a80534837f3"></a><a href="http://chat.stackoverflow.com/users/726300"><img height="23" width="23" title="Luc Danton: 5 hours ago" src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/b671ab6df2741db2c2eaf3b5755a2797"></a></div></div></div>
+<script>
+// <!--
+    StackExchange.ready(
+    function () {
+        var options = {
+            chatUrl: 'http://chat.stackoverflow.com',
+            reloadUrl: '/api/recent-chat',
+            preloadData: {"activeUsers":41,"activeRooms":27,"rooms":[{"name":"PHP","id":11,"lastPost":1457063889,"posts":2242825,"users":[{"name":"Levi Morrison","id":538216,"emailhash":"e91a4b631b4bb7f0c477626617dd3926","lastPost":1457063889},{"name":"Wes","id":4251625,"emailhash":"!https://i.stack.imgur.com/XUshi.jpg?s=128\u0026g=1","lastPost":1457063622},{"name":"Saitama","id":4332216,"emailhash":"!https://i.stack.imgur.com/Wv4X9.jpg?s=128\u0026g=1","lastPost":1457063611},{"name":"little pootis","id":1947276,"emailhash":"!https://i.stack.imgur.com/89dSf.png?s=128\u0026g=1","lastPost":1457063428},{"name":"jayesh","id":5353097,"emailhash":"82733ac2f2776b9a1b6637de2a5827d0","lastPost":1457063348},{"name":"Paul Crovella","id":3942918,"emailhash":"!https://i.stack.imgur.com/Rup3Y.jpg?s=128\u0026g=1","lastPost":1457063216},{"name":"Sun Maung Oo","id":4107368,"emailhash":"3594daeca1170f0a0d0c2ddc133bdda1","lastPost":1457062347}],"messages":[{"date":1457063889,"user":"Levi Morrison","userid":538216}],"singleImage":false,"tags":["php"]},{"name":"Lounge\u003cC++\u003e","id":10,"lastPost":1457064124,"posts":4495850,"users":[{"name":"Aaron3468","id":5991423,"emailhash":"eda53354248f80b4b8fb896159ea1765","lastPost":1457064124},{"name":"Hubert Applebaum","id":703016,"emailhash":"!https://i.stack.imgur.com/UqxI5.jpg?s=128\u0026g=1","lastPost":1457063377},{"name":"Jerry Coffin","id":179910,"emailhash":"d8962238339d771f0348967be6f97b1b","lastPost":1457062809},{"name":"ThePhD","id":5280922,"emailhash":"331716f42186fee81481fbb90a18fe50","lastPost":1457060851},{"name":"jaggedSpire","id":4892076,"emailhash":"!https://i.stack.imgur.com/s6vwT.png?s=128\u0026g=1","lastPost":1457059349},{"name":"StackedCrooked","id":75889,"emailhash":"37aa3ec65ec47c5a3f9e2a80534837f3","lastPost":1457058830},{"name":"Luc Danton","id":726300,"emailhash":"b671ab6df2741db2c2eaf3b5755a2797","lastPost":1457058231}],"messages":[{"date":1457064124,"user":"Aaron3468","userid":5991423}],"singleImage":false,"tags":["c++","c++11","c++14","c++-faq"]}]} 
+        };
+
+        StackExchange.chatAd.init(options);
+    });
+// -->
+</script>
+
+</div>  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/4790522?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">29
+    </div>
+</a><a href="http://stackoverflow.com/questions/4790522/how-to-find-longest-palindromic-subsequence?rq=1" class="question-hyperlink">how to find longest palindromic subsequence?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/5304239?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">5
+    </div>
+</a><a href="http://stackoverflow.com/questions/5304239/finding-the-largest-palindrome-in-string-implementation?rq=1" class="question-hyperlink">Finding the largest palindrome in string implementation</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/6132688?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">12
+    </div>
+</a><a href="http://stackoverflow.com/questions/6132688/finding-the-longest-palindrome-subsequence-with-less-memory?rq=1" class="question-hyperlink">Finding the Longest Palindrome Subsequence with less memory</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/15019817?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/15019817/need-algorithm-to-find-the-nth-palindromic-number?rq=1" class="question-hyperlink">need algorithm to find the nth palindromic number</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/17498120?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">-5
+    </div>
+</a><a href="http://stackoverflow.com/questions/17498120/whats-number-anagram-which-are-palindromes-in-string?rq=1" class="question-hyperlink">what's number anagram which are palindromes in string</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/17532770?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/17532770/number-of-anagrams-which-are-palindromes-for-a-word-which-is-a-palindrome?rq=1" class="question-hyperlink">Number of anagrams which are palindromes for a word which is a palindrome</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/24591616?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/24591616/whats-the-time-complexity-of-this-algorithm-for-palindrome-partitioning?rq=1" class="question-hyperlink">What's the time complexity of this algorithm for Palindrome Partitioning?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/25911373?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/25911373/number-of-possible-palindrome-anagrams-for-a-given-word?rq=1" class="question-hyperlink">Number of possible palindrome anagrams for a given word</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/29958999?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">7
+    </div>
+</a><a href="http://stackoverflow.com/questions/29958999/longest-palindromic-substring-recursive-solution?rq=1" class="question-hyperlink">longest palindromic substring recursive solution</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/35251247?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">-1
+    </div>
+</a><a href="http://stackoverflow.com/questions/35251247/find-next-largest-palindrome-number?rq=1" class="question-hyperlink">Find next largest palindrome number</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/37242/how-do-you-do-assassinate-someone-who-is-protected-by-precognitive-people" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do you do assassinate someone who is protected by precognitive people?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-raspberrypi" title="Raspberry Pi Stack Exchange"></div><a href="http://raspberrypi.stackexchange.com/questions/43536/maximum-current-on-each-gpio-pin-for-raspberry-pi-3-model-b" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:447 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Maximum current on each GPIO pin for Raspberry Pi 3 Model B
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-matheducators" title="Mathematics Educators Stack Exchange"></div><a href="http://matheducators.stackexchange.com/questions/10679/what-methods-successfully-identify-and-eliminate-math-ptsd" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:548 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What methods successfully identify and eliminate math PTSD?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-salesforce" title="Salesforce Stack Exchange"></div><a href="http://salesforce.stackexchange.com/questions/112885/need-some-help-with-jquery-plugin-select2-and-vf-page" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Need some help with jquery plugin select2 and VF page
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/35785841/running-javascript-app-outside-of-the-browser" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Running JavaScript app outside of the browser
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gardening" title="Gardening &amp; Landscaping Stack Exchange"></div><a href="http://gardening.stackexchange.com/questions/23392/what-is-the-difference-between-male-and-female-asparagus-plants-and-is-it-impor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:269 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the difference between male and female asparagus plants, and is it important for growing?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/62879/provider-is-cheating-but-i-dont-want-to-disclose-how-i-found-out" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Provider is "cheating", but I don't want to disclose how I found out
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/62957/how-to-deal-with-a-coworker-that-shuts-me-down" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to deal with a coworker that shuts me down?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/116354/how-does-a-company-like-cloudflare-block-bot-crawling-and-email-harvesters" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does a company like CloudFlare block bot crawling and email harvesters?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/311374/what-is-the-plural-of-mrs" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the plural of Mrs?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/121708/randomly-generate-spelling-mistake-in-string" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Randomly generate spelling mistake in string
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mechanics" title="Motor Vehicle Maintenance &amp; Repair Stack Exchange"></div><a href="http://mechanics.stackexchange.com/questions/26834/looking-for-easy-ways-to-set-error-codes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Looking for easy ways to set error codes
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/267496/find-list-all-directories-except-those-with-numbers-in-their-names-and-their-ch" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    find: list all directories except those with numbers in their names and their children
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/121048/in-a-clash-of-kings-why-does-cersei-initially-oppose-marrying-joffrey-to-margae" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    In A Clash of Kings, why does Cersei initially oppose marrying Joffrey to Margaery?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/76491/can-i-use-two-immovable-rods-as-an-infinite-ladder-or-monkey-bars" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I use Two Immovable Rods as an infinite ladder or monkey bars?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-politics" title="Politics Stack Exchange"></div><a href="http://politics.stackexchange.com/questions/10021/why-is-trump-winning-when-i-know-so-few-people-who-admit-to-voting-for-him" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is Trump winning, when I know so few people who admit to voting for him?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/267528/cannot-move-file-because-of-in-name" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    cannot move file because of &amp; in name
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a href="http://chemistry.stackexchange.com/questions/47204/how-do-people-know-hcn-smells-like-almonds" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do people know HCN smells like almonds?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/64507/someone-reported-cheating-during-a-quiz-but-i-didnt-catch-it-myself" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Someone reported cheating during a quiz, but I didn't catch it myself
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1679543/correct-set-notation-for-all-integers-which-are-not-multiples-of-7" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Correct set notation for "all integers which are not multiples of 7"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/25781/why-there-is-no-wake-turbulence-right-after-touch-down-or-before-rotation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why there is no wake turbulence right after touch down or before rotation?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-sqa" title="Software Quality Assurance &amp; Testing Stack Exchange"></div><a href="http://sqa.stackexchange.com/questions/17385/how-to-deal-resolve-huge-bug-backlog" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:244 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to deal/resolve huge bug backlog?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/120666/was-any-character-alive-during-all-of-the-star-wars-episodes-from-i-to-vii" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Was any character alive during all of the Star Wars episodes from I to VII?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/64384/should-i-warn-a-professor-about-his-bad-internet-security-practice" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I warn a professor about his bad internet security practice?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/17524341" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/17524341/ivc/07e8');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/17524341/ivc/07e8" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-cpp</div></div>
+
+
+        </div>
+    </div><img src="./string - Find number of palindromes that are anagrams in C++ - Stack Overflow_files/to.gif" style="display: none;">
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.3.3.3315
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () {
+            setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+        ados_setKeywords('c%2b%2b,string,algorithm,dynamic-programming,palindrome');; ados_load();
+    });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+                        ga('set', 'dimension2', '|c++|string|algorithm|dynamic-programming|palindrome|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+            
+    
+</body></html>

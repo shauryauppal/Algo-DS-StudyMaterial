@@ -1,0 +1,337 @@
+/************************************************************************
+*************************************************************************
+@Name :       	Selectyze - jQuery Plugin CSS
+@Revison :    	1.0
+@Date : 		19/12/2011
+@Author:     	Mickael SURREL - ALPIXEL Agency - (www.myjqueryplugins.com - www.alpixel.fr) 
+@License :		 Open Source - MIT License : http://www.opensource.org/licenses/mit-license.php
+ 
+**************************************************************************
+*************************************************************************/
+
+/***************************/
+/** Common to every theme **/
+/***************************/
+.DivSelectyze {
+	position:relative;
+	width:253px;
+	float:left;
+	margin-top:15px;
+}
+
+.DivSelectyze .selectyzeValue {
+	position:relative;
+	z-index:10;
+	display:block;
+	text-decoration:none;
+}
+
+.DivSelectyze ul {list-style:none;}
+.DivSelectyze .UlSelectize {
+	position:absolute;
+	z-index:9999;
+	display:none;
+}
+
+.DivSelectyze li a {
+	display:block;
+	text-decoration:none;
+}
+
+.optgroupTitle {
+	display:block;
+}
+/*******************************/
+/** END COMMON TO EVERY THEME **/
+/*******************************/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+
+
+/*----------------------------------
+ You can add your own theme below !!
+ To add your theme, be sure to have 5 CSS elements :
+ 
+ .your_theme .selectyzeValue {} 		-> Appearance of your select element
+ .your_theme .UlSelectize {} 			-> Appearance of the dropdown list
+ .your_theme li a {} 					-> Appearance of the items into the dropdown list
+ .your_theme li a:hover {} 				-> items on hover
+ .your_theme .optgroupTitle {} 			-> Appearance of the optgroup label !! only if you have <optgroup> element into your list 
+ 
+ 
+ that's all ! \o/
+----------------------------------*/
+
+
+
+	/*****************/
+	/** SKYPE THEME **/
+	/*****************/
+	.skype .selectyzeValue {
+		font:18px/45px Arial;
+		color:#2a98c1;
+		width:254px;
+		height:45px;
+		background:url('bg_skype.png') no-repeat;
+		padding-left:15px
+	}
+
+	.skype .UlSelectize {
+		top:39px;
+		left:6px;
+		width:239px;
+		border:1px solid #00aff0;
+		background-color:#f7f8ff
+	}
+
+	.skype li a {
+		height:28px;
+		font:14px/30px Arial;
+		background-color:transparent;
+		color:#2a98c1;
+		border-top:1px solid #84d8f8;
+		padding-left:10px
+	}
+
+	.skype li a:hover {
+		color:#fff;
+		background-color:#2a98c1;/** gradient bgcolors */
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#84d8f8), to(#0ab2f1)); /* Saf4+, Chrome */
+		background-image: -webkit-linear-gradient(top, #84d8f8, #0ab2f1); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image:    -moz-linear-gradient(top, #84d8f8, #0ab2f1); /* FF3.6 */
+		background-image:     -ms-linear-gradient(top, #84d8f8, #0ab2f1); /* IE10 */
+		background-image:      -o-linear-gradient(top, #84d8f8, #0ab2f1); /* Opera 11.10+ */
+		background-image:         linear-gradient(top, #84d8f8, #0ab2f1)
+	}
+	
+	.skype .optgroupTitle {
+		margin-top:15px;
+		font-size:16px;
+		padding-left:10px;
+		background-color:#0fb1ef;
+		color:#fff;
+	}
+	
+	
+	/*****************/
+	/** MAC THEME **/
+	/*****************/
+	.mac .selectyzeValue {
+		font:13px/35px Arial;
+		color:#000000;
+		width:244px;
+		height:35px;
+		background:url('bg_mac.png') no-repeat;
+		padding-left:15px
+	}
+
+	.mac .UlSelectize {
+		top:36px;
+		left:0px;
+		width:241px;
+		background-color:#fff;
+		border:1px solid #b7b7b7;
+	}
+
+	.mac li a {
+		height:20px;
+		font:13px/20px Arial;
+		background-color:transparent;
+		color:#000;
+		padding-left:10px;
+		border-top:1px solid white;
+		
+	}
+
+	.mac li a:hover {
+		color:#fff;
+		border-top:1px solid #0e54ec;
+		background-color:#2260f6;/** gradient bgcolors */
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#6289f8), to(#2260f6)); /* Saf4+, Chrome */
+		background-image: -webkit-linear-gradient(top, #6289f8 #2260f6); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image:    -moz-linear-gradient(top, #6289f8, #2260f6); /* FF3.6 */
+		background-image:     -ms-linear-gradient(top, #6289f8, #2260f6); /* IE10 */
+		background-image:      -o-linear-gradient(top, #6289f8, #2260f6); /* Opera 11.10+ */
+		background-image:         linear-gradient(top, #6289f8, #2260f6)
+	}
+	
+	.mac .optgroupTitle {
+		margin-top:15px;
+		font-size:13px;
+		padding-left:10px;
+		background-color:#fff;
+		color:#969696;
+	}
+	
+	
+	/****************/
+	/** GREY HEME **/
+	/*****************/
+	
+	.grey .selectyzeValue {
+		font:13px/35px Arial;
+		color:#797979;
+		width:150px;
+		height:32px;
+		line-height:32px;
+		background:url('../i/select.png') no-repeat;
+		padding-left:0px;
+		text-align:left;
+	}
+	.grey .selectyzeValue:hover {
+		color:#797979;
+	}
+
+	.grey .UlSelectize {
+		top:30px;
+		left:0px;
+		width:148px;
+		border:1px solid #d2d2d2;
+		background-color:#fff;
+		padding-left:0px;
+	}
+	.topRankHeader .DivSelectyze ul li {
+		width:148px;
+		height:22px;
+		text-align:left;
+	}
+	#content .rightRail .commonWidget header .selectyzeValue {
+		text-indent:5px;
+	}
+	.selectyzeValue {
+		text-indent:5px;
+	}
+	
+	#content .rightRail .commonWidget header .grey li {
+		height:22px;
+		line-height:22px;
+		border:none;
+		text-indent:5px;
+	}
+	.grey li {
+		height:22px;
+		line-height:22px;
+		border:none;
+		text-indent:5px;
+	}
+	
+	.grey li {
+		height:22px;
+		line-height:22px;
+		border:none;
+	}
+	
+	.grey li a {
+		height:22px;
+		font:12px/22px Arial;
+		background-color:transparent;
+		color:#797979;
+	}
+
+	.grey li a:hover {
+		color:#fff;
+		background-color:#858585;/** gradient bgcolors */
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#7c7c7c), to(#858585)); /* Saf4+, Chrome */
+		background-image: -webkit-linear-gradient(top, #7c7c7c #858585); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image:    -moz-linear-gradient(top, #7c7c7c, #858585); /* FF3.6 */
+		background-image:     -ms-linear-gradient(top, #7c7c7c, #858585); /* IE10 */
+		background-image:      -o-linear-gradient(top, #7c7c7c, #858585); /* Opera 11.10+ */
+		background-image:         linear-gradient(top, #7c7c7c, #858585)
+	}
+	
+	.grey .optgroupTitle {
+		margin-top:15px;
+		font-size:20px;
+		padding-left:10px;
+		background-color:#858585;
+		color:#fff;
+	}
+	
+	
+	/*******************/
+	/** FIREFOX THEME **/
+	/*******************/
+	.firefox .selectyzeValue {
+		font:12px/22px Arial;
+		color:#000;
+		width:185px;
+		height:22px;
+		background:url('bg_ff.jpg') no-repeat;
+		padding-left:15px
+	}
+
+	.firefox .UlSelectize {
+		top:21px;
+		left:0px;
+		width:241px;
+		border:1px solid #bebebf;
+		background-color:#fff
+	}
+
+	.firefox li a {
+		height:20px;
+		font:12px/20px Arial;
+		background-color:transparent;
+		color:#000;
+		padding-left:10px;
+		border:1px solid #fff
+	}
+
+	.firefox li a:hover {
+		color:#fff;
+		background-color:#3399ff;
+	}
+	
+	.firefox .optgroupTitle {
+		margin-top:15px;
+		font-size:17px;
+		font-style:italic;
+		padding-left:10px;
+		background-color:#fff;
+		color:#000;
+		font-weight:700
+	}
+	
+	
+	/****************/
+	/** CSS3 THEME **/
+	/****************/
+	.css3 .selectyzeValue {
+		font:14px/46px Arial;
+		color:#666666;
+		text-shadow:1px 1px 0px #fff;
+		text-align:center;
+		width:195px;
+		height:46px;
+		background:url('bg_css3.png') no-repeat;
+	}
+
+	.css3 .UlSelectize {
+		top:36px;
+		left:2px;
+		width:190px;
+		background-color:#222222
+	}
+
+	.css3 li a {
+		font:12px/20px Arial;
+		background-color:transparent;
+		color:#fff;
+		text-align:center;
+		padding:3px 0
+	}
+
+	.css3 li a:hover {
+		background-color:#3e3d3d;
+	}
+	
+	.css3 .optgroupTitle {
+		margin-top:15px;
+		font-size:17px;
+		font-style:italic;
+		padding-left:10px;
+		background-color:#3e3d3d;
+		color:#fff;
+		font-weight:700
+	}

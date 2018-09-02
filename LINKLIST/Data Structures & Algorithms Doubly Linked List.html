@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)http://www.tutorialspoint.com/data_structures_algorithms/doubly_linked_list_algorithm.htm -->
+<html lang="en" style="" class=" js no-touch csstransforms3d csstransitions"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Data Structures &amp; Algorithms Doubly Linked List</title>
+<meta name="Description" content="Data Structures &amp; Algorithms Doubly Linked List - Learn Data Structures &amp; Algorithm using c, C++ and Java in simple and easy steps using this beginner&#39;s tutorial containing basic to advanced knowledge starting from Algorithm, Data Structures, Array, Linked List, Doubly Linked List, Circular List, Stack, Parsing Expression, Queue, Priority queue, Tree, Binary Search Tree, B+, AVL, Spanning, Tower of Hanoi, Hash Table, Heap, Graph, Search techniques, Sorting techniques, Recursion.">
+<meta name="Keywords" content="Algorithm, Data Structures, Array, Linked List, Doubly Linked List, Circular List, Stack, Parsing Expression, Queue, Priority queue, Tree, Binary Search Tree, B+, AVL, Spanning, Tower of Hanoi, Hash Table, Heap, Graph, Search techniques, Sorting techniques, Recursion.">
+<!--<base href="http://www.tutorialspoint.com/">--><base href=".">
+<link rel="shortcut icon" href="http://www.tutorialspoint.com/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="fb:app_id" content="471319149685276">
+<meta property="og:site_name" content="www.tutorialspoint.com">
+<meta name="robots" content="index, follow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script src="./Data Structures &amp; Algorithms Doubly Linked List_files/ca-pub-7133395778201029.js"></script><script type="text/javascript" src="./Data Structures &amp; Algorithms Doubly Linked List_files/script-min-v4.js"></script>
+<link rel="stylesheet" href="./Data Structures &amp; Algorithms Doubly Linked List_files/style-min.css">
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+.fa-camera:before{content:"\f03d";font-family:FontAwesome;font-style:normal;font-size:100%}
+pre.prettyprint.tryit {min-height:37px; background: #eee url(data_structures_algorithms/images/try-it.jpg) top right no-repeat !important}div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #cd3300 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #cd3300 !important;}
+.submenu-item{ border-bottom: 2px solid #cd3300 !important; border-top: 2px solid #cd3300 !important }
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()" style="">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img src="./Data Structures &amp; Algorithms Doubly Linked List_files/loading-cg.gif" alt="" width="70" height="70">
+   </div>
+</div>
+<header>
+   <div class="submenu-item sub-main-menu" id="top-sub-menu"></div>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="http://www.tutorialspoint.com/index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="./Data Structures &amp; Algorithms Doubly Linked List_files/logo.png">
+      </a>
+      </h1>			
+      <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 270px!important"> <i class="icon icon-bars"></i> </button>
+      <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="http://www.tutorialspoint.com/index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown" id="liTL"><a class="dropdown" href="javascript:void(0);"><span class="tut-lib"> Tutorials Library  <i class="fa-caret-down"></i></span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="http://www.tutorialspoint.com/codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="http://www.tutorialspoint.com/tutor_connect/index.php"><i class="fa-user"> </i> Tutor Connect</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="http://www.tutorialspoint.com/online_dev_tools.htm"><span class="dev-tools-menu">  Tools</span></a></li> 
+            </ul>
+         </nav>
+         <div class="searchform-popup">
+            <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == &#39;Search your favorite tutorials...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search your favorite tutorials...&#39;;}" autocomplete="off">
+            <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+        </div>
+      </div>
+     </div>	
+</div></header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="./Data Structures &amp; Algorithms Doubly Linked List_files/data-structure-mini-logo.jpg" alt="Data Structures &amp; Algorithms Tutorial">
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Data Structures &amp; Algorithms</li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/index.htm">DSA - Home</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/data_structure_overview.htm">DSA - Overview</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/data_structure_environment.htm">DSA - Environment Setup</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Algorithm</li>   
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/algorithms_basics.htm">DSA - Algorithms Basics</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/asymptotic_analysis.htm">DSA - Asymptotic Analysis</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/greedy_algorithms.htm">DSA - Greedy Algorithms</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/divide_and_conquer.htm">DSA - Divide and Conquer</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/dynamic_programming.htm">DSA - Dynamic Programming</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Data Structures</li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/data_structures_basics.htm">DSA - Data Structure Basics</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/array_data_structure.htm">DSA - Array Data Structure</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Linked Lists</li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/linked_list_algorithms.htm">DSA - Linked List Basics</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/doubly_linked_list_algorithm.htm" style="background-color: rgb(214, 214, 214);">DSA - Doubly Linked List</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/circular_linked_list_algorithm.htm">DSA - Circular Linked List</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Stack &amp; Queue</li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/stack_algorithm.htm">DSA - Stack</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/expression_parsing.htm">DSA - Expression Parsing</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm">DSA - Queue</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Searching Techniques</li>
+<!--<li style="background:yellow;"><a href="/data_structures_algorithms/searching_algorithms.htm">DSA - Searching Algorithms</a></li>-->
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/linear_search_algorithm.htm">DSA - Linear Search</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/binary_search_algorithm.htm">DSA - Binary Search</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/interpolation_search_algorithm.htm">DSA - Interpolation Search</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/hash_data_structure.htm">DSA - Hash Table</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Sorting Techniques</li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/sorting_algorithms.htm">DSA - Sorting Algorithms</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/bubble_sort_algorithm.htm">DSA - Bubble Sort</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/insertion_sort_algorithm.htm">DSA - Insertion Sort</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/selection_sort_algorithm.htm">DSA - Selection Sort</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/merge_sort_algorithm.htm">DSA - Merge Sort</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/shell_sort_algorithm.htm">DSA - Shell Sort</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/quick_sort_algorithm.htm">DSA - Quick Sort</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Graph Data Structure</li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/graph_data_structure.htm">DSA - Graph Data Structure</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/depth_first_traversal.htm">DSA - Depth First Traversal</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/breadth_first_traversal.htm">DSA - Breadth First Traversal</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Tree Data Structure</li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm">DSA - Tree Data Structure</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/tree_traversal.htm">DSA - Tree Traversal</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/binary_search_tree.htm">DSA - Binary Search Tree</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/avl_tree_algorithm.htm">DSA - AVL Tree</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/spanning_tree.htm">DSA - Spanning Tree</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/heap_data_structure.htm">DSA - Heap</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Recursion</li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/recursion_basics.htm">DSA - Recursion Basics</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/tower_of_hanoi.htm">DSA - Tower of Hanoi</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/fibonacci_series.htm">DSA - Fibonacci Series</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">DSA Useful Resources</li>
+<!--<li><a href="/data_structures_algorithms/dsa_quick_guide.htm">DSA - Quick Guide</a></li>-->
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/data_structures_algorithms_questions_answers.htm">DSA - Questions and Answers</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/dsa_useful_resources.htm">DSA - Useful Resources</a></li>
+<li><a href="http://www.tutorialspoint.com/data_structures_algorithms/dsa_discussion.htm">DSA - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="http://www.tutorialspoint.com/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="http://www.tutorialspoint.com/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Data Structure - Doubly Linked List</h1>
+<div class="topgooglead">
+<hr>
+<div style="padding-bottom:5px;padding-left:10px;">Advertisements</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript" src="./Data Structures &amp; Algorithms Doubly Linked List_files/show_ads.js"> 
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><iframe width="468" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./Data Structures &amp; Algorithms Doubly Linked List_files/saved_resource.html"></iframe></ins></ins>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="http://www.tutorialspoint.com/data_structures_algorithms/linked_list_algorithms.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="http://www.tutorialspoint.com/data_structures_algorithms/circular_linked_list_algorithm.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr>
+<p>Doubly Linked List is a variation of Linked list in which navigation is possible in both ways either forward and backward easily as compared to Single Linked List. Following are important terms to understand the concepts of doubly Linked List</p>
+<ul class="list">
+<li><p><b>Link</b> − Each Link of a linked list can store a data called an element.</p></li>
+<li><p><b>Next</b> − Each Link of a linked list contain a link to next link called Next.</p></li>
+<li><p><b>Prev</b> − Each Link of a linked list contain a link to previous link called Prev.</p></li>
+<li><p><b>LinkedList</b> − A LinkedList contains the connection link to the first Link called First and to the last link called Last.</p></li>
+</ul>
+<h2>Doubly Linked List Representation</h2>
+<img src="./Data Structures &amp; Algorithms Doubly Linked List_files/doubly_linked_list.jpg" alt="Doubly Linked List"> 
+<p>As per above shown illustration, following are the important points to be considered.</p>
+<ul class="list">
+<li>Doubly LinkedList contains an link element called first and last.</li>
+<li>Each Link carries a data field(s) and a Link Field called next.</li>
+<li>Each Link is linked with its next link using its next link.</li>
+<li>Each Link is linked with its previous link using its prev link.</li>
+<li>Last Link carries a Link as null to mark the end of the list.</li>
+</ul>
+<h2>Basic Operations</h2>
+<p>Following are the basic operations supported by an list.</p>
+<ul class="list">
+<li><p><b>Insertion</b> − add an element at the beginning of the list.</p></li>
+<li><p><b>Deletion</b> − delete an element at the beginning of the list.</p></li>
+<li><p><b>Insert Last</b> − add an element in the end of the list.</p></li>
+<li><p><b>Delete Last</b> − delete an element from the end of the list.</p></li>
+<li><p><b>Insert After</b> − add an element after an item of the list.</p></li>
+<li><p><b>Delete</b> − delete an element from the list using key.</p></li>
+<li><p><b>Display forward</b> − displaying complete list in forward manner.</p></li>
+<li><p><b>Display backward</b> − displaying complete list in backward manner.</p></li>
+</ul>
+<h2>Insertion Operation</h2>
+<p>Following code demonstrate insertion operation at beginning in a doubly linked list.</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="com">//insert link at the first location</span><span class="pln">
+</span><span class="kwd">void</span><span class="pln"> insertFirst</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> key</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+   </span><span class="com">//create a link</span><span class="pln">
+   </span><span class="kwd">struct</span><span class="pln"> node </span><span class="pun">*</span><span class="pln">link </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">struct</span><span class="pln"> node</span><span class="pun">*)</span><span class="pln"> malloc</span><span class="pun">(</span><span class="kwd">sizeof</span><span class="pun">(</span><span class="kwd">struct</span><span class="pln"> node</span><span class="pun">));</span><span class="pln">
+   link</span><span class="pun">-&gt;</span><span class="pln">key </span><span class="pun">=</span><span class="pln"> key</span><span class="pun">;</span><span class="pln">
+   link</span><span class="pun">-&gt;</span><span class="pln">data </span><span class="pun">=</span><span class="pln"> data</span><span class="pun">;</span><span class="pln">
+	
+   </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">isEmpty</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="com">//make it the last link</span><span class="pln">
+      </span><span class="kwd">last</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> link</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">}</span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="com">//update first prev link</span><span class="pln">
+      head</span><span class="pun">-&gt;</span><span class="pln">prev </span><span class="pun">=</span><span class="pln"> link</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+
+   </span><span class="com">//point it to old first link</span><span class="pln">
+   link</span><span class="pun">-&gt;</span><span class="kwd">next</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> head</span><span class="pun">;</span><span class="pln">
+	
+   </span><span class="com">//point first to new first link</span><span class="pln">
+   head </span><span class="pun">=</span><span class="pln"> link</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<h2>Deletion Operation</h2>
+<p>Following code demonstrate deletion operation at beginning in a doubly linked list.</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="com">//delete first item</span><span class="pln">
+</span><span class="kwd">struct</span><span class="pln"> node</span><span class="pun">*</span><span class="pln"> deleteFirst</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+   </span><span class="com">//save reference to first link</span><span class="pln">
+   </span><span class="kwd">struct</span><span class="pln"> node </span><span class="pun">*</span><span class="pln">tempLink </span><span class="pun">=</span><span class="pln"> head</span><span class="pun">;</span><span class="pln">
+	
+   </span><span class="com">//if only one link</span><span class="pln">
+   </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">head</span><span class="pun">-&gt;</span><span class="kwd">next</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> NULL</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">last</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> NULL</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">}</span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      head</span><span class="pun">-&gt;</span><span class="kwd">next</span><span class="pun">-&gt;</span><span class="pln">prev </span><span class="pun">=</span><span class="pln"> NULL</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+	
+   head </span><span class="pun">=</span><span class="pln"> head</span><span class="pun">-&gt;</span><span class="kwd">next</span><span class="pun">;</span><span class="pln">
+	
+   </span><span class="com">//return the deleted link</span><span class="pln">
+   </span><span class="kwd">return</span><span class="pln"> tempLink</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<h2>Insertion at End Operation</h2>
+<p>Following code demonstrate insertion operation at last position in a doubly linked list.</p>
+<pre class="prettyprint notranslate prettyprinted"><span class="com">//insert link at the last location</span><span class="pln">
+</span><span class="kwd">void</span><span class="pln"> insertLast</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> key</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+   </span><span class="com">//create a link</span><span class="pln">
+   </span><span class="kwd">struct</span><span class="pln"> node </span><span class="pun">*</span><span class="pln">link </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">struct</span><span class="pln"> node</span><span class="pun">*)</span><span class="pln"> malloc</span><span class="pun">(</span><span class="kwd">sizeof</span><span class="pun">(</span><span class="kwd">struct</span><span class="pln"> node</span><span class="pun">));</span><span class="pln">
+   link</span><span class="pun">-&gt;</span><span class="pln">key </span><span class="pun">=</span><span class="pln"> key</span><span class="pun">;</span><span class="pln">
+   link</span><span class="pun">-&gt;</span><span class="pln">data </span><span class="pun">=</span><span class="pln"> data</span><span class="pun">;</span><span class="pln">
+	
+   </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">isEmpty</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="com">//make it the last link</span><span class="pln">
+      </span><span class="kwd">last</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> link</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">}</span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="com">//make link a new last link</span><span class="pln">
+      </span><span class="kwd">last</span><span class="pun">-&gt;</span><span class="kwd">next</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> link</span><span class="pun">;</span><span class="pln">     
+      </span><span class="com">//mark old last node as prev of new link</span><span class="pln">
+      link</span><span class="pun">-&gt;</span><span class="pln">prev </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">last</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+
+   </span><span class="com">//point last to new last node</span><span class="pln">
+   </span><span class="kwd">last</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> link</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<p>To see the implementation in C programming language, please <a href="http://www.tutorialspoint.com/data_structures_algorithms/doubly_linked_list_program_in_c.htm">click here</a>.</p>
+<hr>
+<div class="pre-btn">
+<a href="http://www.tutorialspoint.com/data_structures_algorithms/linked_list_algorithms.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="http://www.tutorialspoint.com/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="http://www.tutorialspoint.com/data_structures_algorithms/pdf/doubly_linked_list_algorithm.pdf" title="Data Structures &amp; Algorithms Doubly Linked List" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="http://www.tutorialspoint.com/data_structures_algorithms/circular_linked_list_algorithm.htm">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script type="text/javascript"><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="./Data Structures &amp; Algorithms Doubly Linked List_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:400px;margin:0;padding:0;position:relative;visibility:visible;width:580px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:400px;margin:0;padding:0;position:relative;visibility:visible;width:580px;background-color:transparent"><iframe width="580" height="400" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./Data Structures &amp; Algorithms Doubly Linked List_files/saved_resource(1).html"></iframe></ins></ins>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;http://www.facebook.com/sharer.php?u=&#39; + &#39;http://www.tutorialspoint.com/data_structures_algorithms/doubly_linked_list_algorithm.htm&#39;,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Data Structures &amp; Algorithms Doubly Linked List_files/facebookIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;http://twitter.com/share?url=&#39; + &#39;http://www.tutorialspoint.com/data_structures_algorithms/doubly_linked_list_algorithm.htm&#39;,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Data Structures &amp; Algorithms Doubly Linked List_files/twitterIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;https://www.linkedin.com/cws/share?url=&#39; + &#39;http://www.tutorialspoint.com/data_structures_algorithms/doubly_linked_list_algorithm.htm&amp;title=&#39;+ document.title,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Data Structures &amp; Algorithms Doubly Linked List_files/linkedinIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;https://plus.google.com/share?url=http://www.tutorialspoint.com/data_structures_algorithms/doubly_linked_list_algorithm.htm&#39;,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Data Structures &amp; Algorithms Doubly Linked List_files/googlePlusIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;http://www.stumbleupon.com/submit?url=http://www.tutorialspoint.com/data_structures_algorithms/doubly_linked_list_algorithm.htm&amp;title=&#39;+ document.title,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Data Structures &amp; Algorithms Doubly Linked List_files/StumbleUponIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;http://reddit.com/submit?url=http://www.tutorialspoint.com/data_structures_algorithms/doubly_linked_list_algorithm.htm&amp;title=&#39;+ document.title,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=656,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Data Structures &amp; Algorithms Doubly Linked List_files/reddit.jpg" alt="img">
+</a>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="./Data Structures &amp; Algorithms Doubly Linked List_files/show_ads.js">
+</script><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" src="./Data Structures &amp; Algorithms Doubly Linked List_files/saved_resource(2).html"></iframe></ins></ins>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="./Data Structures &amp; Algorithms Doubly Linked List_files/show_ads.js">
+</script><ins id="aswift_3_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" src="./Data Structures &amp; Algorithms Doubly Linked List_files/saved_resource(3).html"></iframe></ins></ins>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./Data Structures &amp; Algorithms Doubly Linked List_files/show_ads.js">
+</script><ins id="aswift_4_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_4_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;" src="./Data Structures &amp; Algorithms Doubly Linked List_files/saved_resource(4).html"></iframe></ins></ins>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="http://www.tutorialspoint.com/index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="./Data Structures &amp; Algorithms Doubly Linked List_files/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="http://www.tutorialspoint.com/about/tutorials_writing.htm">Write for us</a></li>
+         <li><a href="http://www.tutorialspoint.com/about/faq.htm">FAQ's</a></li>
+         <li><a href="http://www.tutorialspoint.com/about/about_helping.htm">Helping</a></li>
+         <li><a href="http://www.tutorialspoint.com/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>© Copyright 2016. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == &#39;Enter email for newsletter...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Enter email for newsletter...&#39;;}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script type="text/javascript" src="./Data Structures &amp; Algorithms Doubly Linked List_files/custom-min.js"></script><a class="scroll-to-top visible" href="http://www.tutorialspoint.com/#" id="scrollToTop"><i class="icon icon-chevron-up icon-white"></i></a>
+<script src="./Data Structures &amp; Algorithms Doubly Linked List_files/urchin.js">
+</script>
+<script type="text/javascript">
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+<script type="text/javascript" src="./Data Structures &amp; Algorithms Doubly Linked List_files/jquery.colorbox-min.js"></script>
+<script type="text/javascript">
+   var tryit = new $.TryIt('data_structures_algorithms/try_dsa.php');
+   tryit.compile();
+</script><div id="source" style="display:none;"></div><div id="supportsource" style="display:none;"></div><div id="utilsource" style="display:none;"></div><div id="extrasource" style="display:none;"></div><div id="inputs" style="display:none;"></div><div id="filename" style="display:none;"></div>
+
+
+<div class="autocomplete-suggestions " style="top: 1682px; left: 0px; width: 8px;"></div><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>

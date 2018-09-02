@@ -1,0 +1,9 @@
+Adform=window.Adform||{};
+Adform.host="https://asia.adformdsp.net";
+Adform.shost="https://s2.adformdsp.net";
+Adform.scriptBase=Adform.shost+"/banners/scripts/";
+Adform.cache="580";
+Adform.ADFBannerData={URL:"https://asia.adformdsp.net/adfserve/?bn=13109881;rtbwp=V5JLLAADWxsKaIaDAA7TneiksKDqDo9RKeanHg;rtbdata=LA9mEKok5qD0oYB1CX2PCZvpchtVmV39_sozU2rdTN4NrQTeZ9XdXHuUNwcd7BVeIBt9gCaMlaOvQ4hnMtlYCOaU4BL4KjAhAYvyB-TjgPrOebptW0NXzD0SXtD4zJuWrL8W606dnULJPxj2Z-S4Zub4WkGtQm8BC9t1fSQnE7DiI8yRqi0xpBhEfRJ_b3SWsti2GxJilpbv4wXAkAtpxILfh-nVGSDpMK5vh18DZzQIffeKio1Er9pQAS8LTky3tBWgQFwMKjDnQTlqUP2Xs115u-ypbfaD0;rtbdataext=dH1EEtP2jeA1;nofp=1;click=https://adclick.g.doubleclick.net/aclk?sa=L&ai=CtCO7LEuSV5u2DYONogOdp7vABOLegsNEvtC4heUCwI23ARABIABg5cLkg6QOggEXY2EtcHViLTk0NjU2MDk2MTYxNzE4NjbIAQmpAuy0Hnyw44M-qAMBqgTAAU_Qn5xX5dBFHacQZBiudrdXGRJUSmF45YzQ4bM4SYNz5eWk2vcrKbWFNngzRKdVZDhUdQp2LmqckNQJrdBc1M5gWsx1tGb5j3-9NTH_uN1Sy-f50T5c-dIpyNd9SBDovP4p9b8E2bqUVf2-vGqFak1rDGVGB-Uw82NHzX5wAkhoxT9q6I9QeN4oW4Bk909CDZ2XHBUo6hHr2HlcbE3KUeXToAtLNILPEYMtmisazxgTqOrRoo2WE_eKdF8Ty5mpSoAG0K31gpOPoZF8oAYhqAemvhvYBwA&num=1&sig=AOD64_18FSsQ0Z1jZjaGckk87mqmasKd3w&client=ca-pub-9465609616171866&adurl=",CREFURL:"https%3a%2f%2fgoogleads.g.doubleclick.net%2fpagead%2fads%3fclient%3dca-pub-9465609616171866%26format%3d336x280%26output%3dhtml%26h%3d280%26slotname%3d4061219431%26adk%3d627427594%26adf%3d4012800296%26w%3d336%26lmt%3d1469122647%26loeid%3d33509809%252C108809121%26flash%3d22.0.0%26url%3dhttp%253A%252F%252Fwww.geeksforgeeks.org%252Fprimality-test-set-1-introduction-and-school-method%252F%26wgl%3d1%26d",BN:"13109881"};
+if(!Adform.ADFBannerParams)Adform.ADFBannerParams=[];
+Adform.ADFBannerParams.push(Adform.ADFBannerData);
+typeof Adform.ADFUtilInstance=="undefined"?document.write('<scr'+'ipt type="text/javascript" src="https://s2.adformdsp.net/stoat/580/s2.adformdsp.net/bootstrap.js"></scr'+'ipt>'):new Adform.ADFBanner();

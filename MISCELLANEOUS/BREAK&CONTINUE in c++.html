@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://www.programiz.com/cpp-programming/break-continue -->
+<html class="no-js js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--[if IE]><![endif]-->
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<![endif]-->
+<link rel="shortcut icon" href="http://www.programiz.com/sites/tutorial2program/files/programiz-favicon_2.png" type="image/png">
+<meta name="description" content="There are two statements (break; and continue;) built in C++ programming to alter the normal flow of program.Loops are used to perform repetitive task until test expression is false but sometimes it is desirable to skip some statement/s inside loop or terminate the loop immediately with checking test condition. On these type of scenarios, continue; statement and break; statement is used respectively. The break; statement is also used to terminate switch statement.">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="http://www.programiz.com/cpp-programming/break-continue">
+<link rel="shortlink" href="http://www.programiz.com/node/245">
+<script async="" src="./BREAK&amp;CONTINUE in c++_files/async-ads.js"></script><script src="./BREAK&amp;CONTINUE in c++_files/osd.js"></script><script src="./BREAK&amp;CONTINUE in c++_files/ca-pub-9007421361448641.js"></script><script type="text/javascript" async="" src="./BREAK&amp;CONTINUE in c++_files/cse.js"></script><script async="" src="./BREAK&amp;CONTINUE in c++_files/analytics.js"></script><script async="" type="text/javascript" src="./BREAK&amp;CONTINUE in c++_files/gpt.js"></script><script type="text/javascript">
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+</script>
+
+<script type="text/javascript">
+  googletag.cmd.push(function() {
+
+   var mediaBottom = googletag.sizeMapping().
+		addSize([320, 0], [300, 250]).
+		addSize([360, 0], [336, 280]).
+		addSize([1180, 0], [728, 90]).
+		build();
+    googletag.defineSlot('/68410703/programiz_bottom_media', [[336, 280], [300, 250], [728, 90]], 'div-gpt-ad-1467779060829-0').defineSizeMapping(mediaBottom).addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<script async="" src="./BREAK&amp;CONTINUE in c++_files/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9007421361448641",
+    enable_page_level_ads: true
+  });
+</script>
+<meta name="google-site-verification" content="17JZPeRuYVi-HGRJIG06Wx4uVrQSGPSGk7RLbZ7LaTA">
+  <title>C++ break and continue Statement</title>
+
+  <link href="./BREAK&amp;CONTINUE in c++_files/icon" rel="stylesheet">
+  <link href="./BREAK&amp;CONTINUE in c++_files/css" rel="stylesheet" type="text/css">
+  <link type="text/css" rel="stylesheet" href="./BREAK&amp;CONTINUE in c++_files/css__BJ6Ou6QsBRtnFTmxaakamOIS8n4QswDP2XnnZ1sxtaM__NBuvkP6eInGIkb1aJvUHx5PX79XApuxBDkk_77W5tYk__DwhoqSFJ0nzgbTyMfBgFr-xWfUkMqXYLnTXT8LH3cX8.css" media="all">
+<link type="text/css" rel="stylesheet" href="./BREAK&amp;CONTINUE in c++_files/css__rQ1alF2wtRJheC4MwbTGQHhDW1u3JWtM73MeXej8ZCI__fhvJVXXQ_0VSZPsugyxWP4moufN-95EZrJc4g5Xp1vE__DwhoqSFJ0nzgbTyMfBgFr-xWfUkMqXYLnTXT8LH3cX8.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./BREAK&amp;CONTINUE in c++_files/css__Y_Abals2Ox8i_4wYFc6W5IyVrijfmLt8txrLUIbADpw__CscDtWVPNwtiSqNynENyaUJskPSiOBFwHEJrAPFG4qA__DwhoqSFJ0nzgbTyMfBgFr-xWfUkMqXYLnTXT8LH3cX8.css" media="all">
+<link type="text/css" rel="stylesheet" href="./BREAK&amp;CONTINUE in c++_files/css__rM9mGCzMTewMpAw8WSW1Hbp4C7Y12KxjWgkBtzegLDY__6ZLQdzeaEEnt0yEgNw-KHstIBiBy9GW0tHxm08g-t5s__DwhoqSFJ0nzgbTyMfBgFr-xWfUkMqXYLnTXT8LH3cX8.css" media="all">
+  <script type="text/javascript" src="./BREAK&amp;CONTINUE in c++_files/jquery.min.js"></script><script src="./BREAK&amp;CONTINUE in c++_files/pubads_impl_92.js" async=""></script><link rel="prefetch" href="http://tpc.googlesyndication.com/safeframe/1-0-4/html/container.html">
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="./BREAK&amp;CONTINUE in c++_files/js__srfTwyRnYo2N1LE0Gq6ilG90GFq4u_yoJrqVbbrBr3U__L6WW0Hf3U9BAi-s7gm8sUDyawuLwLz4zlNWgTQs-J7M__DwhoqSFJ0nzgbTyMfBgFr-xWfUkMqXYLnTXT8LH3cX8.js"></script>
+<script type="text/javascript" src="./BREAK&amp;CONTINUE in c++_files/js__dTRSuW27RiJte-z_L4Px_rno5dZsdWKiU3HtuBiTSmc__RPUH1Pa_09kAZ8D2-aMQ-HwAGT4k3LEND1qRE2SEZHM__DwhoqSFJ0nzgbTyMfBgFr-xWfUkMqXYLnTXT8LH3cX8.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-36675496-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="./BREAK&amp;CONTINUE in c++_files/js__LB1c3bFcsjynTeWg39c5WXJ2C3R7kD6FodKDEuFhZv4__myBe-t_2DklMffCWriLQe3huRGhRY-hqvNLs7hlkbVY__DwhoqSFJ0nzgbTyMfBgFr-xWfUkMqXYLnTXT8LH3cX8.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"ultimate","theme_token":"vMwLOzXop4rhRASvJvO0WbGeGmmNYehy8qO986sCwc4","css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/codefilter\/codefilter.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/themes\/Ultimate\/css\/normalize.css":1,"sites\/all\/themes\/Ultimate\/css\/main.css":1,"sites\/all\/themes\/Ultimate\/sidr-package-1.2.1\/stylesheets\/jquery.sidr.dark.css":1,"sites\/all\/modules\/prettify\/styles\/stackoverflow.css":1},"js":{"sites\/all\/libraries\/prettify\/prettify.js":1,"sites\/all\/modules\/prettify\/prettify.loader.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/codefilter\/codefilter.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"sites\/all\/themes\/Ultimate\/sidr-package-1.2.1\/jquery.sidr.min.js":1,"sites\/all\/themes\/Ultimate\/js\/plugins.js":1,"sites\/all\/themes\/Ultimate\/js\/main.js":1}},"prettify":{"linenums":false,"match":"","nocode":"nocode","custom":[],"markup":{"precode":true,"code":false,"pre":false}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"}});
+//--><!]]>
+</script>
+<script type="text/javascript" async="" src="./BREAK&amp;CONTINUE in c++_files/bsa.js"></script><script type="text/javascript" src="./BREAK&amp;CONTINUE in c++_files/jquery.inputmask.bundle.min.js"></script><script src="./BREAK&amp;CONTINUE in c++_files/jsapi" type="text/javascript"></script><link type="text/css" href="./BREAK&amp;CONTINUE in c++_files/default+en.css" rel="stylesheet"><link type="text/css" href="./BREAK&amp;CONTINUE in c++_files/default.css" rel="stylesheet"><script type="text/javascript" src="./BREAK&amp;CONTINUE in c++_files/default+en.I.js"></script><style type="text/css">
+.gsc-control-cse {
+font-family: Verdana, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-control-cse .gsc-table-result {
+font-family: Verdana, sans-serif;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+border-color: #D9D9D9;
+}
+input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+border-color: #EFEFEF;
+background-color: #2C394B;
+background-image: none;
+filter: none;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #E9E9E9;
+background-color: #E9E9E9;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-color: #FF9900;
+border-bottom-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+border-color: #FF9900;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #0000CC;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #0000CC;
+}
+.gsc-cursor-page {
+color: #0000CC;
+}
+a.gsc-trailing-more-results:link {
+color: #0000CC;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #000000;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #008000;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #008000;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #FFFFFF;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #E9E9E9;
+background-color: #FFFFFF;
+color: #0000CC;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #FF9900;
+background-color: #FFFFFF;
+color: #0000CC;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+border-color: #336699;
+background-color: #FFFFFF;
+}
+.gsc-completion-title {
+color: #0000CC;
+}
+.gsc-completion-snippet {
+color: #000000;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #0000CC;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #0000CC;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right * {
+color: #000000;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #008000;
+}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 9px}.gsib_a{padding-right:8px;padding-left:8px}.gsst_a{padding-top:3px}.gssb_e{border:0}.gssb_l{margin:5px 0}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><script type="text/javascript" id="_bsap_js_f45e8a7dfcbc87e2805451dac2be09c1" src="./BREAK&amp;CONTINUE in c++_files/s_f45e8a7dfcbc87e2805451dac2be09c1.js" async="async"></script><script type="text/javascript" src="./BREAK&amp;CONTINUE in c++_files/pro.js" id="_bsap_premium_pro"></script><script type="text/javascript" id="_bsaPRO_js" src="./BREAK&amp;CONTINUE in c++_files/saved_resource" async="async"></script><script id="_fbn_projs" type="text/javascript" src="./BREAK&amp;CONTINUE in c++_files/C6ADVKE.json"></script></head>
+<body style="">
+    <!-- BuySellAds Ad Code -->
+<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>
+<!-- End BuySellAds Ad Code -->
+
+<div id="programiz-header" class="nav-down clearfix">  <!-- programiz-header Start (contains logo and main-nav)-->
+
+    <header class="header-wrapper">
+
+                    <div class="logo">
+                <a href="http://www.programiz.com/" title="Programiz Home">Programiz Logo</a>
+            </div>
+        
+            <div class="main-nav-wrapper clearfix">
+
+            <div>
+                
+                    <nav class="main-nav">
+
+                        <ul>
+                            <li><a href="http://www.programiz.com/" class="material-icons home-icon">home</a></li>
+                            <li class="current-nav-li"><a class="c-programming" href="http://www.programiz.com/c-programming">C Tutorial</a></li>
+                            <li><a class="cpp-programming" href="http://www.programiz.com/cpp-programming">C++</a></li>
+                            <li><a class="python-programming" href="http://www.programiz.com/python-programming">Python</a></li>
+                            <li><a class="r-programming" href="http://www.programiz.com/r-programming">R</a></li>
+                        </ul>
+
+<!--                        -->
+                    </nav>
+
+                
+                <a href="http://www.programiz.com/cpp-programming/break-continue" class="material-icons search-icon">search</a>
+            </div>
+
+                
+            </div>
+
+
+    </header>
+</div>
+
+<!-- programiz-header End -->
+<div id="search-area" class="clearfix">
+    <span class="material-icons">close</span>
+
+    <script>
+  (function() {
+    var cx = '013351199471627194829:-zsempw5vtc';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="___gcse_0"><div class="gsc-control-cse gsc-control-cse-en"><div class="gsc-control-wrapper-cse" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 " style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" dir="ltr" spellcheck="false" style="width: 100%; padding: 0px; border: none; margin: 0px; height: auto; outline: none; background: url(&quot;http://www.google.com/cse/static/en/google_custom_search_watermark.gif&quot;) left center no-repeat rgb(255, 255, 255);"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;"><span class="gscb_a" id="gs_cb50">×</span></a></div></td></tr></tbody></table></div><input type="hidden" name="bgresponse" id="bgresponse"></td><td class="gsc-search-button"><input type="image" src="./BREAK&amp;CONTINUE in c++_files/search_box_icon.png" class="gsc-search-button gsc-search-button-v2" title="search"></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table><table cellspacing="0" cellpadding="0" class="gsc-branding"><tbody><tr><td class="gsc-branding-user-defined"></td><td class="gsc-branding-text"><div class="gsc-branding-text">powered by</div></td><td class="gsc-branding-img"><img src="./BREAK&amp;CONTINUE in c++_files/small-logo.png" class="gsc-branding-img"></td></tr></tbody></table></form><div class="gsc-results-wrapper-overlay"><div class="gsc-results-close-btn" tabindex="0"></div><div class="gsc-tabsAreaInvisible"><div class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Custom Search</div><span class="gs-spacer"> </span></div><div class="gsc-tabsAreaInvisible"></div><div class="gsc-above-wrapper-area-invisible"><table cellspacing="0" cellpadding="0" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td><td class="gsc-orderby-container"><div class="gsc-orderby-invisible"><div class="gsc-orderby-label gsc-inline-block">Sort by:</div><div class="gsc-option-menu-container gsc-inline-block"><div class="gsc-selected-option-container gsc-inline-block"><div class="gsc-selected-option">Relevance</div><div class="gsc-option-selector"></div></div><div class="gsc-option-menu-invisible"><div class="gsc-option-menu-item gsc-option-menu-item-highlighted"><div class="gsc-option">Relevance</div></div><div class="gsc-option-menu-item"><div class="gsc-option">Date</div></div></div></div></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><table cellspacing="0" cellpadding="0" class="gsc-resultsHeader"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">Web</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-all-results-active"><div class="gsc-result-selector gsc-one-result" title="show one result">&nbsp;</div><div class="gsc-result-selector gsc-more-results" title="show more results">&nbsp;</div><div class="gsc-result-selector gsc-all-results" title="show all results">&nbsp;</div></div></td><td class="gsc-configLabelCell"></td></tr></tbody></table><div><div class="gsc-expansionArea"></div></div></div></div></div></div><div class="gsc-modal-background-image" tabindex="0"></div></div></div></div>
+</div>
+
+
+<div id="main-wrapper" class="clearfix">   <!-- main-wrapper (programiz-left-sidebar, programiz-main-content, programiz-right-sidebar) Start -->
+
+
+            <aside id="programiz-left-sidebar"> <!-- programiz-left-sidebar Start -->
+              <div class="region region-sidebar-left">
+    <div id="block-block-53" class="block block-block">
+
+    
+  <div class="content">
+    <div style="width: 300px; margin: 0 auto;">
+<script type="text/javascript">
+var width = window.innerWidth 
+        || document.documentElement.clientWidth 
+        || document.body.clientWidth;
+
+if ( width >= 917 ) {
+document.write('<div id="bsap_1305034" class="bsarocks bsap_f45e8a7dfcbc87e2805451dac2be09c1"></div>')
+}
+</script><div id="bsap_1305034" class="bsap bsap_1305034" data-serve="CVADT27E">
+<style type="text/css">
+div.bsap_1305034{width:100%;display:block;}div.bsap_1305034 a{width:300px;}div.bsap_1305034 a img{padding:0;}div.bsap_1305034 a em{font-style:normal;}div.bsap_1305034 a{display:block;font-size:13px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;height: 200px; float:left;}
+div.bsap_1305034 img{border:0;clear:right;}
+div.bsap_1305034 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;padding-top:94px;}
+div.bsap_1305034 a.adhere:hover{border:1px solid #999;background:#ccc;color:#333;}
+div.bsap_1305034 iframe{display:block;font-size:13px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;height: 200px; float:left;}div.bsap_1305034 a{line-height:100%;}div.bsap_1305034 a.adhere{width:300px;height:250px;line-height:2000%;}html>body div.bsap_1305034 a.adhere{width:298px;height:248px;}div.bsap_1305034 img.s{height:0;width:0;}div.bsap_1305034{line-height:9px;}div.bsap_1305034 .bsap_adhere a{height:19px !important;width:298px !important;font-size:10px;background:#f1f1f1;border:1px solid #e1e1e1;border-top:none;border-radius: 0 0 2px 2px;line-height:16px;}.bsap_backfillframe{border:0;}
+</style>
+<!-- no ad -->
+<script type="text/javascript" id="auto_1" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+</div>  </div>
+</div>
+<div id="block-block-3" class="block block-block">
+
+    
+  <div class="content">
+    <nav class="header-list-menu">
+	<h2>C++ Programming</h2>
+	<ul class="topmenu">
+		<li>
+			<h3>C++ Flow Control<span class="indicator_show"></span></h3>
+			<ul class="submenu visuallynothidden">
+				<li><a href="http://www.programiz.com/cpp-programming/if-else">C++ if...else</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/for-loop">C++ for Loop</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/do-while-loop">C++ do...while Loop</a></li>
+				<li class="currentPage"><a href="http://www.programiz.com/cpp-programming/break-continue">C++ break &amp; continue</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/switch-case">C++ switch Statement</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/goto">C++ goto Statement</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Functions<span class="indicator_hide"></span></h3>
+			<ul class="submenu visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/function">C++ Functions</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/user-defined-function-types">C++ Function Types</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/function-overloading" style="line-height: 1.538em;">C++ Function Overloading</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/default-argument">C++ Default Argument</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/storage-class">C++ Storage Class</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/recursion">C++ Recursion</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/return-reference">C++ Return Reference</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Arrays &amp; String<span class="indicator_hide"></span></h3>
+			<ul class="submenu visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/arrays">C++ Arrays</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/multidimensional-arrays">Multidimensional Arrays</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/passing-arrays-function" title="Passing Array to Function in C++">C++ Function and Array</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/strings" title="C++ Strings">C++ String</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Structures<span class="indicator_hide"></span></h3>
+			<ul class="submenu visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/structure">C++ Structure</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/structure-function">Structure and Function</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/structure-pointer" title="Pointers to Structure in C++">C++ Pointers to Structure</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/enumeration" title="C++ Enumeration">C++ Enumeration</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Object &amp; Class<span class="indicator_hide"></span></h3>
+			<ul class="submenu visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/object-class" title="C++ Objects and Class">C++ Objects and Class</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/constructors" title="C++ Constructors">C++ Constructors</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/pass-return-object-function">C++ Objects &amp; Function</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/operator-overloading" title="C++ Programming Operator Overloading">C++ Operator Overloading</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Pointers<span class="indicator_hide"></span></h3>
+			<ul class="submenu visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/pointers" title="C++ Pointer">C++ Pointer</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/pointers-arrays" title="Relation between Pointers and Arrays in C++">C++ Pointers and Arrays</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/pointers-function" title="C++ Pointers and Function">C++ Pointers and Functions</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/memory-management" title="Dynamic Memory Management in C++">C++ Memory Management</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Inheritance<span class="indicator_hide"></span></h3>
+			<ul class="submenu visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/inheritance" title="C++ Programming Inheritance">C++ Inheritance</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/public-protected-private-inheritance" title="C++ Access Control in Inheritance">Inheritance Access Control</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/function-overriding" title="Function Overriding in C++ Programming">C++ Function Overriding</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/multilevel-multiple-inheritance" title="Multiple &amp; Multilevel Inheritance">Multiple &amp; Multilevel Inheritance</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/friend-function-class" title="Friend Function and Friend Class in C++">C++ Friend Function</a></li>
+			</ul>
+		</li>
+		<li>
+			<ul class="submenu visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/virtual-functions" title="C++ Virtual Function">C++ Virtual Function</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/templates" title="C++ Templates">C++ Templates</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+  </div>
+</div>
+<div id="block-block-45" class="block block-block">
+
+    
+  <div class="content">
+    <style>
+.Programiz_Responsive_Left1 { display:none; margin: auto }
+@media(min-width: 900px) { .Programiz_Responsive_Left1 { display: block; width: 250px; height: 250px; } }
+@media (min-width: 1100px) { .Programiz_Responsive_Left1 { width: 300px; height: 250px; } }
+@media (min-width: 1200px) { .Programiz_Responsive_Left1 { padding: 12px 18px; background: white; } }
+</style>
+<ins class="adsbygoogle Programiz_Responsive_Left1" data-ad-client="ca-pub-9007421361448641" data-ad-slot="2944551229" data-adsbygoogle-status="done" style="width: 300px; height: 250px;"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./BREAK&amp;CONTINUE in c++_files/saved_resource.html"></iframe></ins></ins></ins>
+<script async="" src="./BREAK&amp;CONTINUE in c++_files/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+</div>
+<div id="block-block-31" class="block block-block">
+
+    
+  <div class="content">
+    <div class="ml-subscribe-form ml-subscribe-form-1819437" id="mlb2-1819437">
+	<h2>C++ Newsletter</h2>
+	<div class="ml-vertical-align-center">
+		<div class="subscribe-form ml-block-success" style="display:none">
+			<div class="form-section">
+				<p>You have successfully subscribed to C++ programming newsletter.</p>
+			</div>
+		</div>
+		<form action="http://app.mailerlite.com/webforms/submit/j6c0c1" class="ml-block-form" data-code="j6c0c1" method="POST" target="_blank">
+			<div class="subscribe-form">
+				<div class="form-section">
+					<p>Receive the latest C++ news and tutorials straight to your inbox.</p>
+				</div>
+				<div class="form-section">
+					<div class="form-group ml-field-email ml-validate-required ml-validate-email"><input class="form-control" name="fields[email]" placeholder="Enter Email Address*" type="email" value=""></div>
+				</div>
+				<input name="ml-submit" type="hidden" value="1"><button class="primary" type="submit">SUBMIT</button><button class="loading" disabled="disabled" style="display: none;" type="button"><img height="20" src="./BREAK&amp;CONTINUE in c++_files/rolling.gif" style="width: 20px; height: 20px;" width="20"></button></div>
+		</form>
+		<script>
+            function ml_webform_success_1819437() {
+                jQuery('.ml-subscribe-form-1819437 .ml-block-success').show();
+                jQuery('.ml-subscribe-form-1819437 .ml-block-form').hide();
+            };
+        </script></div>
+</div>
+<script type="text/javascript" src="./BREAK&amp;CONTINUE in c++_files/webforms.js"></script>  </div>
+</div>
+<div id="block-views-dfeb77de4a1767720005ea3510518deb" class="block block-views">
+
+    <h2>Related Examples</h2>
+  
+  <div class="content">
+    <div class="view view-cpp-programming-related-examples view-id-cpp_programming_related_examples view-display-id-block view-dom-id-34f1ae8d2efbc7a592d6f1626d1edd50">
+        
+  
+  
+      <div class="view-content">
+      <table class="views-table cols-0">
+       <tbody>
+          <tr>
+                  <td class="views-field views-field-title">
+            <a href="http://www.programiz.com/cpp-programming/examples/prime-number">C++ Program to Check Whether a Number is Prime or Not</a>          </td>
+              </tr>
+          <tr>
+                  <td class="views-field views-field-title">
+            <a href="http://www.programiz.com/cpp-programming/examples/prime-number-intervals">C++ Program to Display Prime Numbers Between Two Intervals</a>          </td>
+              </tr>
+          <tr>
+                  <td class="views-field views-field-title">
+            <a href="http://www.programiz.com/cpp-programming/examples/pyramid-pattern">C++ Programming Code To Create Pyramid and Pattern</a>          </td>
+              </tr>
+          <tr>
+                  <td class="views-field views-field-title">
+            <a href="http://www.programiz.com/cpp-programming/examples/calculator-switch-case">C++ Program to Make a Simple Calculator to Add, Subtract, Multiply or Divide Using switch...case</a>          </td>
+              </tr>
+          <tr>
+                  <td class="views-field views-field-title">
+            <a href="http://www.programiz.com/cpp-programming/examples/prime-interval-function">C++ Program to Display Prime Numbers Between Intervals Using User-defined Function</a>          </td>
+              </tr>
+      </tbody>
+</table>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+<div id="block-block-46" class="block block-block">
+
+    
+  <div class="content">
+    <style type="text/css">
+.Programiz_Responsive_Left2 { display: none; }
+@media(min-width: 900px) { .Programiz_Responsive_Left2 { width: 300px; height: 600px; margin: auto; display: block; }} 
+@media(min-width: 1200px) { .Programiz_Responsive_Left2 { background: white; padding: 20px 18px;} }
+</style>
+<!-- Programiz_Responsive_Left2 -->
+<ins class="adsbygoogle Programiz_Responsive_Left2" data-ad-client="ca-pub-9007421361448641" data-ad-slot="4421284423" data-adsbygoogle-status="done" style="width: 300px; height: 600px;"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./BREAK&amp;CONTINUE in c++_files/saved_resource(1).html"></iframe></ins></ins></ins>
+<script async="" src="./BREAK&amp;CONTINUE in c++_files/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+</div>
+  </div>
+        </aside>  <!-- programiz-left-sidebar End -->
+    
+    <div id="programiz-main-content"> <!-- programiz-main-content(content-top, main-content, content-bottom) Start -->
+
+        
+        
+        <section class="main-content">  <!-- main-content Start   -->
+
+                                        <h1>C++ break and continue Statement</h1>
+             
+            
+        
+            
+                <div class="inside-content">
+                      <div class="region region-content-inside">
+    <div id="block-block-43" class="block block-block">
+
+    
+  <div class="content">
+    <style>
+.Programiz_Responsive_Top { width: 320px; height: 100px;  display: block; margin: 0 auto 30px;} 
+@media(min-width: 748px) { .Programiz_Responsive_Top { width: 728px; height: 90px;} }
+@media(min-width: 900px) { .Programiz_Responsive_Top { width: 320px; height: 100px;} }
+@media(min-width: 1170px) { .Programiz_Responsive_Top { width: 728px; height: 90px;} }
+</style>
+
+<script async="" src="./BREAK&amp;CONTINUE in c++_files/adsbygoogle.js"></script>
+<!-- Programiz_Responsive_Top -->
+<ins class="adsbygoogle Programiz_Responsive_Top" data-ad-client="ca-pub-9007421361448641" data-ad-slot="1467818021" data-adsbygoogle-status="done" style="width: 728px; height: 90px;"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" src="./BREAK&amp;CONTINUE in c++_files/saved_resource(2).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+</div>
+  </div>
+                </div>
+            
+              
+                      
+               
+            
+
+              <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-245" class="node node-cpp-tutorial node-promoted clearfix" about="/cpp-programming/break-continue" typeof="sioc:Item foaf:Document">
+
+  
+      <span property="dc:title" content="C++ break and continue Statement" class="rdf-meta element-hidden"></span>
+  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>There are two statements (<code>break;</code> and <code>continue;</code>) built in C++ programming to alter the normal flow of program.</p><p>Loops are used to perform repetitive task until test expression is false but sometimes it is desirable to skip some statement/s inside loop or terminate the loop immediately with checking test condition. On these type of scenarios, <code>continue;</code> statement and <code>break;</code> statement is used respectively. The <code>break;</code> statement is also used to terminate switch statement.</p><h2>C++ break Statement</h2><p>The break; statement terminates the loop(for, while and do..while loop) and switch statement immediately when it appears.</p><h3>Syntax of break</h3>
+<pre>break;</pre>
+<p>In real practice, break statement is almost always used inside the body of conditional statement(if...else) inside the loop.</p><h3>Working of break Statement</h3><p><img alt="Working of break statement in C++ programming" src="./BREAK&amp;CONTINUE in c++_files/working-break.jpg" title="Working of break Statement" height="415" width="600"></p><h3>Example 1: C++ break</h3><p><b>C++ program to add all number entered by user until user enters 0.</b></p>
+<pre class="prettyprint prettyprinted"><code><span class="com">// C++ Program to demonstrate working of break statement</span><span class="pln">
+
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;iostream&gt;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">float</span><span class="pln"> number</span><span class="pun">,</span><span class="pln"> sum </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">true</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">     </span><span class="com">// test expression is always true</span><span class="pln">
+        cout</span><span class="pun">&lt;&lt;</span><span class="str">"Enter a number: "</span><span class="pun">;</span><span class="pln">
+        cin</span><span class="pun">&gt;&gt;</span><span class="pln">number</span><span class="pun">;</span><span class="pln">
+        
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">number </span><span class="pun">!=</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            sum </span><span class="pun">+=</span><span class="pln"> number</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">    </span><span class="com">// terminating the loop if number equals to 0.0</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="pun">}</span><span class="pln">
+    cout</span><span class="pun">&lt;&lt;</span><span class="str">"Sum = "</span><span class="pun">&lt;&lt;</span><span class="pln">sum</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span></code></pre>
+<p><b>Output</b></p>
+<pre><samp>
+Enter a number: 4
+Enter a number: 3.4
+Enter a number: 6.7
+Enter a number: -4.5
+Enter a number: 0
+Sum = 9.6
+</samp></pre>
+<p></p><div id="block-inject-1" class="block-inject block-inject-1"><div id="block-block-48" class="block block-block">
+
+    
+  <div class="content">
+    <style>
+.Programiz_Responsive_Middle_Content { display:inline-block; width: 300px; height: 250px;  margin: 0 auto;}
+@media (min-width: 356px) { .Programiz_Responsive_Middle_Content { width: 336px; height: 280px } }
+@media(min-width: 748px) { .Programiz_Responsive_Middle_Content { width: 728px; height: 90px; } }
+@media (min-width: 886px) { .Programiz_Responsive_Middle_Content { display: none; } }
+</style>
+
+<ins class="adsbygoogle Programiz_Responsive_Middle_Content" data-ad-client="ca-pub-9007421361448641" data-ad-slot="8314930428" <="" ins="" data-adsbygoogle-status="done" style="width: 728px; height: 90px;">
+<script async="" src="./BREAK&amp;CONTINUE in c++_files/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><!--No ad requested because of display:none on the adsbygoogle tag-->
+  </ins></div>
+</div>
+</div><div class="clearfix"></div><p>In this C++ program, the test expression is always true. The user is asked to enter a number which is stored in variable <var>number</var>. If the user enters any number other than 0, that number is added to <var>sum</var> and stored to it and again user is asked to enter another number. When user enters 0, the test expression inside <code>if</code> statement is false and body of <code>else</code> is executed which terminates the loop. Finally, the sum is displayed.</p><h2>C++ continue Statement</h2><p>It is sometimes necessary to skip some statement/s inside the loop. In that case, <code>continue;</code> statement is used in C++ programming.</p><h3>Syntax of continue</h3>
+<pre>continue;</pre>
+<p>In practice,&nbsp;<code>continue;</code> statement is almost always used inside conditional statement.</p><h3>Working of continue Statement</h3><p><img alt="Working of continue statement in C++ programming" src="./BREAK&amp;CONTINUE in c++_files/working-continue.jpg" title="Working of continue Statement" height="411" width="600"></p><h3>Example 2: C++ continue</h3><p><b>C++ program to display integer from 1 to 10 except 6 and 9.</b></p>
+<pre class="prettyprint prettyprinted"><code><span class="com">// C++ Program to demonstrate working of continue statement</span><span class="pln">
+
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;iostream&gt;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="lit">10</span><span class="pun">;</span><span class="pln"> </span><span class="pun">++</span><span class="pln">i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> i </span><span class="pun">==</span><span class="pln"> </span><span class="lit">6</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> i </span><span class="pun">==</span><span class="pln"> </span><span class="lit">9</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">continue</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        cout</span><span class="pun">&lt;&lt;</span><span class="pln">i</span><span class="pun">&lt;&lt;</span><span class="str">"\t"</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<p><b>Output</b></p>
+<pre><samp>1	2	3	4	5      7	8	10	
+</samp></pre>
+<p>In above program, when <var>i</var> is 6 or 9, execution of statement <code>cout&lt;&lt;i&lt;&lt;"\t";</code> is skipped inside the loop using <code>continue;</code> statement.</p></div></div></div>  </div>
+
+  
+  
+</div>
+  </div>
+</div>
+  </div>
+
+              
+            <div class="content-bottom"> <!-- content-bottom Start -->
+                  <div class="region region-content-bottom">
+    <div id="block-block-64" class="block block-block">
+
+    
+  <div class="content">
+    <div style="margin: 0 auto; width: 300px;">
+<script type="text/javascript">
+var width = window.innerWidth 
+        || document.documentElement.clientWidth 
+        || document.body.clientWidth;
+
+if ( width < 917 ) {
+document.write('<div id="bsap_1305034" class="bsarocks bsap_f45e8a7dfcbc87e2805451dac2be09c1"></div>')
+}
+</script>
+</div>  </div>
+</div>
+  </div>
+            </div> <!-- content-bottom End  -->
+
+        
+        </section> <!-- main-content End -->
+
+
+    </div> <!-- programiz-main-content End -->
+
+</div> <!-- main-wrapper End -->
+
+
+<footer id="footer">
+    <div class="footer-misc clearfix">
+            </div>
+</footer>
+
+<div class="copyright">
+    Copyright © by Programiz | All rights reserved | <a href="http://www.programiz.com/privacy-policy">Privacy Policy</a>
+</div>
+<script async="" type="text/javascript" src="./BREAK&amp;CONTINUE in c++_files/fancybar.js" id="_fancybar_js"></script>
+
+
+  <script type="text/javascript" src="./BREAK&amp;CONTINUE in c++_files/js__sd4vsxffhg0cL1km_YHOlFfpfckWnd6PRAu5v0MAC-U__dusYUiWWOX2tRJblHTKMmN63euNzUSvQObGEdN8cFRw__DwhoqSFJ0nzgbTyMfBgFr-xWfUkMqXYLnTXT8LH3cX8.js"></script>
+
+
+<ins class="adsbygoogle" data-adsbygoogle-status="done" style="display: none; width: auto; height: auto;"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><iframe width="0" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" src="./BREAK&amp;CONTINUE in c++_files/saved_resource(3).html"></iframe></ins></ins></ins><div id="sidr-left" class="sidr left"><div class="sidr-inner">
+	<h2>C++ Programming</h2>
+	<ul class="sidr-class-topmenu">
+		<li>
+			<h3>C++ Flow Control<span class="sidr-class-indicator_show"></span></h3>
+			<ul class="sidr-class-submenu sidr-class-visuallynothidden">
+				<li><a href="http://www.programiz.com/cpp-programming/if-else">C++ if...else</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/for-loop">C++ for Loop</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/do-while-loop">C++ do...while Loop</a></li>
+				<li class="sidr-class-currentPage"><a href="http://www.programiz.com/cpp-programming/break-continue">C++ break &amp; continue</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/switch-case">C++ switch Statement</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/goto">C++ goto Statement</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Functions<span class="sidr-class-indicator_hide"></span></h3>
+			<ul class="sidr-class-submenu sidr-class-visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/function">C++ Functions</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/user-defined-function-types">C++ Function Types</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/function-overloading">C++ Function Overloading</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/default-argument">C++ Default Argument</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/storage-class">C++ Storage Class</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/recursion">C++ Recursion</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/return-reference">C++ Return Reference</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Arrays &amp; String<span class="sidr-class-indicator_hide"></span></h3>
+			<ul class="sidr-class-submenu sidr-class-visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/arrays">C++ Arrays</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/multidimensional-arrays">Multidimensional Arrays</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/passing-arrays-function" title="Passing Array to Function in C++">C++ Function and Array</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/strings" title="C++ Strings">C++ String</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Structures<span class="sidr-class-indicator_hide"></span></h3>
+			<ul class="sidr-class-submenu sidr-class-visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/structure">C++ Structure</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/structure-function">Structure and Function</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/structure-pointer" title="Pointers to Structure in C++">C++ Pointers to Structure</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/enumeration" title="C++ Enumeration">C++ Enumeration</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Object &amp; Class<span class="sidr-class-indicator_hide"></span></h3>
+			<ul class="sidr-class-submenu sidr-class-visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/object-class" title="C++ Objects and Class">C++ Objects and Class</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/constructors" title="C++ Constructors">C++ Constructors</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/pass-return-object-function">C++ Objects &amp; Function</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/operator-overloading" title="C++ Programming Operator Overloading">C++ Operator Overloading</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Pointers<span class="sidr-class-indicator_hide"></span></h3>
+			<ul class="sidr-class-submenu sidr-class-visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/pointers" title="C++ Pointer">C++ Pointer</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/pointers-arrays" title="Relation between Pointers and Arrays in C++">C++ Pointers and Arrays</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/pointers-function" title="C++ Pointers and Function">C++ Pointers and Functions</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/memory-management" title="Dynamic Memory Management in C++">C++ Memory Management</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>C++ Inheritance<span class="sidr-class-indicator_hide"></span></h3>
+			<ul class="sidr-class-submenu sidr-class-visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/inheritance" title="C++ Programming Inheritance">C++ Inheritance</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/public-protected-private-inheritance" title="C++ Access Control in Inheritance">Inheritance Access Control</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/function-overriding" title="Function Overriding in C++ Programming">C++ Function Overriding</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/multilevel-multiple-inheritance" title="Multiple &amp; Multilevel Inheritance">Multiple &amp; Multilevel Inheritance</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/friend-function-class" title="Friend Function and Friend Class in C++">C++ Friend Function</a></li>
+			</ul>
+		</li>
+		<li>
+			<ul class="sidr-class-submenu sidr-class-visuallyhidden">
+				<li><a href="http://www.programiz.com/cpp-programming/virtual-functions" title="C++ Virtual Function">C++ Virtual Function</a></li>
+				<li><a href="http://www.programiz.com/cpp-programming/templates" title="C++ Templates">C++ Templates</a></li>
+			</ul>
+		</li>
+	</ul>
+</div></div><table cellspacing="0" cellpadding="0" class="gstl_50 gssb_c" style="width: 2px; display: none; top: 3px; position: absolute; left: -1px;"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table><iframe id="google_osd_static_frame_6961805721757" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./BREAK&amp;CONTINUE in c++_files/saved_resource(4).html"></iframe></body></html>

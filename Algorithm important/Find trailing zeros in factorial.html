@@ -1,0 +1,948 @@
+
+<!-- saved from url=(0093)http://www.programmerinterview.com/index.php/java-questions/find-trailing-zeros-in-factorial/ -->
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" class="js" style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./Find trailing zeros in factorial_files/saved_resource"></script><script type="text/javascript" async="" src="./Find trailing zeros in factorial_files/GetWidget.aspx"></script><script type="text/javascript" async="" src="./Find trailing zeros in factorial_files/recaptcha__en.js"></script><script id="twitter-wjs" src="./Find trailing zeros in factorial_files/widgets.js"></script><script type="text/javascript" async="" src="http://ib.adnxs.com/jpt?callback=pbjs.handleAnCB&amp;callback_uid=10fc8abe3cabdf&amp;psa=0&amp;id=9504594&amp;size=300x250&amp;promo_sizes=320x250,320x320,120x600,160x600,300x600&amp;referrer=http%3A%2F%2Fwww.programmerinterview.com%2Findex.php%2Fjava-questions%2Ffind-trailing-zeros-in-factorial%2F"></script>
+<link rel="stylesheet" type="text/css" href="./Find trailing zeros in factorial_files/TY1BDsIwDAQ_hAmceE9wTGLJiSvbofB7IrUHrrMz2lvaTKvl3sl4BNmbaU8eX6HLPaGOyBjwUuvwSDxQZiFP6H44vqSoCDg9tMPBGlH80aUI1xZP_cAm86xbLrpTWReitqZr5_ED.css" media="all">
+<title>Find trailing zeros in factorial</title>
+
+
+
+<meta name="viewport" content="width=device-width">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://www.programmerinterview.com/xmlrpc.php">
+<script src="./Find trailing zeros in factorial_files/ca-pub-4184197171686251.js"></script><script type="text/javascript" async="" src="./Find trailing zeros in factorial_files/ga.js"></script><script type="text/javascript" async="" src="./Find trailing zeros in factorial_files/recaptcha__en.js"></script><script type="text/javascript">
+//<![CDATA[
+(function(){document.documentElement.className='js'})();
+//]]>
+</script>
+<link rel="alternate" type="application/rss+xml" title="Programmer and Software Interview Questions and Answers » Feed" href="http://www.programmerinterview.com/index.php/feed/">
+<link rel="alternate" type="application/rss+xml" title="Programmer and Software Interview Questions and Answers » Comments Feed" href="http://www.programmerinterview.com/index.php/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Programmer and Software Interview Questions and Answers » Find trailing zeros in factorial Comments Feed" href="http://www.programmerinterview.com/index.php/java-questions/find-trailing-zeros-in-factorial/feed/">
+<script type="text/javascript">
+/*<![CDATA[*/window._wpemojiSettings={"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.programmerinterview.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.10"}};!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);/*]]>*/
+</script><script src="./Find trailing zeros in factorial_files/wp-emoji-release.min.js" type="text/javascript"></script>
+<style type="text/css">
+/*<![CDATA[*/
+img.wp-smiley,img.emoji {
+display:inline!important;
+border:none!important;
+box-shadow:none!important;
+height:1em!important;
+width:1em!important;
+margin:0 .07em!important;
+vertical-align:-.1em!important;
+background:none!important;
+padding:0!important;
+}
+/*]]>*/
+</style>
+
+<script type="text/javascript" src="./Find trailing zeros in factorial_files/rYzbDYAgDAAXEqoTGcRGaijFyiNuLx-OYHLJfd0FYYTmVCQtM-S6RfJrKBwhqxzqmFEpFdRG2K0Xhp4NJR_rjjecg6uiPp-m8OvOMI2moGVKLw.js">
+</script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.programmerinterview.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.programmerinterview.com/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 4.2.10">
+<link rel="canonical" href="http://www.programmerinterview.com/index.php/java-questions/find-trailing-zeros-in-factorial/">
+<link rel="shortlink" href="http://www.programmerinterview.com/?p=3404">
+<script src="./Find trailing zeros in factorial_files/controller.php" async="" type="text/javascript">
+</script>
+<meta name="ca_title" content="Find trailing zeros in factorial">
+<script src="./Find trailing zeros in factorial_files/api.js" type="text/javascript">
+</script>
+<script src="./Find trailing zeros in factorial_files/ezoiclitedata.go" type="text/javascript">
+</script>
+<style type="text/css">
+/*<![CDATA[*/
+#sidebar ul {
+list-style:none;
+margin:0;
+padding:0;
+}
+/*]]>*/
+</style>
+
+<style type="text/css">
+/*<![CDATA[*/
+#indJobContent {
+padding-bottom:5px;
+}
+
+#indJobContent .company_location {
+font-size:11px;
+overflow:hidden;
+display:block;
+}
+
+#indJobContent.wide .job {
+display:block;
+float:left;
+margin-right:5px;
+width:135px;
+overflow:hidden;
+}
+
+#indeed_widget_wrapper {
+position:relative;
+font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+font-size:13px;
+font-weight:400;
+line-height:18px;
+padding:10px;
+height:auto;
+overflow:hidden;
+}
+
+#indeed_widget_header {
+font-size:18px;
+padding-bottom:5px;
+}
+
+#indeed_search_wrapper {
+clear:both;
+font-size:12px;
+margin-top:5px;
+padding-top:5px;
+}
+
+#indeed_search_wrapper label {
+font-size:12px;
+line-height:inherit;
+text-align:left;
+margin-right:5px;
+}
+
+#indeed_search_wrapper input[type=text] {
+width:100px;
+font-size:11px;
+}
+
+#indeed_search_wrapper #qc {
+float:left;
+}
+
+#indeed_search_wrapper #lc {
+float:right;
+}
+
+#indeed_search_wrapper.stacked #qc,#indeed_search_wrapper.stacked #lc {
+float:none;
+clear:both;
+}
+
+#indeed_search_wrapper.stacked input[type=text] {
+width:150px;
+}
+
+#indeed_search_wrapper.stacked label {
+display:block;
+padding-bottom:5px;
+}
+
+#indeed_search_footer {
+width:295px;
+padding-top:5px;
+clear:both;
+}
+
+#indeed_link {
+position:absolute;
+bottom:1px;
+right:5px;
+clear:both;
+font-size:11px;
+}
+
+#indeed_link a {
+text-decoration:none;
+}
+
+#results .job {
+padding:1px 0;
+}
+
+#pagination {
+clear:both;
+}
+/*]]>*/
+</style>
+
+<style type="text/css">
+/*<![CDATA[*/
+#indeed_widget_wrapper {
+width:240px;
+height:600px;
+background:#FFF;
+}
+
+#indeed_widget_wrapper {
+border:1px solid #DDD;
+}
+
+#indeed_widget_wrapper,#indeed_link a {
+color:#000;
+}
+
+#indJobContent,#indeed_search_wrapper {
+border-top:1px solid #DDD;
+}
+
+#indJobContent a {
+color:#00c;
+}
+
+#indeed_widget_header {
+color:#000;
+}
+/*]]>*/
+</style>
+<script type="text/javascript" cf-async="false">var _ezaq = {"ab_test_id":"mod1","ab_test_val":"","adgroup_rank_id":-1,"country":"IN","device_height":528,"device_width":1280,"domain_id":8806,"forensiq_score":-1,"form_factor_id":1,"ip":"182.77.113.217","landing_page_url":"http://www.programmerinterview.com/index.php/java-questions/find-trailing-zeros-in-factorial/","page_view_id":"167b7648-7bd7-42ae-6c37-53489467622e","pv_event_count":0,"referrer_id":0,"referring_domain":"google.co.in","region":"ap-southeast-1","serverid":"52.221.236.249:12115","t_epoch":1474178369,"template_id":0,"url":"http://www.programmerinterview.com/index.php/java-questions/find-trailing-zeros-in-factorial/","user_agent":"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36","user_id":1056964129,"visit_id":193696489,"visit_uuid":"6554a5d8-4aa8-42a6-4b41-99f1c7f39049"};var _ezExtraQueries = "&ez_orig=1";</script><script data-cfasync="false" type="text/javascript" src="./Find trailing zeros in factorial_files/imp2.js"></script>
+<script data-cfasync="false" type="text/javascript">window.google_analytics_uacct = "UA-71305124-27";</script>
+<script data-cfasync="false" type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['e._setAccount', 'UA-71305124-27']);
+_gaq.push(['f._setAccount', 'UA-38339005-1']);
+_gaq.push(['e._setDomainName', 'programmerinterview.com']);
+_gaq.push(['f._setDomainName', 'programmerinterview.com']);
+_gaq.push(['e._setCustomVar',1,'template','old_site_gc',3]);
+_gaq.push(['e._setCustomVar',2,'t','126',3]);
+_gaq.push(['e._setCustomVar',3,'rid','0',2]);
+_gaq.push(['e._setCustomVar',4,'bra','mod1',3]);
+_gaq.push(['e._setAllowAnchor',true]);
+_gaq.push(['e._setSiteSpeedSampleRate', 10]);
+_gaq.push(['f._setCustomVar',1,'template','old_site_gc',3]);
+_gaq.push(['f._setCustomVar',2,'domain','programmerinterview.com',3]);
+_gaq.push(['f._setSiteSpeedSampleRate', 20]);
+_gaq.push(['e._trackPageview']);
+_gaq.push(['f._trackPageview']);
+
+_gaq.push(['_setAccount', 'UA-7135242-1']);
+_gaq.push(['_setDomainName', 'programmerinterview.com']);
+_gaq.push(['_trackPageview']);
+
+
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+var ez_tos_track_count = 0;
+var ez_last_activity_count = 0;
+(function (__ez_tos) {
+  window.setInterval(function () {
+    __ez_tos = (function (t) {
+      return t[0] == 45 ? (parseInt(t[1]) + 1) + ':00' : (t[1] || '0') + ':' + (parseInt(t[0]) + 15);
+    })(__ez_tos.split(':').reverse());
+
+    ez_tos_track_count++;
+    if(ez_tos_track_count > 1 && ez_tos_track_count < (ez_last_activity_count + 4) && ez_tos_track_count < 240)
+    {
+        if(window.pageTracker)
+        {
+            pageTracker._trackEvent('Time', 'Log', __ez_tos);
+			
+        }
+        else
+        {
+           _gaq.push(['e._trackEvent', 'Time', 'Log', __ez_tos]);
+           _gaq.push(['f._trackEvent', 'Time', 'Log', __ez_tos]);
+		   
+        }
+		
+		if(typeof(_paq) != 'undefined')
+        {
+            _paq.push(['trackEvent', 'Time', __ez_tos, 'TimeOnPage']);
+        }
+
+    }
+  }, 15000);
+})('00');
+
+</script>
+<script type="text/javascript">var ezouid = "1056964129";</script><!--<base href="http://www.programmerinterview.com/index.php/java-questions/find-trailing-zeros-in-factorial/">--><base href="."><!--[if lt IE 9]>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+<!--[if (gte IE 9) | (!IE)]><!-->
+    <script src="./Find trailing zeros in factorial_files/jquery.min.js"></script>
+<!--<![endif]--><script type="text/javascript">
+var ezoTemplate = 'old_site_gc';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script>
+
+<script>
+var old_jquery = null;
+var old_jquery_sign = null;
+function open_jquery_wrapper()
+{
+    if(typeof $ezJQuery != 'undefined')
+    {
+        old_jquery = jQuery;
+        old_jquery_sign = $;
+        $ = $ezJQuery;
+        jQuery = $ezJQuery;
+    }
+}
+function close_jquery_wrapper()
+{
+    if(typeof $ezJQuery != 'undefined')
+    {
+        $ = old_jquery_sign;
+        jQuery = old_jquery;
+    }
+}
+</script>
+
+<!-- START EZHEAD -->
+<script type="text/javascript">
+var soc_app_id = '0';
+var did = 8806;
+var ezdomain = 'programmerinterview.com';
+var ezoicSearchable = 1;
+</script>
+<!---->
+<!-- END EZHEAD -->
+<script src="./Find trailing zeros in factorial_files/ezjquery-noconflict.js"></script><link type="text/css" rel="stylesheet" charset="UTF-8" href="./Find trailing zeros in factorial_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="./Find trailing zeros in factorial_files/main.js"></script><script async="" src="./Find trailing zeros in factorial_files/jwidget.js"></script><script type="text/javascript" charset="UTF-8" src="./Find trailing zeros in factorial_files/element_main.js"></script><script data-q1resource="captify" src="./Find trailing zeros in factorial_files/px.js" async="" type="text/javascript"></script><script data-q1resource="simplifi" src="./Find trailing zeros in factorial_files/dpx.js" async="" type="text/javascript" data-sifi-parsed="true"></script><script data-q1resource="jquery" src="./Find trailing zeros in factorial_files/jquery.min(1).js" async="" type="text/javascript"></script><script data-q1resource="videojs" src="./Find trailing zeros in factorial_files/video.js" async="" type="text/javascript"></script><link data-q1resource="videojsCss" href="./Find trailing zeros in factorial_files/video-js.css" rel="stylesheet" type="text/css"><script type="text/javascript" async="" src="./Find trailing zeros in factorial_files/embed.js"></script><script async="" type="text/javascript" src="./Find trailing zeros in factorial_files/count.js"></script><script type="text/javascript" charset="utf-8" async="" src="./Find trailing zeros in factorial_files/button.9c9dd7044dfaf420ee068697fbf32302.js"></script></head>
+<body class="page page-id-3404 page-child parent-pageid-77 page-template-default" style="position: relative; min-height: 100%; top: 0px;"><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_oxsync" style="display: none !important;" src="./Find trailing zeros in factorial_files/saved_resource.html"></iframe><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_cksync_0" style="display: none !important;" src="./Find trailing zeros in factorial_files/saved_resource(1).html"></iframe><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_beacons" style="display: none !important;" src="./Find trailing zeros in factorial_files/saved_resource(2).html"></iframe>
+<div id="header">
+<div class="wrapper">
+<div class="site-logo"><a href="http://www.programmerinterview.com/" title="Programmer and Software Interview Questions and Answers" rel="home"><img src="./Find trailing zeros in factorial_files/logo.gif" border="0"></a></div>
+<div id="searchbox">
+<table border="0" align="right" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td height="35" colspan="2" align="right" valign="top">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td width="80"><strong>Translate:</strong></td>
+<td>
+<div id="google_translate_element"><div class="skiptranslate goog-te-gadget" dir="ltr"><div id=":0.targetLanguage" class="goog-te-gadget-simple" style="white-space: nowrap;"><img src="./Find trailing zeros in factorial_files/cleardot.gif" class="goog-te-gadget-icon" alt="" style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span style="vertical-align: middle;"><a role="menu" class="goog-te-menu-value" href="javascript:void(0)"><span>Select Language</span><img src="./Find trailing zeros in factorial_files/cleardot.gif" alt="" width="1" height="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="./Find trailing zeros in factorial_files/cleardot.gif" alt="" width="1" height="1"><span style="color: rgb(155, 155, 155);">▼</span></a></span></div></div></div>
+<script type="text/javascript">
+//<![CDATA[
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');}
+//]]>
+</script><script src="./Find trailing zeros in factorial_files/element.js" type="text/javascript">
+</script></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td>
+<form action="http://www.programmerinterview.com/index.php/searchresults" id="cse-search-box">
+<div><input type="hidden" name="cx" value="partner-pub-4184197171686251:6461685870"> <input type="hidden" name="cof" value="FORID:10"> <input type="hidden" name="ie" value="UTF-8"> <input type="text" name="q" size="35" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;https://www.google.com/cse/static/en/google_custom_search_watermark.gif&quot;) left center no-repeat rgb(255, 255, 255);"> <input type="submit" name="sa" value="Search"></div>
+<input name="siteurl" type="hidden" value="www.programmerinterview.com/index.php/java-questions/find-trailing-zeros-in-factorial/"><input name="ref" type="hidden" value="www.google.co.in/"><input name="ss" type="hidden" value=""></form>
+<script type="text/javascript" src="./Find trailing zeros in factorial_files/brand">
+</script></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div id="middle-container">
+<div id="sidebar">
+<ul>
+<li id="pages-6" class="widget widget_pages">
+<h2 class="widgettitle">Pages</h2>
+<ul>
+<li class="page_item page-item-64"><a href="http://www.programmerinterview.com/">Home</a></li>
+<li class="page_item page-item-77 page_item_has_children current_page_ancestor current_page_parent"><a href="http://www.programmerinterview.com/index.php/java-questions/">Java</a>
+<ul class="children">
+<li class="page_item page-item-294"><a href="http://www.programmerinterview.com/index.php/java-questions/java-introduction/">Java Interview Questions</a></li>
+<li class="page_item page-item-120"><a href="http://www.programmerinterview.com/index.php/java-questions/how-system-out-println-works/">How System.out.println() works</a></li>
+<li class="page_item page-item-127"><a href="http://www.programmerinterview.com/index.php/java-questions/jvm-platform-dependent/">JVM platform dependent?</a></li>
+<li class="page_item page-item-136"><a href="http://www.programmerinterview.com/index.php/java-questions/method-overriding-vs-overloading/">Method overriding vs overloading</a></li>
+<li class="page_item page-item-138"><a href="http://www.programmerinterview.com/index.php/java-questions/why-have-a-private-constructor/">Why have a private constructor</a></li>
+<li class="page_item page-item-140"><a href="http://www.programmerinterview.com/index.php/java-questions/difference-between-object-and-class/">Difference between object and class</a></li>
+<li class="page_item page-item-142"><a href="http://www.programmerinterview.com/index.php/java-questions/how-copy-constructors-work/">How copy constructors work</a></li>
+<li class="page_item page-item-144"><a href="http://www.programmerinterview.com/index.php/java-questions/final-modifier/">Final modifier</a></li>
+<li class="page_item page-item-146"><a href="http://www.programmerinterview.com/index.php/java-questions/finally-block/">Finally block</a></li>
+<li class="page_item page-item-3381"><a href="http://www.programmerinterview.com/index.php/java-questions/will-finally-run-after-return/">Java: Will Finally run after return?</a></li>
+<li class="page_item page-item-148"><a href="http://www.programmerinterview.com/index.php/java-questions/classes/">Java Protected Example</a></li>
+<li class="page_item page-item-150"><a href="http://www.programmerinterview.com/index.php/java-questions/serializable-classes/">Java serializable class example</a></li>
+<li class="page_item page-item-152"><a href="http://www.programmerinterview.com/index.php/java-questions/multiple-inheritance/">Multiple Inheritance</a></li>
+<li class="page_item page-item-154"><a href="http://www.programmerinterview.com/index.php/java-questions/how-to-create-a-thread/">How to Create a Thread in Java</a></li>
+<li class="page_item page-item-156"><a href="http://www.programmerinterview.com/index.php/java-questions/interface-vs-abstract-class/">Interface vs. Abstract Class</a></li>
+<li class="page_item page-item-158"><a href="http://www.programmerinterview.com/index.php/java-questions/thread-states/">Thread States in Java</a></li>
+<li class="page_item page-item-160"><a href="http://www.programmerinterview.com/index.php/java-questions/arithmetic-exception/">Arithmetic Exception</a></li>
+<li class="page_item page-item-162"><a href="http://www.programmerinterview.com/index.php/java-questions/overridden-method/">Overridden Method</a></li>
+<li class="page_item page-item-164"><a href="http://www.programmerinterview.com/index.php/java-questions/dynamic-binding/">Dynamic Binding</a></li>
+<li class="page_item page-item-1204"><a href="http://www.programmerinterview.com/index.php/java-questions/can-constructors-be-synchronized-in-java/">Can constructors be synchronized in Java?</a></li>
+<li class="page_item page-item-1641"><a href="http://www.programmerinterview.com/index.php/java-questions/does-java-pass-by-reference-or-by-value/">Does Java pass by reference or by value?</a></li>
+<li class="page_item page-item-1644"><a href="http://www.programmerinterview.com/index.php/java-questions/difference-between-a-primitive-type-and-a-class-type/">Difference between a primitive type and a class type?</a></li>
+<li class="page_item page-item-1658"><a href="http://www.programmerinterview.com/index.php/java-questions/does-java-have-pointers/">Does Java have pointers?</a></li>
+<li class="page_item page-item-1702"><a href="http://www.programmerinterview.com/index.php/java-questions/downcasting-in-java/">Downcasting in Java</a></li>
+<li class="page_item page-item-1772"><a href="http://www.programmerinterview.com/index.php/java-questions/java-diamond-problem/">Java: Diamond Problem</a></li>
+<li class="page_item page-item-1764"><a href="http://www.programmerinterview.com/index.php/java-questions/java-can-an-interface-extend-another-interface/">Java: Can an interface extend another interface?</a></li>
+<li class="page_item page-item-1778"><a href="http://www.programmerinterview.com/index.php/java-questions/java-are-objects-of-the-same-type-as-the-interface-implemented/">Java: Are objects of the same type as the interface implemented?</a></li>
+<li class="page_item page-item-1782"><a href="http://www.programmerinterview.com/index.php/java-questions/java-can-an-interface-be-instantiated/">Java: Can an interface be instantiated?</a></li>
+<li class="page_item page-item-1839"><a href="http://www.programmerinterview.com/index.php/java-questions/find-first-nonrepeated-character/">Find First Nonrepeated Character</a></li>
+<li class="page_item page-item-1891"><a href="http://www.programmerinterview.com/index.php/java-questions/java-whats-the-difference-between-equals-and/">Java: What’s the difference between equals() and ==?</a></li>
+<li class="page_item page-item-3404 current_page_item"><a href="http://www.programmerinterview.com/index.php/java-questions/find-trailing-zeros-in-factorial/">Find trailing zeros in factorial</a></li>
+<li class="page_item page-item-3393"><a href="http://www.programmerinterview.com/index.php/java-questions/java-reflection-example/">Java Reflection Example</a></li>
+<li class="page_item page-item-4100"><a href="http://www.programmerinterview.com/index.php/java-questions/bit-manipulation-interview-question/">Bit Manipulation Interview Questions and Answers</a></li>
+<li class="page_item page-item-4122"><a href="http://www.programmerinterview.com/index.php/java-questions/xor-in-java/">XOR in Java</a></li>
+<li class="page_item page-item-4632"><a href="http://www.programmerinterview.com/index.php/java-questions/java-inner-class-example/">Java Inner Class Example</a></li>
+<li class="page_item page-item-4550"><a href="http://www.programmerinterview.com/index.php/java-questions/when-to-use-inner-classes-in-java/">When to use inner classes in Java</a></li>
+<li class="page_item page-item-4512"><a href="http://www.programmerinterview.com/index.php/java-questions/inner-vs-nested-classes/">Inner vs nested class</a></li>
+<li class="page_item page-item-4572"><a href="http://www.programmerinterview.com/index.php/java-questions/java-anonymous-class-example/">Java Anonymous Class Example</a></li>
+<li class="page_item page-item-4614"><a href="http://www.programmerinterview.com/index.php/java-questions/anonymous-class-interface/">Anonymous Class Interface</a></li>
+<li class="page_item page-item-4628"><a href="http://www.programmerinterview.com/index.php/java-questions/argument-defined-anonymous-inner-class/">Argument Defined Anonymous Inner Class</a></li>
+</ul>
+</li>
+<li class="page_item page-item-66"><a href="http://www.programmerinterview.com/index.php/c-cplusplus/">C/C++</a></li>
+<li class="page_item page-item-69"><a href="http://www.programmerinterview.com/index.php/database-sql/">Databases/SQL</a></li>
+<li class="page_item page-item-2269"><a href="http://www.programmerinterview.com/index.php/javascript/">Javascript</a></li>
+<li class="page_item page-item-1857"><a href="http://www.programmerinterview.com/index.php/php-questions/">PHP</a></li>
+<li class="page_item page-item-71"><a href="http://www.programmerinterview.com/index.php/data-structures/">Data Structures</a></li>
+<li class="page_item page-item-5390"><a href="http://www.programmerinterview.com/index.php/design-pattern-questions/">Design Pattern Questions</a></li>
+<li class="page_item page-item-3889"><a href="http://www.programmerinterview.com/index.php/excel-interview-questions/">Excel Interview Questions</a></li>
+<li class="page_item page-item-4432"><a href="http://www.programmerinterview.com/index.php/html5/">HTML5</a></li>
+<li class="page_item page-item-3338"><a href="http://www.programmerinterview.com/index.php/networking/">Networking</a></li>
+<li class="page_item page-item-82"><a href="http://www.programmerinterview.com/index.php/operating-systems/">Operating Systems</a></li>
+<li class="page_item page-item-1593"><a href="http://www.programmerinterview.com/index.php/recursion/">Recursion</a></li>
+<li class="page_item page-item-5522"><a href="http://www.programmerinterview.com/index.php/apache-interview-questions/">Apache Interview Questions</a></li>
+<li class="page_item page-item-84"><a href="http://www.programmerinterview.com/index.php/general-miscellaneous/">General/Miscellaneous</a></li>
+<li class="page_item page-item-87"><a href="http://www.programmerinterview.com/index.php/non-technical-questions/">Non-Technical Questions</a></li>
+<li class="page_item page-item-89"><a href="http://www.programmerinterview.com/index.php/interviewing-in-india/">Interviewing in India</a></li>
+<li class="page_item page-item-91"><a href="http://www.programmerinterview.com/index.php/working-as-a-software-engineer/">Working As a Software Engineer</a></li>
+<li class="page_item page-item-2072"><a href="http://www.programmerinterview.com/index.php/financial-interview-questions/">Financial Analyst Questions</a></li>
+<li class="page_item page-item-521"><a href="http://www.programmerinterview.com/index.php/job-advice/">Job Advice For Programmers</a></li>
+<li class="page_item page-item-720"><a href="http://www.programmerinterview.com/index.php/puzzles/">Puzzles</a></li>
+<li class="page_item page-item-792"><a href="http://www.programmerinterview.com/index.php/assortment/">Assortment of Knowledge</a></li>
+<li class="page_item page-item-862"><a href="http://www.programmerinterview.com/index.php/american-vocabulary/">American Vocabulary</a></li>
+<li class="page_item page-item-4995"><a href="http://www.programmerinterview.com/index.php/technical-vocabulary/">Technical Vocabulary</a></li>
+<li class="page_item page-item-1017"><a href="http://www.programmerinterview.com/index.php/science-questions/">Science Questions</a></li>
+</ul>
+</li>
+<li id="text-7" class="widget widget_text">
+<div class="textwidget"><script type="text/javascript">
+//<![CDATA[
+var ind_pub='1374145301824455';var ind_el='indJobContent';var ind_pf='';var ind_q='programmer';var ind_l='';var ind_chnl='none';var ind_n=10;var ind_d='http://www.indeed.com';var ind_t=20;var ind_c=10;
+//]]>
+</script> <script type="text/javascript" src="./Find trailing zeros in factorial_files/jobroll-widget-v3.js">
+</script>
+<div id="indeed_widget_wrapper" style="">
+<div id="indeed_widget_header">Find a Job</div>
+<div id="indJobContent" class=""><div id="results">
+<div id="job_0" class="job">
+    <a target="_blank" href="http://www.indeed.com/viewjob?t=Software+Developer+Programmer&amp;c=New+Jersey+Institute+of+Technology&amp;l=Newark%2C+NJ&amp;jk=e2c07a3eceb12a22&amp;indpubnum=1374145301824455&amp;atk=&amp;chnl=none" class="jobtitle">Software...</a><br>
+    <span class="company_location">
+        <span class="company">New Jersey...</span> -
+        <span class="location">Newark, NJ</span>
+   </span>
+</div>
+<div id="job_1" class="job">
+    <a target="_blank" href="http://www.indeed.com/viewjob?t=Database+Analyst+Programmer&amp;c=Harris+County&amp;l=Houston%2C+TX&amp;jk=fe433304ac579671&amp;indpubnum=1374145301824455&amp;atk=&amp;chnl=none" class="jobtitle">Database...</a><br>
+    <span class="company_location">
+        <span class="company">Harris...</span> -
+        <span class="location">Houston, TX</span>
+   </span>
+</div>
+<div id="job_2" class="job">
+    <a target="_blank" href="http://www.indeed.com/viewjob?t=Application+System+Analyst+Programmer&amp;c=Harris+County&amp;l=Houston%2C+TX&amp;jk=0ac1a6791fb668e8&amp;indpubnum=1374145301824455&amp;atk=&amp;chnl=none" class="jobtitle">Applications Systems...</a><br>
+    <span class="company_location">
+        <span class="company">Harris...</span> -
+        <span class="location">Houston, TX</span>
+   </span>
+</div>
+<div id="job_3" class="job">
+    <a target="_blank" href="http://www.indeed.com/viewjob?t=Software+Engineer&amp;c=Microsoft&amp;l=Redmond%2C+WA&amp;jk=8c8dbc3d7ba61061&amp;indpubnum=1374145301824455&amp;atk=&amp;chnl=none" class="jobtitle">Software Engineer</a><br>
+    <span class="company_location">
+        <span class="company">Microsoft</span> -
+        <span class="location">Redmond, WA</span>
+   </span>
+</div>
+<div id="job_4" class="job">
+    <a target="_blank" href="http://www.indeed.com/viewjob?t=Entry+Level+Programmer&amp;c=SADA+Systems&amp;l=Los+Angeles%2C+CA&amp;jk=35bc4aa4f1bda79a&amp;indpubnum=1374145301824455&amp;atk=&amp;chnl=none" class="jobtitle">Entry Level...</a><br>
+    <span class="company_location">
+        <span class="company">SADA...</span> -
+        <span class="location">Los Angeles, CA</span>
+   </span>
+</div>
+<div id="job_5" class="job">
+    <a target="_blank" href="http://www.indeed.com/viewjob?t=Software+Development+Engineer+Test&amp;c=TransUnion&amp;l=Remote&amp;jk=12575988dc05e925&amp;indpubnum=1374145301824455&amp;atk=&amp;chnl=none" class="jobtitle">Software Development...</a><br>
+    <span class="company_location">
+        <span class="company">TransUnion</span> -
+        <span class="location">Remote</span>
+   </span>
+</div>
+<div id="job_6" class="job">
+    <a target="_blank" href="http://www.indeed.com/viewjob?t=Programmer&amp;c=Vencore&amp;l=Bethesda%2C+MD&amp;jk=3dd4faa56cecd33f&amp;indpubnum=1374145301824455&amp;atk=&amp;chnl=none" class="jobtitle">Programmer I</a><br>
+    <span class="company_location">
+        <span class="company">Vencore</span> -
+        <span class="location">Bethesda, MD</span>
+   </span>
+</div>
+<div id="job_7" class="job">
+    <a target="_blank" href="http://www.indeed.com/viewjob?t=Junior+Software+Engineer&amp;c=Leidos&amp;l=Herndon%2C+VA&amp;jk=2e7d001743233271&amp;indpubnum=1374145301824455&amp;atk=&amp;chnl=none" class="jobtitle">Junior Software...</a><br>
+    <span class="company_location">
+        <span class="company">Leidos</span> -
+        <span class="location">Herndon, VA</span>
+   </span>
+</div>
+<div id="job_8" class="job">
+    <a target="_blank" href="http://www.indeed.com/viewjob?t=Entry+Level+Control+System+Developer&amp;c=Interstates&amp;l=Sioux+Center%2C+IA&amp;jk=341a3fb9bfe5497b&amp;indpubnum=1374145301824455&amp;atk=&amp;chnl=none" class="jobtitle">Entry Level Control...</a><br>
+    <span class="company_location">
+        <span class="company">Interstate...</span> -
+        <span class="location">Sioux Center, IA</span>
+   </span>
+</div>
+<div id="job_9" class="job">
+    <a target="_blank" href="http://www.indeed.com/viewjob?t=Entry+SAS+Programmer&amp;c=SimulStat%27s+client&amp;l=Parsippany%2C+NJ&amp;jk=459e50b625d34740&amp;indpubnum=1374145301824455&amp;atk=&amp;chnl=none" class="jobtitle">Entry SAS programmer</a><br>
+    <span class="company_location">
+        <span class="company">SimulStat'...</span> -
+        <span class="location">Parsippany, NJ</span>
+   </span>
+</div>
+</div></div>
+<div id="indeed_search_wrapper"><script type="text/javascript">
+/*<![CDATA[*/function clearDefaults(){var formInputs=document.getElementById('indeed_jobform').elements;for(var i=0;i<formInputs.length;i++){if(formInputs[i].value=='title, keywords'||formInputs[i].value=='city, state, or zip'){formInputs[i].value='';}}}/*]]>*/
+</script>
+<form onsubmit="clearDefaults();" method="get" action="http://www.indeed.com/jobs" id="indeed_jobform" target="_new">
+<div id="qc"><label>What:</label><input type="text" onfocus="this.value=&quot;&quot;" value="title, keywords" name="q" id="q"></div>
+<div id="lc"><label>Where:</label><input type="text" onfocus="this.value=&quot;&quot;" value="city, state, or zip" name="l" id="l"></div>
+<div id="indeed_search_footer">
+<div style="float:left"><input type="submit" value="Find Jobs" class="findjobs"></div>
+</div>
+<input type="hidden" name="indpubnum" id="indpubnum" value="1374145301824455"></form>
+</div>
+<div id="indeed_link"><a title="Job Search" href="http://www.indeed.com/" target="_new">jobs by <img alt="Indeed" src="./Find trailing zeros in factorial_files/jobsearch.gif" style="border: 0;vertical-align: bottom;"></a></div>
+</div>
+</div>
+</li>
+<li id="text-6" class="widget widget_text">
+<div class="textwidget">
+<div style="text-align:center"><script async="" src="./Find trailing zeros in factorial_files/adsbygoogle.js" type="text/javascript">
+</script> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-4184197171686251" data-ad-slot="9756668673" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./Find trailing zeros in factorial_files/saved_resource(3).html"></iframe></ins></ins></ins> <script type="text/javascript">
+//<![CDATA[
+(adsbygoogle=window.adsbygoogle||[]).push({});
+//]]>
+</script></div>
+</div>
+</li>
+<li id="text-4" class="widget widget_text">
+<h2 class="widgettitle">Newsletter Subscription</h2>
+<div class="textwidget">
+<div id="subscribe">
+<div role="form" class="wpcf7" id="wpcf7-f5796-o1" dir="ltr">
+<div class="screen-reader-response"></div>
+<form action="http://www.programmerinterview.com/index.php/java-questions/find-trailing-zeros-in-factorial/#wpcf7-f5796-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+<div style="display: none;"><input type="hidden" name="_wpcf7" value="5796"> <input type="hidden" name="_wpcf7_version" value="4.3.1"> <input type="hidden" name="_wpcf7_locale" value=""> <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5796-o1"> <input type="hidden" name="_wpnonce" value="432bd9c715"></div>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td align="left" valign="middle">Email</td>
+<td height="50" align="right" valign="middle"><span class="wpcf7-form-control-wrap Email"><input type="email" name="Email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email email_box" aria-required="true" aria-invalid="false"></span></td>
+</tr>
+<tr>
+<td align="left" valign="middle">Country</td>
+<td align="right" valign="bottom"><span class="wpcf7-form-control-wrap Country"><select name="Country" class="wpcf7-form-control wpcf7-select country_box" aria-invalid="false">
+<option value="United States">United States</option>
+<option value="India">India</option>
+<option value="Canada">Canada</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Germany">Germany</option>
+<option value="Argentina">Argentina</option>
+<option value="Armenia">Armenia</option>
+<option value="Aruba">Aruba</option>
+<option value="Australia">Australia</option>
+<option value="Austria">Austria</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="Barbados">Barbados</option>
+<option value="Belarus">Belarus</option>
+<option value="Belgium">Belgium</option>
+<option value="Belize">Belize</option>
+<option value="Bhutan">Bhutan</option>
+<option value="Bolivia">Bolivia</option>
+<option value="Brazil">Brazil</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="Chile">Chile</option>
+<option value="China">China</option>
+<option value="Colombia">Colombia</option>
+<option value="Congo">Congo</option>
+<option value="Costa Rica">Costa Rica</option>
+<option value="Croatia">Croatia</option>
+<option value="Cuba">Cuba</option>
+<option value="Czech Republic">Czech Republic</option>
+<option value="Denmark">Denmark</option>
+<option value="Djibouti">Djibouti</option>
+<option value="Dominica">Dominica</option>
+<option value="Dominican Republic">Dominican Republic</option>
+<option value="Ecuador">Ecuador</option>
+<option value="Egypt">Egypt</option>
+<option value="Fiji">Fiji</option>
+<option value="Finland">Finland</option>
+<option value="France">France</option>
+<option value="Honduras">Honduras</option>
+<option value="Hong Kong">Hong Kong</option>
+<option value="Hungary">Hungary</option>
+<option value="Iceland">Iceland</option>
+<option value="India">India</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Iran">Iran</option>
+<option value="Iraq">Iraq</option>
+<option value="Ireland">Ireland</option>
+<option value="Israel">Israel</option>
+<option value="Italy">Italy</option>
+<option value="Jamaica">Jamaica</option>
+<option value="Japan">Japan</option>
+<option value="Jordan">Jordan</option>
+<option value="Kazakhstan">Kazakhstan</option>
+<option value="Kenya">Kenya</option>
+<option value="Kiribati">Kiribati</option>
+<option value="Kuwait">Kuwait</option>
+<option value="Kyrgyzstan">Kyrgyzstan</option>
+<option value="Laos">Laos</option>
+<option value="Latvia">Latvia</option>
+<option value="Lebanon">Lebanon</option>
+<option value="Madagascar">Madagascar</option>
+<option value="Malawi">Malawi</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Maldives">Maldives</option>
+<option value="Mali">Mali</option>
+<option value="Malta">Malta</option>
+<option value="Marshall Islands">Marshall Islands</option>
+<option value="Martinique">Martinique</option>
+<option value="Mauritania">Mauritania</option>
+<option value="Mauritius">Mauritius</option>
+<option value="Mayotte">Mayotte</option>
+<option value="Mexico">Mexico</option>
+<option value="Morocco">Morocco</option>
+<option value="Mozambique">Mozambique</option>
+<option value="Myanmar">Myanmar</option>
+<option value="Namibia">Namibia</option>
+<option value="Nauru">Nauru</option>
+<option value="Nepal">Nepal</option>
+<option value="Netherlands">Netherlands</option>
+<option value="Nicaragua">Nicaragua</option>
+<option value="Niger">Niger</option>
+<option value="Nigeria">Nigeria</option>
+<option value="Norway">Norway</option>
+<option value="Oman">Oman</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Panama">Panama</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="Paraguay">Paraguay</option>
+<option value="Peru">Peru</option>
+<option value="Philippines">Philippines</option>
+<option value="Poland">Poland</option>
+<option value="Portugal">Portugal</option>
+<option value="Puerto Rico">Puerto Rico</option>
+<option value="Qatar">Qatar</option>
+<option value="Romania">Romania</option>
+<option value="Russian Federation">Russian Federation</option>
+<option value="Rwanda">Rwanda</option>
+<option value="Saint Helena">Saint Helena</option>
+<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+<option value="Saint Lucia">Saint Lucia</option>
+<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+<option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+<option value="Samoa">Samoa</option>
+<option value="San Marino">San Marino</option>
+<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Senegal">Senegal</option>
+<option value="Serbia">Serbia</option>
+<option value="Singapore">Singapore</option>
+<option value="Slovakia">Slovakia</option>
+<option value="Slovenia">Slovenia</option>
+<option value="Solomon Islands">Solomon Islands</option>
+<option value="Somalia">Somalia</option>
+<option value="South Africa">South Africa</option>
+<option value="South Georgia">South Georgia</option>
+<option value="South Korea">South Korea</option>
+<option value="Spain">Spain</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="Swaziland">Swaziland</option>
+<option value="Sweden">Sweden</option>
+<option value="Switzerland">Switzerland</option>
+</select></span></td>
+</tr>
+<tr>
+<td height="60" colspan="2" align="right" valign="middle"><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit subscribebt"></td>
+</tr>
+<tr>
+<td height="60" colspan="2" align="right" valign="middle">
+<div class="wpcf7-form-control-wrap">
+<div data-sitekey="6LcWmA0TAAAAANo3UZYDoSWY6HPr_eopyaLsN0dR" data-size="compact" class="wpcf7-form-control g-recaptcha wpcf7-recaptcha"><div style="width: 164px; height: 144px;"><div><iframe src="./Find trailing zeros in factorial_files/anchor.html" title="recaptcha widget" width="164" height="144" role="presentation" frameborder="0" scrolling="no" name="undefined"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></div>
+<noscript>
+&lt;div style="width: 302px; height: 422px;"&gt;
+&lt;div style="width: 302px; height: 422px; position: relative;"&gt;
+&lt;div style="width: 302px; height: 422px; position: absolute;"&gt;&lt;iframe src="https://www.google.com/recaptcha/api/fallback?k=6LcWmA0TAAAAANo3UZYDoSWY6HPr_eopyaLsN0dR" frameborder="0" scrolling="no" style="width: 302px; height:422px; border-style: none;"&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;div style="width: 300px; height: 60px; border-style: none; bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px; background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;"&gt;
+&lt;textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;"&gt;
+&lt;/textarea&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</noscript></div>
+</td>
+</tr>
+</tbody></table>
+<div class="wpcf7-response-output wpcf7-display-none"></div>
+</form>
+</div>
+</div>
+</div>
+</li>
+<li id="text-3" class="widget widget_text">
+<h2 class="widgettitle">Jobboard</h2>
+<div class="textwidget">
+<div id="sidebar-jobboard"><a title="Job Board" href="http://www.programmerinterview.com/jobs" target="_blank"><img src="./Find trailing zeros in factorial_files/jb-logo.gif" border="0"></a></div>
+</div>
+</li>
+<li id="text-8" class="widget widget_text">
+<div class="textwidget"><a href="http://99centrazor.com/?utm_source=programmerinterview&amp;utm_medium=toprightrail&amp;utm_campaign=99centrazor"><img src="./Find trailing zeros in factorial_files/new-design.jpg" width="240"></a></div>
+</li>
+</ul>
+</div>
+<div class="top-ad"><br>
+<div id="ezoic-pub-ad-placeholder-104"><script async="" src="./Find trailing zeros in factorial_files/adsbygoogle.js" type="text/javascript">
+</script> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:120px" data-ad-client="ca-pub-4184197171686251" data-ad-slot="7122663875" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:120px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:120px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="120" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./Find trailing zeros in factorial_files/saved_resource(4).html"></iframe></ins></ins></ins> <script type="text/javascript">
+//<![CDATA[
+(adsbygoogle=window.adsbygoogle||[]).push({});
+//]]>
+</script></div>
+<script type="text/javascript">
+/*<![CDATA[*/function TestMyAd(){var x=jQuery('#adsense2').height();if(x==0)
+{document.write('<a href="http://www.programmerinterview.com/jobs"><img src="http://programmerinterview.com/images/JobboardTopBanner.jpg"><\/a>');}}
+TestMyAd();/*]]>*/
+</script></div>
+<div id="content">
+<div class="post">
+<div class="entry">
+<h2>Write a program that will calculate the number of trailing zeros in a factorial of a given number</h2>
+<p>First off, let’s define a factorial for those of you who don’t remember what a factorial of a number is. A factorial of any non-negative integer number “x” is the product of all of the positive integers less than and equal to “x”. This means that the factorial of 4 is 4*3*2*1 which is 24, and the factorial of 6 is 6*5*4*3*2*1 which is 720.</p>
+<h2>What does the number of trailing zeros mean exactly?</h2>
+<p></p>
+<table align="left" border="0" cellspacing="0" cellpadding="10">
+<tbody><tr>
+<td>
+<div id="ezoic-pub-ad-placeholder-106"><script async="" src="./Find trailing zeros in factorial_files/adsbygoogle.js" type="text/javascript">
+</script><br>
+<br>
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-4184197171686251" data-ad-slot="1355331874" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" src="./Find trailing zeros in factorial_files/saved_resource(5).html"></iframe></ins></ins></ins><br>
+<script type="text/javascript">
+//<![CDATA[
+(adsbygoogle=window.adsbygoogle||[]).push({});
+//]]>
+</script></div>
+</td>
+</tr>
+</tbody></table>
+<p>If we want to find the number of trailing zeros this means that we want to calculate how many zeros the factorial of a number ends with – the number of terminating zeros. So, for example, 720 has one trailing zero since it ends with one zero, and 24 has no trailing zeros since it does not end with any zeros at all.</p>
+<p>Before we can begin to write a program that will compute the number of trailing zeros of a factorial of a given number, we must come up with an <i>algorithm</i> – basically we need to find a pattern that we can use to write a program. So, let’s start to think about this problem in a way that allows us to find a pattern.</p>
+<table align="left" border="0" cellspacing="0" cellpadding="10">
+<tbody><tr>
+<td>
+<div id="ezoic-pub-ad-placeholder-105"><script async="" src="./Find trailing zeros in factorial_files/adsbygoogle.js" type="text/javascript">
+</script><br>
+<br>
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-4184197171686251" data-ad-slot="5723421878" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" src="./Find trailing zeros in factorial_files/saved_resource(6).html"></iframe></ins></ins></ins><br>
+<script type="text/javascript">
+//<![CDATA[
+(adsbygoogle=window.adsbygoogle||[]).push({});
+//]]>
+</script></div>
+<p></p>
+</td>
+</tr>
+</tbody></table>
+<p>Let’s start by asking ourselves a question. When does a number have a trailing or terminating zero? Well, it should be clear that a number will have a trailing zero if it has a 10 as one of its <b><i>factors</i></b>. Remember that a factor of a number “X” is just a number that when multiplied by other numbers gives you “X”. Clearly 720 has a 10 as one of its factors because 10*72 gives us 720. And a number will have 2 trailing zeros if it has 10 as it’s factor 2 times – 10 * 10 * <b>any number</b> will give us a number that ends with 2 zeros. So, it should be clear that the number of 10’s that a number has as it’s factors determines the number of trailing zeros. If there are 2 10’s that are factors, then the number will have 2 trailing zeros. If there are 17 10’s that are factors for a given number, then there will be 17 trailing zeros in that number.</p>
+<h2>We need to calculate the number of times 10 is a factor to find the trailing zeros</h2>
+<p>So, the number of factors that are 10’s is equal to the number of trailing zeros. But, wait – 10 has it’s own factors of 5 and 2 – so wouldn’t it be more accurate to say that if a number has factors of 5 and 2 then it also has a 10 as a factor? Yes, that is true. Can we break it down even further? What if we say that the number of times 5 is a factor determines the number of trailing zeros? How accurate is that statement? Well, think about it – if both a 5 and a 2 are factors then that will determine if 10 is a factor, which determines the number of trailing zeros. So, the 5 needs to have a 2 to pair with it to give it a 10. But, almost all factorials have 2 as a factor multiple times – for instance the factorial of 6 is 6*5*4*3*2*1, and 2 is a factor in 2, 4, and 6 – which means that 2 is a factor 3 times, and 5 is a factor once. All we really need is for each 5 to have a 2 to pair with it – but <i>clearly in the factorial of a number the number of 2’s as factors will always exceed the number of 5’s as factors</i>. It’s important that you understand that point, so think it over and/or re-read to make sure it makes sense.</p>
+<h2>The number of trailing zeros equals the number of times 5 is a factor</h2>
+<p>So, we can safely assume that any factor of 5 will have a 2 to go with it to give us a 10, which will give us 1 trailing zero. Finally, this means that <b><i>we just need to count the number of times 5 is a factor</i></b> in the factorial to get the number of trailing zeros – because we can safely assume that there will always be another 2 as a factor to pair it with. Another key point is that 5 will have to be counted as a factor twice in the number 25 (because 5*5 is 25), three times in the number 125 (because 5*5*5 is 125), and so on. But, 5 is counted as a factor only once in numbers like 10 (5*2), 15 (5*3), 20 (5*4), and so and so forth.</p>
+<h2>Solution to calculating the number of trailing zeros in factorial</h2>
+<table align="left" border="0" cellspacing="0" cellpadding="10">
+<tbody><tr>
+<td>
+<div id="ezoic-pub-ad-placeholder-110"><script async="" src="./Find trailing zeros in factorial_files/adsbygoogle.js" type="text/javascript">
+</script><br>
+<br>
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-4184197171686251" data-ad-slot="4308798273" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_4_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;" src="./Find trailing zeros in factorial_files/saved_resource(7).html"></iframe></ins></ins></ins><br>
+<script type="text/javascript">
+//<![CDATA[
+(adsbygoogle=window.adsbygoogle||[]).push({});
+//]]>
+</script></div>
+<p></p>
+</td>
+</tr>
+</tbody></table>
+<p>Let’s use some actual numbers to test out our theory. Suppose we have the number 10 as our input – we know that the factorial of 10 is 3628800 – which means that there are 2 trailing zeros. So, applying our pattern – we know that in 10! (which equals 10*9*8*7*6*5*4*3*2*1) there are 2 factors of 5 – one factor is in the number 5 itself and the other factor is in 10 (which is 5*2), and that gives us a total of 2. And, of course, those 2 factors of 5 can be <b>paired</b> with any one of the multiple factors of 2 to give us a 10 twice since 5*2 = 10 (there’s 2, 4, 6, 8, and 10 – remember we said that the numbers of 2’s that are factors will always exceed the number of 5’s that are factors). This means that there should be 2 trailing zeros in the factorial of 10, which there is – so our theory is correct.</p>
+<p>What about a bigger number like 29? Why not, instead of counting the number of multiples of 5 that are factors – like 5, 10, 15, etc. – we just divide by 5? If we divide by 5 and round off the number to the lowest integer, we can get the number of multiples of 5 that will be factors in the factorial of a given number. So, if we divide 29 by 5, we get 5.8 – rounding to the lowest integer we get 5. This means that there are 5 multiples of 5 in the number 29 – which is correct because there’s 5, 10, 15, 20, and 25. But wait, remember that 25 is special because it has 2 factors of 5 (because 5*5 is 25). This means that it should count 2 times plus the 4 other factors of 5, which gives us 4+2 = 6. So there are a total of 6 trailing zeros in the factorial of 29, which is correct because 29! is 8841761993739701954543616000000.</p>
+<div style="text-align:center"></div>
+<h2>An algorithm to find the trailing zeros in factorial</h2>
+<p>Now that we see the pattern, let’s try to come up with an algorithm that will calculate the number of zeros for a factorial in the context of an actual program:</p>
+<p><i>Suppose we have the input number, let’s call it “n”. If the number “n” is equal to 5, we return a 1. If not, we divide that number by 5 and if we get a number that is a decimal greater than 1, then we should truncate to the lowest integer.<br></i></p>
+<p><i><br>
+Then we divide “n” by 5<sup>2</sup> (25), and if we get a number that is a decimal greater than or equal to 1, then we should truncate to the lowest integer, and add 1 to the count of trailing zeros If the number is less than 1 then we stop counting and return.<br></i></p>
+<p><i><br>
+Then we divide “n” by 5<sup>3</sup> (125), and if we get a number that is a decimal greater than or equal to 1, then we should truncate to the lowest integer, and add 1 to the count of trailing zeros If the number is less than 1 then we stop counting and return.<br></i></p>
+<div style="text-align:center"></div>
+<p><i><br>
+And so on…<br></i></p>
+<p>Here is what a solution looks like in Java <i>pseudocode</i> that implements the algorithm described above to find the number of terminating zeros:</p>
+<h2>Java solution to find the number of trailing zeros in factorial</h2>
+<pre class="code">public � static � int � findTrailingZeros(int � number) � {
+
+int count = 0;
+
+
+if(number &lt; 0){
+
+System.out.println("Error: There is no Factorial 
+for a number less than 0");
+
+return -1; //error condition
+
+}
+
+if(number == 5){
+return 1; 
+}
+
+
+/*
+start from 5, multiply j by 5 each loop, but
+stop iterating when number/j is no longer greater
+than 1
+*/
+for ( int j = 5; number/j &gt;= 1; j *= 5 )
+{
+/*
+assuming that number/j will just give you the
+integer result of the division of number/j and
+also truncate:
+*/
+count � += � number � / � j;
+}
+
+return count;
+}
+</pre>
+<p>And there we have a solution to the problem – hopefully it was interesting for you!</p>
+</div>
+</div>
+<div style="text-align:center"><script id="mNCC" language="javascript" type="text/javascript">
+//<![CDATA[
+medianet_width="336";medianet_height="280";medianet_crid="421634339";
+//]]>
+</script> <script id="mNSC" src="./Find trailing zeros in factorial_files/nmedianet.js" language="javascript" type="text/javascript">
+</script><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="_mN_openx_421634339" style="display: none;" src="./Find trailing zeros in factorial_files/saved_resource(8).html"></iframe><script language="javascript" type="text/javascript" id="_mN_dy_421634339" src="./Find trailing zeros in factorial_files/fcmdynet.js"></script><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="280" width="100%" id="_mN_main_421634339_0_n" src="./Find trailing zeros in factorial_files/saved_resource(9).html"></iframe>
+<p style="background:#9AFF9A; font-family: calibri,tahoma,arial,sans-serif; font-size: 15px; font-weight: bold; margin:15px 0;"><a href="http://www.programmerinterview.com/jobs">Hiring? Job Hunting? Post a JOB or your RESUME on our JOB BOARD &gt;&gt;</a></p>
+<p><a class="lbp-inline-link-1 cboxElement" href="http://www.programmerinterview.com/index.php/java-questions/find-trailing-zeros-in-factorial/#">Subscribe to our newsletter for more free interview questions.</a></p>
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="./Find trailing zeros in factorial_files/follow_button.d59f1863bc12f58215682d9908af95aa.en.html" style="position: static; visibility: visible; width: 194px; height: 28px;" data-screen-name="programmerintvw"></iframe> <script type="text/javascript">
+//<![CDATA[
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+//]]>
+</script></div>
+<div class="pager">
+<div class="prev"><a href="http://www.programmerinterview.com/index.php/java-questions/java-whats-the-difference-between-equals-and/" title="Java: What’s the difference between equals() and ==?">Previous...</a></div>
+<div class="next"><a href="http://www.programmerinterview.com/index.php/java-questions/java-reflection-example/" title="Java Reflection Example">Next...</a></div>
+<div><div id="ac_134093"><div class="ac_header_title">You Might Also Like</div><div class="ac_adbox"><div class="ac_adbox_inner"><!-- start ads --><div class="ac_container"><a class="ac_image_link" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1741433&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;B93446A7-DC11-4B5D-AD2D-011FF14235F1&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_8cf8650e400771c98d5a6f8864210316&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;ffc5a04d29b52568b7a73260057a549b&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://vanilla-style.com/10-foods-that-kill-belly-fat-fast/?network=contentad&amp;subacc2=1741433&amp;subacc3=178483&#39;;return true;" href="http://vanilla-style.com/10-foods-that-kill-belly-fat-fast/?network=contentad&amp;subacc2=1741433&amp;subacc3=178483"><img height="250" width="300" src="./Find trailing zeros in factorial_files/3287dbf6949730d422c0c861bb358793.jpg" alt="No Need to Diet or Go to the Gym If You Do This" class="ac_image" title="No Need to Diet or Go to the Gym If You Do This"></a><div class="ac_title_wrapper"><a class="ac_title" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1741433&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;B93446A7-DC11-4B5D-AD2D-011FF14235F1&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_8cf8650e400771c98d5a6f8864210316&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;ffc5a04d29b52568b7a73260057a549b&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://vanilla-style.com/10-foods-that-kill-belly-fat-fast/?network=contentad&amp;subacc2=1741433&amp;subacc3=178483&#39;;return true;" href="http://vanilla-style.com/10-foods-that-kill-belly-fat-fast/?network=contentad&amp;subacc2=1741433&amp;subacc3=178483">No Need to Diet or Go to the Gym If You Do This</a></div></div><div class="ac_container"><a class="ac_image_link" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1607701&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;4D4DC553-4E97-4030-9591-1794A991D11A&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_991dcfbad37ebea96cecd22d51f05d9c&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;96e04999ace16e2bc3719187e7158156&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://www.stickyday.com/19-people-you-wont-believe-actually-exist/?utm_source=contentad&amp;utm_medium=referral&#39;;return true;" href="http://www.stickyday.com/19-people-you-wont-believe-actually-exist/?utm_source=contentad&amp;utm_medium=referral"><img height="250" width="300" src="./Find trailing zeros in factorial_files/f137fa31abf440664e795cd7e2c6f39d.jpg" alt="19 People You Won’t Believe Actually Exist" class="ac_image" title="19 People You Won’t Believe Actually Exist"></a><div class="ac_title_wrapper"><a class="ac_title" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1607701&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;4D4DC553-4E97-4030-9591-1794A991D11A&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_991dcfbad37ebea96cecd22d51f05d9c&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;96e04999ace16e2bc3719187e7158156&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://www.stickyday.com/19-people-you-wont-believe-actually-exist/?utm_source=contentad&amp;utm_medium=referral&#39;;return true;" href="http://www.stickyday.com/19-people-you-wont-believe-actually-exist/?utm_source=contentad&amp;utm_medium=referral">19 People You Won’t Believe Actually Exist</a></div></div><div class="ac_container"><a class="ac_image_link" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1755434&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;DBE908D9-D685-4252-B0B6-A8DE97A9595E&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_975faf313d7d402b30869931a253baa2&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;d113b8b3c54b42e317fc6fe3afe46fac&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://cb.17trk.com/53168474-7131-4799-8e01-01acd2a6114e?adid=9&amp;source=178483&#39;;return true;" href="http://cb.17trk.com/53168474-7131-4799-8e01-01acd2a6114e?adid=9&amp;source=178483"><img height="250" width="300" src="./Find trailing zeros in factorial_files/336654f0f5713eb54cb35308b1353adf.jpg" alt="This Is The Secret Your Fairer Friends Keep Hidden" class="ac_image" title="This Is The Secret Your Fairer Friends Keep Hidden"></a><div class="ac_title_wrapper"><a class="ac_title" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1755434&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;DBE908D9-D685-4252-B0B6-A8DE97A9595E&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_975faf313d7d402b30869931a253baa2&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;d113b8b3c54b42e317fc6fe3afe46fac&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://cb.17trk.com/53168474-7131-4799-8e01-01acd2a6114e?adid=9&amp;source=178483&#39;;return true;" href="http://cb.17trk.com/53168474-7131-4799-8e01-01acd2a6114e?adid=9&amp;source=178483">This Is The Secret Your Fairer Friends Keep Hidden</a></div></div><div class="ac_container"><a class="ac_image_link" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1698113&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;DBE908D9-D685-4252-B0B6-A8DE97A9595E&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_ea475c1157bbd8b1b2eb5d45af930f0d&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;d89ce0fe8c5cbe4edafb30bf4d675da7&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://cb.17trk.com/4233f534-ba07-4eb5-a877-10b018401e4f?&amp;adid=CR2&amp;source=178483&#39;;return true;" href="http://cb.17trk.com/4233f534-ba07-4eb5-a877-10b018401e4f?&amp;adid=CR2&amp;source=178483"><img height="250" width="300" src="./Find trailing zeros in factorial_files/4c462f13349bfbf3b2c24131a2eb49be.jpg" alt="Women Are Getting Fairer Skin Now Using This 1 Simple Method" class="ac_image" title="Women Are Getting Fairer Skin Now Using This 1 Simple Method"></a><div class="ac_title_wrapper"><a class="ac_title" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1698113&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;DBE908D9-D685-4252-B0B6-A8DE97A9595E&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_ea475c1157bbd8b1b2eb5d45af930f0d&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;d89ce0fe8c5cbe4edafb30bf4d675da7&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://cb.17trk.com/4233f534-ba07-4eb5-a877-10b018401e4f?&amp;adid=CR2&amp;source=178483&#39;;return true;" href="http://cb.17trk.com/4233f534-ba07-4eb5-a877-10b018401e4f?&amp;adid=CR2&amp;source=178483">Women Are Getting Fairer Skin Now Using This 1 Simple Method</a></div></div><div class="ac_container"><a class="ac_image_link" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1756006&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;4D4DC553-4E97-4030-9591-1794A991D11A&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_fefc9462353cc8ebb4f59240b615a4ef&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;b97b4b4de72e28875b3ee509322bdd69&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://www.stickyday.com/22-mainstream-films-where-the-actors-are-really-hooking-up-copy/?utm_source=contentad&amp;utm_medium=referral&#39;;return true;" href="http://www.stickyday.com/22-mainstream-films-where-the-actors-are-really-hooking-up-copy/?utm_source=contentad&amp;utm_medium=referral"><img height="250" width="300" src="./Find trailing zeros in factorial_files/8101a3fb54e95b96a856e439c242ed63.jpg" alt="22 Movies Where They Really Did It" class="ac_image" title="22 Movies Where They Really Did It"></a><div class="ac_title_wrapper"><a class="ac_title" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1756006&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;4D4DC553-4E97-4030-9591-1794A991D11A&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_fefc9462353cc8ebb4f59240b615a4ef&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;b97b4b4de72e28875b3ee509322bdd69&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://www.stickyday.com/22-mainstream-films-where-the-actors-are-really-hooking-up-copy/?utm_source=contentad&amp;utm_medium=referral&#39;;return true;" href="http://www.stickyday.com/22-mainstream-films-where-the-actors-are-really-hooking-up-copy/?utm_source=contentad&amp;utm_medium=referral">22 Movies Where They Really Did It</a></div></div><div class="ac_container"><a class="ac_image_link" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1616067&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;459E9662-BD13-4E07-8C9B-F60058638F48&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_b0abde5dca96ed333758495b185505c2&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;aa76c9525bceb9c453ea202e27ca0f79&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://track.sahbaktrk.com/0b4efaae-6374-4ed6-bb3a-4d10efa21c5b?pubid=178483&amp;ad=ad4&#39;;return true;" href="http://track.sahbaktrk.com/0b4efaae-6374-4ed6-bb3a-4d10efa21c5b?pubid=178483&amp;ad=ad4"><img height="250" width="300" src="./Find trailing zeros in factorial_files/88cf6fc468fb291c7ed52eb8e97cba09.jpg" alt="Diabetes Breakthrough That Will Bankrupt Diabetes Industry" class="ac_image" title="Diabetes Breakthrough That Will Bankrupt Diabetes Industry"></a><div class="ac_title_wrapper"><a class="ac_title" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1616067&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;459E9662-BD13-4E07-8C9B-F60058638F48&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_b0abde5dca96ed333758495b185505c2&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;aa76c9525bceb9c453ea202e27ca0f79&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://track.sahbaktrk.com/0b4efaae-6374-4ed6-bb3a-4d10efa21c5b?pubid=178483&amp;ad=ad4&#39;;return true;" href="http://track.sahbaktrk.com/0b4efaae-6374-4ed6-bb3a-4d10efa21c5b?pubid=178483&amp;ad=ad4">Diabetes Breakthrough That Will Bankrupt Diabetes Industry</a></div></div><div class="ac_container"><a class="ac_image_link" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1745200&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;F8C0F3E1-3D09-4E0C-9566-A3D7564F7F0E&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_824be47358ad536f275c9d1597ac5de8&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;204e26d7dfc0f64e1bb653f741622b59&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;https://boxmusic.club/2679/hot-female-celebs-who-never-wear-a-bra/?utm_source=contentad&amp;utm_medium=referral&amp;utm_campaign=CelebNoBraContentadlowtier&amp;utm_content=178483&#39;;return true;" href="https://boxmusic.club/2679/hot-female-celebs-who-never-wear-a-bra/?utm_source=contentad&amp;utm_medium=referral&amp;utm_campaign=CelebNoBraContentadlowtier&amp;utm_content=178483"><img height="250" width="300" src="./Find trailing zeros in factorial_files/6652e97c01272e3a5e45ec79da661def.jpg" alt="Famous People Who Never Wear Bras" class="ac_image" title="Famous People Who Never Wear Bras"></a><div class="ac_title_wrapper"><a class="ac_title" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1745200&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;F8C0F3E1-3D09-4E0C-9566-A3D7564F7F0E&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_824be47358ad536f275c9d1597ac5de8&#39;, &#39;2016-09-17 22:59:54.101&#39;, &#39;10949&#39;, &#39;&#39;, &#39;204e26d7dfc0f64e1bb653f741622b59&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;https://boxmusic.club/2679/hot-female-celebs-who-never-wear-a-bra/?utm_source=contentad&amp;utm_medium=referral&amp;utm_campaign=CelebNoBraContentadlowtier&amp;utm_content=178483&#39;;return true;" href="https://boxmusic.club/2679/hot-female-celebs-who-never-wear-a-bra/?utm_source=contentad&amp;utm_medium=referral&amp;utm_campaign=CelebNoBraContentadlowtier&amp;utm_content=178483">Famous People Who Never Wear Bras</a></div></div><div class="ac_container"><a class="ac_image_link" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1718739&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;4BC6F9BC-1EF9-4C90-A4AA-099D468C05F2&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_e7a0e24915c83f8ed31ad4ef1eba0dc9&#39;, &#39;2016-09-17 22:59:54.102&#39;, &#39;10949&#39;, &#39;&#39;, &#39;143e69080d7feb01132de971259bf3e1&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://www.stickyday.com/54-tragically-awkward-wedding-photos/?utm_source=contentad&amp;utm_medium=referral&#39;;return true;" href="http://www.stickyday.com/54-tragically-awkward-wedding-photos/?utm_source=contentad&amp;utm_medium=referral"><img height="250" width="300" src="./Find trailing zeros in factorial_files/2c55f77292eb37b4e9b81af9e3d94765.jpg" alt="Dirty Wedding Photos" class="ac_image" title="Dirty Wedding Photos"></a><div class="ac_title_wrapper"><a class="ac_title" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1718739&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;4BC6F9BC-1EF9-4C90-A4AA-099D468C05F2&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_e7a0e24915c83f8ed31ad4ef1eba0dc9&#39;, &#39;2016-09-17 22:59:54.102&#39;, &#39;10949&#39;, &#39;&#39;, &#39;143e69080d7feb01132de971259bf3e1&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://www.stickyday.com/54-tragically-awkward-wedding-photos/?utm_source=contentad&amp;utm_medium=referral&#39;;return true;" href="http://www.stickyday.com/54-tragically-awkward-wedding-photos/?utm_source=contentad&amp;utm_medium=referral">Dirty Wedding Photos</a></div></div><div class="ac_container"><a class="ac_image_link" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1742064&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;C5902F6F-40FC-4F8B-8CA2-F26B7078C54E&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_132e14250b5438f7bcb470fb6050f8ac&#39;, &#39;2016-09-17 22:59:54.102&#39;, &#39;10949&#39;, &#39;&#39;, &#39;584880b5b8f10c7cdba9e1b6cac09db7&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://www.stickyday.com/22-mainstream-films-where-the-actors-are-really-hooking-up/?utm_source=contentad&amp;utm_medium=referral&#39;;return true;" href="http://www.stickyday.com/22-mainstream-films-where-the-actors-are-really-hooking-up/?utm_source=contentad&amp;utm_medium=referral"><img height="250" width="300" src="./Find trailing zeros in factorial_files/0e822cff5f955f7c74ef0f79e7ea7206.jpg" alt="22 Movies Where They Really Did It" class="ac_image" title="22 Movies Where They Really Did It"></a><div class="ac_title_wrapper"><a class="ac_title" rel="nofollow" target="_blank" onclick="javascript:trackOutboundClick(&#39;1&#39;, &#39;134093&#39;, &#39;1742064&#39;, &#39;3&#39;, &#39;178483&#39;, &#39;&#39;, &#39;ip-172-32-23-33&#39;, &#39;C5902F6F-40FC-4F8B-8CA2-F26B7078C54E&#39;, &#39;0&#39;, &#39;IN&#39;, &#39;&#39;, &#39;2016091722_132e14250b5438f7bcb470fb6050f8ac&#39;, &#39;2016-09-17 22:59:54.102&#39;, &#39;10949&#39;, &#39;&#39;, &#39;584880b5b8f10c7cdba9e1b6cac09db7&#39;, &#39;&#39;, &#39;&#39;)" onmousedown="this.href=&#39;http://www.stickyday.com/22-mainstream-films-where-the-actors-are-really-hooking-up/?utm_source=contentad&amp;utm_medium=referral&#39;;return true;" href="http://www.stickyday.com/22-mainstream-films-where-the-actors-are-really-hooking-up/?utm_source=contentad&amp;utm_medium=referral">22 Movies Where They Really Did It</a></div></div><!-- end ads --><img class="ac_pixel" src="./Find trailing zeros in factorial_files/pixel.gif" height="1" width="1"><img class="ac_pixel" src="./Find trailing zeros in factorial_files/px.gif" height="1" width="1"></div><div style="clear:both;"></div><div class="ac_credit"><a href="https://www.content.ad/AboutUs?utm_medium=modal&amp;utm_source=widget_134093&amp;widgetId=134093" target="_blank" rel="nofollow">?</a></div><div class="ac_modal_shading"></div><div class="ac_credit_copy"><div class="ac_credit_logo"><img src="./Find trailing zeros in factorial_files/c_ad_logo.png"></div><p style="border-bottom:1px solid #ccc;padding-bottom:20px;">These content links are provided by <a href="https://www.content.ad/?utm_medium=modal&amp;utm_source=widget_134093">Content.ad</a>. Both <a href="https://www.content.ad/?utm_medium=modal&amp;utm_source=widget_134093">Content.ad</a> and the web site upon which the links are displayed may receive compensation when readers click on these links. Some of the content you are redirected to may be sponsored content. View our privacy policy <a href="https://www.content.ad/Privacy?utm_medium=modal&amp;utm_source=widget_134093" target="_blank" rel="nofollow">here</a>.</p><p><b>Family-Friendly Content</b><br>Website owners select the type of content that appears in our units. However, if you would like to ensure that Content.ad always displays family-friendly content on this device, regardless of what site you are on, check the option below. <a href="https://www.content.ad/FamilyFriendlyContent?utm_medium=modal&amp;utm_source=widget_134093" target="_blank">Learn More</a></p><p><input type="checkbox" id="familyFriendlyContent" onclick="familyFriendlyHandler(134093, this)"><label for="familyFriendlyContent" style="font-weight:bold;">Only recommend family-friendly content</label></p><p style="border-top:1px solid #ccc;padding-top:20px;">To learn how you can use <a href="https://www.content.ad/?utm_medium=modal&amp;utm_source=widget_134093">Content.ad</a> to drive visitors to your content or add this service to your site, please contact us at <a href="mailto:info@content.ad" rel="nofollow">info@content.ad</a>.</p></div></div><div style="clear:both;"></div></div><style type="text/css" id="ac_134093_css">/* Clean */#ac_134093, #ac_134093 div, #ac_134093 span, #ac_134093 a, #ac_134093 img {margin: 0;padding: 0;border: 0;font-size: 14px;font: normal 14px/1.428em Arial, Helvetica, sans-serif;vertical-align: baseline;}#ac_134093 {clear: both;display: block;text-align: left;margin: 20px 0;position: relative;font-family: Arial, Helvetica, sans-serif;text-align: left;line-height: 1em;}#ac_134093 .ac_header_title {margin: 0;border: none;direction: ltr;vertical-align: middle;padding: 0 178px 0 0;font-weight: bold;word-wrap: break-word;min-height: 1.071em;}#ac_134093 .ac_adbox {width: 100%;position: relative;display: block;clear: both;text-align: left;text-decoration: none;}#ac_134093 .ac_image {width: 300px;height: auto;border: none ;margin: 0;display: block;padding: 0;max-width: 100%;}#ac_134093 .ac_container {display: inline-block;zoom: 1;vertical-align: top;padding-right: 0.2857em;margin-top: 0.857em;}#ac_134093 .ac_container:hover .ac_title_wrapper .ac_title {text-decoration: underline;}#ac_134093 .ac_container a {display: block;direction: ltr;text-align: left;text-decoration: none;}#ac_134093 .ac_title_wrapper {width: 300px;padding-top: 0.1428em;}#ac_134093 .ac_title_wrapper .ac_title {margin: 0;border: none;direction: ltr;text-align: left;vertical-align: middle;word-wrap: break-word;width: 100%;padding: 0;font-size: 0.92857em;line-height: 1.25em;color: #000;}#ac_134093 .ac_referrer {font-size: 0.714em;font-weight: normal;font-style: italic;color: #888;word-wrap: break-word;line-height: 150%;}#ac_134093 a.ac_image_link {display: inline-block;*display: inline;zoom: 1;margin-right: 0;position: relative;overflow: hidden;}#ac_134093 .ac_container a.ac_image_link .ac_sponsored {position: absolute;bottom: 0;right: 0;padding: 0 1px 0 4px;background-color: #000;opacity: 0.5;-webkit-transition: opacity .5s ease-in-out;-moz-transition: opacity .5s ease-in-out;-o-transition: opacity .5s ease-in-out;transition: opacity .5s ease-in-out;font-size: 0.643em;text-transform: capitalize;letter-spacing: 1px;color: #fff;line-height: 1.8888em;border-radius: 5px 0 0 0;}#ac_134093 .ac_container:hover a.ac_image_link .ac_sponsored {opacity: 0.85;}#ac_134093 .ac_credit {position: absolute;top: -23px;right: 5px;font-size: 0.7857em;color: #999;}#ac_134093 .ac_credit a {display: inline-block;background: url(https://d32oduq093hvot.cloudfront.net/icons/sponsoredlinksby.png) 0 0 transparent;width: 163px;height: 21px;vertical-align: bottom;padding: 0;margin: 0 0 2px;font-size: 0;font-weight: bold;text-decoration: none;}#ac_134093 img.ac_pixel {width:1px!important;height:1px!important;border:none!important;z-index: inherit!important;visibility:visible!important;display:inline!important;background: none!important;background-image:none!important;position:relative!important;}#ac_134093 .ac_credit_copy, #ac_134093 .ac_modal_shading {display: none;}#ac_134093_modal-overlay {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,0.75);z-index: 999999;visibility: hidden;opacity: 0;transition: visibility 0s linear 0.25s,opacity 0.25s linear;-moz-transition: visibility 0s linear 0.25s,opacity 0.25s linear;-webkit-transition: visibility 0s linear 0.25s,opacity 0.25s linear;-o-transition: visibility 0s linear 0.25s,opacity 0.25s linear;}#ac_134093_modal-overlay.hidden {visibility: hidden;opacity: 0;}#ac_134093_modal-overlay.visible {visibility: visible !important;opacity: 1;transition-delay: 0s;}#ac_134093_modal-container, #ac_134093_modal-container div, #ac_134093_modal-container span, #ac_134093_modal-container h1, #ac_134093_modal-container h2, #ac_134093_modal-container h3, #ac_134093_modal-container p, #ac_134093_modal-container a, #ac_134093_modal-container em, #ac_134093_modal-container i, #ac_134093_modal-container img, #ac_134093_modal-container small, #ac_134093_modal-container strong, #ac_134093_modal-container b, #ac_134093_modal-container sub, #ac_134093_modal-container sup, #ac_134093_modal-container u {margin: 0;padding: 0;border: 0;font-size: 14px;font: normal 14px/1.428em Arial, Helvetica, sans-serif;vertical-align: baseline;}#ac_134093_modal-container em, #ac_134093_modal-container i {font-style: italic;}#ac_134093_modal-container h1, #ac_134093_modal-container h2, #ac_134093_modal-container h3, #ac_134093_modal-container strong,  #ac_134093_modal-container b {font-weight: bold;}#ac_134093_modal-container {position: fixed;width: 600px;max-width: 100%;min-width: 280px;height: auto;max-height: 100%;background: #fff;border: 1px solid #ababab;box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);padding: 18px 14px 24px;z-index: 1000000;overflow: auto;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);line-height: 1.428em;text-align: left;color: #333;font-size: 12px;background-color: #fff;visibility: hidden;opacity: 0;transition: visibility 0s linear 0.25s,opacity 0.25s linear;-moz-transition: visibility 0s linear 0.25s,opacity 0.25s linear;-webkit-transition: visibility 0s linear 0.25s,opacity 0.25s linear;-o-transition: visibility 0s linear 0.25s,opacity 0.25s linear;}#ac_134093_modal-container.hidden {visibility: hidden;opacity: 0;}#ac_134093_modal-container.visible {visibility: visible !important;opacity: 1;transition-delay: 0s;}#ac_134093_modal-container input[type=checkbox] {appearance: checkbox;-webkit-appearance: checkbox;-moz-appearance: checkbox;margin-right: 0.5em;display: inline-block;vertical-align: middle;}#ac_134093_modal-container p {margin: 0 0 1em 0;}#ac_134093_modal-container p:last-child {margin: 0;}@media (min-width: 768px) {#ac_134093_modal-container {padding: 18px 24px 24px;}}#ac_134093_modal-close {position: absolute;display: inline-block;width: 30px;height: 30px;text-indent: -999em;right: 0;top: 0;}#ac_134093_modal-close:before, #ac_134093_modal-close:after {content: '';position: absolute;width: 70%;top: 40%;left: 20%;background: #999;height: 2px;}#ac_134093_modal-close:before {-ms-transform: rotate(45deg); /* IE 9 */-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */transform: rotate(45deg);}#ac_134093_modal-close:after {-ms-transform: rotate(-45deg); /* IE 9 */-webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */transform: rotate(-45deg);}#ac_134093_modal-close:hover:before, #ac_134093_modal-close:hover:after {background: #000;}#ac_134093_modal-container .ac_credit_logo {width: 50%;max-width: 300px;min-width: 200px;margin: 0 auto 24px;text-align: center;}#ac_134093_modal-container .ac_credit_logo img {width: 100%;}#ac_134093_modal-container a {color: #F06924;text-decoration: underline;}@media (min-width: 600px) {#ac_134093 .ac_container {width: 32.6667%;padding: 0 ;margin-right: 1%;}#ac_134093 .ac_container:nth-child(3n) {margin-right: 0 ;}#ac_134093 .ac_image_link {width: 100% ;height: auto ;}#ac_134093 .ac_image {width: 100% ;}#ac_134093 .ac_title_wrapper {width: 100% ;}}@media (max-width: 599px) {/* mobile/tablet */#ac_134093 {text-align: center;}#ac_134093 .ac_adbox_inner {display: inline-block;width: 100%;}#ac_134093 .ac_container {width: 100.00%;max-width: 599px;padding: 0;margin-right: 1%;}#ac_134093 .ac_container:nth-child(1n) {margin-right: 0 ;}#ac_134093 .ac_header_title {text-align: left;}#ac_134093 .ac_image {width: 100%;height: auto;}#ac_134093 .ac_title_wrapper {width: 100%;max-width: 599px;display: block;}#ac_134093 a.ac_image_link {width: 100%;max-width: 599px;height: auto;}#ac_134093 .ac_title {width: auto;padding-top: 2px ;}}</style></div><div id="contentad134093"><script type="text/javascript" async="" src="./Find trailing zeros in factorial_files/widget2.aspx"></script></div>
+<script type="text/javascript">
+/*<![CDATA[*/(function(d){var params={id:"f5f1234c-7b60-44c0-bb28-a51fad23dac7",d:"cHJvZ3JhbW1lcmludGVydmlldy5jb20=",wid:"134093",cb:(new Date()).getTime()};var qs=[];for(var key in params)qs.push(key+'='+encodeURIComponent(params[key]));var s=d.createElement('script');s.type='text/javascript';s.async=true;var p='https:'==document.location.protocol?'https':'http';s.src=p+"://api.content.ad/Scripts/widget2.aspx?"+qs.join('&');d.getElementById("contentad134093").appendChild(s);})(document);/*]]>*/
+</script></div>
+<div id="disqus_thread"><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Find trailing zeros in factorial_files/saved_resource(10).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 2924px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+<p class="postmetadata"></p>
+</div>
+</div><script src="./Find trailing zeros in factorial_files/p"></script>
+<div id="sidebar-right">
+<div class="rightbar-ad">
+<div id="ezoic-pub-ad-placeholder-109">
+<div id="adsense3"><script async="" src="./Find trailing zeros in factorial_files/adsbygoogle.js" type="text/javascript">
+</script> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-4184197171686251" data-ad-slot="4169197477" data-adsbygoogle-status="done"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_5_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;" src="./Find trailing zeros in factorial_files/saved_resource(11).html"></iframe></ins></ins></ins> <script type="text/javascript">
+//<![CDATA[
+(adsbygoogle=window.adsbygoogle||[]).push({});
+//]]>
+</script><br>
+<br></div>
+</div>
+<script type="text/javascript">
+/*<![CDATA[*/function TestMyTopAd(){var x=jQuery('#adsense3').width();if(x==0)
+{document.write('<a href="http://www.programmerinterview.com/jobs"><img src="http://www.programmerinterview.com/images/JobVertical.JPG"><\/a>');}}
+TestMyTopAd();/*]]>*/
+</script></div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<div class="bookmark">
+<p>Would you like to thank <strong>ProgrammerInterview.com</strong> for being a helpful free resource? <strong>Then why not tell a friend about us</strong>, or <strong>simply add a link to this page from your webpage</strong> using the HTML below.</p>
+<p>Link to this page: <input class="bookmark-link" style="direction: ltr;" ondblclick="click_block=1" size="120" readonly="readonly" value="&lt;a href=&quot;http://www.programmerinterview.com/index.php/java-questions/find-trailing-zeros-in-factorial/&quot;&gt;Programmer and Software Interview Questions and Answers » Find trailing zeros in factorial&lt;/a&gt;" onclick="this.focus(); this.select();"></p>
+<p><span>Please bookmark with social media, your votes are noticed and appreciated:</span> <iframe src="./Find trailing zeros in factorial_files/like.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:22px;" allowtransparency="true"></iframe></p>
+</div>
+<div class="copyright">
+<div class="links">Copyright © 2016&nbsp;|&nbsp;<a href="http://www.programmerinterview.com/jobs">Programmer Job Board</a>&nbsp;|&nbsp;<a href="http://indiajobs.programmerinterview.com/">India Job Board for Programmers</a>&nbsp;|&nbsp; <a rel="author" href="http://www.programmerinterview.com/index.php/about/">About</a></div>
+</div>
+</div>
+<script type="text/javascript">
+/*<![CDATA[*/var recaptchaCallback=function(){var forms=document.getElementsByTagName('form');var pattern=/(^|\s)g-recaptcha(\s|$)/;for(var i=0;i<forms.length;i++){var divs=forms[i].getElementsByTagName('div');for(var j=0;j<divs.length;j++){var sitekey=divs[j].getAttribute('data-sitekey');if(divs[j].className&&divs[j].className.match(pattern)&&sitekey){grecaptcha.render(divs[j],{'sitekey':sitekey,'theme':divs[j].getAttribute('data-theme'),'type':divs[j].getAttribute('data-type'),'size':divs[j].getAttribute('data-size'),'tabindex':divs[j].getAttribute('data-tabindex'),'callback':divs[j].getAttribute('data-callback'),'expired-callback':divs[j].getAttribute('data-expired-callback')});break;}}}}/*]]>*/
+</script><script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function($){$("a[rel*=lightbox]").colorbox({width:"400px",height:"300px",initialWidth:"30%",initialHeight:"30%",maxWidth:"600px",maxHeight:"400px",opacity:0.8});$(".lbp_secondary").colorbox({speed:300,width:"450",height:"350",innerWidth:"50%",innerHeight:"50%",initialWidth:"30%",initialHeight:"40%",maxWidth:"600",maxHeight:"450",opacity:0.8,iframe:true});$(".lbp-inline-link-1").colorbox({transition:"elastic",speed:"300",width:"580",height:"320",innerWidth:false,innerHeight:false,maxWidth:"80%",maxHeight:"80%",top:false,right:false,bottom:false,left:false,fixed:true,open:false,opacity:"0.8",inline:true,href:"#lbp-inline-href-1"});$(".lbp-inline-link-2").colorbox({transition:"elastic",speed:"300",width:"80%",height:"80%",innerWidth:false,innerHeight:false,maxWidth:"80%",maxHeight:"80%",top:false,right:false,bottom:false,left:false,fixed:false,open:false,opacity:"0.8",inline:true,href:"#lbp-inline-href-2"});$(".lbp-inline-link-3").colorbox({transition:"elastic",speed:"300",width:"80%",height:"80%",innerWidth:false,innerHeight:false,maxWidth:"80%",maxHeight:"80%",top:false,right:false,bottom:false,left:false,fixed:false,open:false,opacity:"0.8",inline:true,href:"#lbp-inline-href-3"});$(".lbp-inline-link-4").colorbox({transition:"elastic",speed:"300",width:"80%",height:"80%",innerWidth:false,innerHeight:false,maxWidth:"80%",maxHeight:"80%",top:false,right:false,bottom:false,left:false,fixed:false,open:false,opacity:"0.8",inline:true,href:"#lbp-inline-href-4"});$(".lbp-inline-link-5").colorbox({transition:"elastic",speed:"300",width:"80%",height:"80%",innerWidth:false,innerHeight:false,maxWidth:"80%",maxHeight:"80%",top:false,right:false,bottom:false,left:false,fixed:false,open:false,opacity:"0.8",inline:true,href:"#lbp-inline-href-5"});});
+//]]>
+</script><script type="text/javascript" src="./Find trailing zeros in factorial_files/M9RPzs8rSUwu0U3LL8rVNdfPzEvOKU1JLdbPAqLC0tSiSj2QjF5uZh4A.js">
+</script><script type="text/javascript">
+//<![CDATA[
+var _wpcf7={"loaderUrl":"http:\/\/www.programmerinterview.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ...","cached":"1"};
+//]]>
+</script><script type="text/javascript" src="./Find trailing zeros in factorial_files/HcnBDYAgDADAhSwND2McRytqSaFYINHtNX7vPJLmtlCDXS3BhJxJ-hYqxoqVjEurg0fh42yr3lCk_xWvHuxxpKL2ufNudDMkzi8.js">
+</script><script type="text/javascript" src="./Find trailing zeros in factorial_files/api(1).js">
+</script><script type="text/javascript">
+//<![CDATA[
+var embedVars={"disqusConfig":{"platform":"wordpress@4.2.10","language":""},"disqusIdentifier":"3404 http:\/\/www.programmerinterview.com\/?page_id=3404","disqusShortname":"programmerinterview","disqusTitle":"Find trailing zeros in factorial","disqusUrl":"http:\/\/www.programmerinterview.com\/index.php\/java-questions\/find-trailing-zeros-in-factorial\/","options":{"manualSync":false},"postId":"3404"};
+//]]>
+</script><script type="text/javascript" src="./Find trailing zeros in factorial_files/M9RPySwuLC3WTc7PzU3NK9EtriwuSc3Vz01NyUzUzyqGSgMA.js">
+</script><script type="text/javascript">
+//<![CDATA[
+var countVars={"disqusShortname":"programmerinterview"};
+//]]>
+</script><script type="text/javascript" src="./Find trailing zeros in factorial_files/M9RPySwuLC3WTc7PzU3NK9EtriwuSc3Vz01NyUzUzyrWT84vzSsBAA.js">
+</script>
+
+<script data-cfasync="false" type="text/javascript">
+
+if (typeof $ezJQuery == 'undefined') {
+    if (typeof jQuery == 'undefined') {
+        document.write('<scr'+'ipt type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></sc'+'ript>');
+    } else {
+        $ezJQuery = jQuery;
+    }
+}
+
+if (typeof $ezJQuery == 'undefined' && typeof jQuery != 'undefined') {
+    $ezJQuery = jQuery.noConflict(true);
+}
+
+if (typeof $ezJQuery != 'undefined') {
+    $ezJQuery("body").mousemove(function(e){
+      ez_last_activity_count = ez_tos_track_count;
+    });
+    $ezJQuery("body").keypress(function(e){
+      ez_last_activity_count = ez_tos_track_count;
+    });
+    $ezJQuery(window).scroll(function(e){
+      ez_last_activity_count = ez_tos_track_count;
+    });
+} else {
+    ez_last_activity_count = 8;
+}
+
+</script>
+<script type="text/javascript" src="./Find trailing zeros in factorial_files/tb.php"></script>
+<script>
+$ezJQuery(function() {
+    if (typeof run_body_onload == 'function') {
+        run_body_onload();
+    }
+    if (typeof ezoicJSPageLoad == 'function') {
+        ezoicJSPageLoad($ezJQuery);
+    }
+});
+</script>
+
+<div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./Find trailing zeros in factorial_files/translate_24dp.png" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><iframe frameborder="0" class="goog-te-menu-frame skiptranslate" style="visibility: visible; box-sizing: content-box; width: 1003px; height: 263px; display: none;" src="./Find trailing zeros in factorial_files/saved_resource(12).html"></iframe><div id="ac_134093_modal-container" style="visibility: hidden;"><a id="ac_134093_modal-close">Close Modal</a><div id="ac_134093_modal-content"></div></div><div id="ac_134093_modal-overlay" style="visibility: hidden;"></div><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" src="./Find trailing zeros in factorial_files/saved_resource(13).html"></iframe><object id="vpaid_video_flash_tester_el" type="application/x-shockwave-flash" data="./Find trailing zeros in factorial_files/VPAIDFlash.swf" style="position: absolute; left: -1px; top: -1px; width: 1px; height: 1px;"><param name="FlashVars" value="flashid=vpaid_video_flash_tester_el&amp;handler=vpaid_video_flash_handler"><param name="allowScriptAccess" value="always"></object><iframe style="display: none;" src="./Find trailing zeros in factorial_files/saved_resource(14).html"></iframe></body></html>

@@ -1,0 +1,23 @@
+string str;
+getline(cin,str);
+
+getline() is used to take i/p with space.
+
+
+
+
+
+NOTE->
+
+
+if u want to leave a line and then give input used cin.ignore().
+
+If you're using getline after cin >> something, you need to flush the newline character out of the buffer in between. You can do it by using cin.ignore()
+
+It would be something like this:
+
+string messageVar;
+cout << "Type your message: ";
+cin.ignore(); 
+getline(cin, messageVar);
+This happens because the >> operator leaves a newline \n character in the input buffer. This may become a problem when you do unformatted input, like getline(), which reads input until a newline character is found. This happening, it will stop reading immediatly, because of that \n that was left hanging there in your previous operation.

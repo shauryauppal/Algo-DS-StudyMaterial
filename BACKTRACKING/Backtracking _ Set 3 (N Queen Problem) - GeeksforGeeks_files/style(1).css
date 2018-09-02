@@ -1,0 +1,332 @@
+body, body * {
+  vertical-align: baseline;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 9pt;
+  color: #333;
+}
+
+
+#main-container {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  background: #fff;
+  font-family: 'Open Sans';
+}
+
+#exit {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid black;
+  z-index: 10;
+}
+
+.feature {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+:focus {
+  outline:none;
+}
+::-moz-focus-inner {
+  border:0;
+}
+
+.compose-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  z-index: 5;
+}
+.compose-cursor {
+  width: 18px;
+  height: 26px;
+  position: absolute;
+  left: 337px;
+  top: 368px;
+}
+.compose-button {
+  background-color: #DB3A0D;
+  height: 28px;
+  display: block;
+  width: 118px;
+  text-align: center;
+  line-height: 30px;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  border-radius: 3px;
+  border: 1px solid #DB3A0D;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 94px;
+  bottom: 0;
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+}
+
+.compose-button:hover, .hover-compose-button {
+  box-shadow: 0px 0px 4px #b1b1b1;
+	background: linear-gradient(0deg, #CC360C, #DB3A0D);
+	border: 1px solid #B3320E;
+}
+.compose-button:active, .active-compose-button {
+  box-shadow: 0px 0px 2px #FFF inset;
+	background: linear-gradient(0deg, #CC360C, #DB3A0D);
+	border: 1px solid #B3320E;
+}
+
+#bg-img {
+  position: absolute;
+}
+
+.email-address-shadow {
+
+}
+
+.email-address-shadow .left, .email-address-shadow .right  {
+  position: absolute;
+  top: 107px;
+}
+.email-address-shadow .left  {
+	left: 37px;
+	top: 105px;
+}
+.email-address-shadow .right  {
+	left: 214px;
+	top: 105px;
+}
+.email-address-shadow .left div, .email-address-shadow .right div {
+  display: inline-block;
+  font-size: 27px;
+  color: white;
+  margin-left: -4px;
+  font-weight: 300;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+  opacity: 0;
+}
+.email-address-shadow .left div.cursor {
+  position: absolute;
+  font-weight: 400;
+  opacity: 1;
+  font-size: 32px;
+  top: -8px;
+  left: -15px;
+}
+
+.professional-email-text-block {
+  text-align: center;
+  margin-top: 85px;
+}
+.professional-email-text-block h3 {
+  font-weight: 300;
+  color: #808285;
+  font-size: 18px;
+  position: absolute;
+  left: -153px;
+  right: 0;
+  opacity: 0;
+}
+.professional-business-text {
+  top: 108px;
+}
+
+.email-company-name {
+	color: #808285;
+	font-size: 18px;
+	position: absolute;
+	left: 112px;
+	top: 107px;
+	font-weight: 300;
+	opacity: 0;
+}
+
+.gmail-for-work-block {
+  text-align: center;
+  margin-top: -58px;
+}
+.gmail-for-work-title {
+  font-size: 20px;
+  position: absolute;
+  left: -153px;
+  right: 0;
+  top: 79px;
+  opacity: 0;
+}
+.gmail-for-work-block .gmail-logo {
+  position: absolute;
+  left: -153px;
+  right: 0;
+  margin: 0 auto;
+  opacity: 0;
+  -webkit-box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);
+}
+.gmail-for-work-block h3{
+  position: absolute;
+  left: -153px;;
+  right: 0;
+  top: 113px;
+  font-weight: 300;
+  color: #858585;
+  font-size: 14px;
+  opacity: 0;
+}
+.start-now-button {
+	background-color: #1075f4;
+	padding: 9px;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	top: 167px;
+	width: 140px;
+	border-radius: 2px;
+	color: #ffffff;
+	font-size: 14px;
+	letter-spacing: 0.6px;
+	transform: scale(0.4);
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	-ms-transform: scale(0.4);
+	opacity: 0;
+	overflow: hidden;
+}
+
+.start-now-button .icon-effect {
+  position: absolute;
+  top: -110%;
+  left: -210%;
+  width: 200%;
+  height: 200%;
+
+  opacity: 0;
+
+  -webkit-transform: rotate(10deg);
+     -moz-transform: rotate(10deg);
+      -ms-transform: rotate(10deg);
+       -o-transform: rotate(10deg);
+          transform: rotate(10deg);
+
+
+  background: rgba(255, 255, 255, 0.2);
+  background: -moz-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0.5) 90%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0.5) 90%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+  background: -webkit-gradient(
+    linear, left top, right top,
+    color-stop(0%  ,rgba(255, 255, 255, 0.2)),
+    color-stop(75% ,rgba(255, 255, 255, 0.2)),
+    color-stop(90% ,rgba(255, 255, 255, 0.8)),
+    color-stop(100%,rgba(255, 255, 255, 0.0))
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0.5) 90%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0.5) 90%,6
+    rgba(255, 255, 255, 0.0) 100%
+  );
+  background: linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0.5) 90%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+
+
+
+  -webkit-transition-property: left, top, opacity;
+     -moz-transition-property: left, top, opacity;
+      -ms-transition-property: left, top, opacity;
+       -o-transition-property: left, top, opacity;
+          transition-property: left, top, opacity;
+  -webkit-transition-duration: 0.5s, 0.5s, 0.1s;
+     -moz-transition-duration: 0.5s, 0.5s, 0.1s;
+      -ms-transition-duration: 0.5s, 0.5s, 0.1s;
+       -o-transition-duration: 0.5s, 0.5s, 0.1s;
+          transition-duration: 0.5s, 0.5s, 0.1s;
+  -webkit-transition-timing-function: ease;
+     -moz-transition-timing-function: ease;
+      -ms-transition-timing-function: ease;
+       -o-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+/* Hover state - trigger effect */
+
+.icon-effect.shimmer {
+  opacity: 1;
+  top: -15%;
+  left: -30%;
+}
+
+
+.footer {
+  position: absolute;
+  width: 300px;
+  height: 35px;
+  background-color: #fff;
+  top: 215px;
+  z-index: 5;
+}
+.footer .gmail-for-work-text {
+  position: absolute;
+    right: 15px;
+    font-size: 15px;
+    letter-spacing: -0.6px;
+    top: 7px;
+}
+.footer-gmail-logo {
+  width: 15px;
+  position: absolute;
+  right: 118px;
+  top: 12px;
+  -webkit-box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 6px -4px rgba(0,0,0,0.75);
+}

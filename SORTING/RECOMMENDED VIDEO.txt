@@ -1,0 +1,5 @@
+1.MERGE SORT
+https://youtu.be/M814OagXWTI
+Also check wikipedia animation image
+2.Quick sort
+https://www.youtube.com/watch?v=COk73cpQbFQ

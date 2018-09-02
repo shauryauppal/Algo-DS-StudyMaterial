@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes -->
+<html lang="en" dir="ltr" class="client-js ve-not-available"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Sieve of Eratosthenes - Wikipedia, the free encyclopedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ = window.RLQ || []).push(function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Sieve_of_Eratosthenes","wgTitle":"Sieve of Eratosthenes","wgCurRevisionId":711785949,"wgRevisionId":711785949,"wgArticleId":73415,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles containing Greek-language text","Pages using citations with accessdate and no URL","Articles containing Ancient Greek-language text","Articles needing additional references from June 2015","All articles needing additional references","Primality tests","Articles with example pseudocode","Sieve theory","Algorithms"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Sieve_of_Eratosthenes","wgRelevantArticleId":73415,"wgRequestId":"73c0a97c2ca749030c5c0874","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCentralAuthMobileDomain":false,"wgWikibaseItemId":"Q177898","wgVisualEditorToolbarScrollOffset":0}); /* @nomin */mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"}); /* @nomin */ ;
+
+});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.desktopArticleTarget.init","ext.uls.init","ext.uls.interface","ext.quicksurveys.init","mw.MediaWikiPlayer.loader","mw.PopUpMediaTransform","ext.centralNotice.bannerController","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/load.php">
+<style>
+.uls-menu a{cursor:pointer}.uls-menu.callout .caret-before{border-top:20px solid transparent;border-right:20px solid #C9C9C9;border-bottom:20px solid transparent;display:inline-block;left:-21px;top:30px;position:absolute}.uls-menu.callout .caret-after{border-top:20px solid transparent;border-right:20px solid #FCFCFC;border-bottom:20px solid transparent;display:inline-block;left:-20px;top:30px;position:absolute}.uls-ui-languages button{width:23%;text-overflow:ellipsis;margin-right:4%}button.uls-more-languages{width:auto}.settings-title{font-size:11pt}.settings-text{color:#555555;font-size:9pt}div.display-settings-block:hover .settings-text{color:#252525}
+#container{position:relative;min-height:100%}#container,video{width:100%;height:100%}#playerContainer{overflow:hidden;position:relative;height:100%;background:#000}#videoHolder{position:relative;overflow:hidden}.fullscreen #playerContainer{position:absolute !important;width:100% !important;height:100%! important;z-index:9999;min-height:100%;top:0;left:0;margin:0}.mwEmbedPlayer{width:100%;height:100%;overflow:hidden;position:absolute;top:0;left:0}.modal_editor{ left:10px;top:10px;right:10px;bottom:10px;position:fixed;z-index:100}.displayHTML a:visited{color:white}.loadingSpinner{width:32px;height:32px;display:block;padding:0px;background-image:url(/w/extensions/MwEmbedSupport/MwEmbedModules/MwEmbedSupport/skins/common/images/loading_ani.gif?a51c5)}.mw-imported-resource{border:thin solid black}.kaltura-icon{background-image:url(/w/extensions/MwEmbedSupport/MwEmbedModules/MwEmbedSupport/skins/common/images/kaltura_logo_sm_transparent.png?fa5c4) !important;background-repeat:no-repeat;display:block;height:12px;width:12px;margin-top:2px !important;margin-left:3px !important}.mw-fullscreen-overlay{background:rgb(0,0,0) none repeat scroll 0% 0%;position:fixed;top:0pt;left:0pt;width:100%;height:100%;-moz-background-clip:border;-moz-background-origin:padding;-moz-background-inline-policy:continuous} .play-btn-large{width:70px;height:53px;background :url(/w/extensions/MwEmbedSupport/MwEmbedModules/MwEmbedSupport/skins/common/images/player_big_play_button.png?69699);position :absolute;cursor :pointer;border :none !important; }.play-btn-large:hover{background :url(/w/extensions/MwEmbedSupport/MwEmbedModules/MwEmbedSupport/skins/common/images/player_big_play_button_hover.png?97c2a)}.carouselContainer{position :absolute;width :100%;z-index :2}.carouselVideoTitle{position :absolute;top :0px;left :0px;width :100%;background :rgba(0,0,0,0.8);color :white;font-size :small;font-weight :bold;z-index :2}.carouselVideoTitleText{display :block;padding :10px 10px 10px 20px}.carouselTitleDuration{position :absolute;top :0px;right :0px;padding :2px;background-color :#5A5A5A;color :#D9D9D9;font-size :smaller;z-index :2}.carouselImgTitle{position :absolute;width :100%;text-align :center;color :white;font-size :small;background :rgba(0,0,0,0.4)}.carouselImgDuration{position :absolute;top :2px;left :2px;background :rgba( 0,0,0,0.7 );color :white;padding :1px 6px;font-size :small}.carouselPrevButton,.carouselNextButton{display :block;position :absolute;bottom:23px}.carouselPrevButton{left :5px}.carouselNextButton{right:6px}.alert-container{border-radius:3px;background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.04,rgb(215,215,215)),color-stop(0.55,rgb(230,230,230)),color-stop(1,rgb(255,255,255)));background-image:-o-linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:-ms-linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:-moz-linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:-webkit-linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);background-image:linear-gradient(bottom,rgb(215,215,215) 4%,rgb(230,230,230) 55%,rgb(255,255,255) 100%);margin:auto;position:absolute;top:0;left:0;right:0;bottom:0;max-width:80%;max-height:30%}.alert-title{background-color :#E6E6E6;padding :5px;border-bottom :1px solid #D1D1D1;font-weight :normal !important;font-size:14px !important;border-top-left-radius:3px;border-top-right-radius:3px }.alert-message{padding :5px;font-weight :normal !important;text-align:center;font-size:14px !important}.alert-buttons-container{text-align:center;padding-bottom:5px}.alert-button{background-color:#474747;color:white;border-radius:.5em;padding:2px 10px;background-image:-webkit-gradient( linear,left bottom,left top,color-stop(0.04,rgb(25,25,25)),color-stop(0.55,rgb(47,47,47)),color-stop(0.68,rgb(71,71,71)) );background-image:-o-linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:-moz-linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:-ms-linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:-webkit-linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%);background-image:linear-gradient(bottom,rgb(25,25,25) 4%,rgb(47,47,47) 55%,rgb(71,71,71) 68%)}.alert-text{color :black !important}
+.PopUpMediaTransform a .play-btn-large{top:50%;left :50%;width:70px;height:53px;margin-left:-35px;margin-top:-25px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAA1CAYAAAD8mJ3rAAADNklEQVR4AWJAAhxA7AHEeUDcP8JwHtTvHAxoQAuI5wDxZkD75qBkSRKG0bZt21h7t23btm2bO7ZthNq2rq3mo0zWeKaty6yI8wB1Et+fEnDuIC4+SdEGvIBSPvP6oxOhYihjG8WImHtQxDaAk52GEeQFT4uBYqAYKAaKUVNTG9bX1x+FYj4iLi4+UFVVRXjz5s0Wwo0bN1geHh7zAi8mKSkJ9fLly63vOX/+POO3336bElgx////P/3Fixdbu9HS0kKxsLAYFzgxZ8+eZTx9+nRzP8rKygh6enqjAiOmt7eX/ujRo82DcP/+/fWsrCyskpLSEN+L6e7upoMf3jgMt27dWouKilqRkZEZ5FsxHR0dtDt37qwfhUuXLrG8vb0XxMTEBvhODJhcaSCi149DZ2cn3cHBYZavxDQ2NlKvXLmydhLU19dTfvjhhym+EFNXV0e5ePHi6klSVFREMDIyGuNpMdXV1WQQ2azTIDU1FaOpqTnCk2IqKirIPT09zNOiq6uLARIMpaCgMMhTYkpLS0kgmZinDZjk6SDBFiUlJQd4QkxhYSGxra2Nzi7AgpVibm4+zvVi8vLyiE1NTXR2gshBeg5Xi8nOziaAZKKxG7AwneBqMZmZmQSQTFR2o6OjM8LVYkCk4svLyynsJCYmBs31c0xycjKupKSEwg5A4Ud2c3NbkJCQGOB6MfHx8diCggLyaePr67ukqKg4xDN1DOjWWJBMpNMiODgYtb365QExoCrFgs0n4kkTHh6OBqcOYzy7VoqIiMCkp6cTT4ro6GgsKOAmeH51HRYWhgbJRDgusbGxODs7uylhYeF+vth2CAkJQYNkIhwVRMgvv/wyg5xP8dVGVVBQECoxMRF/WECa4f7666+57aU9n4gJCAhAIT95GBwcHObl5OQG+fqUwN/fH4UMh4Pg7u6+pKqqOsx+AVwqxsfHZ0VLS2tUoE4ikV6wm5DAwECUsbHxuECeXevq6o59LwREOMbKympyW/QKkhgEZJi4uLgsIr0H1CLT+0QvvFEFxUAxUAwUA8Xs+pYAviUohSK2UfrpvdJrKOMzbz86ef/9AIfU5yH0AyJklzeR8E3kO5B6nR5s2Y8qAAAAAElFTkSuQmCC);background-image:url(/w/extensions/TimedMediaHandler/resources/player_big_play_button.png?f49a4)!ie}.PopUpMediaTransform a .play-btn-large :hover{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAA1CAYAAAD8mJ3rAAADSklEQVR4AeybA4wlWRRA1/u1tjG2g3YHY0/U4djTtm3btm3bTtu27du2WVXvJif8PIV3Ue+jBUECrgPsgAbBYAeuTzlYEicBU8CH4JhOuZiJ3wBHJGUOlyknEJxIxlLACYQ5ErEMcLLSZYRwRGKQGCQGicG0mP/++y/4/Pnz4UjMDCQSyQ+ianR0dGyS6urqbnZ29nTCi9HR0SkYHBwcW0peXl7Ho0ePEggrJisrq62/v390NWJjYxsZGRmjCCcmJyeno7u7e2Q9PDw8qs6ePRtOGDEZGRntEMMbobm5edDCwqLsjz/+CMK9mNTU1Db4w0Oboaampk9BQSH/22+/DcCtmMTExNb6+vrBrVBYWNjNzc2d+eWXX/rhTkx0dHRLZWXlwHZISkpqe/LkSSquxISHhzeXlJT07QShoaFNN2/ejMeFmODg4KaCgoLencTZ2bn68uXLEZgW4+/v3wBLdvduYGBgUHL06NFQTIrx9vauT09P79otUlJSOhQVFQt++eWXQEyJcXNzq4OVqXO3iYqKaoMVLJtGo/ljQoyjo2MtpP3tewUUrE0MDAzRB16MjY1NDaxMbXuJr69vE5VK9T/QYiDFrw4KCmrda6AwjTnQYkxMTKrg9G7ea06ePBl2oMXAklrp6enZtJcoKSkVY6FRVeHi4tK4F8CNvuHNmzdZFArF/8CLUVdXL7O3t6/fbXh4eHJ//fXXIMzkMcrKyqXW1tZ1u4WoqGjBkSNHQjGX+crLy5eamZnV7jTS0tLF586di8RsrSQjI1NiZGRUs1NA+l9KT08fg/nqWlJSslhfX796u6ioqJRfu3Yt/pNPPvHFRdtBTEysSFtbu2qrgJCKe/fuJZPJZH9cNapEREQKNTU1KzeLmppaBRsbW9qyohAvYgQFBQsm/+RmgDZmxo8//hiI6ykBPz9/weTlsBHevn2b+88//4TMvZ/oYri5ufOPHz8eTqhJ5Lt373JWEyIsLFx45cqVaELOrk+fPh0J2W/5QiGwhJewsrLGzS29RBQzyeRl8vLly+zJswdykUQSieSPHhxaHSQGiUFikBgkBu0lWH0vATcSsQzu2f1KLkjGHG4TA4cJFOjBs9RoFtIDBQiOPZGjeyIBuiuBC06Nbn0AAAAASUVORK5CYII=);background-image:url(/w/extensions/TimedMediaHandler/resources/player_big_play_button_hover.png?8a926)!ie} .mw-tmh-playtext{display:block;height:0;overflow:hidden}
+@media print{#centralNotice{display:none}}.cn-closeButton{display:inline-block;zoom:1;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAMAAABFjsb+AAABelBMVEX///////80NDT///////////////////////////8yMjIzMzM5OTkMDAxlZWWCgoIvLy////8AAAD9/f3////8/PxjY2Pa2tpqamo7Ozvp6elFRUWEhITCwsLNzc1WVlbY2Ng3Nzf+/v57e3vb29ufn58LCwthYWExMTFSUlJDQ0Py8vJXV1cvLy9WVlbExMQBAQH+/v59fX14eHg2NjYuLi5VVVXc3Nz6+vrIyMjj4+Pn5+dGRkZ5eXmBgYHp6elsbGwwMDB8fHz8/PzOzs5XV1c1NTXQ0NDn5+dkZGRnZ2ft7e3l5eUtLS3d3d07OztDQ0PHx8eRkZGysrJbW1v8/Pzu7u40NDRUVFRsbGzb29uIiIiXl5fi4uLy8vJmZmbh4eHp6elpaWmioqKCgoJ5eXk5OTmcnJxsbGzy8vJiYmKwsLDk5ORAQEA8PDw6OjrAwMCqqqqCgoLx8fHz8/Pr6+vx8fHj4+NlZWXn5+dtbW2jo6OdnZ16enp8kgr/AAAAfnRSTlMAqOd5JlJZc5YX5+flANTK6SMAmaap1L/c5Lngyre12rHlqc2xzADd6NrhsNno37cAqMzZ5unasJq1vbjf2Ne40ujLmrTf5sK23tOyteq95eC2xsneq7Hm4Ny/yNG5ttuws9zJ1dfky9q31cu65OPkxsbWtrezsLrbudrJy9cUNT7KAAAA+ElEQVQYV2NgAAEWVmYOEQ5mVhYGCOBV42QT1pfhE+PjlxVm4zQQAokJsqsYSYdzc3MzaSkrsAuCxDjZ5eS5FDNUk9NT0zQ0Ldk5gWJsCTq6rlGihoyMolJJpmbmbEDjnfm5IqzsExkZGbVzrOMdnSxYGFhdbEzcPZg8Mxm9bX39pPwDAlkZmIPcQkLDJAQio1IE9OIY7ZiimRk4HJhilBh9jHkkedRjGRmDubw4GESymLKBZonn5uUXAOlCLjERrOoQ5hUJ6BVDzIPZW4JkL9R9pUCzysqtK8Dug/hDHOyPSgmIP6D+rVKtrqmVhPkXW7hgCz/McAYAItEzkWDsbM4AAAAASUVORK5CYII=);background:url(//en.wikipedia.org/static/1.27.0-wmf.12/extensions/CentralNotice/resources/subscribing/CloseWindow19x19.png?d968e)!ie;width:19px;height:19px;text-indent:19px;white-space:nowrap;overflow:hidden}
+.cite-accessibility-label{position:absolute !important; top:-99999px;clip:rect(1px 1px 1px 1px); clip:rect(1px,1px,1px,1px);padding:0 !important;border:0 !important;height:1px !important;width:1px !important;overflow:hidden}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+cite,dfn{font-style:inherit} q{quotes:'"' '"' "'" "'"} blockquote{overflow:hidden;margin:1em 0;padding:0 40px} strong.selflink{font-weight:700} .mw-body sub,.mw-body sup,span.reference {font-size:80%} #interwiki-completelist{font-weight:bold}body.page-Main_Page #ca-delete{display:none !important}body.page-Main_Page #mp-topbanner{clear:both} .updatedmarker{background-color:transparent;color:#006400} #toolbar{height:22px;margin-bottom:6px} #editpage-specialchars{display:none} body.action-info :target,.citation:target{background-color:#DEF; background-color:rgba(0,127,255,0.133)} .citation{word-wrap:break-word} @media screen,handheld{.citation .printonly{display:none}} ol.references,div.reflist,div.refbegin{font-size:90%; margin-bottom:0.5em}div.refbegin-100{font-size:100%; }div.reflist ol.references{font-size:100%; list-style-type:inherit; } sup.reference{font-weight:normal;font-style:normal} span.brokenref{display:none} div.columns{margin-top:0.3em}div.columns dl,div.columns ol,div.columns ul{margin-top:0} .nocolbreak,div.columns li,div.columns dd dd{-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid-column} .flowlist ul{overflow-x:hidden;margin-left:0;padding-left:1.6em}.flowlist ol{overflow-x:hidden;margin-left:0;padding-left:3.2em}.flowlist dl{overflow-x:hidden} .hlist dl,.hlist ol,.hlist ul{margin:0;padding:0} .hlist dd,.hlist dt,.hlist li{margin:0;display:inline} .hlist.inline,.hlist.inline dl,.hlist.inline ol,.hlist.inline ul,.hlist dl dl,.hlist dl ol,.hlist dl ul,.hlist ol dl,.hlist ol ol,.hlist ol ul,.hlist ul dl,.hlist ul ol,.hlist ul ul{display:inline} .hlist .mw-empty-li{display:none} .hlist dt:after{content:":"}.hlist dd:after,.hlist li:after{content:" · ";font-weight:bold}.hlist dd:last-child:after,.hlist dt:last-child:after,.hlist li:last-child:after{content:none} .hlist dd dd:first-child:before,.hlist dd dt:first-child:before,.hlist dd li:first-child:before,.hlist dt dd:first-child:before,.hlist dt dt:first-child:before,.hlist dt li:first-child:before,.hlist li dd:first-child:before,.hlist li dt:first-child:before,.hlist li li:first-child:before{content:" (";font-weight:normal}.hlist dd dd:last-child:after,.hlist dd dt:last-child:after,.hlist dd li:last-child:after,.hlist dt dd:last-child:after,.hlist dt dt:last-child:after,.hlist dt li:last-child:after,.hlist li dd:last-child:after,.hlist li dt:last-child:after,.hlist li li:last-child:after{content:") ";font-weight:normal} .hlist ol{counter-reset:listitem}.hlist ol > li{counter-increment:listitem}.hlist ol > li:before{content:" " counter(listitem) " ";white-space:nowrap}.hlist dd ol > li:first-child:before,.hlist dt ol > li:first-child:before,.hlist li ol > li:first-child:before{content:" (" counter(listitem) " "} .plainlist ol,.plainlist ul{line-height:inherit;list-style:none none;margin:0}.plainlist ol li,.plainlist ul li{margin-bottom:0} .navbox{ border:1px solid #aaa;width:100%;margin:auto;clear:both;font-size:88%;text-align:center;padding:1px}.navbox-inner,.navbox-subgroup{width:100%}.navbox-group,.navbox-title,.navbox-abovebelow{padding:0.25em 1em; line-height:1.5em;text-align:center}th.navbox-group{ white-space:nowrap; text-align:right}.navbox,.navbox-subgroup{background:#fdfdfd; }.navbox-list{line-height:1.5em;border-color:#fdfdfd; }.navbox th,.navbox-title{background:#ccccff; }.navbox-abovebelow,th.navbox-group,.navbox-subgroup .navbox-title{background:#ddddff; }.navbox-subgroup .navbox-group,.navbox-subgroup .navbox-abovebelow{background:#e6e6ff; }.navbox-even{background:#f7f7f7; }.navbox-odd{background:transparent; }table.navbox{margin-top:1em; }table.navbox table.navbox{margin-top:0; }table.navbox + table.navbox{margin-top:-1px; }.navbox .hlist td dl,.navbox .hlist td ol,.navbox .hlist td ul,.navbox td.hlist dl,.navbox td.hlist ol,.navbox td.hlist ul{padding:0.125em 0; } .navbar{display:inline;font-size:88%;font-weight:normal}.navbar ul{display:inline;white-space:nowrap}.mw-body-content .navbar ul{line-height:inherit}.navbar li{word-spacing:-0.125em}.navbar.mini li abbr[title]{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit} .infobox .navbar{font-size:100%}.navbox .navbar{display:block;font-size:100%}.navbox-title .navbar{ float:left; text-align:left; margin-right:0.5em;width:6em} .collapseButton{ float:right;font-weight:normal; margin-left:0.5em; text-align:right;width:auto} .navbox .collapseButton{width:6em} .mw-collapsible-toggle{font-weight:normal; text-align:right}.navbox .mw-collapsible-toggle{width:6em} .infobox{border:1px solid #aaa;border-spacing:3px;background-color:#f9f9f9;color:black; margin:0.5em 0 0.5em 1em;padding:0.2em; float:right; clear:right;font-size:88%;line-height:1.5em}.infobox caption{font-size:125%;font-weight:bold;padding:0.2em}.infobox td,.infobox th{vertical-align:top; text-align:left}.infobox.bordered{border-collapse:collapse}.infobox.bordered td,.infobox.bordered th{border:1px solid #aaa}.infobox.bordered .borderless td,.infobox.bordered .borderless th{border:0}.infobox.sisterproject{width:20em;font-size:90%}.infobox.standard-talk{border:1px solid #c0c090;background-color:#f8eaba}.infobox.standard-talk.bordered td,.infobox.standard-talk.bordered th{border:1px solid #c0c090} .infobox.bordered .mergedtoprow td,.infobox.bordered .mergedtoprow th{border:0;border-top:1px solid #aaa; border-right:1px solid #aaa}.infobox.bordered .mergedrow td,.infobox.bordered .mergedrow th{border:0; border-right:1px solid #aaa} .infobox.geography{border-collapse:collapse;line-height:1.2em;font-size:90%}.infobox.geography td,.infobox.geography th{border-top:1px solid #aaa;padding:0.4em 0.6em 0.4em 0.6em}.infobox.geography .mergedtoprow td,.infobox.geography .mergedtoprow th{border-top:1px solid #aaa;padding:0.4em 0.6em 0.2em 0.6em}.infobox.geography .mergedrow td,.infobox.geography .mergedrow th{border:0;padding:0 0.6em 0.2em 0.6em}.infobox.geography .mergedbottomrow td,.infobox.geography .mergedbottomrow th{border-top:0;border-bottom:1px solid #aaa;padding:0 0.6em 0.4em 0.6em}.infobox.geography .maptable td,.infobox.geography .maptable th{border:0;padding:0} .wikitable.plainrowheaders th[scope=row]{font-weight:normal; text-align:left} .wikitable td ul,.wikitable td ol,.wikitable td dl{ text-align:left} .toc.hlist ul,#toc.hlist ul,.wikitable.hlist td ul,.wikitable.hlist td ol,.wikitable.hlist td dl{text-align:inherit} div.listenlist{background:url(//upload.wikimedia.org/wikipedia/commons/4/47/Sound-icon.svg) no-repeat scroll 0 0 transparent;background-size:30px;padding-left:40px} table.mw-hiero-table td{vertical-align:middle} div.medialist{min-height:50px;margin:1em; background-position:top left;background-repeat:no-repeat}div.medialist ul{list-style-type:none;list-style-image:none;margin:0}div.medialist ul li{padding-bottom:0.5em}div.medialist ul li li{font-size:91%;padding-bottom:0} div#content a[href$=".pdf"].external,div#content a[href*=".pdf?"].external,div#content a[href*=".pdf#"].external,div#content a[href$=".PDF"].external,div#content a[href*=".PDF?"].external,div#content a[href*=".PDF#"].external,div#mw_content a[href$=".pdf"].external,div#mw_content a[href*=".pdf?"].external,div#mw_content a[href*=".pdf#"].external,div#mw_content a[href$=".PDF"].external,div#mw_content a[href*=".PDF?"].external,div#mw_content a[href*=".PDF#"].external{background:url(//upload.wikimedia.org/wikipedia/commons/2/23/Icons-mini-file_acrobat.gif) no-repeat right; padding-right:18px} div#content span.PDFlink a,div#mw_content span.PDFlink a{background:url(//upload.wikimedia.org/wikipedia/commons/2/23/Icons-mini-file_acrobat.gif) no-repeat right; padding-right:18px} div.columns-2 div.column{ float:left;width:50%;min-width:300px}div.columns-3 div.column{ float:left;width:33.3%;min-width:200px}div.columns-4 div.column{ float:left;width:25%;min-width:150px}div.columns-5 div.column{ float:left;width:20%;min-width:120px} .messagebox{border:1px solid #aaa;background-color:#f9f9f9;width:80%;margin:0 auto 1em auto;padding:.2em}.messagebox.merge{border:1px solid #c0b8cc;background-color:#f0e5ff;text-align:center}.messagebox.cleanup{border:1px solid #9f9fff;background-color:#efefff;text-align:center}.messagebox.standard-talk{border:1px solid #c0c090;background-color:#f8eaba;margin:4px auto} .mbox-inside .standard-talk,.messagebox.nested-talk{border:1px solid #c0c090;background-color:#f8eaba;width:100%;margin:2px 0;padding:2px}.messagebox.small{width:238px;font-size:85%; float:right;clear:both; margin:0 0 1em 1em;line-height:1.25em}.messagebox.small-talk{width:238px;font-size:85%; float:right;clear:both; margin:0 0 1em 1em;line-height:1.25em;background:#F8EABA} th.mbox-text,td.mbox-text{ border:none; padding:0.25em 0.9em; width:100%; }td.mbox-image{ border:none; padding:2px 0 2px 0.9em; text-align:center}td.mbox-imageright{ border:none; padding:2px 0.9em 2px 0; text-align:center}td.mbox-empty-cell{ border:none;padding:0;width:1px} table.ambox{margin:0 10%; border:1px solid #aaa; border-left:10px solid #1e90ff; background:#fbfbfb}table.ambox + table.ambox{ margin-top:-1px}.ambox th.mbox-text,.ambox td.mbox-text{ padding:0.25em 0.5em; }.ambox td.mbox-image{  padding:2px 0 2px 0.5em; }.ambox td.mbox-imageright{  padding:2px 0.5em 2px 0; }table.ambox-notice{ border-left:10px solid #1e90ff; }table.ambox-speedy{ border-left:10px solid #b22222; background:#fee; }table.ambox-delete{ border-left:10px solid #b22222; }table.ambox-content{ border-left:10px solid #f28500; }table.ambox-style{ border-left:10px solid #f4c430; }table.ambox-move{ border-left:10px solid #9932cc; }table.ambox-protection{ border-left:10px solid #bba; } table.imbox{margin:4px 10%;border-collapse:collapse;border:3px solid #1e90ff; background:#fbfbfb}.imbox .mbox-text .imbox{ margin:0 -0.5em; display:block; }.mbox-inside .imbox{ margin:4px}table.imbox-notice{border:3px solid #1e90ff; }table.imbox-speedy{border:3px solid #b22222; background:#fee; }table.imbox-delete{border:3px solid #b22222; }table.imbox-content{border:3px solid #f28500; }table.imbox-style{border:3px solid #f4c430; }table.imbox-move{border:3px solid #9932cc; }table.imbox-protection{border:3px solid #bba; }table.imbox-license{border:3px solid #88a; background:#f7f8ff; }table.imbox-featured{border:3px solid #cba135; } table.cmbox{margin:3px 10%;border-collapse:collapse;border:1px solid #aaa;background:#DFE8FF; }table.cmbox-notice{background:#D8E8FF; }table.cmbox-speedy{margin-top:4px;margin-bottom:4px;border:4px solid #b22222; background:#FFDBDB; }table.cmbox-delete{background:#FFDBDB; }table.cmbox-content{background:#FFE7CE; }table.cmbox-style{background:#FFF9DB; }table.cmbox-move{background:#E4D8FF; }table.cmbox-protection{background:#EFEFE1; } table.ombox{margin:4px 10%;border-collapse:collapse;border:1px solid #aaa; background:#f9f9f9}table.ombox-notice{border:1px solid #aaa; }table.ombox-speedy{border:2px solid #b22222; background:#fee; }table.ombox-delete{border:2px solid #b22222; }table.ombox-content{border:1px solid #f28500; }table.ombox-style{border:1px solid #f4c430; }table.ombox-move{border:1px solid #9932cc; }table.ombox-protection{border:2px solid #bba; } table.tmbox{margin:4px 10%;border-collapse:collapse;border:1px solid #c0c090; background:#f8eaba}.mediawiki .mbox-inside .tmbox{ margin:2px 0; width:100%; }.mbox-inside .tmbox.mbox-small{ line-height:1.5em; font-size:100%; }table.tmbox-speedy{border:2px solid #b22222; background:#fee; }table.tmbox-delete{border:2px solid #b22222; }table.tmbox-content{border:2px solid #f28500; }table.tmbox-style{border:2px solid #f4c430; }table.tmbox-move{border:2px solid #9932cc; }table.tmbox-protection,table.tmbox-notice{border:1px solid #c0c090; } table.dmbox{clear:both;margin:0.9em 1em;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background:transparent} table.fmbox{clear:both;margin:0.2em 0;width:100%;border:1px solid #aaa;background:#f9f9f9; }table.fmbox-system{background:#f9f9f9}table.fmbox-warning{border:1px solid #bb7070; background:#ffdbdb; }table.fmbox-editnotice{background:transparent} div.mw-warning-with-logexcerpt,div.mw-lag-warn-high,div.mw-cascadeprotectedwarning,div#mw-protect-cascadeon,div.titleblacklist-warning,div.locked-warning{clear:both;margin:0.2em 0;border:1px solid #bb7070;background:#ffdbdb;padding:0.25em 0.9em} div.mw-lag-warn-normal,div.fmbox-system{clear:both;margin:0.2em 0;border:1px solid #aaa;background:#f9f9f9;padding:0.25em 0.9em} body.mediawiki table.mbox-small{  clear:right; float:right; margin:4px 0 4px 1em;width:238px;font-size:88%;line-height:1.25em}body.mediawiki table.mbox-small-left{  margin:4px 1em 4px 0;width:238px;border-collapse:collapse;font-size:88%;line-height:1.25em}  .compact-ambox table .mbox-image,.compact-ambox table .mbox-imageright,.compact-ambox table .mbox-empty-cell{display:none} .compact-ambox table.ambox{border:none;border-collapse:collapse;background:transparent;margin:0 0 0 1.6em !important;padding:0 !important;width:auto;display:block}body.mediawiki .compact-ambox table.mbox-small-left{font-size:100%;width:auto;margin:0} .compact-ambox table .mbox-text{padding:0 !important;margin:0 !important}.compact-ambox table .mbox-text-span{display:list-item;line-height:1.5em;list-style-type:square;list-style-image:url(//en.wikipedia.org/w/skins/MonoBook/bullet.gif)}.skin-vector .compact-ambox table .mbox-text-span{list-style-type:disc;list-style-image:url(//en.wikipedia.org/w/skins/Vector/images/bullet-icon.svg);list-style-image:url(//en.wikipedia.org/w/skins/Vector/images/bullet-icon.png)\9} .compact-ambox .hide-when-compact{display:none} div.noarticletext{border:none;background:transparent;padding:0} .visualhide{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden} #wpSave{font-weight:bold} .hiddenStructure{display:inline !important;color:#f00;background-color:#0f0} .check-icon a.new{display:none;speak:none} .nounderlines a,.IPA a:link,.IPA a:visited{text-decoration:none !important} div.NavFrame{margin:0;padding:4px;border:1px solid #aaa;text-align:center;border-collapse:collapse;font-size:95%}div.NavFrame + div.NavFrame{border-top-style:none;border-top-style:hidden}div.NavPic{background-color:#fff;margin:0;padding:2px; float:left}div.NavFrame div.NavHead{line-height:1.6em;font-weight:bold;background-color:#ccf;position:relative}div.NavFrame p,div.NavFrame div.NavContent,div.NavFrame div.NavContent p{font-size:100%}div.NavEnd{margin:0;padding:0;line-height:1px;clear:both}a.NavToggle{position:absolute;top:0; right:3px;font-weight:normal;font-size:90%} .hatnote{font-style:italic}.hatnote i{font-style:normal}div.hatnote{ padding-left:1.6em;margin-bottom:0.5em}div.hatnote + div.hatnote{margin-top:-0.5em} .listify td{display:list-item}.listify tr{display:block}.listify table{display:block} .geo-default,.geo-dms,.geo-dec{display:inline}.geo-nondefault,.geo-multi-punct{display:none}.longitude,.latitude{white-space:nowrap} .hlist .tocnumber,.hlist .toctext{display:inline} .nonumtoc .tocnumber{display:none}.nonumtoc #toc ul,.nonumtoc .toc ul{line-height:1.5em;list-style:none none;margin:.3em 0 0;padding:0}.hlist.nonumtoc #toc ul ul,.hlist.nonumtoc .toc ul ul{ margin:0} .toclimit-2 .toclevel-1 ul,.toclimit-3 .toclevel-2 ul,.toclimit-4 .toclevel-3 ul,.toclimit-5 .toclevel-4 ul,.toclimit-6 .toclevel-5 ul,.toclimit-7 .toclevel-6 ul{display:none} blockquote.templatequote div.templatequotecite{line-height:1.5em; text-align:left; padding-left:1.6em;margin-top:0} div.user-block{padding:5px;margin-bottom:0.5em;border:1px solid #A9A9A9;background-color:#FFEFD5} .nowrap,.nowraplinks a,.nowraplinks .selflink,sup.reference a{white-space:nowrap}.nowrap pre{white-space:pre} .wrap,.wraplinks a{white-space:normal} .template-documentation{clear:both;margin:1em 0 0 0;border:1px solid #aaa;background-color:#ecfcf4;padding:1em} .imagemap-inline div{display:inline} #wpUploadDescription{height:13em} .thumbinner{min-width:100px} div.thumb .thumbimage{background-color:#fff} div#content .gallerybox div.thumb{ background-color:#F9F9F9} .gallerybox .thumb img{background:#fff url(//upload.wikimedia.org/wikipedia/commons/5/5d/Checker-16x16.png) repeat} .ns-0 .gallerybox .thumb img,.ns-2 .gallerybox .thumb img,.ns-100 .gallerybox .thumb img,.nochecker .gallerybox .thumb img{background:#fff} #mw-subcategories,#mw-pages,#mw-category-media,#filehistory,#wikiPreview,#wikiDiff{clear:both}body.rtl #mw-articlefeedbackv5,body.rtl #mw-articlefeedback{display:block; margin-bottom:1em; clear:right;  float:right; } .wpb .wpb-header{display:none}.wpbs-inner .wpb .wpb-header{display:block} .wpbs-inner .wpb .wpb-header{display:table-row} .wpbs-inner .wpb-outside{display:none}  .mw-tag-markers{font-style:italic;font-size:90%} .sysop-show,.accountcreator-show,.templateeditor-show,.autoconfirmed-show{display:none} .ve-ui-mwNoticesPopupTool-item .editnotice-redlink,.mw-ve-editNotice .editnotice-redlink{display:none !important} ul.permissions-errors > li{list-style:none none}ul.permissions-errors{margin:0} body.page-Special_UserLogin .mw-label label,body.page-Special_UserLogin_signup .mw-label label{white-space:nowrap} .transborder{border:solid transparent}* html .transborder{ border:solid #000001;filter:chroma(color=#000001)} .times-serif,span.texhtml{font-family:"Nimbus Roman No9 L","Times New Roman",Times,serif;font-size:118%;line-height:1}span.texhtml{white-space:nowrap}span.texhtml span.texhtml{font-size:100%}span.mwe-math-mathml-inline{font-size:118%} .digits,.texhtml{-moz-font-feature-settings:"lnum","tnum","kern" 0;-webkit-font-feature-settings:"lnum","tnum","kern" 0;font-feature-settings:"lnum","tnum","kern" 0;font-variant-numeric:lining-nums tabular-nums;font-kerning:none} .mwe-math-fallback-image-display,.mwe-math-mathml-display{margin-left:1.6em !important;margin-top:0.6em;margin-bottom:0.6em}.mwe-math-mathml-display math{display:inline} table#mw-prefixindex-list-table,table#mw-prefixindex-nav-table{width:98%} .portal-column-left{float:left;width:50%}.portal-column-right{float:right;width:49%}.portal-column-left-wide{float:left;width:60%}.portal-column-right-narrow{float:right;width:39%}.portal-column-left-extra-wide{float:left;width:70%}.portal-column-right-extra-narrow{float:right;width:29%}@media only screen and (max-width:800px){ .portal-column-left,.portal-column-right,.portal-column-left-wide,.portal-column-right-narrow,.portal-column-left-extra-wide,.portal-column-right-extra-narrow{float:inherit;width:inherit}} #bodyContent .letterhead{background-image:url(//upload.wikimedia.org/wikipedia/commons/e/e0/Tan-page-corner.png);background-repeat:no-repeat;padding:2em;background-color:#faf9f2} .treeview ul{padding:0;margin:0}.treeview li{padding:0;margin:0;list-style-type:none;list-style-image:none;zoom:1;}.treeview li li{background:url(//upload.wikimedia.org/wikipedia/commons/f/f2/Treeview-grey-line.png) no-repeat 0 -2981px; padding-left:20px;text-indent:0.3em}.treeview li li.lastline{background-position:0 -5971px }.treeview li.emptyline > ul{ margin-left:-1px}.treeview li.emptyline > ul > li:first-child{background-position:0 9px } td .sortkey,th .sortkey{display:none;speak:none} .inputbox-hidecheckboxes form .inputbox-element{display:none !important} .k-player .k-attribution{visibility:hidden} .PopUpMediaTransform a .play-btn-large{margin:0;top:auto;right:auto;bottom:0;left:0} .mw-ve-editNotice .mbox-image{display:none}
+.page-Main_Page #deleteconfirm,.page-Main_Page #t-cite,.page-Main_Page #footer-info-lastmod,.action-view.page-Main_Page #siteSub,.action-view.page-Main_Page #contentSub,.action-view.page-Main_Page .firstHeading{display:none !important} #coordinates{position:absolute;top:0;right:0;float:right;margin:0;padding:0;line-height:1.5em;text-align:right;text-indent:0;font-size:85%;text-transform:none;white-space:nowrap} div.flaggedrevs_short{position:absolute;top:-3em;right:100px;z-index:1} div.vectorMenu div{z-index:2} #siteSub{display:block;font-size:92%} .mw-body .mw-indicators{padding-top:0.4em}
+@media print {
+	.ns-0 .ambox,.ns-0 .navbox,.ns-0 .vertical-navbox,.ns-0 .infobox.sisterproject,.ns-0 .hatnote,.ns-0 .dablink,.ns-0 .metadata,.editlink,.navbar,a.NavToggle,span.collapseButton,span.mw-collapsible-toggle,th .sortkey,td .sortkey{display:none !important} #content cite a.external.text:after,.nourlexpansion a.external.text:after,.nourlexpansion a.external.autonumber:after{display:none !important} table.collapsible tr,div.NavPic,div.NavContent{display:block !important}table.collapsible tr{display:table-row !important} #firstHeading{margin:0} #content a.external.text:after,#content a.external.autonumber:after{word-wrap:break-word}}
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+.wp-teahouse-question-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}#wp-th-question-ask{float:right}.wp-teahouse-ask a.external{background-image:none !important}.wp-teahouse-respond-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}.wp-th-respond{float:right}.wp-teahouse-respond a.external{background-image:none !important}
+.referencetooltip{position:absolute;list-style:none;list-style-image:none;opacity:0;font-size:10px;margin:0;z-index:5;padding:0}.referencetooltip li{border:#080086 2px solid;max-width:260px;padding:10px 8px 13px 8px;margin:0px;background-color:#F7F7F7;-webkit-box-shadow:2px 4px 2px rgba(0,0,0,0.3);-moz-box-shadow:2px 4px 2px rgba(0,0,0,0.3);box-shadow:2px 4px 2px rgba(0,0,0,0.3)}.referencetooltip li+li{margin-left:7px;margin-top:-2px;border:0;padding:0;height:3px;width:0px;background-color:transparent;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;border-top:12px #080086 solid;border-right:7px transparent solid;border-left:7px transparent solid}.referencetooltip>li+li::after{content:'';border-top:8px #F7F7F7 solid;border-right:5px transparent solid;border-left:5px transparent solid;margin-top:-12px;margin-left:-5px;z-index:1;height:0px;width:0px;display:block}.client-js body .referencetooltip li li{border:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;height:auto;width:auto;margin:auto;padding:0;position:static}.RTflipped{padding-top:13px}.referencetooltip.RTflipped li+li{position:absolute;top:2px;border-top:0;border-bottom:12px #080086 solid}.referencetooltip.RTflipped li+li::after{border-top:0;border-bottom:8px #F7F7F7 solid;position:absolute;margin-top:7px}.RTsettings{float:right;height:24px;width:24px;cursor:pointer;background-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Gear_icon.svg/24px-Gear_icon.svg.png);background-image:linear-gradient(transparent,transparent),url(//upload.wikimedia.org/wikipedia/commons/7/77/Gear_icon.svg);margin-top:-9px;margin-right:-7px;-webkit-transition:opacity 0.15s;-moz-transition:opacity 0.15s;-ms-transition:opacity 0.15s;-o-transition:opacity 0.15s;transition:opacity 0.15s;opacity:0.6;filter:alpha(opacity=60)}.RTsettings:hover{opacity:1;filter:alpha(opacity=100)}.RTTarget{border:#080086 2px solid}
+.skin-vector li.GA,.skin-monobook li.GA,.skin-modern li.GA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/4/42/Monobook-bullet-ga.png)} .skin-vector li.FA,.skin-monobook li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/d/d4/Monobook-bullet-star.png)}.skin-modern li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Modern-bullet-star.svg/9px-Modern-bullet-star.svg.png)}
+.mw-ui-button{font-family:inherit;font-size:1em;display:inline-block;min-width:4em;max-width:28.75em;padding:.5em 1em;margin:0;border-radius:2px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;*display:inline;zoom:1;vertical-align:middle;background:#ffffff;color:#555555;border:1px solid #cccccc;text-align:center;font-weight:bold;cursor:pointer}.mw-ui-button:hover{background-color:#cccccc}.mw-ui-button:focus{border-color:#ffffff;box-shadow:0 0 0 1px #cccccc;outline:none}.mw-ui-button:focus::-moz-focus-inner{border-color:transparent}.mw-ui-button:active,.mw-ui-button.is-on,.mw-ui-button.mw-ui-checked{background:#777777;box-shadow:none}.mw-ui-button:hover,.mw-ui-button:active,.mw-ui-button:visited{color:#555555}.mw-ui-button:focus{background-color:#cccccc}.mw-ui-button:disabled{color:#cccccc}.mw-ui-button:disabled:hover,.mw-ui-button:disabled:active{background:#ffffff;box-shadow:none}.mw-ui-button:disabled{text-shadow:none;cursor:default}.mw-ui-button.mw-ui-big{font-size:1.3em}.mw-ui-button.mw-ui-block{display:block;width:100%;margin-left:auto;margin-right:auto}.mw-ui-button.mw-ui-progressive,.mw-ui-button.mw-ui-primary{background:#347bff;color:#fff;border:1px solid #347bff;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-progressive:hover,.mw-ui-button.mw-ui-primary:hover{background-color:#2962cc}.mw-ui-button.mw-ui-progressive:focus,.mw-ui-button.mw-ui-primary:focus{border-color:#ffffff;box-shadow:0 0 0 1px #2962cc;outline:none}.mw-ui-button.mw-ui-progressive:focus::-moz-focus-inner,.mw-ui-button.mw-ui-primary:focus::-moz-focus-inner{border-color:transparent}.mw-ui-button.mw-ui-progressive:active,.mw-ui-button.mw-ui-primary:active,.mw-ui-button.mw-ui-progressive.is-on,.mw-ui-button.mw-ui-primary.is-on,.mw-ui-button.mw-ui-progressive.mw-ui-checked,.mw-ui-button.mw-ui-primary.mw-ui-checked{background:#2962cc;box-shadow:none}.mw-ui-button.mw-ui-progressive:disabled,.mw-ui-button.mw-ui-primary:disabled{background:#dddddd;border-color:#dddddd}.mw-ui-button.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-primary:disabled:hover,.mw-ui-button.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-primary:disabled:active,.mw-ui-button.mw-ui-progressive:disabled.mw-ui-checked,.mw-ui-button.mw-ui-primary:disabled.mw-ui-checked{box-shadow:none}.mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-primary.mw-ui-quiet{color:#555555}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover,.mw-ui-button.mw-ui-primary.mw-ui-quiet:hover,.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus,.mw-ui-button.mw-ui-primary.mw-ui-quiet:focus{background:transparent;color:#347bff}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:active,.mw-ui-button.mw-ui-primary.mw-ui-quiet:active,.mw-ui-button.mw-ui-progressive.mw-ui-quiet.mw-ui-checked,.mw-ui-button.mw-ui-primary.mw-ui-quiet.mw-ui-checked{color:#2962cc}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-primary.mw-ui-quiet:disabled{color:#cccccc}.mw-ui-button.mw-ui-constructive{background:#347bff;color:#fff;border:1px solid #347bff;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-constructive:hover{background-color:#2962cc}.mw-ui-button.mw-ui-constructive:focus{border-color:#ffffff;box-shadow:0 0 0 1px #2962cc;outline:none}.mw-ui-button.mw-ui-constructive:focus::-moz-focus-inner{border-color:transparent}.mw-ui-button.mw-ui-constructive:active,.mw-ui-button.mw-ui-constructive.is-on,.mw-ui-button.mw-ui-constructive.mw-ui-checked{background:#2962cc;box-shadow:none}.mw-ui-button.mw-ui-constructive:disabled{background:#dddddd;border-color:#dddddd}.mw-ui-button.mw-ui-constructive:disabled:hover,.mw-ui-button.mw-ui-constructive:disabled:active,.mw-ui-button.mw-ui-constructive:disabled.mw-ui-checked{box-shadow:none}.mw-ui-button.mw-ui-constructive.mw-ui-quiet{color:#555555}.mw-ui-button.mw-ui-constructive.mw-ui-quiet:hover,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:focus{background:transparent;color:#347bff}.mw-ui-button.mw-ui-constructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-constructive.mw-ui-quiet.mw-ui-checked{color:#2962cc}.mw-ui-button.mw-ui-constructive.mw-ui-quiet:disabled{color:#cccccc}.mw-ui-button.mw-ui-destructive{background:#d11d13;color:#fff;border:1px solid #d11d13;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-destructive:hover{background-color:#a7170f}.mw-ui-button.mw-ui-destructive:focus{border-color:#ffffff;box-shadow:0 0 0 1px #a7170f;outline:none}.mw-ui-button.mw-ui-destructive:focus::-moz-focus-inner{border-color:transparent}.mw-ui-button.mw-ui-destructive:active,.mw-ui-button.mw-ui-destructive.is-on,.mw-ui-button.mw-ui-destructive.mw-ui-checked{background:#a7170f;box-shadow:none}.mw-ui-button.mw-ui-destructive:disabled{background:#dddddd;border-color:#dddddd}.mw-ui-button.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-destructive:disabled:active,.mw-ui-button.mw-ui-destructive:disabled.mw-ui-checked{box-shadow:none}.mw-ui-button.mw-ui-destructive.mw-ui-quiet{color:#555555}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover,.mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus{background:transparent;color:#d11d13}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-destructive.mw-ui-quiet.mw-ui-checked{color:#a7170f}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:disabled{color:#cccccc}.mw-ui-button.mw-ui-quiet{background:transparent;border:0;text-shadow:none;color:#555555}.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet:focus{background:transparent;color:#555555}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-checked{color:#777777}.mw-ui-button.mw-ui-quiet:disabled{color:#cccccc}.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet:focus{box-shadow:none}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet:disabled{background:transparent}a.mw-ui-button{text-decoration:none;line-height:normal}a.mw-ui-button:hover,a.mw-ui-button:focus{text-decoration:none}.mw-ui-button-group > *{min-width:48px;border-radius:0;float:left}.mw-ui-button-group > *:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.mw-ui-button-group > *:not( :first-child ){border-left:0}.mw-ui-button-group > *:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px}.mw-ui-button-group .is-on .button{cursor:default}
+.mw-ui-icon{position:relative;min-height:1.5em;min-width:1.5em}.mw-ui-icon.mw-ui-icon-element{text-indent:-999px;overflow:hidden;width:3.5em;min-width:3.5em;max-width:3.5em}.mw-ui-icon.mw-ui-icon-element:before{left:0;right:0;position:absolute;margin:0 1em}.mw-ui-icon.mw-ui-icon-before:before,.mw-ui-icon.mw-ui-icon-element:before{background-position:50% 50%;background-repeat:no-repeat;background-size:100% auto;float:left;display:block;min-height:1.5em;content:''}.mw-ui-icon.mw-ui-icon-before:before{position:relative;width:1.5em;margin-right:1em}
+#p-lang .uls-settings-trigger{background:transparent no-repeat right top;background-image:url(/w/extensions/UniversalLanguageSelector/resources/images/cog-sprite.png?fae8e);background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%2214%22%20height%3D%2232%22%3E%3Cdefs%3E%3Cpath%20d%3D%22M14%209.3V6.73l-1.575-.264c-.117-.44-.292-.848-.496-1.2l.93-1.285-1.81-1.84-1.31.908c-.38-.205-.79-.38-1.196-.497L8.284%201H5.716l-.263%201.578c-.437.117-.816.293-1.196.497L2.975%202.17%201.137%203.98l.934%201.287c-.2.38-.376.79-.493%201.228L0%206.73V9.3l1.575.264c.117.438.292.818.496%201.198l-.93%201.315L2.95%2013.89l1.312-.938c.38.205.787.38%201.224.497L5.746%2015h2.566l.263-1.578c.408-.117.817-.293%201.196-.497l1.315.935%201.81-1.812-.935-1.315c.203-.38.38-.76.495-1.2L14%209.303zm-7%201.404c-1.488%200-2.683-1.2-2.683-2.69S5.542%205.327%207%205.327c1.458%200%202.683%201.198%202.683%202.69%200%201.49-1.195%202.688-2.683%202.688z%22%20id%3D%22a%22%2F%3E%3C%2Fdefs%3E%3Cuse%20xlink%3Ahref%3D%22%23a%22%20fill%3D%22%23808080%22%2F%3E%3Cuse%20transform%3D%22translate%280%2016%29%22%20xlink%3Ahref%3D%22%23a%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E%0A);background-image:linear-gradient(transparent,transparent),url(/w/extensions/UniversalLanguageSelector/resources/images/cog-sprite.svg?624e4)!ie;background-image:-o-linear-gradient(transparent,transparent),url(/w/extensions/UniversalLanguageSelector/resources/images/cog-sprite.png?fae8e);height:16px;width:14px;float:right;cursor:pointer}.skin-vector #p-lang .uls-settings-trigger{ margin-top:3px}#p-lang .uls-settings-trigger:hover{background-position:right -16px}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><style>
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/w/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+.mw-mmv-overlay{position:fixed;top:0px;left:0px;right:0px;bottom:0px;z-index:1000;background-color:#000000}body.mw-mmv-lightbox-open{overflow-y:auto}body.mw-mmv-lightbox-open #mw-page-base,body.mw-mmv-lightbox-open #mw-head-base,body.mw-mmv-lightbox-open #mw-navigation,body.mw-mmv-lightbox-open #content,body.mw-mmv-lightbox-open #footer,body.mw-mmv-lightbox-open #globalWrapper{ display:none}body.mw-mmv-lightbox-open > *{ display:none}body.mw-mmv-lightbox-open > .mw-mmv-overlay,body.mw-mmv-lightbox-open > .mw-mmv-wrapper{display:block}.mw-mmv-filepage-buttons{margin-top:5px}.mw-mmv-filepage-buttons .mw-mmv-view-expanded,.mw-mmv-filepage-buttons .mw-mmv-view-config{display:block;line-height:inherit}.mw-mmv-filepage-buttons .mw-mmv-view-expanded.mw-ui-icon:before{background-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%20768%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22%23777%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M851.2%2071.6L690.7%20232.1l-40.1-40.3-9.6%20164.8%20164.8-9.3-40.3-40.4L926%20146.4l58.5%2058.5L997.6%200%20792.7%2013.1%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M769.6%2089.3H611.9l70.9%2070.8%207.9%207.5m-47.1%20234.6l-51.2%203%203-51.2%209.4-164.4%205.8-100.3H26.4V768h883.1V387l-100.9%205.8-165%209.4zM813.9%20678H113.6l207.2-270.2%2031.5-12.9L548%20599.8l105.9-63.2%20159.8%20140.8.2.6zm95.6-291.9V228l-79.1%2078.9%207.8%207.9%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A);background-image:url(/w/extensions/MultimediaViewer/resources/mmv/img/expand.svg?b714e)!ie}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before{background-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%20768%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M897%20454.6V313.4L810.4%20299c-6.4-23.3-16-45.7-27.3-65.8l50.5-71.4-99.4-100.2-71.4%2050.5c-20.9-11.2-42.5-20.9-65.8-27.3L582.6-1H441.4L427%2085.6c-23.3%206.4-45.7%2016-65.8%2027.3l-71.4-50.5-100.3%2099.5%2050.5%2071.4c-11.2%2020.9-20.9%2042.5-27.3%2066.6L127%20313.4v141.2l85.8%2014.4c6.4%2023.3%2016%2045.7%2027.3%2066.6L189.6%20607l99.5%2099.5%2071.4-50.5c20.9%2011.2%2042.5%2020.9%2066.6%2027.3l14.4%2085.8h141.2l14.4-86.6c23.3-6.4%2045.7-16%2065.8-27.3l71.4%2050.5%2099.5-99.5-50.5-71.4c11.2-20.9%2020.9-42.5%2027.3-66.6l86.4-13.6zm-385%2077c-81.8%200-147.6-66.6-147.6-147.6%200-81.8%2066.6-147.6%20147.6-147.6S659.6%20302.2%20659.6%20384%20593.8%20531.6%20512%20531.6z%22%20fill%3D%22%23777%22%2F%3E%0A%3C%2Fsvg%3E%0A);background-image:url(/w/extensions/MultimediaViewer/resources/mmv/img/gear_gray.svg?330ae)!ie;opacity:0.75}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before:hover{opacity:1}
+.ve-activated #toc,.ve-activated #siteNotice,.ve-activated .mw-indicators, .ve-active #bodyContent > :not( #siteSub ):not( #contentSub ):not( .ve-ui-mwTocWidget ),.ve-activated #t-print,.ve-activated #t-permalink,.ve-activated #p-coll-print_export,.ve-activated #t-cite,.ve-deactivating .ve-ui-surface{display:none} .ve-activating .ve-ui-surface{height:0;overflow:hidden}.ve-activated #bodyContent,.ve-activated #firstHeading{opacity:0.6;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.ve-activated #firstHeading{cursor:default} .ve-activated #content{position:relative}.ve-init-mw-desktopArticleTarget-loading-overlay{position:absolute;left:0;right:0;z-index:1;margin-top:-0.5em}.ve-init-mw-desktopArticleTarget-progress{height:1em;overflow:hidden;margin:0 25%}.ve-init-mw-desktopArticleTarget-progress-bar{height:1em;width:0} .mw-editsection{white-space:nowrap; unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection-divider{color:#555} .ve-init-mw-desktopArticleTarget-progress{height:0.75em;border:1px solid #347bff;background:#fff;border-radius:2px;box-shadow:0 0.1em 0 0 rgba(0,0,0,0.15) }.ve-init-mw-desktopArticleTarget-progress-bar{height:0.75em;background:#347bff}
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@-moz-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-moz-transform:translateY(-20px)}100%{opacity:1;-moz-transform:translateY(0)}}@-o-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-o-transform:translateY(-20px)}100%{opacity:1;-o-transform:translateY(0)}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;-moz-animation-name:centralAuthPPersonalAnimation;-o-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}
+.ext-quick-survey-panel,.ext-qs-loader-bar{width:auto;background-color:#eeeeee} .ext-qs-loader-bar{display:block;height:100px;margin-left:1.4em;clear:right;float:right;background-color:#eeeeee}.ext-qs-loader-bar.mw-ajax-loader{top:0}@media all and (min-width:720px){.ext-qs-loader-bar,.ext-quick-survey-panel{margin-left:1.4em;width:300px;clear:right;float:right}}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/load(1).php">
+<script async="" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/load(2).php"></script>
+<meta name="generator" content="MediaWiki 1.27.0-wmf.18">
+<meta name="referrer" content="origin-when-cross-origin">
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Sieve_of_Eratosthenes">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit">
+<link rel="edit" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit">
+<link rel="apple-touch-icon" href="https://en.wikipedia.org/static/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="https://en.wikipedia.org/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.wikipedia.org/w/api.php?action=rsd">
+<link rel="copyright" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">
+<link rel="dns-prefetch" href="https://meta.wikimedia.org/">
+<script src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/load(3).php"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Sieve_of_Eratosthenes skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><div id="centralNotice"></div><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Sieve of Eratosthenes</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#mw-head">navigation</a>, 					<a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="thumb tright">
+<div class="thumbinner" style="width:447px;"><a href="https://en.wikipedia.org/wiki/File:Sieve_of_Eratosthenes_animation.gif" class="image"><img alt="" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/Sieve_of_Eratosthenes_animation.gif" width="445" height="369" class="thumbimage" data-file-width="445" data-file-height="369"></a>
+<div class="thumbcaption">Sieve of Eratosthenes: algorithm steps for primes below 121 (including optimization of starting from prime's square).</div>
+</div>
+</div>
+<p>In <a href="https://en.wikipedia.org/wiki/Mathematics" title="Mathematics">mathematics</a>, the <b><a href="https://en.wikipedia.org/wiki/Sieve_theory" title="Sieve theory">sieve</a> of Eratosthenes</b> (<a href="https://en.wikipedia.org/wiki/Ancient_Greek" title="Ancient Greek">Ancient&nbsp;Greek</a>: <span lang="grc" xml:lang="grc">κόσκινον Ἐρατοσθένους</span>, <i>kóskinon Eratosthénous</i>), one of a number of <a href="https://en.wikipedia.org/wiki/Generating_primes#Prime_sieves" title="Generating primes">prime number sieves</a>, is a simple, ancient <a href="https://en.wikipedia.org/wiki/Algorithm" title="Algorithm">algorithm</a> for finding all <a href="https://en.wikipedia.org/wiki/Prime_number" title="Prime number">prime numbers</a> up to any given limit. It does so by iteratively marking as <a href="https://en.wikipedia.org/wiki/Composite_number" title="Composite number">composite</a> (i.e., not prime) the multiples of each prime, starting with the multiples of 2.<sup id="cite_ref-horsley_1-0" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-horsley-1">[1]</a></sup></p>
+<p>The multiples of a given prime are generated as a sequence of numbers starting from that prime, with <a href="https://en.wikipedia.org/wiki/Arithmetic_progression" title="Arithmetic progression">constant difference between them</a> that is equal to that prime.<sup id="cite_ref-horsley_1-1" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-horsley-1">[1]</a></sup> This is the sieve's key distinction from using <a href="https://en.wikipedia.org/wiki/Trial_division" title="Trial division">trial division</a> to sequentially test each candidate number for divisibility by each prime.<sup id="cite_ref-ONeill_2-0" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-ONeill-2">[2]</a></sup></p>
+<p>The sieve of Eratosthenes is one of the most efficient ways to find all of the smaller primes. It is named after <a href="https://en.wikipedia.org/wiki/Eratosthenes" title="Eratosthenes">Eratosthenes of Cyrene</a>, a <a href="https://en.wikipedia.org/wiki/Greek_mathematics" title="Greek mathematics">Greek mathematician</a>; although none of his works have survived, the sieve was described and attributed to Eratosthenes in the <i><a href="https://en.wikipedia.org/wiki/Introduction_to_Arithmetic" title="Introduction to Arithmetic">Introduction to Arithmetic</a></i> by <a href="https://en.wikipedia.org/wiki/Nicomachus" title="Nicomachus">Nicomachus</a>.<sup id="cite_ref-3" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-3">[3]</a></sup></p>
+<p>The sieve may be used to find primes in <a href="https://en.wikipedia.org/wiki/Arithmetic_progression" title="Arithmetic progression">arithmetic progressions</a>.<sup id="cite_ref-4" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-4">[4]</a></sup></p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+<span class="toctoggle">&nbsp;[<a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Example"><span class="tocnumber">1.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Algorithm_and_variants"><span class="tocnumber">2</span> <span class="toctext">Algorithm and variants</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Segmented_sieve"><span class="tocnumber">2.1</span> <span class="toctext">Segmented sieve</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Incremental_sieve"><span class="tocnumber">2.2</span> <span class="toctext">Incremental sieve</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Computational_analysis"><span class="tocnumber">3</span> <span class="toctext">Computational analysis</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Algorithmic_complexity"><span class="tocnumber">4</span> <span class="toctext">Algorithmic complexity</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Euler.27s_Sieve"><span class="tocnumber">5</span> <span class="toctext">Euler's Sieve</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#External_links"><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Overview">Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit&amp;section=1" title="Edit section: Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="quotebox" style="float: right; clear: right; margin: 0.5em 0 0.8em 1.4em; padding: 6px; border: 1px solid #aaa; font-size: 95%; background-color: #F9F9F9;">
+<div class="" style="position: relative; text-align: left;">
+<div style="margin:0px 2em;">
+<p><i>Sift the Two's and Sift the Three's,</i><br>
+<i>The Sieve of Eratosthenes.</i><br>
+<i>When the multiples sublime,</i><br>
+<i>The numbers that remain are Prime.</i></p>
+</div>
+<div style="position: absolute; left: 0px; top: 0px; text-align: left; font-family:&#39;Times New Roman&#39;,serif; font-weight:bold; font-size: large; color: gray;">“</div>
+<div style="position: absolute; right: 0px; bottom: 0px; text-align: left; font-family:&#39;Times New Roman&#39;,serif; font-weight:bold; font-size: large; color: gray;">”</div>
+</div>
+<div style="text-align: center;"><cite>Anonymous<sup id="cite_ref-5" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-5">[5]</a></sup></cite></div>
+</div>
+<p>A <a href="https://en.wikipedia.org/wiki/Prime_number" title="Prime number">prime number</a> is a <a href="https://en.wikipedia.org/wiki/Natural_number" title="Natural number">natural number</a> that has exactly two distinct natural number <a href="https://en.wikipedia.org/wiki/Divisor" title="Divisor">divisors</a>: <a href="https://en.wikipedia.org/wiki/1_(number)" title="1 (number)">1</a> and itself.</p>
+<p>To find all the prime numbers less than or equal to a given integer <i>n</i> by Eratosthenes' method:</p>
+<ol>
+<li>Create a list of consecutive integers from 2 through <i>n</i>: (2, 3, 4, ..., <i>n</i>).</li>
+<li>Initially, let <i>p</i> equal 2, the smallest prime number.</li>
+<li>Enumerate the multiples of <i>p</i> by counting to <i>n</i> from <i>2p</i> in increments of <i>p</i>, and mark them in the list (these will be 2<i>p</i>, 3<i>p</i>, 4<i>p</i>, ...&nbsp;; the <i>p</i> itself should not be marked).</li>
+<li>Find the first number greater than <i>p</i> in the list that is not marked. If there was no such number, stop. Otherwise, let <i>p</i> now equal this new number (which is the next prime), and repeat from step 3.</li>
+</ol>
+<p>When the algorithm terminates, the numbers remaining not marked in the list are all the primes below <i>n</i>.</p>
+<p>The main idea here is that every value given to <i>p</i> will be prime, because we have already marked all the multiples of the numbers less than <i>p</i>. Note that some of the numbers being marked may have already been marked earlier (e.g., 15 will be marked both for 3 and 5).</p>
+<p>As a refinement, it is sufficient to mark the numbers in step 3 starting from <i>p</i><sup>2</sup>, as all the smaller multiples of <i>p</i> will have already been marked at that point. This means that the algorithm is allowed to terminate in step 4 when <i>p</i><sup>2</sup> is greater than <i>n</i>.<sup id="cite_ref-horsley_1-2" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-horsley-1">[1]</a></sup></p>
+<p>Another refinement is to initially list odd numbers only, (3, 5, ..., <i>n</i>), and count in increments of <i><b>2</b>p</i> from <i>p</i><sup>2</sup> in step 3, thus marking only odd multiples of <i>p</i>. This actually appears in the original algorithm.<sup id="cite_ref-horsley_1-3" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-horsley-1">[1]</a></sup> This can be generalized with <a href="https://en.wikipedia.org/wiki/Wheel_factorization" title="Wheel factorization">wheel factorization</a>, forming the initial list only from numbers <a href="https://en.wikipedia.org/wiki/Coprime" title="Coprime" class="mw-redirect">coprime</a> with the first few primes and not just from odds (i.e., numbers coprime with <i>2</i>), and counting in the correspondingly adjusted increments so that only such multiples of <i>p</i> are generated that are coprime with those small primes, in the first place.<sup id="cite_ref-Runciman_6-0" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-Runciman-6">[6]</a></sup></p>
+<h3><span class="mw-headline" id="Example">Example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit&amp;section=2" title="Edit section: Example">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>To find all the prime numbers less than or equal to 30, proceed as follows.</p>
+<p>First generate a list of integers from 2 to 30:</p>
+<pre> 2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+</pre>
+<p>First number in the list is 2; cross out every 2nd number in the list after it by counting up from 2 in increments of 2 (these will be all the multiples of 2 in the list):</p>
+<pre> 2  3 <s> 4 </s> 5 <s> 6 </s> 7 <s> 8 </s> 9  <s>10</s> 11 <s>12</s> 13 <s>14</s> 15 <s>16</s> 17 <s>18</s> 19 <s>20</s> 21 <s>22</s> 23 <s>24</s> 25 <s>26</s> 27 <s>28</s> 29 <s>30</s>
+</pre>
+<p>Next number in the list after 2 is 3; cross out every 3rd number in the list after it by counting up from 3 in increments of 3 (these will be all the multiples of 3 in the list):</p>
+<pre> 2  3 <s> 4 </s> 5 <s> 6 </s> 7 <s> 8 </s><s> 9 </s><s> 10</s> 11 <s>12</s> 13 <s>14 </s><s>15 </s><s>16</s> 17 <s>18</s> 19 <s>20 </s><s>21 </s><s>22</s> 23 <s>24</s> 25 <s>26 </s><s>27 </s><s>28</s> 29 <s>30</s>
+</pre>
+<p>Next number not yet crossed out in the list after 3 is 5; cross out every 5th number in the list after it by counting up from 5 in increments of 5 (i.e. all the multiples of 5):</p>
+<pre> 2  3 <s> 4 </s> 5 <s> 6 </s> 7 <s> 8 </s><s> 9 </s><s> 10</s> 11 <s>12</s> 13 <s>14 </s><s>15 </s><s>16</s> 17 <s>18</s> 19 <s>20 </s><s>21 </s><s>22</s> 23 <s>24 </s><s>25 </s><s>26 </s><s>27 </s><s>28</s> 29 <s>30</s>
+</pre>
+<p>Next number not yet crossed out in the list after 5 is 7; the next step would be to cross out every 7th number in the list after 7, but they are all already crossed out at this point, as these numbers (14, 21, 28) are also multiples of smaller primes because 7*7 is greater than 30. The numbers left not crossed out in the list at this point are all the prime numbers below 30:</p>
+<pre> 2  3     5     7           11    13          17    19          23                29
+</pre>
+<h2><span class="mw-headline" id="Algorithm_and_variants">Algorithm and variants</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit&amp;section=3" title="Edit section: Algorithm and variants">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The sieve of Eratosthenes can be expressed in <a href="https://en.wikipedia.org/wiki/Pseudocode" title="Pseudocode">pseudocode</a>, as follows:<sup id="cite_ref-sedgewick_7-0" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-sedgewick-7">[7]</a></sup><sup id="cite_ref-intro_8-0" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-intro-8">[8]</a></sup></p>
+<pre><b>Input</b>: an integer <i>n</i> &gt; 1
+ 
+<b>Let</b> <i>A</i> be an <b>array of Boolean</b> values, indexed by <b>integer</b>s 2 to <i>n</i>,
+initially all <b>set</b> to <b>true</b>.
+ 
+<b>for</b> <i>i</i> = 2, 3, 4, ..., not exceeding <span class="texhtml"><i><span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">n</span></span></i></span>:
+  <b>if</b> <i>A</i>[<i>i</i>] <b>is</b> <b>true</b>:
+    <b>for</b> <i>j</i> = <i>i</i><sup>2</sup>, <i>i</i><sup>2</sup>+<i>i</i>, <i>i</i><sup>2</sup>+2<i>i</i>, <i>i</i><sup>2</sup>+3<i>i</i>, ..., not exceeding <i>n</i> :
+      <i>A</i>[<i>j</i>] := <b>false</b>
+ 
+<b>Output</b>: all <i>i</i> such that <i>A</i>[<i>i</i>] <b>is</b> <b>true</b>.
+</pre>
+<p>This algorithm produces all primes not greater than <span class="texhtml mvar" style="font-style:italic;">n</span>. It includes a common optimization, which is to start enumerating the multiples of each prime <span class="texhtml mvar" style="font-style:italic;">i</span> from <span class="texhtml"><i>i</i>²</span>. The time complexity of this algorithm is <span class="texhtml">O(<i>n</i> log log <i>n</i>)</span>.<sup id="cite_ref-intro_8-1" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-intro-8">[8]</a></sup></p>
+<h3><span class="mw-headline" id="Segmented_sieve">Segmented sieve</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit&amp;section=4" title="Edit section: Segmented sieve">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>As Sorenson notes, the problem with the sieve of Eratosthenes is not the number of operations it performs, but rather its memory requirements.<sup id="cite_ref-intro_8-2" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-intro-8">[8]</a></sup> For large <span class="texhtml mvar" style="font-style:italic;">n</span>, the range of primes may not fit in memory; worse, even for moderate <span class="texhtml mvar" style="font-style:italic;">n</span>, its <a href="https://en.wikipedia.org/wiki/CPU_cache" title="CPU cache">cache</a> use is highly suboptimal: the algorithm walks through the entire array <span class="texhtml mvar" style="font-style:italic;">A</span>, exhibiting almost no <a href="https://en.wikipedia.org/wiki/Locality_of_reference" title="Locality of reference">locality of reference</a>.</p>
+<p>A solution to these problems is offered by <i>segmented</i> sieves, where only portions of the range are sieved at a time.<sup id="cite_ref-9" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-9">[9]</a></sup> These have been known since the 1970s, and work as follows:<sup id="cite_ref-intro_8-3" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-intro-8">[8]</a></sup><sup id="cite_ref-10" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-10">[10]</a></sup></p>
+<ol>
+<li>Divide the range 2 through <span class="texhtml mvar" style="font-style:italic;">n</span> into segments of some size <span class="texhtml">Δ ≤ <span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;"><i>n</i></span></span></span>.</li>
+<li>Find the primes up to <span class="texhtml">Δ</span>, using the "regular" sieve.</li>
+<li>For each <span class="texhtml">Δ</span>-sized block from <span class="texhtml"><span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;"><i>n</i></span></span> + 1</span> to <span class="texhtml mvar" style="font-style:italic;">n</span>, set up a Boolean array of size <span class="texhtml">Δ</span>. Eliminate the multiples of each prime <span class="texhtml"><i>p</i> ≤ <span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;"><i>n</i></span></span></span> found in step 2.</li>
+</ol>
+<p>If <span class="texhtml">Δ</span> is chosen to be <span class="texhtml"><span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;"><i>n</i></span></span></span>, the space complexity of the algorithm is <span class="texhtml">O(<span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;"><i>n</i></span></span>)</span>, while the time complexity is the same as that of the regular sieve.<sup id="cite_ref-intro_8-4" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-intro-8">[8]</a></sup></p>
+<p>For ranges with upper limit <span class="texhtml"><i>n</i></span> so large that the sieving primes below <span class="texhtml"><i><span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">n</span></span></i></span> as required by the page segmented sieve of Eratosthenes cannot fit in memory, a slower but much more space-efficient sieve like that <a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Sorenson&amp;action=edit&amp;redlink=1" class="new" title="Sieve of Sorenson (page does not exist)">sieve of Sorenson</a> can be used instead.<sup id="cite_ref-11" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-11">[11]</a></sup></p>
+<h3><span class="mw-headline" id="Incremental_sieve">Incremental sieve</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit&amp;section=5" title="Edit section: Incremental sieve">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="https://en.wikipedia.org/wiki/Trial_division" title="Trial division">Trial division</a> can be used to produce primes by filtering out the composites found by testing each candidate number for divisibility by its preceding primes. It is not the sieve of Eratosthenes but is often confused with it, even though the sieve of Eratosthenes directly generates the composites instead of testing for them. Trial division has worse theoretical <a href="https://en.wikipedia.org/wiki/Analysis_of_algorithms" title="Analysis of algorithms">complexity</a> than that of the sieve of Eratosthenes in generating ranges of primes.<sup id="cite_ref-ONeill_2-1" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-ONeill-2">[2]</a></sup></p>
+<p>When testing each candidate number, the optimal trial division algorithm uses just those prime numbers not exceeding its square root. The widely known 1975 <a href="https://en.wikipedia.org/wiki/Functional_programming" title="Functional programming">functional</a> code by <a href="https://en.wikipedia.org/wiki/David_Turner_(computer_scientist)" title="David Turner (computer scientist)">David Turner</a><sup id="cite_ref-12" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-12">[12]</a></sup> is often presented as an example of the sieve of Eratosthenes<sup id="cite_ref-Runciman_6-1" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-Runciman-6">[6]</a></sup> but is actually a sub-optimal trial division algorithm.<sup id="cite_ref-ONeill_2-2" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-ONeill-2">[2]</a></sup></p>
+<p>An incremental formulation of the sieve<sup id="cite_ref-ONeill_2-3" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-ONeill-2">[2]</a></sup> generates primes indefinitely (i.e., without an upper bound) by interleaving the generation of primes with the generation of their multiples (so that primes can be found in gaps between the multiples), where the multiples of each prime <i>p</i> are generated directly, by counting up from the square of the prime in increments of <i>p</i> (or 2<i>p</i> for odd primes). The generation must be initiated only when the prime's square is reached, to avoid adverse effects on efficiency.</p>
+<h2><span class="mw-headline" id="Computational_analysis">Computational analysis</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit&amp;section=6" title="Edit section: Computational analysis">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="metadata plainlinks ambox ambox-content ambox-Refimprove" role="presentation">
+<tbody><tr>
+<td class="mbox-image">
+<div style="width:52px"><a href="https://en.wikipedia.org/wiki/File:Question_book-new.svg" class="image"><img alt="" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/50px-Question_book-new.svg.png" width="50" height="39" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/75px-Question_book-new.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/100px-Question_book-new.svg.png 2x" data-file-width="262" data-file-height="204"></a></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This section <b>needs additional citations for <a href="https://en.wikipedia.org/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">verification</a></b>. <span class="hide-when-compact">Please help <a class="external text" href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit">improve this article</a> by <a href="https://en.wikipedia.org/wiki/Help:Introduction_to_referencing_with_Wiki_Markup/1" title="Help:Introduction to referencing with Wiki Markup/1">adding citations to reliable sources</a>. Unsourced material may be challenged and removed.</span> <small><i>(June 2015)</i></small></span></td>
+</tr>
+</tbody></table>
+<p>The work performed by this algorithm is almost entirely the operations to cull the composite number representations which for the basic non-optimized version is the sum of the range divided by each of the primes up to that range or <img class="mwe-math-fallback-image-inline tex" alt="n\sum_{p\le n}\frac1p" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/5cd4e1d7e3eca7c6bc914ce756946acd.png">, where n is the sieving range in this and all further analysis.</p>
+<p>By rearranging <a href="https://en.wikipedia.org/wiki/Mertens%27_theorems" title="Mertens&#39; theorems">Mertens' 2nd theorem</a>, this is equal to <img class="mwe-math-fallback-image-inline tex" alt="n\ln\ln n+M" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/5388d30ac2034c89723823e6f304d48f.png"> as n approaches infinity, where M is the <a href="https://en.wikipedia.org/wiki/Meissel%E2%80%93Mertens_constant" title="Meissel–Mertens constant">Meissel–Mertens constant</a> of about 0.2614972128476427837554268386086958590516...</p>
+<p>The optimization of starting at the square of each prime and only culling for primes less than the square root changes the "<span class="texhtml"><i>n</i></span>" in the above expression to <span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;"><i>n</i></span></span> (or <span class="texhtml"><i>n</i><sup><span class="sfrac nowrap" style="display:inline-block; vertical-align:-0.5em; font-size:85%; text-align:center;"><span style="display:block; line-height:1em; margin:0 0.1em;">1</span><span class="visualhide">/</span><span style="display:block; line-height:1em; margin:0 0.1em; border-top:1px solid;">2</span></span></sup></span>) and not culling until the square means that the sum of the base primes each minus two is subtracted from the operations. As the sum of the first <span class="texhtml"><i>x</i></span> primes is <img class="mwe-math-fallback-image-inline tex" alt="\frac1{2}x^2\ln x" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/9d059f772368d7c9b30d6bdac087153f.png"><sup id="cite_ref-13" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-13">[13]</a></sup> and the <a href="https://en.wikipedia.org/wiki/Prime_number_theorem" title="Prime number theorem">Prime number theorem</a> says that <span class="texhtml"><i>x</i></span> is approximately <img class="mwe-math-fallback-image-inline tex" alt="\frac{x}{\ln x}" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/275349676c9018f6c2678d089052d8cb.png"> then the sum of primes to <span class="texhtml"><i>n</i></span> is <img class="mwe-math-fallback-image-inline tex" alt="\frac12\frac{n^2}{\ln n}" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/5189bcb978a17f555fd92223971030d2.png"> and therefore the sum of base primes to <span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;"><i>n</i></span></span> is <img class="mwe-math-fallback-image-inline tex" alt="\frac1{\ln n}" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/b258fb8ed8b45d39afb90198d1ae55de.png"> expressed as a factor of <span class="texhtml"><i>n</i></span>. The extra offset of two per base prime is <img class="mwe-math-fallback-image-inline tex" alt="2\pi(n^\frac12)" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/c99d8637af533410445c0333ec69bb66.png"> where <img class="mwe-math-fallback-image-inline tex" alt="\pi" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/522359592d78569a9eac16498aa7a087.png"> is the <a href="https://en.wikipedia.org/wiki/Prime-counting_function" title="Prime-counting function">Prime-counting function</a> in this case or <img class="mwe-math-fallback-image-inline tex" alt="\frac{4 n^\frac12}{\ln n}" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/8cab9d1c77ca71f393908f77d969e77d.png">; expressing this as a factor of <span class="texhtml"><i>n</i></span> as are the other terms, this is <img class="mwe-math-fallback-image-inline tex" alt="\frac{4}{\sqrt n\ln n}" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/e1fc0a3a4cbe074e14c531e91b3e7c07.png">. Combining all of this, the expression for the number of optimized operations without wheel factorization is <img class="mwe-math-fallback-image-inline tex" alt="\ln\ln n-\frac1{\ln n}\left(1-\frac{4}{\sqrt{n}}\right)+M-\ln 2" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/f2008a9b433b47aa6c36baea02ffe3b8.png">.</p>
+<p>For the wheel factorization cases, there is a further offset of the operations not done of <img class="mwe-math-fallback-image-inline tex" alt="\sum_{p\le x}\frac1p" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/df51430d4cbf9a9dfa95ff808afca87f.png"> where <span class="texhtml"><i>x</i></span> is the highest wheel prime and a constant factor of the whole expression is applied which is the fraction of remaining prime candidates as compared to the repeating wheel circumference. The wheel circumference is <img class="mwe-math-fallback-image-inline tex" alt="\prod_{p\le x}p" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/5d5cb3be8afa3458fae0e22cafcbd51c.png"> and it can easily be determined that this wheel factor is <img class="mwe-math-fallback-image-inline tex" alt="\prod_{p\le x}\frac{p-1}{p}" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/19edb531b1715bd1192a622613c5dc90.png"> as <img class="mwe-math-fallback-image-inline tex" alt="\frac{p-1}{p}" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/63058c54032b3280da18e579ed305424.png"> is the fraction of remaining candidates for the highest wheel prime, <span class="texhtml"><i>x</i></span>, and each succeeding smaller prime leaves its corresponding fraction of the previous combined fraction.</p>
+<p>Combining all of the above analysis, the total number of operations for a sieving range up to <span class="texhtml"><i>n</i></span> including wheel factorization for primes up to <span class="texhtml"><i>x</i></span> is approximately:</p>
+<p><img class="mwe-math-fallback-image-inline tex" alt="\prod_{p\le x}\frac{p-1}{p}\left(\ln\ln n-\frac1{\ln n}\left(1-\frac{4}{\sqrt{n}}\right)+M-\ln 2-\sum_{p\le x}\frac1p\right)" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/7f72c5936884121eeae506355a62c80c.png"></p>
+<p>To show that the above expression is a good approximation to the number of composite number cull operations performed by the algorithm, following is a table showing the actually measured number of operations for a practical implementation of the sieve of Eratosthenes as compared to the number of operations predicted from the above expression with both expressed as a fraction of the range (rounded to four decimal places) for different sieve ranges and wheel factorizations (Note that the last column is a maximum practical wheel as to the size of the wheel gaps Look Up Table - almost 10 million values):</p>
+<dl>
+<dd>
+<table class="wikitable" style="text-align: center">
+<tbody><tr>
+<th><i>n</i></th>
+<th colspan="2">no wheel</th>
+<th colspan="2">odds</th>
+<th colspan="2">2/3/5 wheel</th>
+<th colspan="2">2/3/5/7 wheel</th>
+<th colspan="2">2/3/5/7/11/13/17/19 wheel</th>
+</tr>
+<tr>
+<td><i>10<sup>3</sup></i></td>
+<td>1.4090</td>
+<td>1.3745</td>
+<td>0.4510</td>
+<td>0.4372</td>
+<td>0.1000</td>
+<td>0.0909</td>
+<td>0.0580</td>
+<td>0.0453</td>
+<td>0.0060</td>
+<td>------</td>
+</tr>
+<tr>
+<td><i>10<sup>4</sup></i></td>
+<td>1.6962</td>
+<td>1.6844</td>
+<td>0.5972</td>
+<td>0.5922</td>
+<td>0.1764</td>
+<td>0.1736</td>
+<td>0.1176</td>
+<td>0.1161</td>
+<td>0.0473</td>
+<td>0.0391</td>
+</tr>
+<tr>
+<td><i>10<sup>5</sup></i></td>
+<td>1.9299</td>
+<td>1.9261</td>
+<td>0.7148</td>
+<td>0.7130</td>
+<td>0.2388</td>
+<td>0.2381</td>
+<td>0.1719</td>
+<td>0.1714</td>
+<td>0.0799</td>
+<td>0.0805</td>
+</tr>
+<tr>
+<td><i>10<sup>6</sup></i></td>
+<td>2.1218</td>
+<td>2.1220</td>
+<td>0.8109</td>
+<td>0.8110</td>
+<td>0.2902</td>
+<td>0.2903</td>
+<td>0.2161</td>
+<td>0.2162</td>
+<td>0.1134</td>
+<td>0.1140</td>
+</tr>
+<tr>
+<td><i>10<sup>7</sup></i></td>
+<td>2.2850</td>
+<td>2.2863</td>
+<td>0.8925</td>
+<td>0.8932</td>
+<td>0.3337</td>
+<td>0.3341</td>
+<td>0.2534</td>
+<td>0.2538</td>
+<td>0.1419</td>
+<td>0.1421</td>
+</tr>
+<tr>
+<td><i>10<sup>8</sup></i></td>
+<td>2.4257</td>
+<td>2.4276</td>
+<td>0.9628</td>
+<td>0.9638</td>
+<td>0.3713</td>
+<td>0.3718</td>
+<td>0.2856</td>
+<td>0.2860</td>
+<td>0.1660</td>
+<td>0.1662</td>
+</tr>
+</tbody></table>
+</dd>
+</dl>
+<p>The above table shows that the above expression is a very good approximation to the total number of culling operations for sieve ranges of about a hundred thousand (10<sup>5</sup>) and above.</p>
+<h2><span class="mw-headline" id="Algorithmic_complexity">Algorithmic complexity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit&amp;section=7" title="Edit section: Algorithmic complexity">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The sieve of Eratosthenes is a popular way to benchmark computer performance.<sup id="cite_ref-peng1985fall_14-0" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-peng1985fall-14">[14]</a></sup> As can be seen from the above by removing all constant offsets and constant factors and ignoring terms that tend to zero as n approaches infinity, the time complexity of calculating all primes below <i>n</i> in the <a href="https://en.wikipedia.org/wiki/Random_access_machine" title="Random access machine" class="mw-redirect">random access machine</a> model is <img class="mwe-math-fallback-image-inline tex" alt="O(n \log\log n)" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/f3729d76f3937aaef7f14f63fbcd33f1.png"> operations, a direct consequence of the fact that the <a href="https://en.wikipedia.org/wiki/Prime_harmonic_series" title="Prime harmonic series" class="mw-redirect">prime harmonic series</a> asymptotically approaches <img class="mwe-math-fallback-image-inline tex" alt="\log \log n" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/951025a61f8ad9afaecd4d010ff79cc0.png">. It has an exponential time complexity with regard to input size, though, which makes it a <a href="https://en.wikipedia.org/wiki/Pseudo-polynomial_time" title="Pseudo-polynomial time">pseudo-polynomial</a> algorithm. The basic algorithm requires <img class="mwe-math-fallback-image-inline tex" alt="O(n)" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/7ba55e7c64a9405a0b39a1107e90ca94.png"> of memory.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Bit_complexity" title="Bit complexity" class="mw-redirect">bit complexity</a> of the algorithm is <img class="mwe-math-fallback-image-inline tex" alt="O(n (\log n) (\log \log n))" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/5ebf9275eecd620c375bbf678ebfbd41.png"> bit operations with a memory requirement of <img class="mwe-math-fallback-image-inline tex" alt="O(n)" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/7ba55e7c64a9405a0b39a1107e90ca94.png">.<sup id="cite_ref-15" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-15">[15]</a></sup></p>
+<p>The normally implemented page segmented version has the same operational complexity of <img class="mwe-math-fallback-image-inline tex" alt="O(n \log\log n)" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/f3729d76f3937aaef7f14f63fbcd33f1.png"> as the non-segmented version but reduces the space requirements to the very minimal size of the segment page plus the memory required to store the base primes less than the square root of the range used to cull composites from successive page segments of size <img class="mwe-math-fallback-image-inline tex" alt="O(\frac{\sqrt{n}}{\log n})" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/7d7510547643c57934649bafc773c496.png">.</p>
+<p>A special rarely if ever implemented segmented version of the sieve of Eratosthenes, with basic optimizations, uses <img class="mwe-math-fallback-image-inline tex" alt="O(n)" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/7ba55e7c64a9405a0b39a1107e90ca94.png"> operations and <img class="mwe-math-fallback-image-inline tex" alt="O(n^{1/2}\log\log n/\log n)" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/2fe54f951423145a034bc54e9a30d773.png"> bits of memory.<sup id="cite_ref-Pritchard1_16-0" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-Pritchard1-16">[16]</a></sup><sup id="cite_ref-Pritchard2_17-0" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-Pritchard2-17">[17]</a></sup><sup id="cite_ref-Pritchard3_18-0" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-Pritchard3-18">[18]</a></sup></p>
+<p>To show that the above approximation in complexity is not very accurate even for about as large as practical a range, the following is a table of the estimated number of operations as a fraction of the range rounded to four places, the calculated ratio for a factor of ten change in range based on this estimate, and the factor based on the <i>log log n</i> estimate for various ranges and wheel factorizations (the combo column uses a frequently practically used pre-cull by the maximum wheel factorization but only the 2/3/5/7 wheel for the wheel factor as the full factorization is difficult to implement efficiently for page segmentation):</p>
+<dl>
+<dd>
+<table class="wikitable">
+<tbody><tr>
+<th><i>n</i></th>
+<th colspan="3">no wheel</th>
+<th colspan="3">odds</th>
+<th colspan="3">2/3/5 wheel</th>
+<th colspan="3">2/3/5/7 wheel</th>
+<th colspan="3">combo wheel</th>
+<th colspan="3">2/3/5/7/11/13/17/19 wheel</th>
+</tr>
+<tr>
+<td>10<sup>6</sup></td>
+<td>2.122</td>
+<td>1.102</td>
+<td>1.075</td>
+<td>0.811</td>
+<td>1.137</td>
+<td>1.075</td>
+<td>0.2903</td>
+<td>1.22</td>
+<td>1.075</td>
+<td>0.2162</td>
+<td>1.261</td>
+<td>1.075</td>
+<td>0.1524</td>
+<td>1.416</td>
+<td>1.075</td>
+<td>0.114</td>
+<td>1.416</td>
+<td>1.075</td>
+</tr>
+<tr>
+<td>10<sup>7</sup></td>
+<td>2.2863</td>
+<td>1.077</td>
+<td>1.059</td>
+<td>0.8932</td>
+<td>1.101</td>
+<td>1.059</td>
+<td>0.3341</td>
+<td>1.151</td>
+<td>1.059</td>
+<td>0.2537</td>
+<td>1.174</td>
+<td>1.059</td>
+<td>0.1899</td>
+<td>1.246</td>
+<td>1.059</td>
+<td>0.1421</td>
+<td>1.246</td>
+<td>1.059</td>
+</tr>
+<tr>
+<td>10<sup>8</sup></td>
+<td>2.4276</td>
+<td>1.062</td>
+<td>1.048</td>
+<td>0.9638</td>
+<td>1.079</td>
+<td>1.048</td>
+<td>0.3718</td>
+<td>1.113</td>
+<td>1.048</td>
+<td>0.286</td>
+<td>1.127</td>
+<td>1.048</td>
+<td>0.2222</td>
+<td>1.17</td>
+<td>1.048</td>
+<td>0.1662</td>
+<td>1.17</td>
+<td>1.048</td>
+</tr>
+<tr>
+<td>10<sup>9</sup></td>
+<td>2.5514</td>
+<td>1.051</td>
+<td>1.04</td>
+<td>1.0257</td>
+<td>1.064</td>
+<td>1.04</td>
+<td>0.4048</td>
+<td>1.089</td>
+<td>1.04</td>
+<td>0.3143</td>
+<td>1.099</td>
+<td>1.04</td>
+<td>0.2505</td>
+<td>1.127</td>
+<td>1.04</td>
+<td>0.1874</td>
+<td>1.127</td>
+<td>1.04</td>
+</tr>
+<tr>
+<td>10<sup>10</sup></td>
+<td>2.6615</td>
+<td>1.043</td>
+<td>1.035</td>
+<td>1.0808</td>
+<td>1.054</td>
+<td>1.035</td>
+<td>0.4342</td>
+<td>1.073</td>
+<td>1.035</td>
+<td>0.3395</td>
+<td>1.08</td>
+<td>1.035</td>
+<td>0.2757</td>
+<td>1.101</td>
+<td>1.035</td>
+<td>0.2063</td>
+<td>1.101</td>
+<td>1.035</td>
+</tr>
+<tr>
+<td>10<sup>11</sup></td>
+<td>2.7608</td>
+<td>1.037</td>
+<td>1.03</td>
+<td>1.1304</td>
+<td>1.046</td>
+<td>1.03</td>
+<td>0.4607</td>
+<td>1.061</td>
+<td>1.03</td>
+<td>0.3622</td>
+<td>1.067</td>
+<td>1.03</td>
+<td>0.2984</td>
+<td>1.082</td>
+<td>1.03</td>
+<td>0.2232</td>
+<td>1.082</td>
+<td>1.03</td>
+</tr>
+<tr>
+<td>10<sup>12</sup></td>
+<td>2.8511</td>
+<td>1.033</td>
+<td>1.027</td>
+<td>1.1755</td>
+<td>1.04</td>
+<td>1.027</td>
+<td>0.4847</td>
+<td>1.052</td>
+<td>1.027</td>
+<td>0.3828</td>
+<td>1.057</td>
+<td>1.027</td>
+<td>0.319</td>
+<td>1.069</td>
+<td>1.027</td>
+<td>0.2387</td>
+<td>1.069</td>
+<td>1.027</td>
+</tr>
+<tr>
+<td>10<sup>13</sup></td>
+<td>2.9339</td>
+<td>1.029</td>
+<td>1.024</td>
+<td>1.217</td>
+<td>1.035</td>
+<td>1.024</td>
+<td>0.5068</td>
+<td>1.046</td>
+<td>1.024</td>
+<td>0.4018</td>
+<td>1.049</td>
+<td>1.024</td>
+<td>0.3379</td>
+<td>1.059</td>
+<td>1.024</td>
+<td>0.2528</td>
+<td>1.059</td>
+<td>1.024</td>
+</tr>
+<tr>
+<td>10<sup>14</sup></td>
+<td>3.0104</td>
+<td>1.026</td>
+<td>1.022</td>
+<td>1.2552</td>
+<td>1.031</td>
+<td>1.022</td>
+<td>0.5272</td>
+<td>1.04</td>
+<td>1.022</td>
+<td>0.4193</td>
+<td>1.044</td>
+<td>1.022</td>
+<td>0.3554</td>
+<td>1.052</td>
+<td>1.022</td>
+<td>0.2659</td>
+<td>1.052</td>
+<td>1.022</td>
+</tr>
+<tr>
+<td>10<sup>15</sup></td>
+<td>3.0815</td>
+<td>1.024</td>
+<td>1.02</td>
+<td>1.2907</td>
+<td>1.028</td>
+<td>1.02</td>
+<td>0.5462</td>
+<td>1.036</td>
+<td>1.02</td>
+<td>0.4355</td>
+<td>1.039</td>
+<td>1.02</td>
+<td>0.3717</td>
+<td>1.046</td>
+<td>1.02</td>
+<td>0.2781</td>
+<td>1.046</td>
+<td>1.02</td>
+</tr>
+<tr>
+<td>10<sup>16</sup></td>
+<td>3.1478</td>
+<td>1.022</td>
+<td>1.018</td>
+<td>1.3239</td>
+<td>1.026</td>
+<td>1.018</td>
+<td>0.5639</td>
+<td>1.032</td>
+<td>1.018</td>
+<td>0.4507</td>
+<td>1.035</td>
+<td>1.018</td>
+<td>0.3868</td>
+<td>1.041</td>
+<td>1.018</td>
+<td>0.2894</td>
+<td>1.041</td>
+<td>1.018</td>
+</tr>
+</tbody></table>
+</dd>
+</dl>
+<p>The above shows that the <i>log log n</i> estimate is not very accurate even for maximum practical ranges of about 10<sup>16</sup>. One can see why it does not match by looking at the computational analysis above and seeing that within these practical sieving range limits, there are very significant constant offset terms such that the very slowly growing <i>log log n</i> term does not get large enough so as to make these terms insignificant until the sieving range approaches infinity - well beyond any practical sieving range. Within these practical ranges, these significant constant offsets mean that the performance of the Sieve of Eratosthenes is much better than one would expect just using the asymptotic time complexity estimates by a significant amount, but that also means that the slope of the performance with increasing range is steeper than predicted as the benefit of the constant offsets becomes slightly less significant.</p>
+<p>One should also note that in using the calculated operation ratios to the sieve range, it must be less than about 0.2587 in order to be faster than the often compared <a href="https://en.wikipedia.org/wiki/Sieve_of_Atkin" title="Sieve of Atkin">sieve of Atkin</a> <b>if the operations take approximately the same time each in CPU clock cycles</b>, which is a reasonable assumption for the one huge bit array algorithm. Using that assumption, the sieve of Atkin is only faster than the maximally wheel factorized sieve of Eratosthenes for ranges of over 10<sup>13</sup> at which point the huge sieve buffer array would need about a quarter Terabyte (about 250 Gigabytes) of RAM memory even if bit packing were used - i.e., not very practical! An analysis of the page segmented versions will show that the assumption that the time per operation stays the same between the two algorithms does not hold for page segmentation and that the sieve of Atkin operations get slower much faster than the sieve of Eratosthenes with increasing range. Thus for practical purposes, the maximally wheel factorized Sieve of Eratosthenes is faster than the Sieve of Atkin although the Sieve of Atkin is faster for lesser amounts of wheel factorization.</p>
+<p>Using <a href="https://en.wikipedia.org/wiki/Big_O_Notation" title="Big O Notation" class="mw-redirect">Big O Notation</a> is also not the correct way to compare practical performance of even variations of the Sieve of Eratosthenes as it ignores constant factors and offsets that may be very significant for practical ranges: The Sieve of Eratosthenes variation known as the Pritchard Wheel Sieve<sup id="cite_ref-Pritchard1_16-1" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-Pritchard1-16">[16]</a></sup><sup id="cite_ref-Pritchard2_17-1" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-Pritchard2-17">[17]</a></sup><sup id="cite_ref-Pritchard3_18-1" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-Pritchard3-18">[18]</a></sup> has an O(n) performance, but its basic implementation requires either a "one large array" algorithm which limits its usable range to the amount of available memory else it needs to be page segmented to reduce memory use. When implemented with page segmentation in order to save memory, the basic algorithm still requires about <img class="mwe-math-fallback-image-inline tex" alt="O\left(\frac{n}{\log n}\right)" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/9bc25b948ff21098ab011bb5a9826832.png"> bits of memory (much more than the requirement of the basic page segmented Sieve of Eratosthenes using <img class="mwe-math-fallback-image-inline tex" alt="O\left(\frac{\sqrt{n}}{\log n}\right)" src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/f2ef1bac36460a7bc94d93b12f17e402.png"> bits of memory). Pritchard's work reduced the memory requirement to the limit as described above the table, but the cost is a fairly large constant factor of about three in execution time to about 0.75 times the sieve range due to the complex computations required to do so. As can be seen from the above table for the basic Sieve of Eratosthenes, even though the resulting wheel sieve has O(n) performance and an acceptable memory requirement, it will never be faster than a reasonably Wheel Factorized basic Sieve of Eratosthenes for any practical sieving range by a factor of about two. Other than that it is quite complex to implement, it is rarely practically implemented because it still uses more memory than the basic Sieve of Eratosthenes implementations described here as well as being slower for practical ranges. It is thus more of an intellectual curiosity than something practical.</p>
+<h2><span class="mw-headline" id="Euler.27s_Sieve">Euler's Sieve</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit&amp;section=8" title="Edit section: Euler&#39;s Sieve">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Euler's <a href="https://en.wikipedia.org/wiki/Proof_of_the_Euler_product_formula_for_the_Riemann_zeta_function#Proof_of_the_Euler_product_formula" title="Proof of the Euler product formula for the Riemann zeta function">proof of the zeta product formula</a> contains a version of the sieve of Eratosthenes in which each composite number is eliminated exactly once.<sup id="cite_ref-intro_8-5" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-intro-8">[8]</a></sup> It, too, starts with a <a href="https://en.wikipedia.org/wiki/List_(computing)" title="List (computing)" class="mw-redirect">list</a> of numbers from <i>2</i> to <i>n</i> in order. On each step the first element is identified as the next prime and the results of multiplying this prime with each element of the list are marked in the list for subsequent deletion. The initial element and the marked elements are then removed from the working sequence, and the process is repeated:</p>
+<pre><small>[2] (3) 5  7  <u>9</u>  11  13 <u>15</u> 17 19 <u>21</u> 23 25 <u>27</u> 29 31 <u>33</u> 35 37 <u>39</u> 41 43 <u>45</u> 47 49 <u>51</u> 53 55 <u>57</u> 59 61 <u>63</u> 65 67 <u>69</u> 71 73 <u>75</u> 77 79  ...
+[3]    (5) 7     11  13    17 19    23 <u>25</u>    29 31    <u>35</u> 37    41 43    47 49    53 <u>55</u>    59 61    <u>65</u> 67    71 73    77 79  ...
+[4]       (7)    11  13    17 19    23       29 31       37    41 43    47 <u>49</u>    53       59 61       67    71 73    <u>77</u> 79  ...
+[5]             (11) 13    17 19    23       29 31       37    41 43    47       53       59 61       67    71 73       79  ...
+[...]</small>
+</pre>
+<p>Here the example is shown starting from odds, after the first step of the algorithm. Thus, on the <i>k</i>th step all the remaining multiples of the <i>k</i>th prime are removed from the list, which will thereafter contain only numbers coprime with the first <i>k</i> primes (cf., <a href="https://en.wikipedia.org/wiki/Wheel_factorization" title="Wheel factorization">wheel factorization</a>), so that the list will start with the next prime, and all the numbers in it below the square of its first element will be prime too.</p>
+<p>Thus, when generating a bounded sequence of primes, when the next identified prime exceeds the square root of the upper limit, all the remaining numbers in the list are prime.<sup id="cite_ref-intro_8-6" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-intro-8">[8]</a></sup> In the example given above that is achieved on identifying 11 as next prime, giving a list of all primes less than or equal to 80.</p>
+<p>Note that numbers that will be discarded by a step are still used while marking the multiples in that step, e.g., for the multiples of 3 it is <span class="texhtml">3 · 3 = 9</span>, <span class="texhtml">3 · 5 = 15</span>, <span class="texhtml">3 · 7 = 21</span>, <span class="texhtml">3 · <i><b>9</b></i> = 27</span>, ..., <span class="texhtml">3 · <i><b>15</b></i> = 45</span>, ..., so care must be taken dealing with this.<sup id="cite_ref-intro_8-7" class="reference"><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_note-intro-8">[8]</a></sup></p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit&amp;section=9" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Sieve_of_Sundaram" title="Sieve of Sundaram">Sieve of Sundaram</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Sieve_of_Atkin" title="Sieve of Atkin">Sieve of Atkin</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Sieve_theory" title="Sieve theory">Sieve theory</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit&amp;section=10" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist columns references-column-count references-column-count-2" style="-moz-column-count: 2; -webkit-column-count: 2; column-count: 2; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-horsley-1"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-horsley_1-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-horsley_1-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-horsley_1-2"><sup><i><b>c</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-horsley_1-3"><sup><i><b>d</b></i></sup></a></span> <span class="reference-text">Horsley, Rev. Samuel, F. R. S., "<i><span lang="el" xml:lang="el">Κόσκινον Ερατοσθένους</span></i> or, The Sieve of Eratosthenes. Being an account of his method of finding all the Prime Numbers," <a rel="nofollow" class="external text" href="http://www.jstor.org/stable/106053"><i>Philosophical Transactions</i> (1683–1775), Vol. 62. (1772), pp. 327–347</a>.</span></li>
+<li id="cite_note-ONeill-2"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-ONeill_2-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-ONeill_2-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-ONeill_2-2"><sup><i><b>c</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-ONeill_2-3"><sup><i><b>d</b></i></sup></a></span> <span class="reference-text">O'Neill, Melissa E., <a rel="nofollow" class="external text" href="http://www.cs.hmc.edu/~oneill/papers/Sieve-JFP.pdf">"The Genuine Sieve of Eratosthenes"</a>, Journal of Functional Programming, Published online by Cambridge University Press 9 October 2008 <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1017%2FS0956796808007004">10.1017/S0956796808007004</a>, pp. 10, 11 (contains two incremental sieves in Haskell: a priority-queue–based one by O'Neill and a list–based, by Richard Bird).</span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-3"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><a href="https://en.wikipedia.org/wiki/Nicomachus" title="Nicomachus">Nicomachus</a>, <i>Introduction to Arithmetic</i>, I, 13. <a rel="nofollow" class="external autonumber" href="http://www.archive.org/stream/nicomachigerasen00nicouoft#page/29/mode/1up">[1]</a></span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-4"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">J. C. Morehead, "Extension of the Sieve of Eratosthenes to arithmetical progressions and applications", <a rel="nofollow" class="external text" href="http://www.jstor.org/stable/1967477">Annals of Mathematics, Second Series <b>10</b>:2 (1909), pp. 88–104</a>.</span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-5"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Clocksin, William F., Christopher S. Mellish, Programming in Prolog, 1984, p. 170. <a href="https://en.wikipedia.org/wiki/Special:BookSources/3540110461" class="internal mw-magiclink-isbn">ISBN 3-540-11046-1</a>.</span></li>
+<li id="cite_note-Runciman-6"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-Runciman_6-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-Runciman_6-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation journal">Runciman, Colin (1997). <a rel="nofollow" class="external text" href="http://eprints.whiterose.ac.uk/3784/1/runcimanc1.pdf">"Functional Pearl: Lazy wheel sieves and spirals of primes"</a> <span style="font-size:85%;">(PDF)</span>. <i>J. Functional Programming</i> <b>7</b> (2): 219–225. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1017%2FS0956796897002670">10.1017/S0956796897002670</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+of+Eratosthenes&amp;rft.atitle=Functional+Pearl%3A+Lazy+wheel+sieves+and+spirals+of+primes&amp;rft.aufirst=Colin&amp;rft.aulast=Runciman&amp;rft.date=1997&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Feprints.whiterose.ac.uk%2F3784%2F1%2Fruncimanc1.pdf&amp;rft_id=info%3Adoi%2F10.1017%2FS0956796897002670&amp;rft.issue=2&amp;rft.jtitle=J.+Functional+Programming&amp;rft.pages=219-225&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=7" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-sedgewick-7"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-sedgewick_7-0"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation book">Sedgewick, Robert (1992). <i>Algorithms in C++</i>. Addison-Wesley. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-201-51059-6" title="Special:BookSources/0-201-51059-6">0-201-51059-6</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+of+Eratosthenes&amp;rft.aufirst=Robert&amp;rft.aulast=Sedgewick&amp;rft.btitle=Algorithms+in+C%2B%2B&amp;rft.date=1992&amp;rft.genre=book&amp;rft.isbn=0-201-51059-6&amp;rft.pub=Addison-Wesley&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span> <span style="display:none;font-size:100%" class="error citation-comment"><code style="color:inherit; border:inherit; padding:inherit;">|access-date=</code> requires <code style="color:inherit; border:inherit; padding:inherit;">|url=</code> (<a href="https://en.wikipedia.org/wiki/Help:CS1_errors#accessdate_missing_url" title="Help:CS1 errors">help</a>)</span>, p. 16.</span></li>
+<li id="cite_note-intro-8"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-intro_8-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-intro_8-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-intro_8-2"><sup><i><b>c</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-intro_8-3"><sup><i><b>d</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-intro_8-4"><sup><i><b>e</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-intro_8-5"><sup><i><b>f</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-intro_8-6"><sup><i><b>g</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-intro_8-7"><sup><i><b>h</b></i></sup></a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://research.cs.wisc.edu/techreports/1990/TR909.pdf">Jonathan Sorenson, An Introduction to Prime Number Sieves</a>, Computer Sciences Technical Report #909, Department of Computer Sciences University of Wisconsin-Madison, January 2, 1990 (the use of optimization of starting from squares, and thus using only the numbers whose square is below the upper limit, is shown).</span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-9"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Crandall &amp; Pomerance, <i>Prime Numbers: A Computational Perspective</i>, second edition, Springer: 2005, pp. 121–24.</span></li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-10"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Bays, Carter; Hudson, Richard H. (1977). "The segmented sieve of Eratosthenes and primes in arithmetic progressions to 10<sup>12</sup>". <i>BIT</i> <b>17</b> (2): 121–127. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1007%2FBF01932283">10.1007/BF01932283</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+of+Eratosthenes&amp;rft.atitle=The+segmented+sieve+of+Eratosthenes+and+primes+in+arithmetic+progressions+to+10%3Csup%3E12%3C%2Fsup%3E&amp;rft.aufirst=Carter&amp;rft.au=Hudson%2C+Richard+H.&amp;rft.aulast=Bays&amp;rft.date=1977&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1007%2FBF01932283&amp;rft.issue=2&amp;rft.jtitle=BIT&amp;rft.pages=121-127&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=17" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-11"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">J. Sorenson, <a rel="nofollow" class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.94.1737">The pseudosquares prime sieve</a>, Proceedings of the 7th International Symposium on Algorithmic Number Theory. (ANTS-VII, 2006).</span></li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-12"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Turner, David A. SASL language manual. Tech. rept. CS/75/1. Department of Computational Science, University of St. Andrews 1975. (<code class="mw-highlight" dir="ltr"><span class="nf">sieve</span> <span class="p">(</span><span class="n">p</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span> <span class="n">p</span> <span class="kt">:</span> <span class="n">sieve</span> <span class="p">[</span><span class="n">x</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="n">rem</span> <span class="n">x</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">];</span> <span class="n">primes</span> <span class="ow">=</span> <span class="n">sieve</span> <span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]</span></code>)</span></li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-13"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">E. Bach and J. Shallit, §2.7 in Algorithmic Number Theory, Vol. 1: Efficient Algorithms, MIT Press, Cambridge, MA, 1996.</span></li>
+<li id="cite_note-peng1985fall-14"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-peng1985fall_14-0"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation news">Peng, T. A. (Fall 1985). <a rel="nofollow" class="external text" href="https://archive.org/stream/byte-magazine-1985-11/1985_11_BYTE_10-11_Inside_the_IBM_PCs#page/n245/mode/2up">"One Million Primes Through the Sieve"</a>. <i>BYTE</i>. pp.&nbsp;243–244<span class="reference-accessdate">. Retrieved <span class="nowrap">19 March</span> 2016</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+of+Eratosthenes&amp;rft.atitle=One+Million+Primes+Through+the+Sieve&amp;rft.au=Peng%2C+T.+A.&amp;rft.date=1985&amp;rft.genre=article&amp;rft_id=https%3A%2F%2Farchive.org%2Fstream%2Fbyte-magazine-1985-11%2F1985_11_BYTE_10-11_Inside_the_IBM_PCs%23page%2Fn245%2Fmode%2F2up&amp;rft.jtitle=BYTE&amp;rft.pages=243-244&amp;rft.ssn=fall&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-15"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Pritchard, Paul, "Linear prime-number sieves: a family tree," <i>Sci. Comput. Programming</i> <b>9</b>:1 (1987), pp. 17–35.</span></li>
+<li id="cite_note-Pritchard1-16"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-Pritchard1_16-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-Pritchard1_16-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text">Paul Pritchard, A sublinear additive sieve for finding prime numbers, Communications of the ACM 24 (1981), 18–23. MR 82c:10011</span></li>
+<li id="cite_note-Pritchard2-17"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-Pritchard2_17-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-Pritchard2_17-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text">Paul Pritchard, Explaining the wheel sieve, Acta Informatica 17 (1982), 477–485. MR 84g:10015</span></li>
+<li id="cite_note-Pritchard3-18"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-Pritchard3_18-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#cite_ref-Pritchard3_18-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text">Paul Pritchard, Fast compact prime number sieves (among others), Journal of Algorithms 4 (1983), 332–344. MR 85h:11080</span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit&amp;section=11" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www.encyclopediaofmath.org/index.php/Eratosthenes,_sieve_of"><i>Eratosthenes, sieve of</i> at Encyclopaedia of Mathematics</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.hbmeyer.de/eratosiv.htm">Interactive JavaScript Page</a></li>
+<li><a rel="nofollow" class="external text" href="http://demonstrations.wolfram.com/SieveOfEratosthenes/">Sieve of Eratosthenes</a> by George Beck, <a href="https://en.wikipedia.org/wiki/Wolfram_Demonstrations_Project" title="Wolfram Demonstrations Project">Wolfram Demonstrations Project</a>.</li>
+<li><a rel="nofollow" class="external text" href="https://wiki.haskell.org/Prime_numbers#Sieve_of_Eratosthenes">Sieve of Eratosthenes in Haskell</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.algolist.net/Algorithms/Number_theoretic_algorithms/Sieve_of_Eratosthenes">Sieve of Eratosthenes algorithm illustrated and explained. Java and C++ implementations.</a></li>
+<li><a rel="nofollow" class="external text" href="http://zsmith.co/primes.html">A related sieve written in x86 assembly language</a></li>
+<li><a rel="nofollow" class="external text" href="http://sites.google.com/site/bbuhrow/">A highly optimized Sieve of Eratosthenes in C</a></li>
+<li><a rel="nofollow" class="external text" href="http://paratechnical.blogspot.com/2011/01/c-implementation-of-parallel-sieve-of.html">A parallel implementation in C#</a></li>
+<li><a rel="nofollow" class="external text" href="http://c2.com/cgi/wiki?SieveOfEratosthenesInManyProgrammingLanguages">SieveOfEratosthenesInManyProgrammingLanguages c2 wiki page</a></li>
+<li><a rel="nofollow" class="external text" href="http://wwwhomes.uni-bielefeld.de/achim/prime_sieve.html">The Art of Prime Sieving</a> Sieve of Eratosthenes in C from 1998 with nice features and algorithmic tricks explained.</li>
+</ul>
+<table class="navbox" style="border-spacing:0">
+<tbody><tr>
+<td style="padding:2px">
+<table class="nowraplinks collapsible uncollapsed navbox-inner" style="border-spacing:0;background:transparent;color:inherit" id="collapsibleTable0">
+<tbody><tr>
+<th scope="col" class="navbox-title" colspan="2"><span class="collapseButton">[<a id="collapseButton0" href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#">hide</a>]</span>
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="https://en.wikipedia.org/wiki/Template:Number-theoretic_algorithms" title="Template:Number-theoretic algorithms"><abbr title="View this template" style=";;background:none transparent;border:none;">v</abbr></a></li>
+<li class="nv-talk"><a href="https://en.wikipedia.org/w/index.php?title=Template_talk:Number-theoretic_algorithms&amp;action=edit&amp;redlink=1" class="new" title="Template talk:Number-theoretic algorithms (page does not exist)"><abbr title="Discuss this template" style=";;background:none transparent;border:none;">t</abbr></a></li>
+<li class="nv-edit"><a class="external text" href="https://en.wikipedia.org/w/index.php?title=Template:Number-theoretic_algorithms&amp;action=edit"><abbr title="Edit this template" style=";;background:none transparent;border:none;">e</abbr></a></li>
+</ul>
+</div>
+<div style="font-size:114%"><a href="https://en.wikipedia.org/wiki/Number_theory" title="Number theory">Number-theoretic</a> <a href="https://en.wikipedia.org/wiki/Algorithm" title="Algorithm">algorithms</a></div>
+</th>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="https://en.wikipedia.org/wiki/Primality_test" title="Primality test">Primality tests</a></th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><span class="smallcaps" style="font-variant:small-caps;"><a href="https://en.wikipedia.org/wiki/AKS_primality_test" title="AKS primality test">AKS test</a></span></li>
+<li><span class="smallcaps" style="font-variant:small-caps;"><a href="https://en.wikipedia.org/wiki/Adleman%E2%80%93Pomerance%E2%80%93Rumely_primality_test" title="Adleman–Pomerance–Rumely primality test">APR test</a></span></li>
+<li><a href="https://en.wikipedia.org/wiki/Baillie%E2%80%93PSW_primality_test" title="Baillie–PSW primality test">Baillie–PSW</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Elliptic_curve_primality" title="Elliptic curve primality">Elliptic curve</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pocklington_primality_test" title="Pocklington primality test">Pocklington</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Fermat_primality_test" title="Fermat primality test">Fermat</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Lucas_primality_test" title="Lucas primality test">Lucas</a></li>
+<li><span class="smallcaps" style="font-variant:small-caps;"><i><a href="https://en.wikipedia.org/wiki/Lucas%E2%80%93Lehmer_primality_test" title="Lucas–Lehmer primality test">Lucas–Lehmer</a></i></span></li>
+<li><span class="smallcaps" style="font-variant:small-caps;"><i><a href="https://en.wikipedia.org/wiki/Lucas%E2%80%93Lehmer%E2%80%93Riesel_test" title="Lucas–Lehmer–Riesel test">Lucas–Lehmer–Riesel</a></i></span></li>
+<li><span class="smallcaps" style="font-variant:small-caps;"><i><a href="https://en.wikipedia.org/wiki/Proth%27s_theorem" title="Proth&#39;s theorem">Proth's theorem</a></i></span></li>
+<li><span class="smallcaps" style="font-variant:small-caps;"><i><a href="https://en.wikipedia.org/wiki/P%C3%A9pin%27s_test" title="Pépin&#39;s test">Pépin's</a></i></span></li>
+<li><a href="https://en.wikipedia.org/wiki/Quadratic_Frobenius_test" title="Quadratic Frobenius test">Quadratic Frobenius test</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Solovay%E2%80%93Strassen_primality_test" title="Solovay–Strassen primality test">Solovay–Strassen</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test" title="Miller–Rabin primality test">Miller–Rabin</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="https://en.wikipedia.org/wiki/Generating_primes" title="Generating primes">Prime-generating</a></th>
+<td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Sieve_of_Atkin" title="Sieve of Atkin">Sieve of Atkin</a></li>
+<li><strong class="selflink">Sieve of Eratosthenes</strong></li>
+<li><a href="https://en.wikipedia.org/wiki/Sieve_of_Sundaram" title="Sieve of Sundaram">Sieve of Sundaram</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Wheel_factorization" title="Wheel factorization">Wheel factorization</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="https://en.wikipedia.org/wiki/Integer_factorization" title="Integer factorization">Integer factorization</a></th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Continued_fraction_factorization" title="Continued fraction factorization">Continued fraction (CFRAC)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Dixon%27s_factorization_method" title="Dixon&#39;s factorization method">Dixon's</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Lenstra_elliptic_curve_factorization" title="Lenstra elliptic curve factorization">Lenstra elliptic curve (ECM)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Euler%27s_factorization_method" title="Euler&#39;s factorization method">Euler's</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm" title="Pollard&#39;s rho algorithm">Pollard's rho</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pollard%27s_p_%E2%88%92_1_algorithm" title="Pollard&#39;s p − 1 algorithm"><i>p</i> − 1</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Williams%27_p_%2B_1_algorithm" title="Williams&#39; p + 1 algorithm"><i>p</i> + 1</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Quadratic_sieve" title="Quadratic sieve">Quadratic sieve (QS)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/General_number_field_sieve" title="General number field sieve">General number field sieve (GNFS)</a></li>
+<li><i><a href="https://en.wikipedia.org/wiki/Special_number_field_sieve" title="Special number field sieve">Special number field sieve (SNFS)</a></i></li>
+<li><a href="https://en.wikipedia.org/wiki/Rational_sieve" title="Rational sieve">Rational sieve</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Fermat%27s_factorization_method" title="Fermat&#39;s factorization method">Fermat's</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Shanks%27_square_forms_factorization" title="Shanks&#39; square forms factorization">Shanks' square forms</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Trial_division" title="Trial division">Trial division</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Shor%27s_algorithm" title="Shor&#39;s algorithm">Shor's</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="https://en.wikipedia.org/wiki/Multiplication_algorithm" title="Multiplication algorithm">Multiplication</a></th>
+<td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Ancient_Egyptian_multiplication" title="Ancient Egyptian multiplication">Ancient Egyptian</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Long_multiplication" title="Long multiplication" class="mw-redirect">Long</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm" title="Karatsuba algorithm">Karatsuba</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Toom%E2%80%93Cook_multiplication" title="Toom–Cook multiplication">Toom–Cook</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Sch%C3%B6nhage%E2%80%93Strassen_algorithm" title="Schönhage–Strassen algorithm">Schönhage–Strassen</a></li>
+<li><a href="https://en.wikipedia.org/wiki/F%C3%BCrer%27s_algorithm" title="Fürer&#39;s algorithm">Fürer's</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="https://en.wikipedia.org/wiki/Discrete_logarithm" title="Discrete logarithm">Discrete logarithm</a></th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Baby-step_giant-step" title="Baby-step giant-step">Baby-step giant-step</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm_for_logarithms" title="Pollard&#39;s rho algorithm for logarithms">Pollard rho</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pollard%27s_kangaroo_algorithm" title="Pollard&#39;s kangaroo algorithm">Pollard kangaroo</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pohlig%E2%80%93Hellman_algorithm" title="Pohlig–Hellman algorithm">Pohlig–Hellman</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Index_calculus_algorithm" title="Index calculus algorithm">Index calculus</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Function_field_sieve" title="Function field sieve">Function field sieve</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" title="Greatest common divisor">Greatest common divisor</a></th>
+<td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Binary_GCD_algorithm" title="Binary GCD algorithm">Binary</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Euclidean_algorithm" title="Euclidean algorithm">Euclidean</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm" title="Extended Euclidean algorithm">Extended Euclidean</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Lehmer%27s_GCD_algorithm" title="Lehmer&#39;s GCD algorithm">Lehmer's</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="https://en.wikipedia.org/wiki/Quadratic_residue" title="Quadratic residue">Modular square root</a></th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Cipolla%27s_algorithm" title="Cipolla&#39;s algorithm">Cipolla</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pocklington%27s_algorithm" title="Pocklington&#39;s algorithm">Pocklington's</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Tonelli%E2%80%93Shanks_algorithm" title="Tonelli–Shanks algorithm">Tonelli–Shanks</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Other algorithms</th>
+<td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Chakravala_method" title="Chakravala method">Chakravala</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cornacchia%27s_algorithm" title="Cornacchia&#39;s algorithm">Cornacchia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Lenstra%E2%80%93Lenstra%E2%80%93Lov%C3%A1sz_lattice_basis_reduction_algorithm" title="Lenstra–Lenstra–Lovász lattice basis reduction algorithm">LLL</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Integer_square_root" title="Integer square root">Integer square root</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Modular_exponentiation" title="Modular exponentiation">Modular exponentiation</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Schoof%27s_algorithm" title="Schoof&#39;s algorithm">Schoof's</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<td class="navbox-abovebelow hlist" colspan="2">
+<div>
+<ul>
+<li><i>Italics</i> indicate that algorithm is for numbers of special forms</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1002
+Cached time: 20160324215127
+Cache expiry: 2592000
+Dynamic content: false
+CPU time usage: 0.445 seconds
+Real time usage: 1.317 seconds
+Preprocessor visited node count: 2036/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 40173/2097152 bytes
+Template argument size: 2262/2097152 bytes
+Highest expansion depth: 10/40
+Expensive parser function count: 3/500
+Lua time usage: 0.107/10.000 seconds
+Lua memory usage: 2.57 MB/50 MB
+Number of Wikibase entities loaded: 0-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1078.304      1 - -total
+ 38.52%  415.318      1 - Template:Reflist
+ 19.54%  210.712      2 - Template:Cite_journal
+ 16.35%  176.298      2 - Template:Lang
+ 16.15%  174.136      1 - Template:Lang-grc
+ 15.71%  169.445     30 - Template:Math
+ 15.54%  167.528      2 - Template:Category_handler
+  4.37%   47.103      1 - Template:Refimprove_section
+  3.17%   34.161      1 - Template:Refimprove
+  2.65%   28.544      1 - Template:Ambox
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:73415-0!*!0!!en!4!*!math=0 and timestamp 20160324215125 and revision id 711785949
+ -->
+<noscript>&lt;img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /&gt;</noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;oldid=711785949">https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;oldid=711785949</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="https://en.wikipedia.org/wiki/Category:Primality_tests" title="Category:Primality tests">Primality tests</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Sieve_theory" title="Category:Sieve theory">Sieve theory</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Algorithms" title="Category:Algorithms">Algorithms</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="https://en.wikipedia.org/wiki/Category:Articles_containing_Greek-language_text" title="Category:Articles containing Greek-language text">Articles containing Greek-language text</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Pages_using_citations_with_accessdate_and_no_URL" title="Category:Pages using citations with accessdate and no URL">Pages using citations with accessdate and no URL</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Articles_containing_Ancient_Greek-language_text" title="Category:Articles containing Ancient Greek-language text">Articles containing Ancient Greek-language text</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Articles_needing_additional_references_from_June_2015" title="Category:Articles needing additional references from June 2015">Articles needing additional references from June 2015</a></li><li><a href="https://en.wikipedia.org/wiki/Category:All_articles_needing_additional_references" title="Category:All articles needing additional references">All articles needing additional references</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Articles_with_example_pseudocode" title="Category:Articles with example pseudocode">Articles with example pseudocode</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="https://en.wikipedia.org/wiki/Special:MyTalk" title="Discussion about edits from this IP address [alt-shift-n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="https://en.wikipedia.org/wiki/Special:MyContributions" title="A list of edits made from this IP address [alt-shift-y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="https://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Sieve+of+Eratosthenes&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Sieve+of+Eratosthenes" title="You&#39;re encouraged to log in; however, it&#39;s not mandatory. [alt-shift-o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" title="View the content page [alt-shift-c]" accesskey="c">Article</a></span></li>
+															<li id="ca-talk"><span><a href="https://en.wikipedia.org/wiki/Talk:Sieve_of_Eratosthenes" title="Discussion about the content page [alt-shift-t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0">
+							<span>Variants</span><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#" tabindex="-1"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Read</a></span></li>
+															<li id="ca-edit"><span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=edit" title="Edit this page [alt-shift-e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label" tabindex="0"><span>More</span><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://en.wikipedia.org/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Wikipedia [alt-shift-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"><input type="hidden" value="Special:Search" name="title"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton">							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="https://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="https://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="https://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="https://en.wikipedia.org/wiki/Special:Random" title="Load a random article [alt-shift-x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="https://shop.wikimedia.org/" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-interaction" aria-labelledby="p-interaction-label">
+			<h3 id="p-interaction-label">Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="https://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="https://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="https://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://en.wikipedia.org/wiki/Special:WhatLinksHere/Sieve_of_Eratosthenes" title="List of all English Wikipedia pages containing links to this page [alt-shift-j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Sieve_of_Eratosthenes" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;oldid=711785949" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q177898" title="Link to connected data repository item [alt-shift-g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Sieve_of_Eratosthenes&amp;id=711785949" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+			<h3 id="p-coll-print_export-label">Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Sieve+of+Eratosthenes">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Sieve+of+Eratosthenes&amp;returnto=Sieve+of+Eratosthenes&amp;oldid=711785949&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="https://en.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;printable=yes" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label"><span class="uls-settings-trigger" title="Language settings" tabindex="0" role="button" aria-haspopup="true"></span>
+			<h3 id="p-lang-label">Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-ar"><a href="https://ar.wikipedia.org/wiki/%D8%BA%D8%B1%D8%A8%D8%A7%D9%84_%D8%A5%D8%B1%D8%A7%D8%AA%D9%88%D8%B3%D8%AA%D9%8A%D9%86%D8%B3" title="غربال إراتوستينس – Arabic" lang="ar" hreflang="ar">العربية</a></li><li class="interlanguage-link interwiki-bg"><a href="https://bg.wikipedia.org/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D1%82%D0%BE_%D0%BD%D0%B0_%D0%95%D1%80%D0%B0%D1%82%D0%BE%D1%81%D1%82%D0%B5%D0%BD" title="Решето на Ератостен – Bulgarian" lang="bg" hreflang="bg">Български</a></li><li class="interlanguage-link interwiki-bs"><a href="https://bs.wikipedia.org/wiki/Eratostenovo_sito" title="Eratostenovo sito – Bosnian" lang="bs" hreflang="bs">Bosanski</a></li><li class="interlanguage-link interwiki-ca"><a href="https://ca.wikipedia.org/wiki/Sed%C3%A0s_d%27Erat%C3%B2stenes" title="Sedàs d&#39;Eratòstenes – Catalan" lang="ca" hreflang="ca">Català</a></li><li class="interlanguage-link interwiki-cs"><a href="https://cs.wikipedia.org/wiki/Eratosthenovo_s%C3%ADto" title="Eratosthenovo síto – Czech" lang="cs" hreflang="cs">Čeština</a></li><li class="interlanguage-link interwiki-da"><a href="https://da.wikipedia.org/wiki/Eratosthenes%27_si" title="Eratosthenes&#39; si – Danish" lang="da" hreflang="da">Dansk</a></li><li class="interlanguage-link interwiki-de"><a href="https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes" title="Sieb des Eratosthenes – German" lang="de" hreflang="de">Deutsch</a></li><li class="interlanguage-link interwiki-el"><a href="https://el.wikipedia.org/wiki/%CE%9A%CF%8C%CF%83%CE%BA%CE%B9%CE%BD%CE%BF_%CF%84%CE%BF%CF%85_%CE%95%CF%81%CE%B1%CF%84%CE%BF%CF%83%CE%B8%CE%AD%CE%BD%CE%B7" title="Κόσκινο του Ερατοσθένη – Greek" lang="el" hreflang="el">Ελληνικά</a></li><li class="interlanguage-link interwiki-es"><a href="https://es.wikipedia.org/wiki/Criba_de_Erat%C3%B3stenes" title="Criba de Eratóstenes – Spanish" lang="es" hreflang="es">Español</a></li><li class="interlanguage-link interwiki-eo"><a href="https://eo.wikipedia.org/wiki/Kribrilo_de_Eratosteno" title="Kribrilo de Eratosteno – Esperanto" lang="eo" hreflang="eo">Esperanto</a></li><li class="interlanguage-link interwiki-fa"><a href="https://fa.wikipedia.org/wiki/%D8%BA%D8%B1%D8%A8%D8%A7%D9%84_%D8%A7%D8%B1%D8%A7%D8%AA%D9%88%D8%B3%D8%AA%D9%86" title="غربال اراتوستن – Persian" lang="fa" hreflang="fa">فارسی</a></li><li class="interlanguage-link interwiki-fr"><a href="https://fr.wikipedia.org/wiki/Crible_d%27%C3%89ratosth%C3%A8ne" title="Crible d&#39;Ératosthène – French" lang="fr" hreflang="fr">Français</a></li><li class="interlanguage-link interwiki-ko"><a href="https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4" title="에라토스테네스의 체 – Korean" lang="ko" hreflang="ko">한국어</a></li><li class="interlanguage-link interwiki-hr"><a href="https://hr.wikipedia.org/wiki/Eratostenovo_sito" title="Eratostenovo sito – Croatian" lang="hr" hreflang="hr">Hrvatski</a></li><li class="interlanguage-link interwiki-id"><a href="https://id.wikipedia.org/wiki/Saringan_Eratosthenes" title="Saringan Eratosthenes – Indonesian" lang="id" hreflang="id">Bahasa Indonesia</a></li><li class="interlanguage-link interwiki-it"><a href="https://it.wikipedia.org/wiki/Crivello_di_Eratostene" title="Crivello di Eratostene – Italian" lang="it" hreflang="it">Italiano</a></li><li class="interlanguage-link interwiki-he"><a href="https://he.wikipedia.org/wiki/%D7%94%D7%A0%D7%A4%D7%94_%D7%A9%D7%9C_%D7%90%D7%A8%D7%98%D7%95%D7%A1%D7%AA%D7%A0%D7%A1" title="הנפה של ארטוסתנס – Hebrew" lang="he" hreflang="he">עברית</a></li><li class="interlanguage-link interwiki-ka"><a href="https://ka.wikipedia.org/wiki/%E1%83%94%E1%83%A0%E1%83%90%E1%83%A2%E1%83%9D%E1%83%A1%E1%83%97%E1%83%94%E1%83%9C%E1%83%94%E1%83%A1_%E1%83%A1%E1%83%90%E1%83%AA%E1%83%94%E1%83%A0%E1%83%98" title="ერატოსთენეს საცერი – Georgian" lang="ka" hreflang="ka">ქართული</a></li><li class="interlanguage-link interwiki-la"><a href="https://la.wikipedia.org/wiki/Cribratum_Eratosthenis" title="Cribratum Eratosthenis – Latin" lang="la" hreflang="la">Latina</a></li><li class="interlanguage-link interwiki-lv"><a href="https://lv.wikipedia.org/wiki/Eratostena_siets" title="Eratostena siets – Latvian" lang="lv" hreflang="lv">Latviešu</a></li><li class="interlanguage-link interwiki-lt"><a href="https://lt.wikipedia.org/wiki/Eratosteno_r%C4%97tis" title="Eratosteno rėtis – Lithuanian" lang="lt" hreflang="lt">Lietuvių</a></li><li class="interlanguage-link interwiki-hu"><a href="https://hu.wikipedia.org/wiki/Eratoszthen%C3%A9sz_szit%C3%A1ja" title="Eratoszthenész szitája – Hungarian" lang="hu" hreflang="hu">Magyar</a></li><li class="interlanguage-link interwiki-mk"><a href="https://mk.wikipedia.org/wiki/%D0%95%D1%80%D0%B0%D1%82%D0%BE%D1%81%D1%82%D0%B5%D0%BD%D0%BE%D0%B2%D0%BE_%D1%81%D0%B8%D1%82%D0%BE" title="Ератостеново сито – Macedonian" lang="mk" hreflang="mk">Македонски</a></li><li class="interlanguage-link interwiki-mzn"><a href="https://mzn.wikipedia.org/wiki/%D8%A7%D8%B1%D8%A7%D8%AA%D9%88%D8%B3%D8%AA%D9%86_%D8%BA%D8%B1%D8%A8%D8%A7%D9%84" title="اراتوستن غربال – Mazanderani" lang="mzn" hreflang="mzn">مازِرونی</a></li><li class="interlanguage-link interwiki-ms"><a href="https://ms.wikipedia.org/wiki/Saringan_Eratosthenes" title="Saringan Eratosthenes – Malay" lang="ms" hreflang="ms">Bahasa Melayu</a></li><li class="interlanguage-link interwiki-nl"><a href="https://nl.wikipedia.org/wiki/Zeef_van_Eratosthenes" title="Zeef van Eratosthenes – Dutch" lang="nl" hreflang="nl">Nederlands</a></li><li class="interlanguage-link interwiki-ja"><a href="https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%A9%E3%83%88%E3%82%B9%E3%83%86%E3%83%8D%E3%82%B9%E3%81%AE%E7%AF%A9" title="エラトステネスの篩 – Japanese" lang="ja" hreflang="ja">日本語</a></li><li class="interlanguage-link interwiki-no"><a href="https://no.wikipedia.org/wiki/Eratosthenes%27_sil" title="Eratosthenes&#39; sil – Norwegian" lang="no" hreflang="no">Norsk bokmål</a></li><li class="interlanguage-link interwiki-oc"><a href="https://oc.wikipedia.org/wiki/Criv%C3%A8l_d%27Eratostenes" title="Crivèl d&#39;Eratostenes – Occitan" lang="oc" hreflang="oc">Occitan</a></li><li class="interlanguage-link interwiki-uz"><a href="https://uz.wikipedia.org/wiki/Eratosfen_elagi" title="Eratosfen elagi – Uzbek" lang="uz" hreflang="uz">Oʻzbekcha/ўзбекча</a></li><li class="interlanguage-link interwiki-pms"><a href="https://pms.wikipedia.org/wiki/Siass_d%27Erat%C3%B2stene" title="Siass d&#39;Eratòstene – Piedmontese" lang="pms" hreflang="pms">Piemontèis</a></li><li class="interlanguage-link interwiki-pl"><a href="https://pl.wikipedia.org/wiki/Sito_Eratostenesa" title="Sito Eratostenesa – Polish" lang="pl" hreflang="pl">Polski</a></li><li class="interlanguage-link interwiki-pt"><a href="https://pt.wikipedia.org/wiki/Crivo_de_Erat%C3%B3stenes" title="Crivo de Eratóstenes – Portuguese" lang="pt" hreflang="pt">Português</a></li><li class="interlanguage-link interwiki-ro"><a href="https://ro.wikipedia.org/wiki/Ciurul_lui_Eratostene" title="Ciurul lui Eratostene – Romanian" lang="ro" hreflang="ro">Română</a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D1%82%D0%BE_%D0%AD%D1%80%D0%B0%D1%82%D0%BE%D1%81%D1%84%D0%B5%D0%BD%D0%B0" title="Решето Эратосфена – Russian" lang="ru" hreflang="ru">Русский</a></li><li class="interlanguage-link interwiki-sq"><a href="https://sq.wikipedia.org/wiki/Sita_e_Eratostenit" title="Sita e Eratostenit – Albanian" lang="sq" hreflang="sq">Shqip</a></li><li class="interlanguage-link interwiki-scn"><a href="https://scn.wikipedia.org/wiki/Criveddu_d%27Erat%C3%B2stini" title="Criveddu d&#39;Eratòstini – Sicilian" lang="scn" hreflang="scn">Sicilianu</a></li><li class="interlanguage-link interwiki-si"><a href="https://si.wikipedia.org/wiki/%E0%B6%91%E0%B6%BB%E0%B6%A7%E0%B7%9C%E0%B7%83%E0%B7%8A%E0%B6%AD%E0%B6%B1%E0%B7%93%E0%B7%83%E0%B7%8A%E0%B6%9C%E0%B7%9A_%E0%B6%B4%E0%B7%99%E0%B6%B1%E0%B7%9A%E0%B6%BB%E0%B6%BA" title="එරටොස්තනීස්ගේ පෙනේරය – Sinhala" lang="si" hreflang="si">සිංහල</a></li><li class="interlanguage-link interwiki-simple"><a href="https://simple.wikipedia.org/wiki/Sieve_of_Eratosthenes" title="Sieve of Eratosthenes – Simple English" lang="simple" hreflang="simple">Simple English</a></li><li class="interlanguage-link interwiki-sk"><a href="https://sk.wikipedia.org/wiki/Eratostenovo_sito" title="Eratostenovo sito – Slovak" lang="sk" hreflang="sk">Slovenčina</a></li><li class="interlanguage-link interwiki-sl"><a href="https://sl.wikipedia.org/wiki/Eratostenovo_sito" title="Eratostenovo sito – Slovenian" lang="sl" hreflang="sl">Slovenščina</a></li><li class="interlanguage-link interwiki-sr"><a href="https://sr.wikipedia.org/wiki/%D0%95%D1%80%D0%B0%D1%82%D0%BE%D1%81%D1%82%D0%B5%D0%BD%D0%BE%D0%B2%D0%BE_%D1%81%D0%B8%D1%82%D0%BE" title="Ератостеново сито – Serbian" lang="sr" hreflang="sr">Српски / srpski</a></li><li class="interlanguage-link interwiki-sh"><a href="https://sh.wikipedia.org/wiki/Eratostenovo_sito" title="Eratostenovo sito – Serbo-Croatian" lang="sh" hreflang="sh">Srpskohrvatski / српскохрватски</a></li><li class="interlanguage-link interwiki-fi"><a href="https://fi.wikipedia.org/wiki/Eratostheneen_seula" title="Eratostheneen seula – Finnish" lang="fi" hreflang="fi">Suomi</a></li><li class="interlanguage-link interwiki-sv"><a href="https://sv.wikipedia.org/wiki/Eratosthenes_s%C3%A5ll" title="Eratosthenes såll – Swedish" lang="sv" hreflang="sv">Svenska</a></li><li class="interlanguage-link interwiki-tr"><a href="https://tr.wikipedia.org/wiki/Eratosten_kalburu" title="Eratosten kalburu – Turkish" lang="tr" hreflang="tr">Türkçe</a></li><li class="interlanguage-link interwiki-uk"><a href="https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D1%88%D0%B5%D1%82%D0%BE_%D0%95%D1%80%D0%B0%D1%82%D0%BE%D1%81%D1%84%D0%B5%D0%BD%D0%B0" title="Решето Ератосфена – Ukrainian" lang="uk" hreflang="uk">Українська</a></li><li class="interlanguage-link interwiki-vi"><a href="https://vi.wikipedia.org/wiki/S%C3%A0ng_Eratosthenes" title="Sàng Eratosthenes – Vietnamese" lang="vi" hreflang="vi">Tiếng Việt</a></li><li class="interlanguage-link interwiki-zh"><a href="https://zh.wikipedia.org/wiki/%E5%9F%83%E6%8B%89%E6%89%98%E6%96%AF%E7%89%B9%E5%B0%BC%E7%AD%9B%E6%B3%95" title="埃拉托斯特尼筛法 – Chinese" lang="zh" hreflang="zh">中文</a></li>					</ul>
+				<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Q177898#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 24 March 2016, at 21:51.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="https://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="https://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="https://en.m.wikipedia.org/w/index.php?title=Sieve_of_Eratosthenes&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="./Sieve of Eratosthenes - Wikipedia, the free encyclopedia_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ = window.RLQ || []).push(function () {
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","user":"ready","user.groups":"ready"});mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.eventLogging.subscriber","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.visualEditor.targetLoader","ext.wikimediaEvents","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"]);
+} );</script><script>(window.RLQ = window.RLQ || []).push(function () {
+mw.config.set({"wgBackendResponseTime":61,"wgHostname":"mw1256"}); /* @nomin */
+} );</script>
+	
+
+<div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

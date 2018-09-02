@@ -1,0 +1,3 @@
+cin leaves the newline character in the stream. Adding cin.ignore() to the next line clears/ignores the newline from the stream.
+
+This is used mainly with combinations of cin and getline. I can't think of any examples but over time you will find them if you use getline and cin together. 

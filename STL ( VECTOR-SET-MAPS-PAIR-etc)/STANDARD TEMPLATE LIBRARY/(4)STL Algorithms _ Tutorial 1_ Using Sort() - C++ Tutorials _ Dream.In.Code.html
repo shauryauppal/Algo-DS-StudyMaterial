@@ -1,0 +1,1192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0084)http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/cb=gapi.loaded_1" async=""></script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/plusone.js" gapi_processed="true"></script><script type="text/javascript" async="" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/lidar.js"></script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/bk-coretag.js"></script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/v60.js"></script><script async="" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/beacon.js"></script><script type="text/javascript" async="" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ga.js"></script><script type="text/javascript" async="" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/"></script><script type="text/javascript" async="" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/"></script><script type="text/javascript" async="" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/"></script><script type="text/javascript" async="" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/"></script>
+
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>STL Algorithms ~ Tutorial 1: Using Sort() - C++ Tutorials | Dream.In.Code</title>
+<meta name="keywords" content="STL,Algorithms,Tutorial,Using,sort,Beginning,Function,Zereo,Sorting,The,function,algorithm,header">
+<meta name="description" content="STL Algorithms ~ Tutorial 1: Using sort(): ">
+<meta name="identifier-url" content="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/">
+<link rel="canonical" href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/">
+<link rel="up" href="http://www.dreamincode.net/forums/forum/48-c-tutorials/">
+<link rel="author" href="http://www.dreamincode.net/forums/user/608681-zereo/">
+<link rel="alternate feed" type="application/rss+xml" title="Programming Forums" href="http://www.dreamincode.net/forums/rss/forums/1-programming-forums/">
+<link rel="alternate feed" type="application/rss+xml" title="Dream.In.Code Blogs RSS feed" href="http://www.dreamincode.net/forums/rss/blog/">
+<link rel="stylesheet" type="text/css" href="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/awards.css">
+<link rel="stylesheet" type="text/css" title="Main" media="screen" href="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/calendar_select.css">
+<link rel="stylesheet" type="text/css" media="print" href="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ipb_print.css">
+<link rel="stylesheet" type="text/css" title="Main" media="screen" href="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ipb_editor.css">
+<link rel="stylesheet" type="text/css" title="Main" media="screen" href="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ipb_styles.css">
+<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" title='Main' media="screen" href="http://cdn.dreamincode.net/forums/public/style_css/css_5/ipb_ie.css?v=58" />
+<![endif]-->
+ 
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://www.dreamincode.net/home/favicon.ico">
+<link rel="alternate" title="dream.in.code Forums" href="http://www.dreamincode.net/rss/featured.php" type="application/rss+xml">
+<link type="text/css" rel="stylesheet" href="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/styles_7.css">
+<link rel="stylesheet" href="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/google_cse.css" type="text/css">
+<link rel="stylesheet" href="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/thickbox.css" type="text/css">
+<meta property="fb:page_id" content="62219401412">
+ 
+<script type="text/javascript" async="" id="nsgpt-ldr-http native sharethrough com assets tag js" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/tag.js"></script><script type="text/javascript" async="" id="ns-bts-g" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/gpt.js"></script><script type="text/javascript" async="" id="ns-bts-zdbb" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/nsgpt.jsonp"></script><script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/jquery.min.js"></script>
+<script type="text/javascript">
+		jQuery.noConflict();
+		</script>
+<script type="text/javascript">
+		  //<![CDATA[
+		  function loginToggle() {
+			var target = document.getElementById("login").getElementsByTagName("div")[0];
+			!target.className.match(/ visible/) ? target.className += " visible" : target.className = target.className.replace(/ visible/, "");
+			}
+		  //]]>
+		</script>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<script type="text/javascript" id="nsgpt" data-channel="general" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/dreamincode.net.js" async="true"></script>
+ 
+<script type="text/javascript">
+      jsDebug = 0; /* Must come before JS includes */
+      USE_RTE = 0;
+      inACP   = false;
+    </script>
+<script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/prototype.js"></script>
+<script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ipb.js"></script>
+<script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/scriptaculous-cache.js"></script>
+<script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ipb.lang.js" charset="iso-8859-1"></script>
+<script type="text/javascript">
+	var isRTL	= false;
+	var rtlIe	= '';
+	var rtlFull	= '';
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+		/* ---- URLs ---- */
+		ipb.vars['base_url'] 			= 'http://www.dreamincode.net/forums/index.php?&';
+		ipb.vars['board_url']			= 'http://www.dreamincode.net/forums';
+		ipb.vars['loading_img'] 		= 'http://cdn.dreamincode.net/forums/public/style_images/master/loading.gif';
+		ipb.vars['active_app']			= 'forums';
+		ipb.vars['upload_url']			= 'http://www.dreamincode.net/forums/uploads';
+		/* ---- Member ---- */
+		ipb.vars['member_id']			= parseInt( 0 ),
+		ipb.vars['is_supmod']			= parseInt( 0 ),
+		ipb.vars['is_admin']			= parseInt( 0 ),
+		ipb.vars['secure_hash'] 		= '880ea6a14ea49e853634fbdc5015a024';
+		ipb.vars['session_id']			= 'a0a8a5af1bd4b3e0f66f1b19ad0547bf';
+		ipb.vars['can_befriend']		= true;
+		/* ---- cookies ----- */
+		ipb.vars['cookie_id'] 			= 'dic_';
+		ipb.vars['cookie_domain'] 		= '.dreamincode.net';
+		ipb.vars['cookie_path']			= '/';
+		/* ---- Rate imgs ---- */
+		ipb.vars['rate_img_on']			= 'http://cdn.dreamincode.net/forums/public/style_images/master/bullet_star.png';
+		ipb.vars['rate_img_off']		= 'http://cdn.dreamincode.net/forums/public/style_images/master/bullet_star_off.png';
+		ipb.vars['rate_img_rated']		= 'http://cdn.dreamincode.net/forums/public/style_images/master/bullet_star_rated.png';
+		/* ---- Uploads ---- */
+		ipb.vars['swfupload_swf']		= 'http://www.dreamincode.net/forums/public/js/3rd_party/swfupload/swfupload.swf';
+		ipb.vars['swfupload_enabled']	= true;
+		ipb.vars['use_swf_upload']		= ( '' == 'flash' ) ? true : false;
+		ipb.vars['swfupload_debug']		= false; /* SKINNOTE: Turn off for production */
+		/* ---- other ---- */
+		ipb.vars['use_live_search'] 	= 0;
+		ipb.vars['live_search_limit'] 	= 4;
+		ipb.vars['highlight_color']		= "#ade57a";
+		ipb.vars['charset']				= "iso-8859-1";
+		ipb.vars['use_rte']				= 1;
+		ipb.vars['image_resize']		= 1;
+		ipb.vars['image_resize_force']  = 500;
+		ipb.vars['seo_enabled']			= 1;
+		
+		ipb.vars['seo_params']			= {"start":"-","end":"\/","varBlock":"\/page__","varSep":"__"};
+		
+		/* Templates/Language */
+		ipb.templates['ajax_loading'] 	= "<div id='ajax_loading'>" + ipb.lang['loading'] + "</div>";
+		ipb.templates['close_popup']	= "<img src='http://cdn.dreamincode.net/forums/public/style_images/master/close_popup.png' alt='x' />";
+		ipb.templates['rss_shell']		= new Template("<ul id='rss_menu'>#{items}</ul>");
+		ipb.templates['rss_item']		= new Template("<li><a href='#{url}' title='#{title}'>#{title}</a></li>");
+		ipb.templates['resized_img']	= new Template("<span>Resized to #{percent}% (was #{width} x #{height}) - Click image to enlarge</span>");
+		ipb.templates['m_add_friend']	= new Template("<a href='http://www.dreamincode.net/forums/index.php?app=members&amp;module=profile&amp;section=friends&amp;do=add&amp;member_id=#{id}' title='Add as Friend'><img src='http://cdn.dreamincode.net/forums/public/style_images/master/user_add.png' alt='Add as Friend' /></a>");
+		ipb.templates['m_rem_friend']	= new Template("<a href='http://www.dreamincode.net/forums/index.php?app=members&amp;module=profile&amp;section=friends&amp;do=remove&amp;member_id=#{id}' title='Remove Friend'><img src='http://cdn.dreamincode.net/forums/public/style_images/master/user_delete.png' alt='Remove Friend' /></a>");
+		ipb.templates['autocomplete_wrap'] = new Template("<ul id='#{id}' class='ipb_autocomplete' style='width: 250px;'></ul>");
+		ipb.templates['autocomplete_item'] = new Template("<li id='#{id}'><img src='#{img}' alt='' width='#{img_w}' height='#{img_h}' />&nbsp;&nbsp;#{itemvalue}</li>");
+		ipb.templates['page_jump']		= new Template("<div id='#{id}_wrap' class='ipbmenu_content'><h3 class='bar'>Jump to page</h3><input type='text' class='input_text' id='#{id}_input' size='8' /> <input type='submit' value='Go' class='input_submit add_folder' id='#{id}_submit' /></div>");
+	//]]>
+	</script>
+<script type="text/javascript">
+      Loader.boot();
+    </script><script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ips.quickpm.js"></script><script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ips.editor.js"></script><script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ips.topic.js"></script><script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ips.rating.js"></script>
+<style type="text/css">pre{overflow:scroll;max-height:500px;background:white;border:1px solid #66666;padding:5px;}</style>
+<script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/pubads_impl_81.js" async=""></script><script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ggcmb510.js"></script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/glcfg510.js"></script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/pldpr510.js"></script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/pldcr500.js"></script><script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/saved_resource"></script><script type="text/javascript" async="" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/a.min.js"></script><script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ggcmb510.js"></script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/glcfg510.js"></script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/pldpr510.js"></script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/pldcr500.js"></script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/plcmb510.js"></script></head> 
+ 
+<body itemscope="" itemtype="http://schema.org/WebPage"><iframe src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/storageframe.html" id="LOCSTORAGE" scrolling="no" name="empty" hidden="true" style="width: 1px; height: 1px; position: absolute; top: -7px; left: -7px; border: 0px;"></iframe><iframe src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/storageframe.html" id="LOCSTORAGE" scrolling="no" name="empty" hidden="true" style="width: 1px; height: 1px; position: absolute; top: -7px; left: -7px; border: 0px;"></iframe>
+ 
+ 
+ 
+<div id="header">
+<h1 id="logo" style="width: 625px;"><a href="http://www.dreamincode.net/" rel="home"><img alt="&lt;/Dream.In.Code&gt;: Programming &amp; Web Development Community" width="264" height="110" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/logo_2012.gif"></a>
+ 
+ 
+</h1>
+ 
+<div style="height: 110px;">
+<div style="padding-top: 30px; padding-right: 10px; float: right;">
+<!-- google_ad_section_start(weight=ignore) -->
+ 
+<form style="margin: 0pt;" id="cse-search-box">
+<span style="float: left; font-size: 24px; padding-top: 5px; padding-right: 5px; color: white; font-weight: bolder; text-shadow: 1px 1px 1px rgb(0, 0, 0);">Search:</span>
+<input name="q" id="query" size="18" style="font-size: 20px; margin-top: 5px; border: 1px solid; border-radius: 5px; background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) 0% 50% no-repeat rgb(255, 255, 255);" value="" type="text">
+<input name="sa" value="Search" style="color: white; background: #303030; font-weight: bolder; border: 1px solid black; margin: 0px 0px 0px 5px; padding: 5px; -moz-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px; position: relative; top: -3px;" type="submit">
+</form>
+<script type="text/javascript">
+ 					var f = document.getElementById('cse-search-box');
+					var q = f.q;
+					    var b = function() {
+						  if (q.value == '') {
+							q.style.background = '#FFFFFF url(http:\x2F\x2Fwww.google.com\x2Fcse\x2Fintl\x2Fen\x2Fimages\x2Fgoogle_custom_search_watermark.gif) left no-repeat';
+						  }
+						};
+
+						var f = function() {
+						  q.style.background = '#ffffff';
+						};
+						window.onload = b;
+						q.onfocus = f;
+						q.onblur = b;
+
+					</script>
+<div style="text-align: right; clear: both;">
+<a href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=search" style="text-decoration: none;"><span style="font-size: 11px; color: rgb(255, 255, 255); font-weight: bold; text-decoration: underline; text-align: right;">Advanced Forum Search</span></a>
+</div>
+ 
+</div>
+</div>
+<div id="navigation-login-register">
+<ul class="navigation">
+<li class="first"><a href="http://www.dreamincode.net/forums/">Forums</a></li>
+<li>
+<a href="http://www.dreamincode.net/forums/forum/76-programming-help/">Programming</a>
+</li>
+<li>
+<a href="http://www.dreamincode.net/forums/forum/74-web-development/">Web Development</a>
+</li>
+<li><a href="http://www.dreamincode.net/forums/forum/71-computer-support/">Computers</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/78-programming-tutorials/">Tutorials</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/205-snippets/">Snippets</a></li>
+<li><a href="http://www.dreamincode.net/forums/?automodule=blog">Dev Blogs</a></li>
+<li><a href="http://jobs.dreamincode.net/">Jobs</a></li>
+<li class="last">
+<a rel="nofollow" href="http://www.dreamincode.net/forums/forum/1-caffeine-lounge/">Lounge</a>
+</li>
+</ul>
+ 
+<ul id="login-register">
+<li id="login"><a rel="nofollow" href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=global&amp;section=login">Login</a></li>
+<li id="register"><a rel="nofollow" href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=global&amp;section=register&amp;coppa_user=&amp;termsread=1&amp;coppa_pass=1&amp;agree_to_terms=1">Join!</a></li>
+<li id="todaystopics"><a href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=search&amp;do=active">Today's Topics</a></li>
+</ul>
+ 
+</div>
+</div>
+<div id="div-gpt-ad-1326943007260-5" style="margin: 5px auto; width: 100%; min-height: 90px; text-align: center;">
+ 
+ 
+<div data-ns="billboard" data-pos="atf" id="nsgpt-billboard-1"></div>
+</div>
+<div style=" background: #FFF; margin: 0px auto; border-left: 1px solid #FFF;border-right: 1px solid #FFF;">
+ 
+ 
+ 
+<div id="main_content">
+<div id="content_hold" class="with_sidebar">
+<div id="content_inner" class="content">
+<div id="ipbwrapper">
+<ul id="breadcrumb" itemprop="breadcrumb" class="left"><li class="first"><a href="http://www.dreamincode.net/forums/index">Dream.In.Code</a></li>
+<li><span class="nav_sep">&gt;</span> <a href="http://www.dreamincode.net/forums/forum/78-programming-tutorials/" title="Return to Programming Tutorials">Programming Tutorials</a></li>
+<li><span class="nav_sep">&gt;</span> <a href="http://www.dreamincode.net/forums/forum/48-c-tutorials/" title="Return to C++ Tutorials">C++ Tutorials</a></li>
+</ul><br>
+ 
+ 
+ 
+ 
+ 
+<div id="content" class="clear">
+<a id="j_content"></a>
+ 
+<script type="text/javascript">
+//<![CDATA[
+	ipb.topic.inSection = 'topicview';
+	ipb.topic.topic_id  = 319433;
+	ipb.topic.forum_id  = 48;
+	ipb.topic.start_id  = 0;
+	// Editor JS: Only needs to be done once per page
+	ipb.editor_values.get('templates')['link'] = new Template("<label for='#{id}_url'>URL</label><input type='text' class='input_text' id='#{id}_url' value='http://' tabindex='10' /><label for='#{id}_urltext'>Link text</label><input type='text' class='input_text _select' id='#{id}_urltext' value='My link' tabindex='11' /><input type='submit' class='input_submit' value='Insert Link' tabindex='12' />");
+ipb.editor_values.get('templates')['image'] = new Template("<label for='#{id}_img'>Image URL</label><input type='text' class='input_text' id='#{id}_img' value='http://' tabindex='10' /><input type='submit' class='input_submit' value='Insert Image' tabindex='11' />");
+ipb.editor_values.get('templates')['email'] = new Template("<label for='#{id}_email'>Email Address</label><input type='text' class='input_text' id='#{id}_email' tabindex='10' /><label for='#{id}_emailtext'>Link text</label><input type='text' class='input_text _select' id='#{id}_emailtext' value='Email me' tabindex='11' /><input type='submit' class='input_submit' value='Insert Email' tabindex='12' />");
+ipb.editor_values.get('templates')['media'] = new Template("<label for='#{id}_media'>Media URL</label><input type='text' class='input_text' id='#{id}_media' value='http://' tabindex='10' /><input type='submit' class='input_submit' value='Insert Media' tabindex='11' />");
+ipb.editor_values.get('templates')['generic'] = new Template("<div class='rte_title'>#{title}</div><strong>Example</strong><pre>#{example}</pre><label for='#{id}_option' class='optional'>#{option_text}</label><input type='text' class='input_text optional' id='#{id}_option' tabindex='10' /><label for='#{id}_text'>#{value_text}</label><input type='text' class='input_text _select' id='#{id}_text' tabindex='11' /><input type='submit' class='input_submit' value='Add' tabindex='12' />");
+ipb.editor_values.get('templates')['togglesource'] = new Template("<fieldset id='#{id}_ts_controls' class='submit' style='text-align: left'><input type='button' class='input_submit' value='Update' id='#{id}_ts_update' />&nbsp;&nbsp;&nbsp; <a href='#' id='#{id}_ts_cancel' class='cancel'>Cancel Source Edit</a></fieldset>");
+	
+ipb.editor_values.get('templates')['toolbar'] = new Template("<ul id='#{id}_toolbar_#{toolbarid}' class='toolbar' style='display: none'>#{content}</ul>");
+ipb.editor_values.get('templates')['button'] = new Template("<li><span id='#{id}_cmd_custom_#{cmd}' class='rte_control rte_button specialitem' title='#{title}'><img src='http://cdn.dreamincode.net/forums/public/style_images/master/rte_icons/#{img}' alt='Icon' /></span></li>");
+ipb.editor_values.get('templates')['menu_item'] = new Template("<li id='#{id}_cmd_custom_#{cmd}' class='specialitem clickable'>#{title}</li>");
+ipb.editor_values.get('templates')['togglesource'] = new Template("<fieldset id='#{id}_ts_controls' class='submit' style='text-align: left'><input type='button' class='input_submit' value='Update' id='#{id}_ts_update' />&nbsp;&nbsp;&nbsp; <a href='#' id='#{id}_ts_cancel' class='cancel'>Cancel Source Edit</a></fieldset>");
+ipb.editor_values.get('templates')['emoticons_showall'] = new Template("<input class='input_submit emoticons' type='button' id='#{id}_all_emoticons' value='Show all emoticons' />");
+ipb.editor_values.get('templates')['emoticon_wrapper'] = new Template("<h4><span>Emoticons</span></h4><div id='#{id}_emoticon_holder' class='emoticon_holder'></div>");
+
+// Add smilies into the mix
+ipb.editor_values.set( 'show_emoticon_link', false );
+
+ipb.editor_values.set( 'bbcodes', $H({"snapback":{"id":"1","title":"Post Snap Back","desc":"This tag displays a little linked image which links back to a post - used when quoting posts from the board. Opens in same window by default.","tag":"snapback","useoption":"0","example":"[snapback]100[/snapback]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"topic":{"id":"5","title":"Topic Link","desc":"This tag provides an easy way to link to a topic","tag":"topic","useoption":"1","example":"[topic=1]Click me![/topic]","switch_option":"0","menu_option_text":"Enter the topic ID","menu_content_text":"Enter the title for this link","single_tag":"0","optional_option":"0","image":""},"post":{"id":"6","title":"Post Link","desc":"This tag provides an easy way to link to a post.","tag":"post","useoption":"1","example":"[post=1]Click me![/post]","switch_option":"0","menu_option_text":"Enter the Post ID","menu_content_text":"Enter the title for this link","single_tag":"0","optional_option":"0","image":""},"spoiler":{"id":"7","title":"Spoiler","desc":"Spoiler tag","tag":"spoiler","useoption":"0","example":"[spoiler]Some hidden text[/spoiler]","switch_option":"0","menu_option_text":"","menu_content_text":"Enter the text to be masked","single_tag":"0","optional_option":"0","image":""},"acronym":{"id":"8","title":"Acronym","desc":"Allows you to make an acronym that will display a description when moused over","tag":"acronym","useoption":"1","example":"[acronym='Laugh Out Loud']lol[/acronym]","switch_option":"0","menu_option_text":"Enter the description for this acronym (EG: Laugh Out Loud)","menu_content_text":"Enter the acronym (EG: lol)","single_tag":"0","optional_option":"0","image":""},"hr":{"id":"12","title":"Horizontal Rule","desc":"Adds a horizontal rule to separate text","tag":"hr","useoption":"0","example":"[hr]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"1","optional_option":"0","image":""},"php":{"id":"14","title":"PHP Code","desc":"Allows you to enter PHP code into a formatted/highlighted syntax box","tag":"php","useoption":"0","example":"[php]$variable = true;\n\nprint_r($variable);[/php]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"html":{"id":"15","title":"HTML Code","desc":"Allows you to enter formatted/syntax-highlighted HTML code","tag":"html","useoption":"0","example":"[html]<body>\n <div class='outer'>\n  <p>Hello World</p>\n </div>\n</body>[/html]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"sql":{"id":"16","title":"SQL Code","desc":"Allows you to enter formatted/syntax-highlighted SQL code","tag":"sql","useoption":"0","example":"[sql]SELECT p.*, t.* FROM posts p LEFT JOIN topics t ON t.tid=p.topic_id WHERE t.tid=7[/sql]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"xml":{"id":"17","title":"XML Code","desc":"Allows you to enter formatted/syntax-highlighted XML code","tag":"xml","useoption":"0","example":"[xml]<outer>\n <inner>\n  <tag param='1'>Test</tag>\n </inner>\n</outer>[/xml]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"member":{"id":"31","title":"Member","desc":"Given a member name, a link is automatically generated to the member's profile","tag":"member","useoption":"1","example":"[member=skyhawk133] runs this site.","switch_option":"0","menu_option_text":"Input Username of Member","menu_content_text":"","single_tag":"1","optional_option":"0","image":"memberbbcode.png"},"extract":{"id":"33","title":"Extract Blog Entry","desc":"This will allow users to define an extract for an entry. Only this piece of the entry will be displayed on the main blog page and will show up in the RSS feed.","tag":"extract","useoption":"0","example":"[extract]This is an example![/extract]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"blog":{"id":"34","title":"Blog Link","desc":"This tag provides an easy way to link to a blog.","tag":"blog","useoption":"1","example":"[blog=100]Click me![/blog]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"entry":{"id":"35","title":"Blog Entry Link","desc":"This tag provides an easy way to link to a blog entry.","tag":"entry","useoption":"1","example":"[entry=100]Click me![/entry]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"twitter":{"id":"36","title":"Twitter","desc":"A tag to link to a user's twitter account","tag":"twitter","useoption":"0","example":"[twitter]userName[/twitter]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":"twitter.png"},"inline":{"id":"37","title":"Inline Code","desc":"Formats code inline instead of in a seperate code box. ","tag":"inline","useoption":"0","example":"[inline]style=\"font-size: 12px;\"[/inline]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"il":{"id":"38","title":"Abbreviated Inline (IL)","desc":"Abbreviated version of the [inline] tag. ","tag":"il","useoption":"0","example":"[il]Code Here[/il]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":"il2.png"},"code":{"id":"41","title":"Code","desc":"Allows you to enter general code","tag":"code","useoption":"1","example":"[code]$text = 'Some long code here';[/code]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"1","image":""}}) );
+	ipb.vars['emoticon_url'] = "http://cdn.dreamincode.net/forums/public/style_emoticons/default";
+	//Search Setup
+	ipb.vars['search_type']			= 'forum';
+	ipb.vars['search_type_id']		= 48;
+	ipb.vars['search_type_2']		= 'topic';
+	ipb.vars['search_type_id_2']	= 319433;
+//]]>
+</script>
+<div class="topic_controls">
+<span class="pagination no_pages left">Page 1 of 1</span>
+</div>
+<div class="topic hfeed">
+<h2 class="maintitle">
+<span class="main_topic_title">
+<a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/" style="text-decoration: none;">STL Algorithms ~ Tutorial 1: Using sort()</a>
+</span>
+ 
+<span class="rating">Rate Topic:
+<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=319433&amp;rating=1" id="topic_rate_1" title="Rate topic 1 star"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/bullet_star.png" alt="*" class="rate_img"></a><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=319433&amp;rating=2" id="topic_rate_2" title="Rate topic 2 stars"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/bullet_star.png" alt="*" class="rate_img"></a><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=319433&amp;rating=3" id="topic_rate_3" title="Rate topic 3 stars"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/bullet_star.png" alt="*" class="rate_img"></a><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=319433&amp;rating=4" id="topic_rate_4" title="Rate topic 4 stars"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/bullet_star.png" alt="*" class="rate_img"></a><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=319433&amp;rating=5" id="topic_rate_5" title="Rate topic 5 stars"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/bullet_star.png" alt="*" class="rate_img"></a>
+<span id="rating_text">
+<span id="rating_hits">1</span> Votes
+</span>
+<script type="text/javascript">
+				//<![CDATA[
+					rating = new ipb.rating( 'topic_rate_', { 
+										url: 'http://www.dreamincode.net/forums/index.php?app=forums&module=ajax&section=topics&do=rateTopic&t=319433&md5check=' + ipb.vars['secure_hash'],
+										cur_rating: 5,
+										rated: 0,
+										allow_rate: 0,
+										multi_rate: 1,
+										show_rate_text: true
+									  } );
+				//]]>
+				</script>
+<br>
+</span>
+</h2>
+ 
+ 
+ 
+<div class="post_block hentry clear  with_rep" id="post_id_1841517">
+<a id="entry1841517"></a>
+<div class="post_wrap">
+<h3>
+<span class="post_id">
+<a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/page__view__findpost__p__1841517" rel="bookmark" title="Link to post #1">#1</a>
+</span>
+<span class="author vcard">
+<a class="url fn" href="http://www.dreamincode.net/forums/user/608681-zereo/">Zereo</a>
+&nbsp;<a href="http://www.dreamincode.net/forums/user/608681-zereo/page__f__48" class="__user __id608681 __fid48" title="View Profile"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/user_popup.png" alt="Icon"></a>
+<img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/user_off.png" alt="User is offline" title="User is offline">
+</span>
+</h3>
+<div class="author_info">
+ 
+<ul class="user_details">
+<li class="avatar"><a href="http://www.dreamincode.net/forums/user/608681-zereo/" title="View Profile"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/" width="64" height="34" alt=""></a></li>
+<li class="title">D.I.C Head</li>
+<li class="group_icon">
+<img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/contributor_group.gif" alt="member icon">
+</li>
+</ul>
+<br>
+<div class="reputation positive">
+<span class="number">Reputation: 44</span>
+</div>
+<div style="margin: 0 auto;">
+<ul class="user_controls clear">
+<li><a href="http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=608681" title="View blog"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/book_open.png" alt="View blog"></a></li>
+</ul>
+</div>
+<ul class="user_fields">
+<li>
+<span class="ft">Posts:</span>
+<span class="fc">108</span>
+</li>
+<li>
+<span class="ft">Joined:</span>
+<span class="fc">08-November 12</span>
+</li>
+</ul>
+ 
+</div>
+<div class="post_body">
+ 
+<p class="posted_info">
+Posted <abbr class="published" title="2013-04-24T16:29:03+00:00">24 April 2013 - 09:29 AM</abbr>
+</p>
+<div class="post entry-content" id="">
+ <div class="bbc_center"><span style="font-size: 17px;">Beginning with STL Algorithms<br>
+Tutorial #1 the sort() Function<br>
+<br>
+By Zereo</span></div><br>
+<br>
+<br>
+<br>
+<div class="bbc_center"><span style="font-size: 15px;"><strong class="bbc">Sorting with the STL</strong></span></div><br>
+<br>
+<br>
+<span style="font-size: 13px;">The sort() function in the algorithm header can be a very useful tool to both new and experienced programmers. It's use is to sort containers like arrays and vectors.<br>
+<br>
+<span style="font-size: 13px;"><strong class="bbc">Important Information</strong></span><br>
+<span style="font-size: 13px;">Now before we start I would like to state that I will be uses features that are only availible on C++11 compilers. If you don't have a C++11 or don't know if your compiler supports it I would recommend doing this. Head on over to codeblocks and download their IDE. It comes with a C++11 compiler and you can enable it by going to settings-&gt;compiler-&gt;compiler settings-&gt;compiler flags-&gt; and then you should see a checkbox that says something like Have g++ follow the C++11 ISO C++ language standard. Enable that and click ok and you should be good to go.</span><br>
+<br>
+<br>
+<br>
+Here is what the function looks like in its default form, and with the optional third parameter. First take a look at each of these functions and see if we can figure out what each parameter does.<br>
+<br>
+<strong class="bbc">Example 1</strong> ~ <span class="inlinecode">std::sort(myvector.begin(), myvector.end)</span><br>
+<br>
+<strong class="bbc">Example 2</strong> ~ <span class="inlinecode">std::sort(myvector.begin(), myvector.end(), myCompFuncion)</span><br>
+<br>
+So lets go dig into these and figure out what each does and why it does it. First lets go over what everything is.<br>
+<br>
+<br>
+<strong class="bbc">Found in</strong> ~ <span class="inlinecode">#include &lt;algorithm&gt;</span><br>
+<br>
+<strong class="bbc">Parameter 1 myvector.begin()</strong> ~ The first parameter is where you will be putting a iterator(Pointer) to the first element in the range that you want to sort. The sort will include the element that the iterator points to.<br>
+<br>
+<strong class="bbc">Parameter 2 myvector.end()</strong> ~ The second parameter is almost like the first but instead of putting a iterator to the first element to sort you will be putting a iterator to the last element. One very important difference is that the search won’t include the element that this iterator points to. It is [First,Last) meaning it includes the first parameter in the sort but it doesn’t include the second parameter in the sort.<br>
+<br>
+<strong class="bbc">Parameter 3 myCompFunction() <span class="bbc_underline">Optional</span></strong> ~ I will only give a brief description here, because I will explain this parameter in more detail later. The third parameter is used to define how you do the search. For example if you have a struct that has 3 different variables in it how does the function know which one to sort? Or how does it know how it should sort it? This is what this parameter is for. I will explain this more in a bit.<br>
+<br>
+<strong class="bbc">Function Return</strong> ~ This function doesn’t return anything because it alters the container directly through iterator (Pointers).<br>
+</span><br>
+<br>
+<br>
+<br>
+<div class="bbc_center"><span style="font-size: 15px;"><strong class="bbc">Array Example</strong></span></div><br>
+<br>
+<br>
+<span style="font-size: 13px;"><div id="highlighter_642200" class="syntaxhighlighter  "><div class="bar                    "><div class="toolbar"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_642200_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_642200" menu="false" src="http://cdn.dreamincode.net/syntax/scripts/clipboard.swf"></div><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="comments">// sort() Example using arrays.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content"><code class="comments">// By Zereo 04/22/13</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="preprocessor">#include &lt;iostream&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content"><code class="preprocessor">#include &lt;algorithm&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content"><code class="keyword bold">const</code> <code class="color1 bold">int</code> <code class="plain">SIZE = 7;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="color1 bold">int</code> <code class="plain">main()</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="plain">{</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">int</code> <code class="plain">intArray[SIZE] = {5, 3, 32, -1, 1, 104, 53};</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">//Now we call the sort function</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">sort</code><code class="plain">(intArray, intArray + SIZE);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>17</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; </code><code class="string">"Sorted Array looks like this."</code> <code class="plain">&lt;&lt; </code><code class="functions bold">endl</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>18</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">size_t</code> <code class="plain">i = 0; i != SIZE; ++i)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>19</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; intArray[i] &lt;&lt; </code><code class="string">" "</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>20</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>21</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">return</code> <code class="plain">0;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>22</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div><br>
+</span><br>
+<br>
+<br>
+<span style="font-size: 13px;"><strong class="bbc">Things to know</strong><br>
+<br>
+When we use the sort function to sort a array our arguments will look a bit different then when we use it on a vector for example. In the example above when we pass in intArray as a argument we are telling the function to start the sort at the beginning of the array. If we wanted it to start the sort at the second element of the array we would do <div id="highlighter_114277" class="syntaxhighlighter  "><div class="bar "><div class="toolbar"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_114277_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_114277" menu="false" src="http://cdn.dreamincode.net/syntax/scripts/clipboard.swf"></div><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="functions bold">sort</code><code class="plain">(intArray + 2, intArray + SIZE);</code></td></tr></tbody></table></div></div></div>. So when we do intArray + SIZE for the second argument we are telling the array to sort up to the last element in the array.</span><br>
+<br>
+<br>
+<span style="font-size: 13px;"><strong class="bbc">Using C++11 to simplify things</strong></span><br>
+<br>
+We can make sorting whole arrays even easier by using <span class="inlinecode">std::begin()</span> and <span class="inlinecode">std::end()</span>. std::begin() will return a iterator(pointer) to the first element in the array we pass it. Whereas std::end() will return a iterator(pointer) to one past the last element in the array we pass it. So we could call the sort function by passing it begin() and end() like so.<br>
+<br>
+<div id="highlighter_541986" class="syntaxhighlighter  "><div class="bar "><div class="toolbar"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_541986_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_541986" menu="false" src="http://cdn.dreamincode.net/syntax/scripts/clipboard.swf"></div><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="functions bold">sort</code><code class="plain">(begin(intArray), end(intArray));</code></td></tr></tbody></table></div></div></div><br>
+<br>
+<br>
+<br>
+<div class="bbc_center"><span style="font-size: 15px;"><strong class="bbc">Sorting Vectors and other STL Containers Example</strong></span></div><br>
+<br>
+<br>
+<span style="font-size: 13px;"><em class="bbc">Warning: Uses C++11 features.</em><br>
+<div id="highlighter_13022" class="syntaxhighlighter  "><div class="bar  "><div class="toolbar"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_13022_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_13022" menu="false" src="http://cdn.dreamincode.net/syntax/scripts/clipboard.swf"></div><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="comments">// Vector Sorting Example.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content"><code class="comments">// By Zereo 04/22/13</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="preprocessor">#include &lt;iostream&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content"><code class="preprocessor">#include &lt;algorithm&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="preprocessor">#include &lt;vector&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="preprocessor">#include &lt;string&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="color1 bold">int</code> <code class="plain">main()</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="plain">{</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Warning this type of initialization requires a C++11 Compiler</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">vector&lt;</code><code class="color1 bold">int</code><code class="plain">&gt; intVec = {56, 32, -43, 23, 12, 93, 132, -154};</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">vector&lt;string&gt; stringVec = {</code><code class="string">"John"</code><code class="plain">, </code><code class="string">"Bob"</code><code class="plain">, </code><code class="string">"Joe"</code><code class="plain">, </code><code class="string">"Zack"</code><code class="plain">, </code><code class="string">"Randy"</code><code class="plain">};</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Sorting the int vector</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>17</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">sort</code><code class="plain">(intVec.begin(), intVec.end());</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>18</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>19</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(vector&lt;</code><code class="color1 bold">int</code><code class="plain">&gt;::size_type i = 0; i != intVec.</code><code class="functions bold">size</code><code class="plain">(); ++i)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>20</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; intVec[i] &lt;&lt; </code><code class="string">" "</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>21</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>22</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; </code><code class="functions bold">endl</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>23</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>24</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Sorting the string vector</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>25</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">sort</code><code class="plain">(stringVec.begin(), stringVec.end());</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>26</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>27</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Ranged Based loops. This requires a C++11 Compiler also</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>28</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// If you don't have a C++11 Compiler you can use a standard</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>29</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// for loop to print your vector.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>30</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(string &amp;s : stringVec)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>31</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; s &lt;&lt; </code><code class="string">" "</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>32</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>33</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">return</code> <code class="plain">0;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>34</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div><br>
+<br>
+<br>
+<strong class="bbc">Things to know:</strong><br>
+<br>
+First as you can see the sorting function works almost the same as on a array but we just have to pass our arguments a little differently. Since the first parameter in sort() accepts a iterator(pointer) to the first element we want to sort we can pass stringVec.begin() to it because .begin() returns a iterator to the first element. So it will start sorting at the first element in the vector. The same goes for stringVec.end() for the second parameter because remember stringVec.end() is a iterator that points to 1 past the last element in the container. Remember the sort function sorts up to but not including what we pass in as the second parameter.<br>
+<br>
+You also probably noticed that the sort works on things other then numbers. When we printed out the vector of strings it gave us a nice and neat vector that holds the names in their alphabetical order.</span><br>
+<br>
+<br>
+<br>
+<div class="bbc_center"><span style="font-size: 15px;"><strong class="bbc">The Third Optional Parameter.</strong></span></div><br>
+<br>
+<br>
+<span style="font-size: 13px;">The third parameter in the sort() function is actually a very useful feature. It allows up to define how the sort() function will actually perform the search. This parameter is optional because for basic types and containers it isn’t needed most of the time. But what if we wanted to change how the container was sorted by having it sort by descending instead of ascending? Or what if we had a container full of a special type of class we created and need to sort that container a special way? Well this is where the third parameter comes in.<br>
+<br>
+<br>
+<br>
+<div class="bbc_center"><span style="font-size: 15px;"><strong class="bbc">Making it sort by descending order example.</strong></span></div><br>
+<br>
+<em class="bbc">Warning: Uses C++11 Features</em><br>
+<div id="highlighter_788640" class="syntaxhighlighter  "><div class="bar                    "><div class="toolbar"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_788640_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_788640" menu="false" src="http://cdn.dreamincode.net/syntax/scripts/clipboard.swf"></div><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="comments">// Vector Sorting Descending Example.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content"><code class="comments">// By Zereo 04/22/13</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="preprocessor">#include &lt;iostream&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content"><code class="preprocessor">#include &lt;algorithm&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="preprocessor">#include &lt;vector&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content"><code class="comments">// We need this function to define how to sort</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="comments">// the vector. We will pass this function into the</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="comments">// third parameter and it will tell it to sort descendingly.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="color1 bold">bool</code> <code class="plain">wayToSort(</code><code class="color1 bold">int</code> <code class="plain">i, </code><code class="color1 bold">int</code> <code class="plain">j) { </code><code class="keyword bold">return</code> <code class="plain">i &gt; j; }</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="color1 bold">int</code> <code class="plain">main()</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content"><code class="plain">{</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">vector&lt;</code><code class="color1 bold">int</code><code class="plain">&gt; intVec = {56, 32, -43, 23, 12, 93, 132, -154};</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>17</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>18</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Do not include the () when you call wayToSort</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>19</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// It must be passed as a function pointer or function object</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>20</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">sort</code><code class="plain">(intVec.begin(), intVec.end(), wayToSort);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>21</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>22</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i : intVec)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>23</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; i &lt;&lt; </code><code class="string">" "</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>24</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>25</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">return</code> <code class="plain">0;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>26</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div><br>
+<br>
+<br>
+<strong class="bbc">The Function</strong><br>
+<br>
+<br>
+First lets look at the function. What we did is we created a function that will determine whether i &gt; j every time it is called. The sort function will automatically assign a element to both i and j.<br>
+<br>
+The function you make needs to have a return type of bool and must return only types that can be converted into bool.<br>
+<br>
+So when we defined <span class="inlinecode">bool wayToSort(int i, int j) { return i &gt; j; }</span> We are saying we wanted it to sort descending because i&gt;j whereas ascending would be i&lt;j.</span><br>
+<br>
+<br>
+<span style="font-size: 13px;"><strong class="bbc">Using the STL to simplify sorting in ascending or descending.</strong></span><br>
+<br>
+Another solution to the problem of getting it to sort descending is to use <span class="inlinecode">std::greater()</span>. Which would look like this.<br>
+<br>
+<div id="highlighter_665989" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_665989_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_665989" menu="false" src="http://cdn.dreamincode.net/syntax/scripts/clipboard.swf"></div><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="functions bold">sort</code><code class="plain">(intVec.begin(), intVec.end(), greater&lt;</code><code class="color1 bold">int</code><code class="plain">&gt;());</code></td></tr></tbody></table></div></div></div><br>
+<br>
+<br>
+<br>
+<div class="bbc_center"><span style="font-size: 15px;"><strong class="bbc">Sorting User Made Types.</strong></span></div><br>
+<br>
+<br>
+<span style="font-size: 13px;">For a lot of program we aren’t storing just ints, strings, or doubles. Instead we are making complicated classes with that have multiple number and string members and storing them in a container. So when we want to sort that container of our class objects we need to define a special function that will tell the sort() function how it should sort them object.<br>
+<br>
+So for my last example lets say we have a struct that represents a person and it looks like this.<br>
+<br>
+<div id="highlighter_40896" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_40896_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_40896" menu="false" src="http://cdn.dreamincode.net/syntax/scripts/clipboard.swf"></div><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword bold">struct</code> <code class="plain">Person</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">{</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">string name;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">int</code> <code class="plain">age;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">string favoriteColor;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">};</code></td></tr></tbody></table></div></div></div><br>
+<br>
+As you can see it has three members: name, age and color. Now lets say we have a program that has a vector full per Person objects, and we need a way to be able to sort them by their name, age or favorite color at certain points in the program.<br>
+<br>
+One way would be to make a function for each different way of sorting like in the example below.<br>
+<br>
+<em class="bbc">Warning: Uses C++11 Features</em><br>
+<div id="highlighter_356457" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_356457_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_356457" menu="false" src="http://cdn.dreamincode.net/syntax/scripts/clipboard.swf"></div><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="comments">// Complicated Types Sorting Example.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content"><code class="comments">// By Zereo 04/22/13</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="preprocessor">#include &lt;iostream&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content"><code class="preprocessor">#include &lt;algorithm&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="preprocessor">#include &lt;vector&gt;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="preprocessor">#include &lt;string&gt;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="keyword bold">struct</code> <code class="plain">Person</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="plain">{</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Left out making a constructor for simplicity's sake.</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">string name;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">int</code> <code class="plain">age;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">string favoriteColor;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="plain">};</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>17</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>18</code></td><td class="content"><code class="comments">// Sort Container by name function</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>19</code></td><td class="content"><code class="color1 bold">bool</code> <code class="plain">sortByName(</code><code class="keyword bold">const</code> <code class="plain">Person &amp;lhs, </code><code class="keyword bold">const</code> <code class="plain">Person &amp;rhs) { </code><code class="keyword bold">return</code> <code class="plain">lhs.name &lt; rhs.name; }</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>20</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>21</code></td><td class="content"><code class="comments">// Sort Container by age function</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>22</code></td><td class="content"><code class="color1 bold">bool</code> <code class="plain">sortByAge(</code><code class="keyword bold">const</code> <code class="plain">Person &amp;lhs, </code><code class="keyword bold">const</code> <code class="plain">Person &amp;rhs) { </code><code class="keyword bold">return</code> <code class="plain">lhs.age &lt; rhs.age; }</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>23</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>24</code></td><td class="content"><code class="comments">// Sort Container by favorite color</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>25</code></td><td class="content"><code class="comments">// We can just sort alphabetically and then it will group the</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>26</code></td><td class="content"><code class="comments">// color together.</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>27</code></td><td class="content"><code class="color1 bold">bool</code> <code class="plain">sortByColor(</code><code class="keyword bold">const</code> <code class="plain">Person &amp;lhs, </code><code class="keyword bold">const</code> <code class="plain">Person &amp;rhs) { </code><code class="keyword bold">return</code> <code class="plain">lhs.favoriteColor &lt; rhs.favoriteColor; }</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>28</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>29</code></td><td class="content"><code class="comments">// A global const variable to hold how many people to ask for input for.</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>30</code></td><td class="content"><code class="keyword bold">const</code> <code class="plain">unsigned numberOfPeople = 2;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>31</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>32</code></td><td class="content"><code class="color1 bold">int</code> <code class="plain">main()</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>33</code></td><td class="content"><code class="plain">{</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>34</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Make a vector that holds 5 blank Person Objects</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>35</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">vector&lt;Person&gt; people(numberOfPeople);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>36</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>37</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// This will ask for user input to populate the container</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>38</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// with 5 different indivuals.</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>39</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(vector&lt;Person&gt;::size_type i = 0; i != numberOfPeople; ++i)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>40</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">{</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>41</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; </code><code class="string">"Person #"</code> <code class="plain">&lt;&lt; i + 1 &lt;&lt; </code><code class="string">" name: "</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>42</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cin</code> <code class="plain">&gt;&gt; people[i].name;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>43</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>44</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; </code><code class="string">"Person #"</code> <code class="plain">&lt;&lt; i + 1 &lt;&lt; </code><code class="string">" age: "</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>45</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cin</code> <code class="plain">&gt;&gt; people[i].age;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>46</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>47</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; </code><code class="string">"Person #"</code> <code class="plain">&lt;&lt; i + 1 &lt;&lt; </code><code class="string">" favorite color: "</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>48</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cin</code> <code class="plain">&gt;&gt; people[i].favoriteColor;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>49</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>50</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>51</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; </code><code class="string">"\n\n"</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>52</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>53</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Sort by name</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>54</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">sort</code><code class="plain">(people.begin(), people.end(), sortByName);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>55</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(Person &amp;n : people)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>56</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; n.name &lt;&lt; </code><code class="string">" "</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>57</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>58</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; </code><code class="functions bold">endl</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>59</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>60</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Sory by age</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>61</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">sort</code><code class="plain">(people.begin(), people.end(), sortByAge);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>62</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(Person &amp;n : people)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>63</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; n.age &lt;&lt; </code><code class="string">" "</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>64</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>65</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; </code><code class="functions bold">endl</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>66</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>67</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// Sort by color</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>68</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">sort</code><code class="plain">(people.begin(), people.end(), sortByColor);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>69</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(Person &amp;n : people)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>70</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">cout</code> <code class="plain">&lt;&lt; n.favoriteColor &lt;&lt; </code><code class="string">" "</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>71</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>72</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">return</code> <code class="plain">0;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>73</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div><br>
+<br>
+<br>
+<strong class="bbc">Things to know</strong><br>
+<br>
+That was actually a pretty large program and sadly I won’t have space to go through it all. I will however explain a bit about the functions we just made.<br>
+<br>
+<strong class="bbc">Sort By Name Function</strong><br>
+<br>
+<div id="highlighter_551572" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_551572_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_551572" menu="false" src="http://cdn.dreamincode.net/syntax/scripts/clipboard.swf"></div><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="color1 bold">bool</code> <code class="plain">sortByName(</code><code class="keyword bold">const</code> <code class="plain">Person &amp;lhs, </code><code class="keyword bold">const</code> <code class="plain">Person &amp;rhs) </code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">{ </code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">return</code> <code class="plain">lhs.name &lt; rhs.name;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div><br>
+<br>
+This function is actually very similar to the one we just made before except for we changed two things. We changed the parameter types from int to type Person, and we also changed the return calculation a bit. <br>
+<br>
+First let’s go over the change to the parameters.<br>
+<br>
+The reason why we had to change the parameters from int to type Person, is because the container we are sorting is of type vector&lt;Person&gt;. And in order to be able to call the equation lhs.name &lt; rhs.name the parameters would have to be of type Person.<br>
+<br>
+Secondly we changed the return equation to lhs.name &lt; rhs.name. Can you guess what this equation is asking? Well what this is saying is basically this. Remember that both lhs and rhs are pointing to a separate element in the container (Like lhs is element 1 and rhs is element 2). So when we say lhs.name we are telling it to access element 1’s object and then access that objects name member. The same goes for rhs.name but is it accessing element 2’s object instead. So when we say to return lhs.name &lt; rhs.name we are asking it is rhs’s object’s name less then rhs’s objects name.<br>
+<br>
+The other functions are actually just the same but use the different members of the struct.<br>
+<br>
+<br>
+<br>
+THE END ;p<br>
+<br>
+Well that is all for this tutorial, though there is a lot more to learn about sorting with the STL. So if you are interested you can look below for some links to other things that relate to sort(). If you have any comments (Especially on any mistakes) on the article/tutorial please let me know I enjoy any type of feedback good or bad. <br>
+<br>
+The same goes for any questions, if you don’t understand anything or the way I explained something didn’t make sense (Very likely ;p) please let me know through a reply here or through a PM. I would be glad to help answer any questions you have.<br>
+<br>
+I am hoping to create some more tutorials shortly about how to use algorithms from the STL. Hope everyone liked it and thanks for reading,<br>
+<br>
+<br>
+<br>
+<div class="bbc_center"><span style="font-size: 15px;"><strong class="bbc">Resources</strong></span></div><br>
+<br>
+<strong class="bbc">Documentations</strong><br>
+<a href="http://en.cppreference.com/w/cpp/iterator/end" class="bbc_url" title="External link" rel="external">std::end()</a><br>
+<a href="http://en.cppreference.com/w/cpp/iterator/begin" class="bbc_url" title="External link" rel="external">std::begin()</a><br>
+<a href="http://www.cplusplus.com/reference/algorithm/sort/" class="bbc_url" title="External link" rel="external">std::sort()</a><br>
+<a href="http://www.cplusplus.com/reference/algorithm/stable_sort/?kw=stable_sort" class="bbc_url" title="External link" rel="external">std::stable_sort</a><br>
+<a href="http://www.cplusplus.com/reference/functional/greater/" class="bbc_url" title="External link" rel="external">std::greater</a><br>
+<a href="http://www.cplusplus.com/reference/functional/less/" class="bbc_url" title="External link" rel="external">std::less</a><br>
+<br>
+<strong class="bbc">Information</strong><br>
+<a href="http://www.cprogramming.com/c++11/c++11-ranged-for-loop.html" class="bbc_url" title="External link" rel="external">Ranged Based For Loops</a><br>
+<a href="http://www.informit.com/articles/article.aspx?p=1852519" class="bbc_url" title="External link" rel="external">Info on initialization in C++11</a><br>
+<br>
+<br>
+~ Zereo</span>
+<br>
+</div>
+<div id="div-gpt-ad-1326943007260-1" style="padding-left: 15px;">
+ 
+<script type="text/javascript">
+//<![CDATA[
+ord = window.ord || Math.floor(Math.random()*1E16);
+document.write('<script type="text/javascript" src="http://ad2.netshelter.net/adj/ns.dreamincode/general;ppos=btf;kw=;tile=2;sz=300x250;ord=' + ord + '?"><\/script>');
+//]]>
+</script><script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/general"></script><div class="GoogleActiveViewClass" id="DfpVisibilityIdentifier_7183656755369157"><div id="google_ads_div_367946"><iframe id="google_ads_iframe_367946" name="google_ads_iframe_367946" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/saved_resource.html" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px;"></iframe></div></div>
+<noscript>&lt;a href="http://ad2.netshelter.net/jump/ns.dreamincode/general;ppos=btf;kw=;tile=2;sz=300x250;ord=123456789?" target="_blank"&gt;&lt;img src="http://ad2.netshelter.net/ad/ns.dreamincode/general;ppos=btf;kw=;tile=2;sz=300x250;ord=123456789?" border="0" alt=""/&gt;&lt;/a&gt;</noscript>
+ 
+</div>
+<br>
+</div>
+<div class="rep_bar clear right" id="rep_post_1841517"><span style="float: left; margin-top: 10px; font-weight: bold;">
+Is This A Good Question/Topic?
+</span>
+<span class="reputation positive rep_show clickable" title="Reputation" onclick="ipb.topic.repPopUp( this, 1841517 );">
+2
+</span>
+ 
+<ul>
+<li><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#" class="rep_up" title="Vote this post up"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/add.png" alt="+"></a></li>
+</ul>
+</div>
+<script type="text/javascript">
+					ipb.global.registerReputation( 'rep_post_1841517', { app: 'forums', type: 'pid', typeid: '1841517' }, parseInt('2') );
+				</script>
+<ul class="post_controls">
+<li class="top hide"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#top" class="top" title="Back to top">Back to top</a></li>
+<li class="multiquote" id="multiq_1841517">
+<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=48&amp;t=319433&amp;qpid=1841517" title="Quote this post with Multi-Quote"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/comment_add.png" alt="Reply Icon"> MultiQuote</a>
+</li>
+<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=48&amp;t=319433&amp;qpid=1841517" title="Reply directly to this post"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/comment_add.png" alt="Reply Icon"> Quote + Reply</a></li>
+ 
+</ul>
+<script type="text/javascript">
+					// Show multiquote for JS browsers
+					$('multiq_1841517').show();
+					
+					if( $('toggle_post_1841517') )
+					{
+						$('toggle_post_1841517').show();
+					}
+				</script>
+</div>
+ 
+</div>
+<hr>
+<h2 class="maintitle">
+Replies To: STL Algorithms ~ Tutorial 1: Using sort()
+</h2>
+ 
+<div class="post_block hentry clear  with_rep" id="post_id_1903066">
+<a id="entry1903066"></a>
+<div class="post_wrap">
+<h3>
+<span class="post_id">
+<a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/page__view__findpost__p__1903066" rel="bookmark" title="Link to post #2">#2</a>
+</span>
+<span class="author vcard">
+<a class="url fn" href="http://www.dreamincode.net/forums/user/610225-prim3/">Prim3</a>
+&nbsp;<a href="http://www.dreamincode.net/forums/user/610225-prim3/page__f__48" class="__user __id610225 __fid48" title="View Profile"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/user_popup.png" alt="Icon"></a>
+<img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/user_off.png" alt="User is offline" title="User is offline">
+</span>
+</h3>
+<div class="author_info">
+ 
+<ul class="user_details">
+<li class="avatar"><a href="http://www.dreamincode.net/forums/user/610225-prim3/" title="View Profile"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/e2cd9906015d1beef616c28eab1bc25e" alt=""></a></li>
+<li class="title">New D.I.C Head</li>
+</ul>
+<br>
+<div class="reputation zero">
+<span class="number">Reputation: 0</span>
+</div>
+<div style="margin: 0 auto;">
+<ul class="user_controls clear">
+<li><a href="http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=610225" title="View blog"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/book_open.png" alt="View blog"></a></li>
+</ul>
+</div>
+<ul class="user_fields">
+<li>
+<span class="ft">Posts:</span>
+<span class="fc">25</span>
+</li>
+<li>
+<span class="ft">Joined:</span>
+<span class="fc">27-November 12</span>
+</li>
+</ul>
+ 
+</div>
+<div class="post_body">
+ 
+<p class="posted_info">
+Posted <abbr class="published" title="2013-09-16T08:48:16+00:00">16 September 2013 - 01:48 AM</abbr>
+</p>
+<div class="post entry-content" id="">
+ Just started learning sorting techniques, this should be useful! Thanks.
+<br>
+</div>
+</div>
+<div class="rep_bar clear right" id="rep_post_1903066"><span style="float: left; margin-top: 10px; font-weight: bold;">
+Was This Post Helpful?
+</span>
+<span class="reputation zero rep_show clickable" title="Reputation" onclick="ipb.topic.repPopUp( this, 1903066 );">
+0
+</span>
+ 
+<ul>
+<li><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#" class="rep_up" title="Vote this post up"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/add.png" alt="+"></a></li>
+<li><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#" class="rep_down" title="Vote this post down"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/delete.png" alt="-"></a></li>
+</ul>
+</div>
+<script type="text/javascript">
+					ipb.global.registerReputation( 'rep_post_1903066', { app: 'forums', type: 'pid', typeid: '1903066' }, parseInt('0') );
+				</script>
+<ul class="post_controls">
+<li class="top hide"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#top" class="top" title="Back to top">Back to top</a></li>
+<li class="multiquote" id="multiq_1903066">
+<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=48&amp;t=319433&amp;qpid=1903066" title="Quote this post with Multi-Quote"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/comment_add.png" alt="Reply Icon"> MultiQuote</a>
+</li>
+<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=48&amp;t=319433&amp;qpid=1903066" title="Reply directly to this post"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/comment_add.png" alt="Reply Icon"> Quote + Reply</a></li>
+ 
+</ul>
+<script type="text/javascript">
+					// Show multiquote for JS browsers
+					$('multiq_1903066').show();
+					
+					if( $('toggle_post_1903066') )
+					{
+						$('toggle_post_1903066').show();
+					}
+				</script>
+</div>
+ 
+</div>
+<hr>
+ 
+<div class="post_block hentry clear  with_rep" id="post_id_1903110">
+<a id="entry1903110"></a>
+<div class="post_wrap">
+<h3>
+<span class="post_id">
+<a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/page__view__findpost__p__1903110" rel="bookmark" title="Link to post #3">#3</a>
+</span>
+<span class="author vcard">
+<a class="url fn" href="http://www.dreamincode.net/forums/user/608681-zereo/">Zereo</a>
+&nbsp;<a href="http://www.dreamincode.net/forums/user/608681-zereo/page__f__48" class="__user __id608681 __fid48" title="View Profile"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/user_popup.png" alt="Icon"></a>
+<img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/user_off.png" alt="User is offline" title="User is offline">
+</span>
+</h3>
+<div class="author_info">
+ 
+<ul class="user_details">
+<li class="avatar"><a href="http://www.dreamincode.net/forums/user/608681-zereo/" title="View Profile"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/" width="64" height="34" alt=""></a></li>
+<li class="title">D.I.C Head</li>
+<li class="group_icon">
+<img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/contributor_group.gif" alt="member icon">
+</li>
+</ul>
+<br>
+<div class="reputation positive">
+<span class="number">Reputation: 44</span>
+</div>
+<div style="margin: 0 auto;">
+<ul class="user_controls clear">
+<li><a href="http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=608681" title="View blog"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/book_open.png" alt="View blog"></a></li>
+</ul>
+</div>
+<ul class="user_fields">
+<li>
+<span class="ft">Posts:</span>
+<span class="fc">108</span>
+</li>
+<li>
+<span class="ft">Joined:</span>
+<span class="fc">08-November 12</span>
+</li>
+</ul>
+ 
+</div>
+<div class="post_body">
+ 
+<p class="posted_info">
+Posted <abbr class="published" title="2013-09-16T12:02:15+00:00">16 September 2013 - 05:02 AM</abbr>
+</p>
+<div class="post entry-content" id="">
+ <p class="citation"><a class="snapback" rel="citation" href="http://www.dreamincode.net/forums/index.php?s=4074d92258a44d29a24bfaee5075c4d8&amp;app=forums&amp;module=forums&amp;section=findpost&amp;pid=1903066"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/snapback.png" alt="View Post"></a>Prim3, on 16 September 2013 - 08:48 AM, said:</p><div class="blockquote"><div class="quote">Just started learning sorting techniques, this should be useful! Thanks.</div></div><br>
+<br>
+Glad it might be of some help <img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/smile.gif" class="bbc_emoticon" alt=":)">/&gt;. Though I should point of a typo of mine in the article.<br>
+<br>
+<p class="citation">Quote</p><div class="blockquote"><div class="quote">Things to know<br>
+<br>
+When we use the sort function to sort a array our arguments will look a bit different then when we use it on a vector for example. In the example above when we pass in intArray as a argument we are telling the function to start the sort at the beginning of the array. If we wanted it to start the sort at the second element of the array we would do<br>
+1<br>
+sort(intArray + 2, intArray + SIZE);<br>
+. So when we do intArray + SIZE for the second argument we are telling the array to sort up to the last element in the array.</div></div><br>
+<br>
+If we wanted to start the sorting at the second element of the array we would start it at element 1 not 2 like it said. So instead of <br>
+<br>
+<span class="inlinecode">sort(intArray + 2, intArray + SIZE);</span> it should be <span class="inlinecode">sort(intArray + 1, intArray +SIZE);</span><br>
+<br>
+This is because as we know array's and other containers start at 0.<br>
+<br>
+Will try and find sometime to go through the article and correct the grammar typos also.
+<br>
+<p class="edit">
+This post has been edited by <b>Zereo</b>: 16 September 2013 - 05:03 AM
+</p>
+</div>
+</div>
+<div class="rep_bar clear right" id="rep_post_1903110"><span style="float: left; margin-top: 10px; font-weight: bold;">
+Was This Post Helpful?
+</span>
+<span class="reputation positive rep_show clickable" title="Reputation" onclick="ipb.topic.repPopUp( this, 1903110 );">
+1
+</span>
+ 
+<ul>
+<li><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#" class="rep_up" title="Vote this post up"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/add.png" alt="+"></a></li>
+<li><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#" class="rep_down" title="Vote this post down"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/delete.png" alt="-"></a></li>
+</ul>
+</div>
+<script type="text/javascript">
+					ipb.global.registerReputation( 'rep_post_1903110', { app: 'forums', type: 'pid', typeid: '1903110' }, parseInt('1') );
+				</script>
+<ul class="post_controls">
+<li class="top hide"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#top" class="top" title="Back to top">Back to top</a></li>
+<li class="multiquote" id="multiq_1903110">
+<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=48&amp;t=319433&amp;qpid=1903110" title="Quote this post with Multi-Quote"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/comment_add.png" alt="Reply Icon"> MultiQuote</a>
+</li>
+<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=48&amp;t=319433&amp;qpid=1903110" title="Reply directly to this post"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/comment_add.png" alt="Reply Icon"> Quote + Reply</a></li>
+ 
+</ul>
+<script type="text/javascript">
+					// Show multiquote for JS browsers
+					$('multiq_1903110').show();
+					
+					if( $('toggle_post_1903110') )
+					{
+						$('toggle_post_1903110').show();
+					}
+				</script>
+</div>
+ 
+</div>
+<hr>
+ 
+ 
+ 
+<ul class="topic_jump right clear">
+<li class="previous"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/page__view__old">&#8592; Previous Topic</a></li>
+<li><strong><a href="http://www.dreamincode.net/forums/forum/48-c-tutorials/" title="Return to C++ Tutorials">C++ Tutorials</a></strong></li>
+<li class="next"><a href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/page__view__new">Next Topic &#8594;</a></li>
+</ul>
+ 
+<div class="topic_controls clear">
+<span class="pagination no_pages left">Page 1 of 1</span>
+</div>
+ 
+ 
+ 
+</div>
+ 
+<br class="clear">
+</div>
+ 
+ 
+<table align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td align="center" valign="top">
+<div data-ns="largerectangle" data-pos="btf" id="nsgpt-largerectangle-1"></div>
+
+</td>
+<td align="left" valign="top" width="100%">
+<div id="related" style="margin-top: -25px;">
+<style>.related ul{list-style-type:circle;font-size:12px;font-weight:bold;}.related li{margin-bottom:5px;background-position:left 7px!important;margin-left:-35px;}.related h2{font-size:18px;font-weight:bold;}.related a{color:blue;}</style>
+<div class="related">
+<h2>Related C++ Topics<sup>beta</sup></h2><ul><li><a href="http://www.dreamincode.net/forums/topic/42591-stl-algorithms/" title="2 Replies - Topic Started: February 6, 2008, 10:16 am" '="">Stl Algorithms - I'm Looking For A Book Or A Tutorial Where I Can Learn Something A</a> </li><li><a href="http://www.dreamincode.net/forums/topic/113534-beginner-c-stl-container-stream-io-tutorial/" title="0 Replies - Topic Started: July 7, 2009, 3:29 pm" '="">BEGINNER C++ STL CONTAINER STREAM I/O TUTORIALBEGINNER C++ STL CONTAINER STREAM I/O TUTORIAL</a> <sup style="color: red;">Tutorial</sup></li><li><a href="http://www.dreamincode.net/forums/topic/120595-c-stl-binary-predicate-function-tutorial/" title="4 Replies - Topic Started: August 17, 2009, 3:49 am" '="">C++ STL BINARY PREDICATE FUNCTION TUTORIALC++ STL BINARY PREDICATE FUNCTION TUTORIAL</a> <sup style="color: red;">Tutorial</sup></li><li><a href="http://www.dreamincode.net/forums/topic/131093-zen-and-the-art-of-using-functors-with-stl-algorithms/" title="0 Replies - Topic Started: October 10, 2009, 9:05 am" '="">Zen And The Art Of Using Functors With STL Algorithms - This Tutorial Presents The Use Of Function Objects Using Standard Temp</a> <sup style="color: red;">Tutorial</sup></li><li><a href="http://www.dreamincode.net/forums/topic/28606-request-a-c-tutorial/" title="327 Replies - Topic Started: June 1, 2007, 11:42 am" '="">Request A C++ Tutorial - Ideas That Will Get You Kudos</a> </li><li><a href="http://www.dreamincode.net/forums/topic/180096-a-guide-to-function-objects/" title="0 Replies - Topic Started: July 4, 2010, 1:19 am" '="">A Guide To Function Objects - How To Make, Use Function Objects Directly And With The STL</a> <sup style="color: red;">Tutorial</sup></li><li><a href="http://www.dreamincode.net/forums/topic/369937-author-list-using-a-class-and-stl/" title="15 Replies - Topic Started: February 9, 2015, 12:42 am" '="">Author List - Using A Class And STL</a> </li><li><a href="http://www.dreamincode.net/forums/topic/301497-printing-out-unique-members-of-a-char-array/" title="29 Replies - Topic Started: November 25, 2012, 10:30 am" '="">Printing Out Unique Members Of A Char Array.</a> </li><li><a href="http://www.dreamincode.net/forums/topic/95161-alphabetically-sorting-strings/" title="6 Replies - Topic Started: March 25, 2009, 2:30 am" '="">Alphabetically Sorting Strings</a> </li><li><a href="http://www.dreamincode.net/forums/topic/210734-tutorial-for-using-aio-asynchronous-io-in-linux-c/" title="1 Replies - Topic Started: January 19, 2011, 4:52 am" '="">Tutorial For Using AIO (Asynchronous I/O) In Linux C</a> </li></ul></div>			</div>
+		</td>
+        
+	</tr>
+</tbody></table>
+
+<!--/ads_bottom-->
+
+<!--/ included content-->
+
+          <script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/lightbox.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+	// Lightbox Configuration
+	LightboxOptions = Object.extend({
+	    fileLoadingImage:        'http://cdn.dreamincode.net/forums/public/style_images/master/lightbox/loading.gif',     
+	    fileBottomNavCloseImage: 'http://cdn.dreamincode.net/forums/public/style_images/master/lightbox/closelabel.gif',
+	    overlayOpacity: 0.8,   // controls transparency of shadow overlay
+	    animate: true,         // toggles resizing animations
+	    resizeSpeed: 7,        // controls the speed of the image resizing animations (1=slowest and 10=fastest)
+	    borderSize: 10,         //if you adjust the padding in the CSS, you will need to update this variable
+		// When grouping images this is used to write: Image # of #.
+		// Change it for non-english localization
+		labelImage: "Image",
+		labelOf: "of"
+	}, window.LightboxOptions || {});
+/* Watch for a lightbox image and set up our downloadbutton watcher */
+document.observe('click', (function(event){
+    var target = event.findElement('a[rel^=lightbox]') || event.findElement('area[rel^=lightbox]');
+    if (target) {
+        event.stop();
+        gbl_addDownloadButton();
+    }
+}).bind(this));
+var _to    = '';
+var _last  = '';
+function gbl_addDownloadButton()
+{
+	if ( typeof( ipsLightbox.lightboxImage ) != 'undefined' && ipsLightbox.lightboxImage.src )
+	{
+		if ( _last != ipsLightbox.lightboxImage.src )
+		{
+			if ( ! $('gbl_d') )
+			{
+				$('bottomNav').insert( { top: "<div id='gbl_d' style='text-align:right;padding-bottom:4px;'></div>" } );
+			}
+			
+			$('gbl_d').update( "<a href='"+ ipsLightbox.lightboxImage.src + "' target='_blank'><img src='http://cdn.dreamincode.net/forums/public/style_images/master/lightbox/download-icon.png' /></a>" );
+			
+			_last = ipsLightbox.lightboxImage.src;
+		}
+	}
+	
+	/* Check for init and then keep checking for new image */
+	_to = setTimeout( "gbl_addDownloadButton()", 1000 );
+}
+//]]>
+</script>
+
+        </div><!-- /ipbwrapper -->
+      </div><!-- /content_inner -->
+    </div><!--/content_hold-->	
+
+    <!--included content-->
+			
+<div id="sidebar">
+<div style="margin-left: 35px; padding-top: 10px; text-align: center;">
+<a href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=global&amp;section=register&amp;coppa_user=&amp;termsread=1&amp;coppa_pass=1&amp;agree_to_terms=1"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ask_a_question_336.png"></a>
+<br>
+<!-- begin ad tag (tile=2) -->
+<div id="div-gpt-ad-1326943007260-2" style="width: 300px; margin-left: 25px;">                                                                   
+<!--
+<script type="text/javascript">
+//<![CDATA[
+ord = window.ord || Math.floor(Math.random()*1E16);
+document.write('<script type="text/javascript" src="http://ad2.netshelter.net/adj/ns.dreamincode/general;ppos=atf;kw=;tile=2;sz=300x250,300x600;ord=' + ord + '?"><\/script>');
+//]]>
+</script>
+<noscript><a href="http://ad2.netshelter.net/jump/ns.dreamincode/general;ppos=atf;kw=;tile=2;sz=300x250,300x600;ord=123456789?" target="_blank" ><img src="http://ad2.netshelter.net/ad/ns.dreamincode/general;ppos=atf;kw=;tile=2;sz=300x250,300x600;ord=123456789?" border="0" alt="" /></a></noscript>
+-->
+
+<!-- NETSHELTER GPT -->
+<div data-ns="portrait" data-pos="atf" id="nsgpt-portrait-1"></div>
+
+</div>
+</div>
+<div id="sidebar_inner">
+
+	
+<div class="column1">
+  <!-- google_ad_section_start(weight=ignore) -->
+    <div class="navigation">
+      
+
+		
+		<h2><a href="http://www.dreamincode.net/forums/forum/72-general-discussion/">General Discussion</a></h2>
+			<ul class="navigation">			
+											 <li><a href="http://www.dreamincode.net/forums/forum/1-caffeine-lounge/" title="This is our off-topic forum for discussions related to non-programming topics including: sports, current events, games, music, movies, food, drink, TV, geek related (toys &amp; technology), debates, life events, rants, and occasionally religion and politics. ">Caffeine Lounge</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/93-corner-cubicle/" title="Off-Topic discussion of IT related topics. This is the forum for professionals and those interested in serious discussion of topics related to the world of IT. It all happens here in the corner cubicle. ">Corner Cubicle</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/110-student-campus/" title="A forum just for students. Talk about colleges, classes, resources for students, homework, and other topics related to life in school. ">Student Campus</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/82-software-development/" title="Discuss topics related to developing software. Including architecture, design patterns, documentation, software industry, and other non-language specific programming topics. ">Software Development</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/83-industry-news/" title="A place for topics that announce various news from the web/software development industry (product release announcements, updates, new services etc.)">Industry News</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/65-introduce-yourself/" title="A place where you can introduce yourself to the community and greet other new members.">Introduce Yourself</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/201-nightmareincode/" title="*NEW* - Post the worst code you come across and have a good laugh. Because sometimes your code dreams, are really code nightmares. ">Nightmare.In.Code</a></li>
+										</ul>
+		
+		<h2><a href="http://www.dreamincode.net/forums/forum/76-programming-help/">Programming Help</a></h2>
+			<ul class="navigation">			
+											 <li><a href="http://www.dreamincode.net/forums/forum/15-c-and-c/" title="Expert programming help for C, and C++! Ask questions about homework assignments, or any other C/C++ related problems. C++ is a great language when beginning programming. ">C and C++</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/67-vbnet/" title="Ask questions about Microsoft&#39;s VB.NET programming language.">VB.NET</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/32-java/" title="Post your Java questions in here. We&#39;re happy to help with homework assignments, work projects, or any other java related questions. Java is common when beginning computer programming.">Java</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/84-c/" title="Object Oriented Programming at its finest. Encompassing power with ease of use, C# has become one of the top programming languages of the new age.">C#</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/30-aspnet/" title="Having some problems with ASP.NET programming? Pop in here and ask your question!">ASP.NET</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/142-net-framework/" title="">.NET Framework</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/21-vb6/" title="Our Visual Basic experts are happy to help with homework assignments, commercial applications, or any other VB question you may have! Visual Basic is good to learn programming. ">VB6</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/28-php/" title="Having some PHP problems? Need some help with a few functions? This is the place to ask! ">PHP</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/109-mobile-development/" title="Discuss developing applications for mobile phones. Including Android, iPhone, and other mobile platforms. ">Mobile Development</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/29-python/" title="">Python</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/70-ruby/" title="This up-and-coming language is easy to learn, fast to develop, and very powerful. Get help with the Ruby on Rails framework or any other Ruby questions you have!">Ruby</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/69-game-development/" title="Get help with anything game development related. Programming, 3D Engines, Art, Design and Math etc.">Game Development</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/14-databases/" title="mySQL, PostgreSQL, Access, SQL, and Oracle... you&#39;ve got a database question... we&#39;ve got database answers!">Databases</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/31-coldfusion/" title="It&#39;s the other white meat... a rapid application development language that will have you hooked in no time! From cfoutput to components, we can help you out!">ColdFusion</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/112-assembly/" title="Topics related to assembly language programming. ">Assembly</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/62-other-languages/" title="Discuss languages that don&#39;t have a specific forum. Including COBOL, Fortran, ADA, Basic, etc. ">Other Languages</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/126-52-weeks-of-code/" title="">52 Weeks Of Code</a></li>
+										</ul>
+		
+		<h2><a href="http://www.dreamincode.net/forums/forum/74-web-development/">Web Development</a></h2>
+			<ul class="navigation">			
+											 <li><a href="http://www.dreamincode.net/forums/forum/63-web-development/" title="Discuss anything that doesn&#39;t fit in the other web development forums.">Web Development</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/4-html-css/" title="Have questions about HTML, XHTML, CSS? We&#39;ll get you headed in the right direction! ">HTML &amp; CSS</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/90-javascript/" title="JavaScript and AJAX, it&#39;s what Web 2.0 is all about. Post your JavaScript related questions here!">JavaScript</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/3-graphic-design/" title="Photoshop and Corel gurus come on in! Can&#39;t figure out how to do that cool effect? Have some questions or cool web images you&#39;ve made? Post em&#39; here">Graphic Design</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/8-flash-actionscript/" title="Let our Flash and ActionScript experts answer your questions. From simple tweens to advanced flash remoting, we&#39;re happy to help!">Flash &amp; ActionScript</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/89-blogging/" title="Wordpress, Blogger, Plugins, Themes, Skins, Pay Per Post, and anything else related to the Blogging industry. ">Blogging</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/59-seo-advertising/" title="Advertising, SEO, AdSense, AdWords, Link Trades, and more! Now that you&#39;ve created your website, you&#39;ve gotta drive traffic to it. Discuss current trends and techniques here. ">SEO &amp; Advertising</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/88-web-servers-hosting/" title="Apache, IIS, Shared Hosting, Dedicated Hosting, Colocation. We&#39;ll make sure you get your site online and keep it online!">Web Servers &amp; Hosting</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/5-site-check/" title="Post your web site to be reviewed by fellow dream.in.code members. ">Site Check</a></li>
+										</ul>
+
+      	  <!-- DIC_160x600_Left_Default -->
+		<div id="div-gpt-ad-1326943007260-0" style="width:160px; height:600px;">
+                <!--
+		<script type='text/javascript'>
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-1326943007260-0'); });
+		</script>
+                -->
+
+                 <div data-ns="skyscraper" id="nsgpt-skyscraper-1" data-pos="btf"></div>
+		</div>
+	        <br>
+    </div>
+	<!-- google_ad_section_end -->
+</div><div class="column2">
+<!--   	<div id="search">
+  		<h2>Search<sup><span style="color:red; font-size: 10px;">Updated!</span></sup><span class="w00t">w00t</span></h2>
+  		<span style="font-size: 11px; color: #CCCCCC; font-weight: bold;"><B>Over 509,000 Pages!</B></span>
+  	  <form style="margin:0;" id="searchbox_000872085005376217422:zamd_7elal4" action="/home">
+  			<input type="hidden" name="cx" value="000872085005376217422:zamd_7elal4" />
+  			<input type="hidden" name="p" value="google" />
+  			<input type="hidden" name="cof" value="FORID:11" />
+  			<input name="q" type="text" size="9" style="font-size: 14px; font-weight: bolder; margin-left: -2px;" value="" />
+  			<input type="submit" name="sa" value="Go" />
+  	  </form>
+  	  <a href="/forums/index.php?app=core&module=search" style="text-decoration: none;"><span style="font-size: 11px; color: #CCCCCC; font-weight: bold; text-decoration: underline;">Advanced Forum Search</span></a>
+  	</div> -->
+  	<div class="tutorials" style="margin-top: -15px;">
+   		<h2>Follow &amp; Share</h2>
+		<!-- Place this tag in the <head> of your document -->
+<script type="text/javascript">
+window.___gcfg = {lang: 'en'};
+(function() 
+{var po = document.createElement("script");
+po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(po, s);
+})();</script>
+
+<!-- Place this tag where you want the badge to render -->
+<div id="___plus_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 170px; height: 85px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 170px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 85px;" tabindex="0" vspace="0" width="100%" id="I0_1457154996812" name="I0_1457154996812" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/badge.html" data-gapiattached="true" title="+Badge"></iframe></div><br>
+  		<a href="http://www.dreamincode.net/rss/featured.php" rel="alternate"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/feed-icon32x32.png" alt="Dream.In.Code RSS Feed" style="border:0; margin: 2px;" width="32" height="32"></a>
+  		<a href="http://www.linkedin.com/e/gis/1506187" rel="alternate"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/linkedin-icon32x32.png" alt="Dream.In.Code LinkedIn Group" style="border:0; margin: 2px;" width="32" height="32"></a>
+  		<a href="http://www.twitter.com/dreamincode" rel="alternate"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/twitter-icon32x32.png" alt="Follow Us On Twitter" style="border:0; margin: 2px;" width="32" height="32"></a>
+  		<a href="http://www.facebook.com/pages/DreamInCode/62219401412" rel="alternate"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/facebook.png" alt="Fan Us On Facebook" style="border:0; margin: 2px;" width="32" height="32"></a>
+  <!-- 		<script type="text/javascript">
+  			document.write('<a rel="nofollow" href="http://del.icio.us/post?url=http://www.dreamincode.net&title=Dream.In.Code Programming Community" title="Bookmark This to del.icio.us"><img src="http://cdn.dreamincode.net/home/images/80727937.png" alt="delicious" height="16" width="16" style="margin-left: 2px;" /></a>');
+  			document.write('<a rel="nofollow" href="http://digg.com/submit?phase=2&url='+encodeURIComponent(location.href)+'" title="Digg This!"><img src="http://cdn.dreamincode.net/home/images/89072042.png" alt="digg" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow" href="http://www.google.com/bookmarks/mark?op=add&bkmk='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Bookmark to Google"><img src="http://cdn.dreamincode.net/home/images/10847106.png" alt="google" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow"  href="http://www.newsvine.com/_tools/seed&save?u='+encodeURIComponent(location.href)+'&h='+encodeURIComponent(document.title)+'" title="Bookmark to Newsvine" ><img src="http://cdn.dreamincode.net/home/images/27563199.png" alt="newsvine" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow" href="http://reddit.com/submit? url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Add to reddit"><img src="http://cdn.dreamincode.net/home/images/10796749.png" alt="reddit" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow" href="http://www.spurl.net/spurl.php?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Spurl This!"><img src="http://cdn.dreamincode.net/home/images/67105361.png" alt="spurl" height="16" width="16" /></a>');
+  			document.write('<a rel="nofollow" href="http://technorati.com/faves?add='+encodeURIComponent(location.href)+'" title="Add to Technorati Favorites" ><img src="http://cdn.dreamincode.net/home/images/81723336.png" alt="Technorati" height="16" width="16" /></a>');
+  		</script> -->
+		<p><a href="http://feeds.feedburner.com/dic_featured"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/dic_featured" height="26" width="88" style="border:0; margin-top: 2px; margin-left: 3px;" alt=""></a></p>
+  		<!-- google_ad_section_end -->
+
+
+<!--		<h2>Give It A Try!</h2>
+<div class="lqm_ad" lqm_publisher="lqm.dreamincode.site" lqm_zone="ros" lqm_format="160x250"></div>-->
+
+		
+
+
+		<!-- <h2>Celebrate &amp; Win!</h2>
+		<a href="http://www.dreamincode.net/forums/topic/247091-dreamincode-10th-birthday500k-members-contest/"><img src="http://cdn.dreamincode.net/home/images/10yr_170x200.jpg"></a> -->
+  		
+<h2><a href="http://www.dreamincode.net/forums/showforum48.htm">C++ Tutorials</a></h2>
+<ul>
+	<li><a href="http://www.dreamincode.net/forums/topic/386763-introduction-to-c-metaprogramming-basics/">Introduction to C++ Metaprogramming: Basics</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/381666-pointers-and-a-possible-problem-if-youre-not-careful/">Pointers, and a possible problem - if you're not careful!</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/379290-generating-random-numbers-the-c-way/">Generating Random Numbers - The C++ Way</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/377050-hello-world-your-first-c-and-c-programs/">Hello World: Your first C and C++ Programs</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/368954-network-programming-under-unix/">Network programming under UNIX</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/359831-implementation-inheritance/">Implementation Inheritance</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/351185-change-theme-in-codeblocks/">Change Theme in Code::Blocks</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/347938-a-new-webcam-api-tutorial-in-c-for-windows/">A New Webcam Api Tutorial in C++ for Windows</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/330359-external-sorting-with-c/">External Sorting with C</a></li>
+	<li><a href="http://www.dreamincode.net/forums/topic/327182-c-windows-charting-library-part-6/">C++ Windows Charting Library Part 6</a></li>
+		<li><a href="http://www.dreamincode.net/forums/showforum48.htm"><strong>345 More C++ Tutorials...</strong></a></li>	</ul>
+	
+  
+  		<h2>Reference Sheets</h2>
+  		<a href="http://www.dreamincode.net/forums/showtopic17947.htm"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/refsheets5.png" height="157" width="151"></a>
+  
+  		<h2><a href="http://www.dreamincode.net/code">Code Snippets</a></h2>
+<ul>
+
+
+							 <li><a href="http://www.dreamincode.net/forums/forum/206-c-snippets/" title="">C Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/208-c-snippets/" title="">C++ Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/209-java-snippets/" title="">Java Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/210-visual-basic-snippets/" title="For VB6 and older versions. Please post VB.NET Snippets in the VB.NET Snippets section.">Visual Basic Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/211-c#-snippets/" title="">C# Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/212-vbnet-snippets/" title="">VB.NET Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/227-aspnet-snippets/" title="">ASP.NET Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/213-php-snippets/" title="">PHP Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/214-python-snippets/" title="">Python Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/215-ruby-snippets/" title="">Ruby Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/216-coldfusion-snippets/" title="">ColdFusion Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/217-sql-snippets/" title="">SQL Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/218-assembly-snippets/" title="">Assembly Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/219-functional-programming-snippets/" title="For functional languages such as Lisp, Clojure, Scheme, Erlang, Haskell, OCaml, F#, and others.">Functional Programming Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/220-perl-snippets/" title="">Perl Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/221-htmlcss-snippets/" title="">HTML/CSS Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/222-jvscript-snippets/" title="">Javascript Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/223-flashactionscript-snippets/" title="">Flash/ActionScript Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/226-asp-snippets/" title="Classic ASP Code Snippets">ASP Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/229-linux-unix-and-bash-snippets/" title="">Linux, Unix, and Bash Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/224-other-languages-snippets/" title="For languages without individualized snippets sections">Other Languages Snippets</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/forum/228-regex/" title="">Regex</a></li>
+							</ul>
+
+
+
+
+  
+  		<!-- google_ad_section_start(weight=ignore) -->
+  		<h2><a rel="nofollow" href="http://www.dreamincode.net/?p=chat">DIC Chatroom</a></h2>
+  		<ul><li><a rel="nofollow" href="http://www.dreamincode.net/?p=chat">Join our IRC Chat</a></li></ul>
+  		<h2>Bye Bye Ads</h2>
+  		<a rel="nofollow" href="http://www.dreamincode.net/forums/index.php?act=paysubs&amp;CODE=index"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/dicpp.gif" width="141" height="32"></a>
+  		<!--<h2>Monthly Drawing</h2>
+  		<a href="/forums/index.php?showtopic=19383" rel="nofollow"><img alt="Thumb Drive" width="130" height="77" src="http://cdn.dreamincode.net/home/images/monthlygiveaway.gif"/></a>-->
+   
+            <!-- google_ad_section_end -->
+  	</div>
+</div>
+<div style="padding-left: 50px; position: relative; clear: both;">
+<iframe src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/likebox.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:287px;" allowtransparency="true"></iframe>
+</div>
+
+  </div> <!-- /sidebar_inner-->
+</div> <!-- /sidebar -->
+
+
+<!--/ included content-->
+  </div><!--/main_content-->
+
+  <div id="footer">
+    <!--included content-->
+<!-- google_ad_section_start(weight=ignore) -->	
+<br><br>
+<div align="center">
+	<strong><a href="http://www.dreamincode.net/forums/index.php?showannouncement=22">FAQ</a> | <a href="http://www.dreamincode.net/forums/blog/1081-dreamincode-team-blog/">Team Blog</a> | <a href="http://www.dreamincode.net/forums/forum/106-site-questions-support/">Feedback/Support</a> | <a href="http://www.dreamincode.net/downloads/MediaKit.pdf" rel="nofollow">Advertising</a><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/pdf.gif" border="0" valign="middle"> | <a href="http://www.dreamincode.net/?p=tos" rel="nofollow">Terms of Use</a> | <a href="http://www.dreamincode.net/?p=privacy" rel="nofollow">Privacy Policy</a> | <a href="http://www.dreamincode.net/?p=about" rel="nofollow">About Us</a> 
+</strong></div><strong>
+
+<br>
+
+
+<br>
+
+<div align="center">Copyright 2001-2016 <a href="http://www.mediagroup1.com/" rel="nofollow"><b>MediaGroup1 LLC</b></a>, All Rights Reserved<br>A <a href="http://www.mediagroup1.com/" rel="nofollow"><b>MediaGroup1 LLC</b></a> Production - Version 6.0.2.1.36<br>Server: secure3</div>
+
+</strong></div><strong>
+
+
+
+
+<script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/thickbox.js"></script>
+<script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/jsapi"></script>
+<script type="text/javascript">
+google.load('search', '1',{nocss: true});
+jQuery(document).ready(function() {
+	jQuery("#cse-search-box").submit(function () {
+	var customSearchControl = new google.search.CustomSearchControl('000872085005376217422:zamd_7elal4');
+	customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+	tb_show("Dream.In.Code Search Results - Powered By <img src='http://www.google.com/cse/images/google_custom_search_smwide.gif'>", "#TB_inline?height=480&width=800");
+	var drawOptions = new google.search.DrawOptions();
+	customSearchControl.draw(document.getElementById("TB_ajaxContent"), drawOptions);
+	customSearchControl.execute(document.getElementById("query").value);
+	return false;
+	});
+});
+</script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/saved_resource(1)" type="text/javascript"></script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/default+en.I.js" type="text/javascript"></script>
+
+
+
+
+<!-- <style>.hilite { background-color: #ff0; }</style>
+<script type="text/javascript" src="http://cdn.dreamincode.net/home/templates2/se_hilite.js"></script>
+ -->
+
+
+<!-- Google Website Optimizer Tracking Script 
+<script type="text/javascript">
+if(typeof(_gat)!='object')document.write('<sc'+'ript src="http'+
+(document.location.protocol=='https:'?'s://ssl':'://www')+
+'.google-analytics.com/ga.js"></sc'+'ript>')</script>
+<script type="text/javascript">
+try {
+var gwoTracker=_gat._getTracker("UA-69851-6");
+gwoTracker._trackPageview("/2514943763/test");
+}catch(err){}</script>
+ End of Google Website Optimizer Tracking Script -->
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+_qoptions={
+qacct:"p-d4Szpdj6xMw-o"
+};
+</script>
+<script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/quant.js"></script>
+<noscript>
+&lt;img src="http://pixel.quantserve.com/pixel/p-d4Szpdj6xMw-o.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/&gt;
+</noscript>
+<!-- End Quantcast tag -->
+
+<script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/saved_resource(2)" type="text/javascript"></script>
+
+<!-- <script type='text/javascript' language='Javascript' src='http://s1.lqcdn.com/m.min.js?dt=2.3.110104.1'></script> -->
+
+<script type="text/javascript">
+    function _dmBootstrap(file) {
+        var _dma = document.createElement('script'); 
+        _dma.type = 'text/javascript';
+        _dma.async = true; 
+        _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+    }
+    function _dmFollowup(file) { if (typeof DMAds === 'undefined')  _dmBootstrap('cdn2.DeveloperMedia.com/a.min.js');}
+    (function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.js'); setTimeout(_dmFollowup, 2000);})();
+</script>
+
+
+<script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/dreamincode.net(1).js"></script><script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ga.js" type="text/javascript"></script><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/beacon.js"></script><script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/v60.js"></script><script type="text/javascript">var pvar = { cid: "ziffdavis", content: "0", server: "secure-us" };var trac = nol_t(pvar);trac.record().post();</script><script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/dreamincode.net-incl.js"></script><script type="text/javascript">try { var ns_pageTracker = _gat._getTracker("UA-25910482-47"); ns_pageTracker._trackPageview(); } catch(err) {} </script><script type="text/javascript">COMSCORE.beacon({c1:2,c2:6036316,c3:"",c4:"",c5:"",c6:"",c15:""});</script>
+
+<!-- google_ad_section_end -->	
+
+
+
+<div align="center">
+</div>
+
+<!--/ included content-->
+
+
+
+
+  </strong></div><script type="text/javascript" async="" id="ns-bts-zdt" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/dreamincode.net-async.js"></script><img name="control_pixel" id="control_pixel" border="0" width="1" height="1" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/adscout.php"><script src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/walker-min.js"></script><iframe src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/container.html" style="visibility: hidden; display: none;"></iframe><iframe src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/saved_resource.html" name="__bkframe" height="0" width="0" style="display: none; position: absolute; clip: rect(0px 0px 0px 0px);"></iframe><iframe src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ls.html" height="0" width="0" id="lsframe" style="display: none;"></iframe><iframe name="oauth2relay301772750" id="oauth2relay301772750" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><img name="control_pixel" id="control_pixel" border="0" width="1" height="1" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/adscout(1).php"><iframe name="__bkframe" height="0" width="0" frameborder="0" style="display:none;position:absolute;clip:rect(0px 0px 0px 0px)" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/saved_resource.html"></iframe><script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/bk-coretag.js"></script><strong>
+			
+
+<script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/shCore.js"></script>
+<script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/shBrushBash.js"></script>
+
+
+<script type="text/javascript">
+jQuery(function(){
+  jQuery('pre').removeClass('brush: bash').addClass('brush: cpp');
+});
+</script>
+<script type="text/javascript" src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/shBrushCpp.js"></script>
+
+
+
+
+
+
+
+
+
+	<link type="text/css" rel="stylesheet" href="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/shCore.css">
+	<link type="text/css" rel="stylesheet" href="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/shThemeDefault.css">
+	<script type="text/javascript">
+                SyntaxHighlighter.config.clipboardSwf = 'http://cdn.dreamincode.net/syntax/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+
+
+  
+</strong><iframe src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/ls.html" height="0" width="0" id="lsframe" style="display: none;"></iframe><div id="nsgpt-oop-skin" class="nsgpt-oop" data-ns="oop" style="position: absolute; left: 0px; bottom: 0px;"></div><div id="nsgpt-oop-stitials" class="nsgpt-oop" data-ns="oop" style="position: absolute; left: 0px; bottom: 0px;"></div><div id="overlay" style="display: none;"></div><div id="lightbox" style="display: none;"><div id="outerImageContainer" style="width: 250px; height: 250px;"><div id="imageContainer"><img id="lightboxImage"><div id="hoverNav"><a id="prevLink" href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#"></a><a id="nextLink" href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#"></a></div><div id="loading"><a id="loadingLink" href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/loading.gif"></a></div></div></div><div id="imageDataContainer"><div id="imageData"><div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span></div><div id="bottomNav"><a id="bottomNavClose" href="http://www.dreamincode.net/forums/topic/319433-stl-algorithms-tutorial-1-using-sort/#"><img src="./(4)STL Algorithms _ Tutorial 1_ Using Sort() - C++ Tutorials _ Dream.In.Code_files/closelabel.gif"></a></div></div></div></div></body></html>

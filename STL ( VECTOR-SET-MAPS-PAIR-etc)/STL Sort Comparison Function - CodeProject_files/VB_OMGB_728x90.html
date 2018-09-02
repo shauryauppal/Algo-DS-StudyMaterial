@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- saved from url=(0158)https://s0.2mdn.net/ads/richmedia/studio/pv2/47275168/20170130243735595/web/VB_OMGB_728x90.html?e=69&renderingType=2&leftOffset=0&topOffset=0&c=kfVjZkH3Nt&t=1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>VB_OMGB_728x90</title>
+    
+<script src="./easeljs-0.8.1.min.js.download"></script>
+<script src="./tweenjs-0.6.1.min.js.download"></script>
+<script src="./movieclip-0.8.1.min.js.download"></script>
+<script src="./preloadjs-0.6.1.min.js.download"></script>    
+    
+<script src="./TweenLite.min.js.download"></script>
+    
+<script src="./Enabler_01_153.js.download"></script>
+
+   <!--
+<script src="http://code.createjs.com/easeljs-0.8.1.min.js"></script>
+<script src="http://code.createjs.com/tweenjs-0.6.1.min.js"></script>
+<script src="http://code.createjs.com/movieclip-0.8.1.min.js"></script>
+<script src="http://code.createjs.com/preloadjs-0.6.1.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+    -->
+    
+<script src="./VB_OMGB_728x90.js.download"></script>
+    
+
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete(evt) {
+	exportRoot = new lib.VB_OMGB_728x90();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+</head>
+
+<body onload="init();" style="background-color:#D4D4D4;margin:0;padding:0;">
+	<canvas id="canvas" width="728" height="90" style="background-color:#CCCCCC"></canvas>
+
+</body></html>
